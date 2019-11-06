@@ -6,7 +6,16 @@
     <body>
 			<canvas id="myCanvas" width="500" height="400">
 				</canvas>	
-
+				<audio id="myAudio">
+					<source src="horse.ogg" type="audio/ogg">
+					<source src="horse.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				  </audio>
+				  
+				  <p>Click the buttons to play or pause the audio.</p>
+				  
+				  <button onclick="playAudio()" type="button">Play Audio</button>
+				  <button onclick="pauseAudio()" type="button">Pause Audio</button> 
 		<img id="image1" src="https://i.kym-cdn.com/entries/icons/original/000/010/806/Internet_Explorer_7_Logo.png" alt="includehelp.com"/>
       <img src =https://thumbs.gfycat.com/FocusedKeyGar-small.gif>
       <img src=https://www.stickpng.com/assets/images/580b57fbd9996e24bc43be67.png>
@@ -15641,7 +15650,15 @@
     context.fill();
   }
 
+  var x = document.getElementById("myAudio"); 
 
+function playAudio() { 
+  x.play(); 
+} 
+
+function pauseAudio() { 
+  x.pause(); 
+} 
 
 		</script>
 		window.onload=init;
