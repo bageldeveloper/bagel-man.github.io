@@ -1,0 +1,95 @@
+<html>
+    <head>
+
+    </head>
+        <title>pickles-dancing.com</title>
+    <body>
+			<canvas id="myCanvas" width="500" height="400">
+				</canvas>	
+
+		<img id="image1" src="https://i.kym-cdn.com/entries/icons/original/000/010/806/Internet_Explorer_7_Logo.png" alt="includehelp.com"/>
+      <img src =https://thumbs.gfycat.com/FocusedKeyGar-small.gif>
+      <img src=https://www.stickpng.com/assets/images/580b57fbd9996e24bc43be67.png>
+      <img src =http://giphygifs.s3.amazonaws.com/media/8aLQDT8BXSj7y/giphy.gif>
+      <img src=https://i.gifer.com/origin/27/27f44af77a679c36d93f07ffa9151038_w200.gif>
+      <img src=https://78.media.tumblr.com/c02aa6aee3cb4e0af2827d1ffc7e1dec/tumblr_nz7ui8rdr91s7f9xxo1_500.gif>
+      <img src=https://i.pinimg.com/originals/5e/01/89/5e0189c23f268afd4ad8610f34985589.gif>
+      <img src=https://www.fosi.org/media/images/funny-game-of-thrones-memes-coverimage.width-800.jpg>
+	  <img src=http://jp8.r0tt.com/l_370ba0c0-f379-11e1-9758-196a67300008.jpg>
+	  <img src=https://pbs.twimg.com/ext_tw_video_thumb/1039606787278884866/pu/img/Q4f6h-xSiwiAUKEp?format=jpg&name=small>
+	  <img src=https://media.giphy.com/media/oz45ELYgMoYVsZqmor/giphy.gif>
+	  <img src=https://i.kym-cdn.com/photos/images/original/001/096/488/790.jpg>
+	  <img src=https://img.buzzfeed.com/buzzfeed-static/static/2015-11/9/12/enhanced/webdr01/enhanced-13809-1447089368-8.jpg?downsize=700:*&output-format=auto&output-quality=auto>
+	  <img src="https://webstockreview.net/images/clipart-pineapple-cute-14.png" id="imgid">
+	  <img id="derp" src=https://images-na.ssl-images-amazon.com/images/I/412porzPScL.jpg>
+<h1 id='header'>press de buton</h1>
+<button onclick="spin(document.getElementById('header'));spin(document.getElementById('imgid'));">Spin!</button>
+
+        <h2></h2>
+        <script> 
+            alert("YEET!");
+            alert("2nd alert");
+            alert("what is love?");
+            alert("baby dont hurt meee");
+            alert("no moooore!!!");
+			//init object globally
+			var objImage= null;
+			function init(){
+				objImage=document.getElementById("image1");				
+				objImage.style.position='relative';
+				objImage.style.left='0px';
+				objImage.style.top='0px';
+			}
+			function getKeyAndMove(e){				
+				var key_code=e.which||e.keyCode;
+				switch(key_code){
+					case 37: //left arrow key
+						moveLeft();
+						break;
+					case 38: //Up arrow key
+						moveUp();
+						break;
+					case 39: //right arrow key
+						moveRight();
+						break;
+					case 40: //down arrow key
+						moveDown();
+						break;						
+				}
+			}
+			function moveLeft(){
+				objImage.style.left=parseInt(objImage.style.left)-5 +'px';
+			}
+			function moveUp(){
+				objImage.style.top=parseInt(objImage.style.top)-5 +'px';
+			}
+			function moveRight(){
+				objImage.style.left=parseInt(objImage.style.left)+5 +'px';
+			}
+			function moveDown(){
+				objImage.style.top=parseInt(objImage.style.top)+5 +'px';
+			}
+  function spin(object) {
+    setInterval(function() {
+      object.style.transform += "rotate(10deg)";
+    }, 1);
+  }
+
+  var context;
+  function init()
+  {
+    context= myCanvas.getContext('2d');
+    context.beginPath();
+    context.fillStyle="#0000ff";
+    // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
+    context.arc(100,100,20,0,Math.PI*2,true); context.closePath();
+    context.fill();
+  }
+
+
+
+		</script>
+		window.onload=init;
+		onkeydown='getKeyAndMove(event)'>
+    </body>
+</html>
