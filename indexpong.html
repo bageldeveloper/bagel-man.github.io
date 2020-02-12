@@ -16,41 +16,8 @@ window.location = "pong.html";
 startBtn.center(); 
 // startBtn code is here */
 
-var info_text = new sjs.Text("Created By Tom Moore :3",20,"black");
+var info_text = new sjs.Text("Created By Bagel-Man :3",20,"black");
 
 info_text.bottom().centerH();
-
-
-} //end start
-</script>
-</head>
-<body onload="start()">
-<h1> Menu </h1>
-
-<div id="target" style="margin:auto;background:grey;"></div>
-</body>
-</html><!DOCTYPE html>
-<html>
-  <head>
-    <title> Game Over </title>
-    <script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script>
-    <script>
-      function start(){
-        sjs.open();
-       var gameover_text = new sjs.Text("LOSER!!! try again or are you to much of a chicken? bok bok, also, the code is being stupid so press restart 2 times.",28,"blue");  
-
-        var restartBtn = new sjs.Button("Restart", function(){
 window.location = "indexpong.html";
-});
-        
-restartBtn.center(); 
 
-
-      } //end start
-    </script>
-  </head>
-  <body onload="start()">
-    <h1> Game Over! </h1>
-
-    <div id="target" style="margin:auto;background:grey;"></div>
-  </body>
