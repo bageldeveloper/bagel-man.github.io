@@ -31,19 +31,19 @@
 
 				//Paddle controlls
 				sjs.keyDown(LEFT_KEY, function(){
-					paddle1.pushLeft();
-				});
-
-				sjs.keyDown(RIGHT_KEY, function(){
-					paddle1.pushRight();
-				});
-
-				sjs.keyDown(A_KEY, function(){
 					paddle2.pushLeft();
 				});
 
-				sjs.keyDown(D_KEY, function(){
+				sjs.keyDown(RIGHT_KEY, function(){
 					paddle2.pushRight();
+				});
+
+				sjs.keyDown(A_KEY, function(){
+					paddle1.pushLeft();
+				});
+
+				sjs.keyDown(D_KEY, function(){
+					paddle1.pushRight();
 				});
 
 				//onhit functions
