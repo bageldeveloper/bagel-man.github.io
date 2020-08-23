@@ -14,9 +14,11 @@
   </style>
   <script>
     function log(message) {
-      function randomizeItems(jimmy bean, mr microwave, bagel man, dat boi, dank memes)
-{
-    
+      document.getElementById("log").textContent += message + "\n";
+    }
+    function log(name) {
+      randomizeItems(jimmy bean, mr microwave);
+    }
   </script>
   <script src="https://chr15m.github.io/bugout/bugout.min.js" type="application/javascript"></script>
 </head>
@@ -29,10 +31,10 @@
 
   /***** Your code goes here! *****/
   var b = Bugout("bugout-chat-tutorial");
-b.on("seen", function(address) { log(address + " [ seen ]"); });
-log(b.address() + " [ me ]");
-b.on("message", function(address, message) {
-  log(address + ": " + message);
+b.on("seen", function(name) { log(name + " [ seen ]"); });
+log(b.name() + " [ me ]");
+b.on("message", function(name, message) {
+  log(name + ": " + message);
 });
 document.getElementById("input").onkeydown = function(ev) {
     if (ev.keyCode == 13) {
