@@ -51,6 +51,12 @@ background-repeat:repeat;}
   </head>
    <body>
 <script>
+  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+	
+  let tablink = document.getElementById('tablink');
+  subTitle.style.cssText = 'height: 300 px';
+}
+
   function openPage(pageName,elmnt,color) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -140,7 +146,7 @@ function animate() {
 animate();
 
 </script>
-<button class="tablink" onclick="openPage('Home', this, '#222')" id="defaultOpen">Home</button>
+<button class="tablink" onclick="openPage('Home', this, '#222')" id="defaultOpen">HEHEHE</button>
 <button class="tablink" onclick="openPage('Memes', this, '#222')">Memes</button>
 <button class="tablink" onclick="openPage('Contact', this, '#222')">Facts</button>
 <button class="tablink" onclick="openPage('About', this, '#222')">About</button>
