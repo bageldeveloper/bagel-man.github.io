@@ -36,12 +36,12 @@ body, html {
   display: none;
   padding: 100px 20px;
   height: 100%;
+  font-size: 22px;
 }
 
 
 #Home {background-color: #222;}
-#Memes { background-image: url("https://www.craftycreations.net/wp-content/uploads/2019/08/Oak-Planks-7.png");
-background-repeat:repeat;}
+#Memes { background-color: #222;}
 #Contact {background-color: #222;}
 #About {background-color: #222;}
 #Game {background-color: #222;}
@@ -51,11 +51,41 @@ background-repeat:repeat;}
   </head>
    <body>
 <script>
-  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-	
-  let tablink = document.getElementById('tablink');
-  subTitle.style.cssText = 'height: 300 px';
+function muneeb_wp_is_mobile() {
+ 
+ if ( function_exists( 'wp_is_mobile' ) )
+     return wp_is_mobile();
+
+ //code from wp_is_mobile function, wp_is_mobile() is located in wp-includes/vars.php version 3.4
+ static$is_mobile;
+
+ if ( isset($is_mobile) )
+     return $is_mobile;
+
+ if ( empty($_SERVER['HTTP_USER_AGENT']) ) {
+     $is_mobile = false;
+ } else if ( strpos($_SERVER['HTTP_USER_AGENT'], 'Mobile') !== false // many mobile devices (all iPhone, iPad, etc.)
+     || strpos($_SERVER['HTTP_USER_AGENT'], 'Android') !== false
+     || strpos($_SERVER['HTTP_USER_AGENT'], 'Silk/') !== false
+     || strpos($_SERVER['HTTP_USER_AGENT'], 'Kindle') !== false
+     || strpos($_SERVER['HTTP_USER_AGENT'], 'BlackBerry') !== false
+     || strpos($_SERVER['HTTP_USER_AGENT'], 'Opera Mini') !== false ) {
+         $is_mobile = true;
+ } else {
+     $is_mobile = false;
+ }
+
+ return $is_mobile;
+
 }
+if ( muneeb_wp_is_mobile() ){
+  let tablink = document.getElementById('tablink');
+  tablink.style.cssText = 'height: 300 px';
+  let tabcontent = document.getElementById('tabcontent');
+  tablink.style.cssText = 'font-size: 35 px';
+}
+
+
 
   function openPage(pageName,elmnt,color) {
   var i, tabcontent, tablinks;
