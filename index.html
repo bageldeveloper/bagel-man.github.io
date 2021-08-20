@@ -1,10 +1,145 @@
 <html>
   <head>
-    <style src ="index.css"></style>
+    <style>
+      * {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  
+  background-color: #222;
+  margin: 0;
+  font-family: roboto;
+}
+.tablink {
+  background-color: #444;
+  color: white;
+  float: left;
+  border: 3;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 20%;
+}
+
+.tablink:hover {
+  background-color: #666;
+}
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+
+#Home {background-color: #222;}
+#Memes { background-image: url("https://www.craftycreations.net/wp-content/uploads/2019/08/Oak-Planks-7.png");
+background-repeat:repeat;}
+#Contact {background-color: #222;}
+#About {background-color: #222;}
+#Game {background-color: #222;}
+
+</style>
 
   </head>
    <body>
-    <script src="index.js"></script>
+<script>
+  function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+
+
+// dots is an array of Dot objects,
+// mouse is an object used to track the X and Y position
+   // of the mouse, set with a mousemove event listener below
+var dots = [],
+    mouse = {
+      x: 0,
+      y: 0
+    };
+
+// The Dot object used to scaffold the dots
+var Dot = function() {
+  this.x = 0;
+  this.y = 0;
+  this.node = (function(){
+    var n = document.createElement("div");
+    n.className = "trail";
+    document.body.appendChild(n);
+    return n;
+  }());
+};
+// The Dot.prototype.draw() method sets the position of 
+  // the object's <div> node
+Dot.prototype.draw = function() {
+  this.node.style.left = this.x + "px";
+  this.node.style.top = this.y + "px";
+};
+
+// Creates the Dot objects, populates the dots array
+for (var i = 0; i < 12; i++) {
+  var d = new Dot();
+  dots.push(d);
+}
+
+// This is the screen redraw function
+function draw() {
+  // Make sure the mouse position is set everytime
+    // draw() is called.
+  var x = mouse.x,
+      y = mouse.y;
+  
+  // This loop is where all the 90s magic happens
+  dots.forEach(function(dot, index, dots) {
+    var nextDot = dots[index + 1] || dots[0];
+    
+    dot.x = x;
+    dot.y = y + 5;
+    dot.draw();
+    x += (nextDot.x - dot.x) * .6;
+    y += (nextDot.y - dot.y) * .6;
+
+  });
+}
+
+addEventListener("mousemove", function(event) {
+  //event.preventDefault();
+  mouse.x = event.pageX;
+  mouse.y = event.pageY;
+});
+
+// animate() calls draw() then recursively calls itself
+  // everytime the screen repaints via requestAnimationFrame().
+function animate() {
+  draw();
+  requestAnimationFrame(animate);
+}
+
+// And get it started by calling animate().
+animate();
+
+</script>
 <button class="tablink" onclick="openPage('Home', this, '#222')" id="defaultOpen">Home</button>
 <button class="tablink" onclick="openPage('Memes', this, '#222')">Memes</button>
 <button class="tablink" onclick="openPage('Contact', this, '#222')">Facts</button>
@@ -50,7 +185,7 @@
 <div id="About" class="tabcontent">
   <h1>About</h1>
   <h4>This was made by a person</h4>
-  <h5>Wanna contact me? sure</h5>
+  <h5>Wanna contact me? too bad</h5>
 </div>
      
      <div id="Game" class="tabcontent">
