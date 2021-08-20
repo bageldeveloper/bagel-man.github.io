@@ -1,3 +1,11 @@
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+	
+  let tablink = document.getElementById('tablink');
+  subTitle.style.cssText = 'height: 300 px';
+}
+
+
+
 function openPage(pageName,elmnt,color) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
