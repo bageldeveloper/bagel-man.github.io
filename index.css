@@ -8,7 +8,7 @@ body, html {
   font-family: roboto;
 }
 .tablink {
-    -webkit-animation:Font 10s infinite alternate;
+    /* -webkit-animation:Font 10s infinite alternate; */
   background-color: #444;
   color: white;
   float: left;
@@ -30,7 +30,7 @@ body, html {
   width: 50%;
 }
 .tabcontent {
-    -webkit-animation:Font 10s infinite alternate;
+    /* -webkit-animation:Font 10s infinite alternate; */
   color: white;
   display: none;
   padding: 100px 20px;
@@ -45,22 +45,22 @@ background-repeat:repeat;}
 #About {background-color: #222;}
 #Game {background-color: #222;}
 
-@-webkit-keyframes Font {
+/* @-webkit-keyframes Font {
     0% {color: red;}
     20% {color: orange;}
     40% {color: yellow;}
     60% {color: green;}
     80% {color: blue;}
     100% {color: purple}
-}
-@-webkit-keyframes Background {
+} */
+/* @-webkit-keyframes Background {
     0% {color: red;}
     20% {color: orange;}
     40% {color: yellow;}
     60% {color: green;}
     80% {color: blue;}
     100% {color: purple}
-}
+} */
 
 .trail { /* className for the trail elements */
     position: absolute;
