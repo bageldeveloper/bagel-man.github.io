@@ -95,7 +95,6 @@ if (strpos(strtolower($_SERVER['HTTP_USER_AGENT']),'android') > 0) {
 
 if($mobile_browser == 0)
 {
-    //its not a mobile browser
 
 } else {
   document.getElementById("tablink").style.height="250 px";
@@ -194,7 +193,7 @@ function animate() {
 animate();
 
 </script>
-<button class="tablink" onclick="openPage('Home', this, '#222')" id="defaultOpen">Nerd</button>
+<button class="tablink" onclick="openPage('Home', this, '#222')" id="defaultOpen">Home</button>
 <button class="tablink" onclick="openPage('Memes', this, '#222')">Memes</button>
 <button class="tablink" onclick="openPage('Contact', this, '#222')">Facts</button>
 <button class="tablink" onclick="openPage('About', this, '#222')">About</button>
