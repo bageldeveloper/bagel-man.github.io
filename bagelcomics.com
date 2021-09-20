@@ -18,9 +18,8 @@ body, html {
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
-  font-size: 100%;
+  font-size: 17px;
   width: 20%;
-  height: 15%;
 }
 
 .tablink:hover {
@@ -37,36 +36,27 @@ body, html {
   display: none;
   padding: 100px 20px;
   height: 100%;
-  font-size: 22px;
 }
 
 
 #Home {background-color: #222;}
-#Memes { background-color: #222;}
+#Memes { background-image: url("https://www.craftycreations.net/wp-content/uploads/2019/08/Oak-Planks-7.png");
+background-repeat:repeat;}
 #Contact {background-color: #222;}
 #About {background-color: #222;}
 #Game {background-color: #222;}
 
 </style>
-<<<<<<< HEAD
-</head>
-<body>
-
-<div class="topnav">
-  <a class="active" href="index.html">Home</a>
-  <a href="pickles.html">Memes</a>
-  <a href="wut.html">Insanity</a>
-  <a href="gamechoice.html">Games</a>
-  <a href="comics.html">Comics</a>
-  <a href="chat.html">Chat</a>
-=======
->>>>>>> 02fbcecb365fb5ffe5abca1c97ed9fd90cdeabf5
 
   </head>
    <body>
 <script>
-
-
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+	
+    let tablink = document.getElementById('tablink');
+    subTitle.style.cssText = 'height: 300 px';
+  }
+  
   function openPage(pageName,elmnt,color) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -156,7 +146,7 @@ function animate() {
 animate();
 
 </script>
-<button class="tablink" onclick="openPage('Home', this, '#222')" id="defaultOpen">Home</button>
+<button class="tablink" onclick="openPage('Home', this, '#222')" id="defaultOpen">hehehehe</button>
 <button class="tablink" onclick="openPage('Memes', this, '#222')">Memes</button>
 <button class="tablink" onclick="openPage('Contact', this, '#222')">Facts</button>
 <button class="tablink" onclick="openPage('About', this, '#222')">About</button>
