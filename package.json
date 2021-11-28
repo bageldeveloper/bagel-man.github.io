@@ -1,0 +1,5 @@
+{
+    "scripts": {
+      "build": "cp -R . ../public && mv ../public public"
+    }
+  }
