@@ -1,0 +1,70 @@
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  
+  background-color: #222;
+  margin: 0;
+  font-family: roboto;
+}
+.tablink {
+    /* -webkit-animation:Font 10s infinite alternate; */
+  background-color: #444;
+  color: white;
+  float: left;
+  border: 3;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 20%;
+}
+
+.tablink:hover {
+  background-color: #666;
+}
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.tabcontent {
+    /* -webkit-animation:Font 10s infinite alternate; */
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+
+#Home {background-color: #222;}
+#Memes { background-image: url("https://www.craftycreations.net/wp-content/uploads/2019/08/Oak-Planks-7.png");
+background-repeat:repeat;}
+#Contact {background-color: #222;}
+#About {background-color: #222;}
+#Game {background-color: #222;}
+
+/* @-webkit-keyframes Font {
+    0% {color: red;}
+    20% {color: orange;}
+    40% {color: yellow;}
+    60% {color: green;}
+    80% {color: blue;}
+    100% {color: purple}
+} */
+/* @-webkit-keyframes Background {
+    0% {color: red;}
+    20% {color: orange;}
+    40% {color: yellow;}
+    60% {color: green;}
+    80% {color: blue;}
+    100% {color: purple}
+} */
+
+.trail { /* className for the trail elements */
+    position: absolute;
+    height: 6px; width: 6px;
+    border-radius: 3px;
+    background: white;
+  }
