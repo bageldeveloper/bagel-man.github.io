@@ -1,5 +1,7 @@
 <html>
   <head>
+    <title>Bagels!</title>
+<meta name=”Description” content=”Bagelcomics.com is a pretty cool website with stuff on it. Play some dope games or read some comics. Chat with other people from around the world or browse some dank memes.”>
     <style>
       * {box-sizing: border-box}
 
@@ -170,6 +172,13 @@ animate();
 <div id="Memes" class="tabcontent">
   <h1>Memes</h1>
   <p>ripe and dank memes</p> 
+
+<form action="upload.php" method="post" enctype="multipart/form-data">
+  Select image to upload:
+  <input type="file" name="fileToUpload" id="fileToUpload">
+  <input type="submit" value="Upload Image" name="submit">
+</form>
+
   <img src="https://i.redd.it/he77atzsrza71.jpg" width="400" class="center">
   <img src="https://i.redd.it/1zqfw903nya71.jpg" width="400" class="center">
     <img src="https://i.redd.it/dyiv0tk2oza71.jpg" width="400" class="center">
@@ -211,8 +220,8 @@ animate();
   <h1>Comics</h1>
   <h2>New comics are realeased every week :)</h2>
   <h2 style="text-align:center">November 29 2021</h2>
-  <li><a href="bagel1.jpg"><img src="bagel1.jpg" height="500" class="center"></a></li>
   <li><a href="bagel2.jpg"><img src="bagel2.jpg" height="500" class="center"></a></li>
+  <li><a href="bagel1.jpg"><img src="bagel1.jpg" height="500" class="center"></a></li>
   
 </div>
 
