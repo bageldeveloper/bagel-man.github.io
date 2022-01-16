@@ -1,12 +1,13 @@
 <html>
   <head>
+    <title>Bagels!</title>
+<meta name=”Description” content=”Bagelcomics.com is a pretty cool website with stuff on it. Play some dope games or read some comics. Chat with other people from around the world or browse some dank memes.”>
     <style>
       * {box-sizing: border-box}
 
 /* Set height of body and the document to 100% */
 body, html {
-  
-  background-color: #222;
+  background-color: #222 ;
   margin: 0;
   font-family: roboto;
 }
@@ -41,15 +42,28 @@ body, html {
 }
 
 
-#Home {background-color: #222;}
-#Memes { background-color: #222;}
-#Contact {background-color: #222;}
-#About {background-color: #222;}
-#Game {background-color: #222;}
+#Home {
+  background-color: #222 ;
+}
+#Memes {
+  background-color: #222 ;
+  }
+#About {
+  background-color: #222 ;
+}
+#Game {
+  background-color: #222 ;
+}
+#Comics {
+  background-color: #222 ;
+}
 
 </style>
 </head>
 <body>
+
+
+
 
 <script>
 
@@ -93,7 +107,7 @@ var Dot = function() {
     return n;
   }());
 };
-// The Dot.prototype.draw() method sets the position of 
+// The Dot.prototype.draw() method sets the position of
   // the object's <div> node
 Dot.prototype.draw = function() {
   this.node.style.left = this.x + "px";
@@ -112,11 +126,11 @@ function draw() {
     // draw() is called.
   var x = mouse.x,
       y = mouse.y;
-  
+
   // This loop is where all the 90s magic happens
   dots.forEach(function(dot, index, dots) {
     var nextDot = dots[index + 1] || dots[0];
-    
+
     dot.x = x;
     dot.y = y + 5;
     dot.draw();
@@ -145,18 +159,32 @@ animate();
 </script>
 <button class="tablink" onclick="openPage('Home', this, '#222')" id="defaultOpen">Home</button>
 <button class="tablink" onclick="openPage('Memes', this, '#222')">Memes</button>
-<button class="tablink" onclick="openPage('Contact', this, '#222')">History</button>
-<button class="tablink" onclick="openPage('About', this, '#222')">About</button>
+<button class="tablink" onclick="openPage('About', this, '#222')">Social</button>
     <button class="tablink" onclick="openPage('Game', this, '#222')">Games</button>
+    <button class="tablink" onclick="openPage('Comics', this, '#222')">Comics</button>
 
 <div id="Home" class="tabcontent">
   <h1>Home</h1>
-  <p>This is a website about stuff, it has some stuff you can do</p>
+  <h2>Welcome to bagelcomics.com! We have some wacky stuff you can try out. You could play some games, look at some memes, read comics, or chat with other people! :)</h2>
+  <h4>This was made by a person</h4>
+  <h5>Join the <a href="https://discord.gg/xEwt8W5utF">Discord server</a></h5>
+  <h5>Email me at weirdwontons@gmail.com</h5>
+  <p>Number of visits</p>
+<a href="https://www.hitwebcounter.com" target="_blank">
+<img src="https://hitwebcounter.com/counter/counter.php?page=7288119&style=0011&nbdigits=5&type=page&initCount=0" title="User Stats" Alt="PHP Hits Count"   border="0" >
+</a> 
 </div>
 
 <div id="Memes" class="tabcontent">
   <h1>Memes</h1>
-  <p>ripe and dank memes</p> 
+  <p>ripe and dank memes</p>
+
+
+  <img src="https://inspirationfeed.com/wp-content/uploads/2020/05/dank-meme-68.jpg" width="400" class="center">
+  <img src="https://inspirationfeed.com/wp-content/uploads/2020/05/dank-meme-61.jpg" width="400" class="center">
+  <img src="https://inspirationfeed.com/wp-content/uploads/2020/05/dank-meme-60.png" width="400" class="center">
+  <img src="https://inspirationfeed.com/wp-content/uploads/2020/05/dank-meme-40.jpg" width="400" class="center">
+  <img src="https://inspirationfeed.com/wp-content/uploads/2020/05/dank-meme-15.png" width="400" class="center">
   <img src="https://i.redd.it/he77atzsrza71.jpg" width="400" class="center">
   <img src="https://i.redd.it/1zqfw903nya71.jpg" width="400" class="center">
     <img src="https://i.redd.it/dyiv0tk2oza71.jpg" width="400" class="center">
@@ -171,18 +199,11 @@ animate();
   <img src="https://preview.redd.it/6xl3l5ws58281.png?width=640&crop=smart&auto=webp&s=97fe0894fb4ee950b91b9c24cf4c1d3d0984dbe7" width="400" class="center">
 </div>
 
-<div id="Contact" class="tabcontent">
-  <iframe src="oldindex.html" style="height:100%;width:100%" title="Iframe Example"></iframe>
+<div id="About" class="tabcontent">
+  <h1>Social</h1>
+  <iframe src="chatindex.html" style="height:100%;width:100%" title="Iframe Example"></iframe>
 </div>
 
-<div id="About" class="tabcontent">
-  <h1>About</h1>
-  <h4>This was made by a person</h4>
-  <h5>Check out my <a href="https://www.youtube.com/channel/UCVsIuX-_vHvdMG7ffTlDQLA">Youtube Channel</a></h5>
-  <h5>Join the <a href="https://discord.gg/xEwt8W5utF">Discord server</a></h5>
-  <h5>Email me at weirdwontons@gmail.com</h5>
-</div>
-     
      <div id="Game" class="tabcontent">
        <h1>Games</h1>
        <iframe frameborder="0" src="https://itch.io/embed/1355170" width="552" height="167"><a href="https://masterbagel.itch.io/vroom-vroom">VROOM VROOM by masterbagel</a></iframe>
@@ -196,5 +217,13 @@ animate();
        <iframe src="https://scratch.mit.edu/projects/385424031/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
        <iframe src="https://scratch.mit.edu/projects/595497446/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
 </div>
+<div id="Comics" class="tabcontent">
+  <h1>Comics</h1>
+  <h2>New comics are realeased every week :)</h2>
+  <li><a href="bagel3.jpg"><img src="bagel3.jpg" height="500" class="center"></a></li>
+  <li><a href="bagel2.jpg"><img src="bagel2.jpg" height="500" class="center"></a></li>
+  <li><a href="bagel1.jpg"><img src="bagel1.jpg" height="500" class="center"></a></li>
+
+</div>
 </body>
-</html> 
+</html>
