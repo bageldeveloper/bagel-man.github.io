@@ -1,0 +1,213 @@
+\<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+background-color: #ebebeb;
+  font-family: "Lato", sans-serif;
+}
+p{
+  background-color: #ebebeb;
+}
+h1{
+  background-color: #ebebeb;
+}
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 20px 15px;
+  border: none;
+  position: fixed;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+.tablink {
+  background-color: #111;
+  color: white;
+  float: left;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 100%;
+  width: 100%;
+  height: 15%;
+}
+
+.tablink:hover {
+  background-color: #666;
+}
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.tabcontent {
+text-align: center;
+  color: #181a24;
+  display: none;
+  padding: 10px 20px;
+  height: 100%;
+  font-size: 22px;
+}
+
+
+#Home {
+  background-color: #ebebeb ;
+}
+#Thesis {
+  background-color: #ebebeb ;
+  }
+#Build {
+  background-color: #ebebeb ;
+}
+#Main {
+  background-color: #ebebeb ;
+}
+#Effects {
+  background-color: #ebebeb ;
+}
+</style>
+</head>
+<body>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+	<button class="tablink" onclick="openPage('Home', this, '#222')" id="defaultOpen">Thesis</button>
+<button class="tablink" onclick="openPage('Thesis', this, '#222')">Background</button>
+<button class="tablink" onclick="openPage('Build', this, '#222')">Buildup</button>
+    <button class="tablink" onclick="openPage('Main', this, '#222')">Main Event</button>
+    <button class="tablink" onclick="openPage('Effects', this, '#222')">Effects</button>
+</div>
+
+
+  <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>  
+
+
+<div id="Home" class="tabcontent">
+  <h1>Thesis</h1>
+ <img src="https://www.seti.org/sites/default/files/2020-10/earth-view-from-moon-perspective-footprints-1400px.jpg" width="100%">
+
+<p>In 1955 the Soviet Union and the United States were competing in a ballistic missile-based nuclear arms race. Eventually, this morphed into a competition to achieve superior spaceflight capability. Many citizens of the U.S. didn’t see the point in this race and thought their money could be allocated to things a little closer to home. In 1969 July 16, a day before the launch of Apollo 11, a group of civil rights activists protested the moon landing. They argued that the money could be spent helping people in poverty by providing food and shelter. Because of this protest, NASA developed technologies to make better housing using the insulation from spaceships, but it was more of an advertising stunt and didn’t amount to much. This protest did still raise awareness, which eventually led to more government spending on helping people in need, and the end of the Apollo missions. Without this protest, America wouldn’t be as far as we are today for providing equal opportunities for everyone.<p>
+  <h2>Word Count:</h4>
+</div>
+
+<div id="Thesis" class="tabcontent">
+  <h1>Background</h1>
+  <p>The Civil Rights Movements began in 1954, which were a series of protests for equal rights and opportunities for every race in America. These protests had roots in the centuries-long efforts for enslaved Africans to achieve racial freedoms. The American Civil war was the result of these efforts which divided America in two. While the South’s economy was based on slavery and would have a more negative impact, keeping slaves went against the reason this country was founded, providing an equal opportunity for everyone. Although African people were eventually given basic civil freedoms because of the American Civil War through the 14th and 15th amendments, the constitution was still not fully able to protect these rights throughout the next century. Through non-violent protests, these civil rights activists were fighting for not only civil right reforms, but also confronting the economic, political, and cultural effects of past racial oppression and enslavement.  World War began 1939, which ended in 1945, leading to the cold war in between America and the Soviet Union </p>
+
+
+</div>
+
+<div id="Build" class="tabcontent">
+  <h1>Buildup</h1>
+  <p>Around the 50’s, the Soviet Union responded to the announcement the US made to make and launch a satellite. After the Soviet Union successfully launched Sputnik 1, the US began putting more government funds into the space program. America did eventually develop and launch a satellite called Explorer 1, but it was too late, the Soviet Union had already sent the first living organism into space. 
+    At this point the US was struggling to keep up with the Soviet Union's rapid progression, so they kept putting more and more money into space exploration. By now a little under 1% of the US’s government was being spent on NASA (National Aeronautics And Space Administration), which was starting to raise a few flags for some people. While the US could be exploring space and proving that democracy was better than communism, they could’ve been trying to solve major problems in their own country, some argued. Poverty level also increased rapidly in the 1950’s through 60’s. 
+    In 1959 the Soviet Union launched Luna 1, which was the first manmade object to leave the earth’s orbit and enter the sun’s orbit. At this point it seemed like all hope was lost for America, riots were breaking out, tensions were rising with the Soviet Union, everyone was poor, and they couldn’t build a spaceship for the life of them. Even though America kept making more space crafts, like the Explorer 6, Freedom 7, or whatever wacky stuff they called them, it was clear they were losing. This made people even angrier, why was the government spending so much on a competition they were going to lose? 
+    But America did have their reasons for this much effort being put into the space program. They wanted to be the first to create a ballistic missile that could travel between nations to have the upper hand in wars, the space race would introduce tons of new useful technologies that we use all the time, and they wanted to prove that capitalism was better than communism. While nowadays it seems like a good thing that the space race happened, people couldn’t have known what this all would eventually lead to. 
+    </p>
+</div>
+
+     <div id="Main" class="tabcontent">
+       <h1>Main Event</h1>
+       <p>Waiting for NASA’s most expensive launch yet, 50,000 people gathered in Harlem for a musical showcase headlined by Stevie Wonder. Even with the upcoming launch, the audience didn’t seem to care what was going to happen with the rocket. The Times reported, “The single mention of a lunar module touching down brought boo’s from the audience.”
+        This event that happened in Harlem represents what many black communities thought of the Apollo 11 mission. Many of them were gathered there in protest of the funds spent on NASA’s moonshot, 25.4 billion dollars, saying it could be better spent trying to mitigate the effects of poverty for millions of Americans. Gill Scott-Heron’s poem “Whitey on the Moon” commented on the conditions and hazards that African Americans faced everyday while Neil Armstrong and Buzz Aldrin were on the moon.
+        One day before the launch of Apollo 11, Abernathy led 25 poor families to the Kennedy Space Center to protest the launch. Calling out America’s distorted sense of priorities, the families with wagons drawn by mules marched across the field to meet the NASA administrator. The mules’ contrast between the gleaming Saturn V rocket represented the difference between the billions spent on the space program and the poor families who couldn’t afford the bare necessity.
+        The crowd then gathered in front of the NASA gates for a candlelight vigil on the 14th of July and then followed by a march on the 15th. Thomas Paine then came out under the lightly falling rain to meet Abernathy and the other poor families in the open field. They then started singing “We Shall Overcome”, a key anthem in the American civil rights movement, while news reporters and media crews recorded. They carried signs saying “$12 a day to feed an astronaut. We could feed a starving child for $8.”
+        Abernathy then made three requests for Thomas Paine, that 10 of their families be allowed to to view the launch of the rocket, that NASA should support the movement to end nationwide hunger and other social issues, and that the people at NASA come up with new ways and ideas to combat the issue of hunger. Paine replied saying, “If we could solve the problems of poverty in the United States by not pushing the button to launch men to the moon tomorrow, then we would not push that button.” He also wished that Abernathy would “hitch his wagons to our rocket”, and to use the space program as an inspiration to the nation to tackle other problems in other areas.
+        This ended with the two men shaking hands, both coming to an agreement. Paine gave him VIP tickets to watch the launch the next day, and Abernathy prayed for the astronauts safety saying he was as proud as anyone at the accomplishment.
+      </p>
+</div>
+<div id="Effects" class="tabcontent">
+  <h1>Effects</h1>
+  <p>Despite all of the protests, NASA still continued with the moonshot. On July 16, 1969, NASA launched the shuttle carrying Neil Armstrong, Buzz Aldrin, and Michael Collins. Eight days later on July 24, they landed on the moon, which some argue ended the space race. Although another argument could be made that the USSR won because of the very little spending compared to NASA’s spending and the clear advantage they had. The entire point of the space race was to see who could be the first to develop satellites and ballistic missiles so they could prove their economy was better.
+    But this protest did do something, or else I wouldn’t be talking about it. NASA tried to keep the promises they made on the day of the protest. Engineers took sensors initially used to detect contaminants in space, and used them to measure the urban air pollution. Another project they took on was taking the insulation from the space crafts and using that to make walls for building. Although looking at the actual effects this made, it seemed more like a publicity stunt. It wasn’t geared towards actually helping people, just making themselves look good so other people would support them.
+    The Space Race did have benefits in many different areas. The Global Positioning System (GPS) that was originally developed by the military for precise navigation and weapon targeting systems, is now used as a tool by many people. It can be used to navigate to different places, or to know where other people are. Artificial limbs were also dramatically improved by using the advanced shock absorbing space technology invented. Deep space exploration missions also needed high quality cameras and image processors, which we also use almost everyday. Tons of technology was created from the Space Race, which really boosted the advancement of technology. Wireless headsets, LED lighting, freeze dried foods, cordless vacuums, scratch resistant eyeglass lenses, and memory foam were some of the big inventions that came from the space race. Also the satellites that were created that eventually led to the invention of the internet, which is a giant resource that billions of people use on a daily basis. The ability to interact with other people from across the world was a revolutionary product.
+    Because of not only the protest at the Kennedy Space Center, but also all of the other protests throughout the 60’s, things started to change for the better. Poverty declined to much lower than it used to be, and government spending on poverty went up. More companies started hiring different types of people, leading to more diverse workplaces. The 60’s also shifted Americans views on civil rights, equality for all genders, and gay rights. These protests demanded that Americans consider equality for everyone in the nation. Eventually, people began to accept the basic goals of the sixties feminists. Women got equal pay for equal work, an end to domestic violence, some lift on the severe limits in managerial jobs, and the share of responsibility for housework and the care of children. Same-sex marriage was still being denied, but cases where popping up of unofficial gay marriages. States slowly applied laws that would give benefits, and try to protect same-sex marriages. After many long years, the supreme court eventually legalized same-sex marriage in all states in 2015.
+    While all of this is certainly better than it used to be, we still have a long way to go to completely get rid of the biased, foreign policy America has established. Racism still exists in America, and non-white people aren’t given as fair as chances as white people. Sexism still exists with some people not accepting that every gender is equal. And homophobia is still a large struggle that people are still fig
+    </p>
+
+</div>
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+
+  function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+
+</script>
+   
+</body>
+</html> 
