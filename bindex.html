@@ -255,7 +255,16 @@ position: relative;
   border-width: 10px 10px 10px 0;
   border-color: transparent white transparent transparent;
 }
-
+.bodybtn{
+	 cursor: pointer;
+        background-color: transparent;
+        height: 100%;
+        width: 100%;
+	float: right;
+        color: #3498db;
+        font-size: 1.5em;
+        box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+	}
 /* Fix the circle for containers on the right side */
 .right::after {
   left: -16px;
@@ -320,9 +329,10 @@ position: relative;
 <button class="tablink" onclick="openPage('Build', this, '#222')">Debate</button>
     <button class="tablink" onclick="openPage('Main', this, '#222')">Diplomacy</button>
     <button class="tablink" onclick="openPage('Effects', this, '#222')">Effects</button>
+	    <button class="bodybtn"></button>
 </div>
 
-
+	    <button class="bodybtn" onclick="closeNav()"></button>
   <button class="openbtn" onclick="openNav()">☰</button>  
 
 
