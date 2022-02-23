@@ -18,6 +18,7 @@ h1{
 	color: #4b6680;
 }
 .column{
+
 	  padding: 10px 20px;
 	    float: left;
 		width:43%;
@@ -27,6 +28,8 @@ h1{
   border-radius: 12px;
 	}
 .column2{
+	
+	margin-bottom:100px;
 	  padding: 10px 20px;
 	    float: right;
 	 width:45%;
@@ -67,6 +70,7 @@ h1{
   top: 0;
   right: 25px;
   font-size: 36px;
+	color:#e0e0e0;
   margin-left: 50px;
 }
 
@@ -123,8 +127,7 @@ h1{
 }
 .center{
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+text-align: center;
   width: 50%;
 }
 .tabcontent {
@@ -157,6 +160,17 @@ img{
 #Research{
   background-color: #ebebeb ;
 }
+	.nextpage{
+		  background-color : #181a24;
+  color: #ebebeb;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border-color: #ebebeb;
+		  position: fixed;
+  bottom: -4px;
+  right: 10px;
+		
+	}
 .debate{
 	float: right;
 	 width:55%;
@@ -331,8 +345,9 @@ position: relative;
   left: 0%;
   }
 .poop{
-
+	margin-top:100px;
  width: 100%;
+	 display:block;
 }
 	  
 }
@@ -363,9 +378,9 @@ position: relative;
   <h1>THESIS</h1>
 
 	
-	<img class="quoteleft" src="https://www.seti.org/sites/default/files/2020-10/earth-view-from-moon-perspective-footprints-1400px.jpg">
+	<img src="https://www.seti.org/sites/default/files/2020-10/earth-view-from-moon-perspective-footprints-1400px.jpg" style="width:50%">
 
-<p class="text">In 1955 the Soviet Union and the United States were competing in a ballistic missile-based nuclear arms race. Eventually, this morphed into a competition to achieve superior spaceflight capability. Many citizens of the U.S. didn’t see the point in this race and thought their money should be allocated to things a little closer to home.<p>
+<p >In 1955 the Soviet Union and the United States were competing in a ballistic missile-based nuclear arms race. Eventually, this morphed into a competition to achieve superior spaceflight capability. Many citizens of the U.S. didn’t see the point in this race and thought their money should be allocated to things a little closer to home.<p>
   <p>On July 15, 1969, a day before the launch of Apollo 11, a group of civil rights activists gathered together to protest the moon landing. They argued that the money could be spent helping people in poverty by providing food and shelter. Because of this protest, NASA developed technologies to make better housing using the insulation from spaceships, but it was more of an advertising stunt and didn’t amount to much. This protest did still raise awareness, which eventually led to more government spending on helping people in need, and the end of the Apollo missions. Without this protest, America's many social issues might of gone unnoticed.<p>
   
 	<h2 class="topinfo">Tom Moore</h2>
@@ -374,6 +389,7 @@ position: relative;
 <h2 class="info">Media Time: 2:25</h2>
 <h2 class="info">Process Paper: 457</h2>
 
+	<button class="nextpage" onclick="openPage('Thesis', this, '#ebebeb')">Background</button>
 </div>
 
 <div id="Thesis" class="tabcontent">
@@ -491,6 +507,8 @@ position: relative;
       <p>The US launches Apollo 8, which becomes the first man piloted flight to orbit the moon.</p>
     </div>
   </div>
+		
+			<button class="nextpage" onclick="openPage('Build', this, '#ebebeb')">Debate</button>
 </div>
 
 
@@ -531,13 +549,14 @@ position: relative;
        <p id="sus2"> To combat the peacful protesters, NASA sent out an administrator named Thomas Paine. Abernathy talked to Paine about why the moon landing was negatively affecting the country. He told Paine that he had three requests from NASA: that ten familes from his group could veiw the launch, NASA should support the movemnt to combat this nations poverty, hunger, and other social problems, and that NASA engineers develop technologies to help combat the problem of hunger in America. 
       </p>
 	     <p class="debate">Paine replied saying,<stong> "If we could solve the problems of poverty in the United States by not pushing the button to launch men to the moon tomorrow, then we would not push that button."</strong> Paine also told Abernanthy that he wished he would  “hitch his wagons to our rocket, using the space program as a spur to the nation to tackle problems in other areas, and using NASA’s space successes as a yardstick by which progress in other areas should be measured.” The protest then ended with the two men in agreeance, Paine gave Abernanthy 10 VIP viewing tickets, and promised him they would make good on their promises. Abernanthy then replied saying he hoped for the astronauts saftey and that he was as proud as anyone for the great accomplisment.</p>
-	    <h2 class="quoteleft">"On the eve of man's noblest venture, I am profoundly moved by the nation's achievements in space and the heroism of the three men embarking for the moon. But, what we can do for space and exploration we demand that we do for starving people."
-	     <img id="poop" src="https://i.guim.co.uk/img/media/a6204750cca7aa41bb814e3a9993d5fb2f04fd14/115_69_3688_2486/master/3688.jpg?width=880&quality=45&auto=format&fit=max&dpr=2&s=78039d3535049f3c84bd7097297793b8">
+	    <h2 class="quoteleft">"On the eve of man's noblest venture, I am profoundly moved by the nation's achievements in space and the heroism of the three men embarking for the moon. But, what we can do for space and exploration we demand that we do for starving people."</h2>
+	       <img src="https://www.history.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_700/MTY1NDA1NDIxMjI0MzM4ODk4/civil-rights-protest-apollo-moon-landing-gettyimages-695984468-edit.webp" alt="Man Holding Sign" style="width:80%">
+
 </div>
 <div id="Effects" class="tabcontent">
   <h1>EFFECTS</h1>
   <p>Despite the protest, NASA still continued with the moonshot. On July 16, 1969, NASA launched the shuttle carrying Neil Armstrong, Buzz Aldrin, and Michael Collins. Eight days later on July 24, they landed on the moon, which some argue ended the space race. Although another argument could be made that the USSR won because of the very little spending compared to NASA’s spending and the clear advantage they had. The entire point of the space race was to see who could be the first to develop satellites and ballistic missiles so they could prove their economy was better.</p>
-	<img class="poop" src="https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/Q6SC23WKEAI6FHY2DJ6N5YQCQ4.jpg">
+	<img src="https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/Q6SC23WKEAI6FHY2DJ6N5YQCQ4.jpg" style="width:80%">
 	<audio controls>
   <source src="62284main_onesmall2.wav" type="audio/mpeg">
 </audio>
