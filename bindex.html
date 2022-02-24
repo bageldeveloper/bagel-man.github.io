@@ -160,15 +160,33 @@ img{
 #Research{
   background-color: #ebebeb ;
 }
+	.nextpage:hover {
+  background-color: #666;
+}
+.lastpage:hover {
+  background-color: #666;
+}
 	.nextpage{
-		  background-color : #181a24;
-  color: #ebebeb;
+		  background-color : #ebebeb;
+  color: #181a24;
   padding: 10px 20px;
-  border-radius: 4px;
+  border-radius: 6px;
   border-color: #ebebeb;
 		  position: fixed;
-  bottom: -4px;
+  bottom: 6px;
   right: 10px;
+		
+	}
+	
+	.lastpage{
+		  background-color : #ebebeb;
+  color: #181a24;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border-color: #ebebeb;
+		  position: fixed;
+  bottom: 6px;
+ left:10px;
 		
 	}
 .debate{
@@ -389,7 +407,7 @@ position: relative;
 <h2 class="info">Media Time: 2:25</h2>
 <h2 class="info">Process Paper: 457</h2>
 
-	<button class="nextpage" onclick="openPage('Thesis', this, '#ebebeb')">Background</button>
+	<button class="nextpage" onclick="openPage('Thesis', this, '#ebebeb')">Background ►</button>
 </div>
 
 <div id="Thesis" class="tabcontent">
@@ -508,7 +526,8 @@ position: relative;
     </div>
   </div>
 		
-			<button class="nextpage" onclick="openPage('Build', this, '#ebebeb')">Debate</button>
+			<button class="lastpage" onclick="openPage('Home', this, '#ebebeb')">◄ Thesis</button>
+			<button class="nextpage" onclick="openPage('Build', this, '#ebebeb')">Debate ►</button>
 </div>
 
 
@@ -540,6 +559,8 @@ position: relative;
     </p>
 	<p class="column2">The Government thought that the money was well spent, developing important technologies, and showing the Soviet Union they wouldn't back down from a challenge. If we don't develop missiles and satelites, the Soviet Union could attack us and we wouldn't be prepared. This is a race to protect our country and our beliefs.</p>
 	<h2>“There was a debate about what America was at the time,” -Neil Maher</h2>
+				<button class="lastpage" onclick="openPage('Thesis', this, '#ebebeb')">◄ Background</button>
+			<button class="nextpage" onclick="openPage('Main', this, '#ebebeb')">Diplomacy ►</button>
 </div>
 
      <div id="Main" class="tabcontent">
@@ -551,6 +572,8 @@ position: relative;
 	     <p class="debate">Paine replied saying,<stong> "If we could solve the problems of poverty in the United States by not pushing the button to launch men to the moon tomorrow, then we would not push that button."</strong> Paine also told Abernanthy that he wished he would  “hitch his wagons to our rocket, using the space program as a spur to the nation to tackle problems in other areas, and using NASA’s space successes as a yardstick by which progress in other areas should be measured.” The protest then ended with the two men in agreeance, Paine gave Abernanthy 10 VIP viewing tickets, and promised him they would make good on their promises. Abernanthy then replied saying he hoped for the astronauts saftey and that he was as proud as anyone for the great accomplisment.</p>
 	    <h2 class="quoteleft">"On the eve of man's noblest venture, I am profoundly moved by the nation's achievements in space and the heroism of the three men embarking for the moon. But, what we can do for space and exploration we demand that we do for starving people."</h2>
 	       <img src="https://www.history.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_700/MTY1NDA1NDIxMjI0MzM4ODk4/civil-rights-protest-apollo-moon-landing-gettyimages-695984468-edit.webp" alt="Man Holding Sign" style="width:80%">
+	     		<button class="lastpage" onclick="openPage('Build', this, '#ebebeb')">◄ Debate</button>
+			<button class="nextpage" onclick="openPage('Effects', this, '#ebebeb')">Effects ►</button>
 
 </div>
 <div id="Effects" class="tabcontent">
@@ -567,6 +590,8 @@ position: relative;
 		<h2 class="debate">“We must build on the successes of the past, always reaching out for new achievements. But we must also recognize that many critical problems here on this planet make high priority demands on our attention and our resources.” President Nixon, March 7, 1970.</h2>
 		<p class="quoteleft">This protest did help to eventually end the Space Race, three moon landings later. When NASA pushed to get a moon base developed that could help benefit on missions to Mars, Nixon declined them. There was not a need to develop and more space technologies, seeing that the Cold War was over. The spending and political debates and arguments were not worth it, leading to the last astronaut to walk on the moon leaving on December 7, 1972.</p>
 		<p class="end">Developing technology is always important, but when that technology gets in the way of our basic needs, it's gone too far. At the height of the Space Race, there were millions of Americans who didn’t have access to basic needs like water and adequate shelter and yet, we still put our resources towards developing new technology. This problem remains relevant today. The most wealthy build rockets for themselves, while their employees work for minimum pay in poor conditions. We need to find a way to continue to advance technology while using our resources to make sure that everyone has an equal opportunity and can live safely. If we don’t do this, we fail to be what America stands for.</p>
+			     		<button class="lastpage" onclick="openPage('Main', this, '#ebebeb')">◄ Diplomacy</button>
+			<button class="nextpage" onclick="openPage('Research', this, '#ebebeb')">Research ►</button>
 		
 </div>
 		
@@ -574,7 +599,10 @@ position: relative;
 		<h1>RESEARCH<h1>
 		<iframe src="NHD Process Paper.pdf" style="width: 90%; height:90%;"></iframe>
 		<iframe src="Sources for Space Race.pdf" style="width: 90%; height:90%;"></iframe>
+							     		<button class="lastpage" onclick="openPage('Effects', this, '#ebebeb')">◄ Effects</button>
 		</div>
+
+
 <script>
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
