@@ -1,0 +1,1965 @@
+<html> 
+ <head>
+    <title>Slidey Block</title> 
+	 <meta name="description" content="Use the arrow keys to get to the flashing portal.">
+<meta name="keywords" content="Matthew's Games, games, game, slidey block, ninja switch, matthews games, sheppard">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+</head>
+	 <link rel="icon" 
+      type="image/png" 
+      href="logo2.png">
+	 <style>
+		 body {
+			 background-color: rgb(0,0,0);
+		 }
+		 h1 {
+			color: rgb(103, 4, 184); 
+		 }
+		 h2 {
+			 color: rgb(129, 230, 230);
+		 }
+		 h4 {
+			 color: rgb(103, 4, 184);
+		 }
+		 .rightalign {
+  			 text-align: right;
+		 }
+		 p {
+            		color: rgb(142, 232, 237);
+       		 }
+		 #mycanvas {
+			 float: none;
+		 }	
+	</style>
+</head>
+ <body>
+	 <script data-ad-client="ca-pub-5384957578428879" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <p align="center"> 
+	    <center>
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+	 <h1>Slidey Block</h1>
+		    <!-- Vertical banner -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px;float:left;padding:30px"
+     data-ad-client="ca-pub-5384957578428879"
+     data-ad-slot="8109716625"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>      
+			    <canvas id="mycanvas"></canvas> 
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Vertical banner -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px;float:right;padding:30px"
+     data-ad-client="ca-pub-5384957578428879"
+     data-ad-slot="8109716625"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>		 
+	    </center>
+    </p>
+	 <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCZCqZB4QiWr-uWXhK0_c4W8rxaOmfV08o",
+    authDomain: "slidey-block-high-score.firebaseapp.com",
+    databaseURL: "https://slidey-block-high-score.firebaseio.com",
+    projectId: "slidey-block-high-score",
+    storageBucket: "slidey-block-high-score.appspot.com",
+    messagingSenderId: "355260695040",
+    appId: "1:355260695040:web:e28f6da35a7c598b"
+  };
+  // Initialize Firebase
+<script src="/__/firebase/init.js"></script>
+  firebase.initializeApp(firebaseConfig);
+</script>
+ </body>
+ <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+ 
+ <script>
+    var sketchProc = function(processingInstance) {
+     with (processingInstance) {
+	     
+	     function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user = getCookie("username");
+    if (user != "") {
+        currentLevel = user;
+  	}
+}
+checkCookie();
+
+        size(900, 900); 
+        frameRate(55);
+var mobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+var upb = {
+    x: 135,
+    y: 780,
+    width: 80,
+    height:70,
+    dir: "up"
+};
+var downb = {
+    x: 135,
+    y: 850,
+    width: 80,
+    height:70,
+    dir: "down"
+};
+var rightb = {
+    x: 215,
+    y: 850,
+    width: 80,
+    height:70,
+    dir: "right"
+};
+var leftb = {
+    x: 55,
+    y: 850,
+    width: 80,
+    height:70,
+    dir: "left"
+};
+var movingUp = false;
+var movingRight = false;
+var movingLeft = false;
+var movingDown = false;
+var mouseIsPressed = false;
+var currentLevel;
+if(currentLevel === undefined){
+    currentLevel = 0;
+}
+var mousePressed = function(){
+    mouseIsPressed = true;
+};
+var mouseReleased = function(){
+    mouseIsPressed = false;
+};
+var dirbutton = function(config){
+    this.x = config.x;
+    this.y = config.y;
+    this.width = config.width;
+    this.height = config.height;
+    this.dir = config.dir;
+};
+var upButton = new dirbutton(upb);
+var downButton = new dirbutton(downb);
+var rightButton = new dirbutton(rightb);
+var leftButton = new dirbutton(leftb);
+var clicked;
+dirbutton.prototype.draw = function() {
+     var o;
+     if(mouseX <= this.x + this.width/2 && mouseX >= this.x - this.width/2 && mouseY <= this.y + this.height/2 && mouseY >= this.y - this.height/2){
+        o = 210;
+    } else {
+        o = 145;
+        
+    }
+     rectMode(CENTER);
+     fill(0,0,0,130);
+     rect(this.x,this.y,this.width,this.height,15);
+     fill(150,150,150,o);
+     rect(this.x,this.y,this.width-10,this.height-10,10);
+     
+     if(this.dir === "right"){
+         noStroke();
+         fill(200,200,200,o);
+         triangle(this.x - 10,this.y + 13,this.x - 10,this.y - 13, this.x + 15,this.y);
+     }
+     else if(this.dir === "left"){
+         noStroke();
+         fill(200,200,200,o);
+         triangle(this.x + 10,this.y + 13,this.x + 10,this.y - 13, this.x - 15,this.y);
+     }
+     else if(this.dir === "down"){
+         noStroke();
+         fill(200,200,200,o);
+         triangle(this.x +13,this.y - 11,this.x - 13,this.y - 11, this.x ,this.y + 14);
+     }
+     else if(this.dir === "up"){
+         noStroke();
+         fill(200,200,200,o);
+         triangle(this.x +13,this.y + 11,this.x - 13,this.y + 11, this.x ,this.y - 14);
+     }
+     else{
+     	textSize(20);
+        text(this.dir,this.x ,this.y);
+     }
+     
+};
+dirbutton.prototype.clicked = function(){
+    if(mouseX <= this.x + this.width/2 && mouseX >= this.x - this.width/2 && mouseY <= this.y + this.height/2 && mouseY >= this.y - this.height/2 && clicked){
+        if(this.dir === "up"){
+            movingUp = true;
+        }
+        if(this.dir === "down"){
+            movingDown = true;
+        }
+        if(this.dir === "right"){
+            movingRight = true;
+        }
+        if(this.dir === "left"){
+            movingLeft = true;
+        }
+    }
+    else{
+        if(this.dir === "up"){
+            movingUp = false;
+        }
+        if(this.dir === "down"){
+            movingDown = false;
+        }
+        if(this.dir === "right"){
+            movingRight = false;
+        }
+        if(this.dir === "left"){
+            movingLeft = false;
+        }
+    }
+};
+	     
+	     
+	var scene = "home";
+var levels = [ 
+    ["ssssssssssssssssssss",
+    "s                < s",
+    "sV                 s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s @               ^s",
+    "s >                s",
+    "ssssssssssssssssssss"],
+    [
+    "ssssssssssssssssssss",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s         s        s",
+    "s  #               s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s@         s       s",
+    "ssssssssssssssssssss"],
+    ["ssssssssssssssssssss",
+    "s s                s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s           s      s",
+    "s  s               s",
+    "sss#               s",
+    "s          s       s",
+    "s                  s",
+    "s                  s",
+    "s@   s             s",
+    "ssssssssssssssssssss"],
+    ["ssssssssssssssssssss",
+    "s@                ss",
+    "s s                s",
+    "s               s  s",
+    "s   s              s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s        #         s",
+    "s                  s",
+    "s                  s",
+    "s         s        s",
+    "s    s             s",
+    "s                  s",
+    "s                  s",
+    "s                s s",
+    "s  s               s",
+    "s                  s",
+    "ssssssssssssssssssss"],
+    ["ssssssssssssssssssss",
+    "s        s         s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s   s              s",
+    "s       s          s",
+    "s                  s",
+    "s                  s",
+    "s            #     s",
+    "s                  s",
+    "s                  s",
+    "s             s    s",
+    "s    s             s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s@             s   s",
+    "ssssssssssssssssssss"],
+    ["ssssssssssssssssssss",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s s                s",
+    "s           s      s",
+    "s                  s",
+    "s                  s",
+    "s          #       s",
+    "s     s           @s",
+    "s                  s",
+    "ss                 s",
+    "s      s           s",
+    "s                 ss",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "ssssssssssssssssssss"],
+    ["ssssssssssssssssssss",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                 Bs",
+    "s                  s",
+    "s                  s",
+    "sss#               s",
+    "s                  s",
+    "s                  s",
+    "s  B               s",
+    "s@                 s",
+    "ssssssssssssssssssss"],
+    ["ssssssssssssssssssss",
+    "s s                s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s        GG        s",
+    "s                  s",
+    "s         RR       s",
+    "s                  s",
+    "s          YY      s",
+    "s                  s",
+    "s           BB     s",
+    "s                  s",
+    "sss#               s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s@            s    s",
+    "ssssssssssssssssssss"],
+    ["ssssssssssssssssssss",
+    "s   s# Y G R B     s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s    Y G R B       s",
+    "s@            s    s",
+    "ssssssssssssssssssss"],
+    ["ssssssssssssssssssss",
+    "s   s              s",
+    "s  Y              Rs",
+    "ssss               s",
+    "sR                Gs",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "sG                #s",
+    "s             ssssss",
+    "sB             Ys  s",
+    "s               s  s",
+    "s               s  s",
+    "s               s  s",
+    "s@             B   s",
+    "ssssssssssssssssssss"],
+    ["ssssssssssssssssssss",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                 ss",
+    "s#                 s",
+    "ss                 s",
+    "s!                 s",
+    "s!      ssss       s",
+    "s!                 s",
+    "s!      s! !s     ss",
+    "s!      s! !s     !s",
+    "s!      s! !s     !s",
+    "s!      s! !s     !s",
+    "ss      ss !s     !s",
+    "s@         ss     !s",
+    "ssssssssssssssssssss"],
+    ["ssssssssssssssssssss",
+    "s  Bs         s    s",
+    "s          s       s",
+    "s              s   s",
+    "s                  s",
+    "s                  s",
+    "s    s            ss",
+    "s  s      G        s",
+    "s     !!!!!        s",
+    "s     !!!!!        s",
+    "s     !BYG!    !!sss",
+    "s     !!R!!    !!!!s",
+    "s   s !!!!! Y  !!!!s",
+    "s     s       s!!!!s",
+    "s              !!!!s",
+    "s              !!!!s",
+    "s              !!R!s",
+    "s              !!#!s",
+    "s@   s         !!!!s",
+    "ssssssssssssssssssss"],
+    [
+    "ssssssssssssssssssss",
+    "s                  s",
+    "s                m s",
+    "s                vms",
+    "s               vm s",
+    "s m            v   s",
+    "sm            v    s",
+    "s m          v     s",
+    "s           v    m s",
+    "s          v      ms",
+    "s m       v      m s",
+    "sm       v         s",
+    "s m     v          s",
+    "s      v         m s",
+    "s     v           ms",
+    "s    v           m s",
+    "s   v              s",
+    "s  v               s",
+    "s@s               #s",
+    "ssssssssssssssssssss"],
+    [
+    "ssssssssssssssssssss",
+    "s!!!!!!!!!!!!!!!!!!s",
+    "s!                !s",
+    "s!                !s",
+    "s!                !s",
+    "s!                !s",
+    "s!                !s",
+    "s!                !s",
+    "s!                !s",
+    "s!                !s",
+    "s!                !s",
+    "s!                !s",
+    "s!                !s",
+    "s!           x    !s",
+    "s! #  x           !s",
+    "s!                !s",
+    "s!                !s",
+    "s!@           x   !s",
+    "s!!!!!!!!!!!!!!!!!!s",
+    "ssssssssssssssssssss"],
+    [
+    "ssssssssssssssssssss",
+    "s                 #s",
+    "sm       m       !Ys",
+    "s  m   m         ! s",
+    "s    m           ! s",
+    "s  m   m         ! s",
+    "sm       m       ! s",
+    "s                ! s",
+    "s        Y       ! s",
+    "ssssssssssssssss!! s",
+    "s!!!!!!!!!!!!!!s!! s",
+    "s!R             B! s",
+    "s!s       x!!!!! ! s",
+    "ssssssssss!!!!!! ! s",
+    "s!!       G!!!!!   s",
+    "s!!  x    ssssssssss",
+    "s!!    R  !G  x!ssss",
+    "sxxxxxxxxx!ssB!sssss",
+    "s@    x       x!ssss",
+    "ssssssssssssssssssss"],
+    [
+    "ssssssssssssssssssss",
+    "s      ss          s",
+    "s      $           s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s #                s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s@       s         s",
+    "ssssssssssssssssssss"],
+    [
+    "ssssssssssssssssssss",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s        @         s",
+    "s                  s",
+    "s                  s",
+    "s             ssssss",
+    "s      ss$ss  s!!!!s",
+    "ssssssss! !s       s",
+    "s      s! s        s",
+    "s                  s",
+    "s#                 s",
+    "s       !          s",
+    "ssssssssssssssssssss"],
+    [
+    "ssssssssssssssssssss",
+    "s    s             s",
+    "s                  s",
+    "s                # s",
+    "s                  s",
+    "s    R             s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s!!!!!!!!!!!!!!!!!!s",
+    "s                  s",
+    "s                 ss",
+    "s        R         s",
+    "ss                 s",
+    "s $       s        s",
+    "s                  s",
+    "s        @s        s",
+    "ssssssssssssssssssss"],
+    ["ssssssssssssssssssss",
+    "ssss               s",
+    "sss                s",
+    "s                  s",
+    "s  s            s  s",
+    "s         #        s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s Y               xs",
+    "sR G    RdGdYdB    s",
+    "s       ddddddd    s",
+    "s       $s$s$s$  x s",
+    "s   B              s",
+    "s                  s",
+    "ssss               s",
+    "ss             s   s",
+    "s            xss   s",
+    "s@x      x x sss!!!s",
+    "ssssssssssssssssssss"],
+    ["ssssssssssssssssssss",
+    "s               x  s",
+    "s     s#           s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s              d   s",
+    "s                  s",
+    "s                  s",
+    "s           x  $   s",
+    "s  x               s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s               x  s",
+    "s   x              s",
+    "s                  s",
+    "s                  s",
+    "s@           x     s",
+    "ssssssssssssssssssss"],
+    ["ssssssssssssssssssss",
+    "s!!!!!!!!!!!!!!!!!!s",
+    "s!              x !s",
+    "s! x              !s",
+    "s!              x !s",
+    "s!  x             !s",
+    "s!     !!!!!!!    !s",
+    "s!    !!  x  !!   !s",
+    "s!    !     x !   !s",
+    "s!    !x     x!   !s",
+    "s!    !   @   !   !s",
+    "s!    !      x!   !s",
+    "s!    !   x   !   !s",
+    "s!    !!     !!   !s",
+    "s!     ! !!!!!    !s",
+    "s!               x!s",
+    "s!      x        x!s",
+    "s!  #x            !s",
+    "s!!!!!!!!!!!!!!!!!!s",
+    "ssssssssssssssssssss"],
+    ["ssssssssssssssssssss",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "ss                 s",
+    "s         $       xs",
+    "s                  s",
+    "s                  s",
+    "sR               #Bs",
+    "s!!!!!!!!!!!!!B!!R!s",
+    "ss                 s",
+    "s         x    x   s",
+    "s                  s",
+    "s                  s",
+    "s        $         s",
+    "s@                 s",
+    "ssssssssssssssssssss"],
+    ["ssssssssssssssssssss",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s         #        s",
+    "s                  s",
+    "s                  s",
+    "smmmmmmmmmmmmm     s",
+    "s!!!!!!!!! !!<!!!!!s",
+    "s        ^         s",
+    "s          >       s",
+    "s             ^  < s",
+    "s         ^        s",
+    "s         >        s",
+    "s                 ^s",
+    "s>@        ^       s",
+    "ssssssssssssssssssss"],
+    [
+    "ssssssssssssssssssss",
+    "sB        s       Gs",
+    "ss        s       ss",
+    "s         s        s",
+    "s        sss       s",
+    "s         s        s",
+    "ss        s       ss",
+    "s         s        s",
+    "s        sss       s",
+    "s         s        s",
+    "ss        s       ss",
+    "s         s        s",
+    "s        sss       s",
+    "s         s        s",
+    "ss        s       ss",
+    "s        YsR       s",
+    "s        !!!       s",
+    "s  R     G@B    Y  s",
+    "s  !     !!!    #  s",
+    "ssssssssssssssssssss"],
+    ["ssssssssssssssssssss",
+    "s           !      s",
+    "s                  s",
+    "s                 <s",
+    "sY                 s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s                  s",
+    "s         R       Rs",
+    "ss                 s",
+    "s          s       s",
+    "s                  s",
+    "sB          B#    Ys",
+    "s                  s",
+    "s         s        s",
+    "s                  s",
+    "s                  s",
+    "s@           s     s",
+    "ssssssssssssssssssss"],
+    ["ssssssssssssssssssss",
+    "s  !               s",
+    "s                  s",
+    "s                  s",
+    "s                x s",
+    "s     x            s",
+    "sR           Y!    s",
+    "sB           G!    s",
+    "sG  x        !!    s",
+    "sY           s!!   s",
+    "s x               xs",
+    "s           x      s",
+    "s      #           s",
+    "s       !s         s",
+    "ss x               s",
+    "s              B   s",
+    "s              R   s",
+    "s s                s",
+    "s         s        s",
+    "ssssssssssssssssssss"],
+    ];
+var level = 0;
+var lavaList = [];
+var levelWidth = 0;
+var levelHeight = 0;
+var zoom = 30; 
+var input = [];
+var blocks = [];
+var movingBlocks = [];
+var pcn;
+var clicked;
+var time2 = 0;
+var plevel = 0;
+var started = false;
+var scene = "logo";
+var btn1 = {
+    x: width/2,
+    y: height * 0.48,
+    width:width * 0.3,
+    height: height * 0.15,
+    r: 87, 
+    g:6,
+    b:158,
+    goto:"game",
+    txt:"PLAY",
+    locked: false
+    
+};
+var btn2 = {
+    x: width * 1/3,
+    y: height * 2/3,
+    width: width * 0.3,
+    height:height * 0.15,
+    r: 87, 
+    g:6,
+    b:158,
+    goto:"howto",
+    txt:"HOW TO",
+    locked: false
+    
+};
+var btn3 = {
+    x: width * 2/3,
+    y: height * 2/3,
+    width:width * 0.3,
+    height: height * 0.15,
+    r: 87, 
+    g:6,
+    b:158,
+    goto:"lvlselect",
+    txt:"LEVELS",
+    locked: false
+    
+};
+var btn4 = {
+    x: width * 0.89166667,
+    y: height * 29/30,
+    width: width/10,
+    height: height/15,
+    r: 87, 
+    g:6,
+    b:158,
+    goto:"home",
+    txt:"MENU",
+    txts: 10,
+    locked: false
+    
+};
+var startLevel = 1;
+var currentLevel;
+if(currentLevel === undefined){
+    currentLevel = 1;
+}
+var level1_15time = 0;
+var totalTime = 0;
+var fastestTime = 0;
+var fastestTime2 = 1000;
+textFont(createFont("Impact"));
+var txt = ["","Use the arrow keys or awsd to move. Once you begin moving you cannot change direction until you stop.", "Use the blocks to get to the portal. These portals will take you to the next room.","","","Can you figure this one out? If not, hit the R key to restart.","These teleporters will take you to the teleporter of the matching color.","It's a staircase!","This one's just fun to watch. :)","","The orange stuff is lava. Don't touch it.","This is the hardest one yet.","It's moving lava! Still don't touch it","If you hit sandstone, it disappears.","Press the R key to restart.","The blocks with the triangle design move in the direction that you hit them.","","Can blocks go through teleporters?","Moving blocks can go through dark stone, but you can't.","","RINGS OF LAVA!",""," Push blocks push you the way the arrow is pointing when  you hit them."];
+var playerBlock = function(config){
+    this.x = -50;
+    this.y = -50;
+    this.speed = this.w * 0.005;
+    this.direction = "left";
+    this.velocity = width/4000;
+    this.falling = false;
+    this.h = height/20;
+    this.w = width/20;
+    this.col = "";
+    this.gravity = 1;
+    this.canMove = true;
+    this.coins = 0;
+    this.hitwierd = 1;
+};
+var player = new playerBlock();
+var listDisplay = function(object){
+     for(var i = 0;i < object.length; ++i) {
+        object[i].draw();
+    }  
+    
+    
+};
+var collision = function(char,obj){
+    if(char.y + char.h/2 >= obj.y + 2 && char.x - char.w/2 <= obj.x + obj.w - 2 && char.x + char.w/2 >= obj.x + 2 && char.y - char.h/2 <= obj.y + obj.h - 2){
+        return true;    
+    } else {
+        return false;    
+    }
+};
+var collision2 = function(char,obj){
+    if(char.y + char.h/2 >= obj.y + 2 - obj.h/2&& char.x - char.w/2 <= obj.x + obj.w/2 - 2 && char.x + char.w/2 >= obj.x + 2 - obj.w/2 && char.y - char.h/2 <= obj.y + obj.h/2 - 2){
+        return true;    
+    } else {
+        return false;    
+    }
+};
+var stoneBlock = function(x,y,w,h,t){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.t = t;
+};
+stoneBlock.prototype.draw = function() {
+    rectMode(LEFT);
+    fill(128, 116, 116);
+    strokeWeight(2);
+    stroke(82, 78, 82);
+    rect(this.x,this.y,this.w,this.h);
+    line(this.x + this.w/2,this.y,this.x + this.w/2,this.y + this.h/2);
+    line(this.x + 1,this.y + this.h/2 + 1,this.x + this.w - 1,this.y + this.h/2 + 1);
+    stroke(128, 116, 116);
+    line(this.x,this.y + 2,this.x,this.y + this.h/2 - 2);
+    strokeWeight(1);
+};
+var pushBlockUp = function(x,y,w,h,t){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.t = t;
+    this.name = "upStone";
+};
+pushBlockUp.prototype.draw = function() {
+    rectMode(LEFT);
+    noStroke();
+    fill(217, 106, 217);
+    rect(this.x,this.y,this.w,this.h);
+    fill(107, 102, 107);
+    stroke(107, 102, 107);
+    strokeWeight(3);
+    line(this.x + this.w/2,this.y + this.h/6,this.x + this.w/2,this.y + this.h - this.h/6);
+    triangle(this.x + this.w/2,this.y + this.h/6,this.x + this.w/3,this.y + this.h/2.5,this.x + this.w/3 + this.w/3,this.y + this.h/2.5);
+    
+};
+var pushBlockDown = function(x,y,w,h,t){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.t = t;
+    this.name = "downStone";
+};
+pushBlockDown.prototype.draw = function() {
+    rectMode(LEFT);
+    noStroke();
+    fill(217, 106, 217);
+    rect(this.x,this.y,this.w,this.h);
+    fill(107, 102, 107);
+    stroke(107, 102, 107);
+    strokeWeight(3);
+    line(this.x + this.w/2,this.y + this.h/6,this.x + this.w/2,this.y + this.h - this.h/6);
+    triangle(this.x + this.w/2,this.y + this.h - this.h/6,this.x + this.w/3,this.y + this.h -  this.h/2.5,this.x + this.w/3 + this.w/3,this.y + this.h - this.h/2.5);
+    
+};
+var pushBlockLeft = function(x,y,w,h,t){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.t = t;
+    this.name = "leftStone";
+};
+pushBlockLeft.prototype.draw = function() {
+    rectMode(LEFT);
+    noStroke();
+    fill(217, 106, 217);
+    rect(this.x,this.y,this.w,this.h);
+    fill(107, 102, 107);
+    stroke(107, 102, 107);
+    strokeWeight(3);
+    line(this.x + this.w/6,this.y + this.h/2,this.x + this.w - this.w/6,this.y + this.h/2);
+    triangle(this.x + this.w/6,this.y + this.h/2,this.x + this.w/2.5,this.y + this.h/3,this.x + this.w/2.5,this.y + this.h/3 + this.h/3);
+    
+};
+var pushBlockRight = function(x,y,w,h,t){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.t = t;
+    this.name = "rightStone";
+};
+pushBlockRight.prototype.draw = function() {
+    rectMode(LEFT);
+    noStroke();
+    fill(217, 106, 217);
+    rect(this.x,this.y,this.w,this.h);
+    fill(107, 102, 107);
+    stroke(107, 102, 107);
+    strokeWeight(3);
+    line(this.x + this.w/6,this.y + this.h/2,this.x + this.w - this.w/6,this.y + this.h/2);
+    triangle(this.x + this.w - this.w/6,this.y + this.h/2,this.x + this.w - this.w/2.5,this.y + this.h/3,this.x + this.w - this.w/2.5,this.y + this.h/3 + this.h/3);
+    
+};
+var sandStoneBlock = function(x,y,w,h,t){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.t = t;
+    this.disappeared = false;
+};
+sandStoneBlock.prototype.draw = function() {
+    rectMode(LEFT);
+    fill(207, 145, 75);
+    strokeWeight(2);
+    stroke(92, 59, 15);
+    rect(this.x,this.y,this.w,this.h);
+};
+var darkStoneBlock = function(x,y,w,h,t){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.t = t;
+};
+darkStoneBlock.prototype.draw = function() {
+    fill(74, 62, 62);
+    strokeWeight(2);
+    stroke(184, 184, 184);
+    rect(this.x,this.y,this.w,this.h);
+    line(this.x + this.w/2,this.y,this.x + this.w/2,this.y + this.h/2);
+    line(this.x + 1,this.y + this.h/2 + 1,this.x + this.w - 1,this.y + this.h/2 + 1);
+    stroke(74, 62, 62);
+    line(this.x,this.y + 2,this.x,this.y + this.h/2 - 2);
+    strokeWeight(1);
+};
+var darkStoneDesign = function(x,y,w,h,t){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.t = t;
+};
+darkStoneDesign.prototype.draw = function() {
+    fill(77, 66, 66);
+    strokeWeight(2);
+    stroke(64, 50, 64);
+    rect(this.x,this.y,this.w,this.h);
+    fill(46, 41, 41);
+    triangle(this.x,this.y,this.x + this.h - 1, this.y,this.x,this.y + this.w - 1);
+    strokeWeight(1);
+};
+var portal = function(x,y,w,h,t){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.t = t;
+};
+portal.prototype.draw = function() {
+    rectMode(LEFT);
+    fill(random(0,255),random(0,255),random(0,255));
+    strokeWeight(2);
+    noStroke();
+    rect(this.x,this.y,this.w,this.h);
+};
+var bluePortal = function(x,y,w,h,t){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.t = t;
+};
+bluePortal.prototype.draw = function() {
+    noStroke();
+    rectMode(LEFT);
+    fill(69, 87, 191);
+    rect(this.x,this.y,this.w,this.h);
+};
+var redPortal = function(x,y,w,h,t){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.t = t;
+};
+redPortal.prototype.draw = function() {
+    noStroke();
+    rectMode(LEFT);
+    fill(191, 64, 57);
+    rect(this.x,this.y,this.w,this.h);
+};
+var greenPortal = function(x,y,w,h,t){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.t = t;
+};
+greenPortal.prototype.draw = function() {
+    noStroke();
+    rectMode(LEFT);
+    fill(70, 189, 82);
+    rect(this.x,this.y,this.w,this.h);
+};
+var yellowPortal = function(x,y,w,h,t){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.t = t;
+};
+yellowPortal.prototype.draw = function() {
+    noStroke();
+    rectMode(LEFT);
+    fill(230, 218, 51);
+    rect(this.x,this.y,this.w,this.h);
+};
+var lava = function(x,y,w,h,t){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.t = t;
+};
+lava.prototype.draw = function() {
+    noStroke();
+    rectMode(LEFT);
+    fill(230, 111, 25);
+    rect(this.x,this.y,this.w,this.h);
+};
+var portalCheck = function(type,obj){
+for(var i = 0;i < blocks.length; i++) {
+        
+    if(blocks[i].t === type && i !== pcn) {
+        if(obj.direction === "down" || obj.direction === 2){
+            obj.x = blocks[i].x + obj.w/2;
+            obj.y = blocks[i].y + blocks[i].h + obj.h/2;
+        }
+        if(obj.direction === "up" || obj.direction === 3){
+            obj.x = blocks[i].x + obj.w/2;
+            obj.y = blocks[i].y - obj.h/2;
+        }
+        if(obj.direction === "right" || obj.direction === 1){
+            obj.x = blocks[i].x + blocks[i].w + obj.w/2;
+            obj.y = blocks[i].y + obj.h/2;
+        }
+        if(obj.direction === "left" || obj.direction === 0){
+            obj.x = blocks[i].x - obj.w/2 ;
+            obj.y = blocks[i].y + obj.h/2;
+        }
+        
+    }
+ }
+};
+var movingStone = function(x,y,w,h,t){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.t = t;
+    this.direction = 1;
+    this.name = "movingStone";
+    this.moving = false;
+    this.speed = 3;
+    this.velocity = 0.15;
+};
+movingStone.prototype.draw = function() {
+    rectMode(CENTER);
+    fill(77, 66, 66);
+    strokeWeight(2);
+    stroke(64, 50, 64);
+    rect(this.x,this.y,this.w,this.h);
+    fill(155, 97, 161);
+    triangle(this.x - this.w/2,this.y - this.h/2,this.x + this.w/2 - 1, this.y - this.h/2,this.x - this.w/2,this.y + this.w/2 - 1);
+    strokeWeight(1);
+};
+movingStone.prototype.move = function() {
+    if(this.direction === 0 && this.moving === true){
+        this.x -= this.speed;
+        this.speed += this.velocity;
+    }
+    if(this.direction === 1 && this.moving === true){
+        this.x += this.speed;
+        this.speed += this.velocity;
+    }
+    if(this.direction === 3 && this.moving === true){
+        this.y -= this.speed;
+        this.speed += this.velocity;
+    }
+    if(this.direction === 2 && this.moving === true){
+        this.y += this.speed;
+        this.speed += this.velocity;
+    }
+    
+};
+movingStone.prototype.collide = function() {
+    for(var i = 0; i < blocks.length; i++){
+        if(collision(this,blocks[i]) === true && blocks[i].name === "upStone"){
+            this.moving = "up";
+            this.hitwierd = 0; 
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].name === "downStone"){
+            this.moving = "down";
+            this.hitwierd = 0;
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].name === "leftStone"){
+            this.moving = "left";
+            this.hitwierd = 0;
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].name === "rightStone"){
+            this.moving = "right";
+            this.hitwierd = 0;
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "solid" || collision(this,blocks[i]) === true && blocks[i].t === "sandstone" && blocks[i].disappeared !== true){
+            this.moving = false;
+            player.canMove = true;
+            this.speed = 3;
+            if(this.direction === 0){
+                this.x = blocks[i].x + blocks[i].w + this.w/2 + 1;
+            }
+            if(this.direction === 1){
+                this.x = blocks[i].x - this.w/2 - 1;
+            }
+            if(this.direction === 2){
+                this.y = blocks[i].y - this.h / 2 - 1;
+            }
+            if(this.direction === 3){
+                this.y = blocks[i].y + blocks[i].h + this.h / 2 + 1;
+            }
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "bluePortal"){
+            pcn = i;
+            portalCheck("bluePortal",this);
+
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "redPortal"){
+            pcn = i;
+            portalCheck("redPortal",this);
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "greenPortal"){
+            pcn = i;
+            portalCheck("greenPortal",this);
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "yellowPortal"){
+            pcn = i;
+            portalCheck("yellowPortal",this);
+        }
+    }
+};
+var movingLava = function(x,y,w,h,t){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.t = t;
+    this.direction = 0;
+};
+movingLava.prototype.draw = function() {
+    noStroke();
+    rectMode(LEFT);
+    fill(230, 111, 25);
+    rectMode(CENTER);
+    rect(this.x,this.y,this.w,this.h);
+};
+movingLava.prototype.move = function() {
+    if(this.direction === 0){
+        this.x -= width/200;
+    }
+    if(this.direction === 1){
+        this.x += width/200;
+    }
+};
+movingLava.prototype.collide = function() {
+    for(var i = 0; i < blocks.length; i++){
+        this.col = "";
+        if(collision(this,blocks[i]) === true && blocks[i].t === "solid" || collision(this,blocks[i]) === true && blocks[i].t === "lava"){
+            this.direction = abs(this.direction - 1);
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "bluePortal"){
+            pcn = i;
+            portalCheck("bluePortal",this);
+
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "redPortal"){
+            pcn = i;
+            portalCheck("redPortal",this);
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "greenPortal"){
+            pcn = i;
+            portalCheck("greenPortal",this);
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "yellowPortal"){
+            pcn = i;
+            portalCheck("yellowPortal",this);
+        }
+    }
+};
+var verticalMovingLava = function(x,y,w,h,t){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.t = t;
+    this.direction = 2;
+};
+verticalMovingLava.prototype.draw = function() {
+    noStroke();
+    rectMode(LEFT);
+    fill(230, 111, 25);
+    rectMode(CENTER);
+    rect(this.x,this.y,this.w,this.h);
+};
+verticalMovingLava.prototype.move = function() {
+    if(this.direction === 2){
+        this.y -= height/200;
+    }
+    if(this.direction === 3){
+        this.y += height/200;
+    }
+};
+verticalMovingLava.prototype.collide = function() {
+    for(var i = 0; i < blocks.length; i++){
+        this.col = "";
+        if(collision(this,blocks[i]) === true && blocks[i].t === "solid"){
+            if(this.direction === 2){
+                this.direction = 3;
+            } else {
+                this.direction = 2;
+            }
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "bluePortal"){
+            pcn = i;
+            portalCheck("bluePortal",this);
+
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "redPortal"){
+            pcn = i;
+            portalCheck("redPortal",this);
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "greenPortal"){
+            pcn = i;
+            portalCheck("greenPortal",this);
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "yellowPortal"){
+            pcn = i;
+            portalCheck("yellowPortal",this);
+        }
+    }
+};
+var coin = function(x,y,w,h,t){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.t = t;
+};
+coin.prototype.draw = function() {
+    noStroke();
+    rectMode(LEFT);
+    fill(212, 190, 66);
+    ellipse(this.x,this.y,this.w,this.h);
+};
+var keyPressed = function() {
+    input[keyCode] = true;
+    input[key.toString().toUpperCase()] = true;
+};
+var keyReleased = function() {
+    input[keyCode] = false;
+    input[key.toString().toUpperCase()] = false;
+};
+var loadLevel = function(){
+blocks = [];
+lavaList = [];
+movingBlocks = [];
+var wEx = 0;
+var hEx = 0;
+for(var column = 0;column < levels[level].length;column++) {
+        for(var row = 0;row < levels[level][column].length;row++) {
+        if(levels[level][column][row] === "s") {
+            blocks.push(new stoneBlock(row* (width/20),column * (height /20), width/20,height/20, "solid"));
+            
+        }
+        if(levels[level][column][row] === "^") {
+            blocks.push(new pushBlockUp(row* (width/20),column * (height /20), width/20,height/20, "solid"));
+            
+        }
+        if(levels[level][column][row] === "V") {
+            blocks.push(new pushBlockDown(row* (width/20),column * (height /20), width/20,height/20, "solid"));
+            
+        }
+        if(levels[level][column][row] === "<") {
+            blocks.push(new pushBlockLeft(row* (width/20),column * (height /20), width/20,height/20, "solid"));
+            
+        }
+        if(levels[level][column][row] === ">") {
+            blocks.push(new pushBlockRight(row* (width/20),column * (height /20), width/20,height/20, "solid"));
+            
+        }
+        if(levels[level][column][row] === "#") {
+            blocks.push(new portal(row* (width/20),column * (height /20), width/20,height/20, "portal"));
+        }
+        if(levels[level][column][row] === "d") {
+            blocks.push(new darkStoneBlock(row* (width/20),column * (height /20), width/20,height/20, "dark"));
+        }
+        if(levels[level][column][row] === "D") {
+            blocks.push(new darkStoneDesign(row* (width/20),column * (height /20), width/20,height/20, "not solid"));
+        }
+        if(levels[level][column][row] === "B") {
+            blocks.push(new bluePortal(row* (width/20),column * (height /20), width/20,height/20, "bluePortal"));
+        }
+        if(levels[level][column][row] === "R") {
+            blocks.push(new redPortal(row* (width/20),column * (height /20), width/20,height/20, "redPortal"));
+        }
+        if(levels[level][column][row] === "G") {
+            blocks.push(new greenPortal(row* (width/20),column * (height /20), width/20,height/20, "greenPortal"));
+        }
+        if(levels[level][column][row] === "Y") {
+            blocks.push(new yellowPortal(row* (width/20),column * (height /20), width/20,height/20, "yellowPortal"));
+        }
+        if(levels[level][column][row] === "!") {
+            blocks.push(new lava(row* (width/20),column * (height /20), width/20,height/20, "lava"));
+        }
+        if(levels[level][column][row] === "c") {
+            blocks.push(new coin(row* (width/20) + width/40,column * (height /20) + height/40, width/20,height/20, "coin"));
+        }
+        if(levels[level][column][row] === "m") {
+            lavaList.push(new movingLava(row* (width/20) + width/40,column * (height /20) + height/40, width/20,height/20, "lava"));
+        }
+        if(levels[level][column][row] === "v") {
+            lavaList.push(new verticalMovingLava(row* (width/20) + width/40,column * (height /20) + height/40, width/20,height/20, "lava"));
+        }
+        if(levels[level][column][row] === "x") {
+            blocks.push(new sandStoneBlock(row* (width/20),column * (height /20), width/20,height/20, "sandstone"));
+        }
+        if(levels[level][column][row] === "$") {
+            movingBlocks.push(new movingStone(row* (width/20) + width/40,column * (height /20) + height/40, width/20,height/20, "solid"));
+        }
+        if(levels[level][column][row] === "@") {
+            player.sx = row * width/20 + player.h/2 + hEx;
+            player.sy = column * height/20 + player.h/2 + wEx;
+        }
+    }
+ }
+};
+mouseClicked = function(){
+    clicked = true;
+};
+var button = function(config){
+    this.x = config.x;
+    this.y = config.y;
+    this.width = config.width;
+    this.height = config.height;
+    this.r = config.r;
+    this.g = config.g;
+    this.b = config.b;
+    this.goto = config.goto;
+    this.txt = config.txt;
+    this.t = config.t;
+    this.locked = config.locked;
+    this.txts = config.txts || 40;
+};
+button.prototype.draw = function() {
+     var o;
+     
+     if(mouseX <= this.x + this.width/2 && mouseX >= this.x - this.width/2 && mouseY <= this.y + this.height/2 && mouseY >= this.y - this.height/2){
+        o = 210;
+        
+        
+    } else {
+        o = 145;
+        
+    }
+    
+     rectMode(CENTER);
+     fill(0,0,0,130);
+     rect(this.x,this.y,this.width,this.height,15);
+     fill(this.r,this.g,this.b,o);
+     rect(this.x,this.y,this.width-10,this.height-10,10);
+     textAlign(CENTER,CENTER);
+     fill(10);
+     textSize(this.txts);
+     if(this.locked === true){
+        textSize(16);
+        this.txt = "LOCKED";
+     }
+     text(this.txt,this.x,this.y);
+};
+button.prototype.clicked = function(){
+    if(mouseX <= this.x + this.width/2 && mouseX >= this.x - this.width/2 && mouseY <= this.y + this.height/2 && mouseY >= this.y - this.height/2 && clicked === true && this.locked === false){
+        if(this.t === "level"){
+            scene = "game2";
+            level = this.goto;
+            startLevel = this.goto;
+	    background(0,0,0);
+            loadLevel();
+            player.reset();
+            time = 0;
+            time += 0;
+        } else {
+            scene = this.goto;
+            level = 1;
+	    background(0,0,0);
+            loadLevel();
+            player.reset();
+        }
+    }
+};
+var playButton = new button(btn1);
+var howToButton = new button(btn2);
+var recordButton = new button(btn3);
+var menuButton = new button(btn4);
+playerBlock.prototype.draw = function() {
+    rectMode(CENTER);
+    angleMode = "degrees";
+    noStroke();
+    fill(153, 141, 141);
+    rect(this.x,this.y,this.w,this.h);
+    strokeWeight(width/300);
+    stroke(156, 9, 9);
+    arc(this.x,this.y + this.h/7.5,this.w * 2/3,this.h * 1/3,0,PI);
+    stroke(10);
+    strokeWeight(width/150);
+    ellipse(this.x - this.w * 0.3,this.y-this.h * 0.1,this.w/75,this.h/75);
+    ellipse(this.x + this.w * 0.3,this.y-this.h * 0.1,this.w/75,this.h/75);
+};
+playerBlock.prototype.move = function(){
+    if(input.W && this.canMove || input[UP] && this.canMove || movingUp && this.canMove){
+        this.moving = "up";
+        this.canMove = false;
+    }
+    if(input.S && this.canMove || input[DOWN] && this.canMove || movingDown && this.canMove){
+        this.moving = "down";
+        this.canMove = false;
+    }
+    if(input.A && this.canMove || input[LEFT] && this.canMove || movingLeft && this.canMove){
+        this.moving = "left";
+        this.canMove = false;
+    }
+    if(input.D && this.canMove || input[RIGHT] && this.canMove || movingRight && this.canMove){
+        this.moving = "right";
+        this.canMove = false;
+    }
+    if(this.moving === "up" && this.past !== "u" && this.col !== "up"){
+        this.y -= this.speed;
+        this.direction = "up";
+        this.speed += this.velocity;
+        this.past = "u";
+    } else if(this.past === "u" && this.speed > 3){
+        this.y -= this.speed;
+        this.speed += this.velocity * 2;
+        this.past = "u";
+    }
+    else if(this.past === "u"){
+        this.past = "";
+    }
+    if(this.moving === "down" && this.past !== "d" && this.col !== "down"){
+        this.y += this.speed;
+        this.direction = "down";
+        this.speed += this.velocity;
+        this.past = "d";
+    } else if(this.past === "d" && this.speed > 3){
+        this.y += this.speed;
+        this.speed += this.velocity * 2;
+        this.past = "d";
+    }
+    else if(this.past === "d"){
+        this.past = "";
+    }
+    if(this.moving === "left" && this.past !== "r" && this.col !== "left"){
+        this.x -= this.speed;
+        this.direction = "left";
+        this.speed += this.velocity;
+        this.past = "l";
+    } else if(this.past === "l" && this.speed > 3){
+        this.x -= this.speed;
+        this.speed += this.velocity * 2;
+        this.past = "l";
+    }
+    else if(this.past === "l"){
+        this.past = "";
+    }
+    if(this.moving === "right" && this.past !== "l" && this.col !== "right"){
+        this.x += this.speed;
+        this.direction = "right";
+        this.speed += this.velocity;
+        //playSound(getSound("rpg/step-heavy"));
+        this.past = "r";
+    } else if(this.past === "r" && this.speed > 3){
+        this.x += this.speed;
+        this.speed += this.velocity * 2;
+        this.past = "r";
+    } else if(this.past === "r"){
+        this.past = "";
+    }
+    /**if(input[5]){
+        this.canMove = true;
+    }**/
+};
+playerBlock.prototype.collide = function(){
+
+    for(var i = 0; i < blocks.length; i++){
+        if(collision(this,blocks[i]) === true && blocks[i].name === "upStone"){
+            this.moving = "up";
+            this.hitwierd = 0; 
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].name === "downStone"){
+            this.moving = "down";
+            this.hitwierd = 0;
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].name === "leftStone"){
+            this.moving = "left";
+            this.hitwierd = 0;
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].name === "rightStone"){
+            this.moving = "right";
+            this.hitwierd = 0;
+        }
+        this.col = "";
+        if(collision(this,blocks[i]) === true && blocks[i].t === "solid" || collision(this,blocks[i]) === true && blocks[i].t === "sandstone" && blocks[i].disappeared !== true || collision(this,blocks[i]) === true && blocks[i].t === "dark"){
+            if(blocks[i].t === "sandstone"){
+                blocks[i].disappeared = true;
+                this.speed = 3;
+                this.moving = "";
+            }
+            if(this.hitwierd === 0){
+                this.canMove = false;
+            } else {
+                this.canMove = true;
+            }
+            if(this.x - this.w/2 <= blocks[i].x + blocks[i].w && this.x + this.w/2 >= blocks[i].x){
+                if(this.past === "r"){
+                    this.col = "right";
+            this.speed = 3;
+            this.x = blocks[i].x - this.w/2 - 1;
+                } else if(this.past === "l"){
+                    this.speed = 3;
+            this.x = blocks[i].x + blocks[i].w + this.w/2 + 1;
+            this.col = "left";
+                }
+            }
+            if(this.y + this.h/2 >= blocks[i].y && this.y - this.h/2 <= blocks[i].y + blocks[i].h){
+                if(this.past === "d"){
+                    this.col = "top";
+                    this.speed = 3;
+                    this.y = blocks[i].y - this.h / 2 - 1;
+                } else if(this.past === "u"){
+                    this.speed = 3;
+                    this.y = blocks[i].y + blocks[i].h + this.h / 2 + 1;
+                    this.col = "bottom";
+                }
+            }
+        }
+        
+        this.hitwierd += 1;
+        if(collision(this,blocks[i]) === true && blocks[i].t === "portal"){        
+            level++;
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "bluePortal"){
+            pcn = i;
+            portalCheck("bluePortal",this);
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "redPortal"){
+            pcn = i;
+            portalCheck("redPortal",this);
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "greenPortal"){
+            pcn = i;
+            portalCheck("greenPortal",this);
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "yellowPortal"){
+            pcn = i;
+            portalCheck("yellowPortal",this);
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "lava"){
+            this.reset();
+        }
+        if(collision(this,blocks[i]) === true && blocks[i].t === "movingStone"){
+            println("hi");
+        }
+    }
+    for(var i = 0; i < lavaList.length; i++){    
+        if(collision2(this,lavaList[i]) === true){
+            this.reset();
+        }
+    }
+    for(var i = 0; i < movingBlocks.length; i++){    
+        if(collision2(this,movingBlocks[i]) === true){
+            movingBlocks[i].moving = true;
+            this.speed = 0;
+            //this.moving = "";
+            //this.canMove = true;
+            if(this.x - this.w/2 <= movingBlocks[i].x + movingBlocks[i].w/2 && this.x + this.w/2 >= movingBlocks[i].x - movingBlocks[i].w/2){
+                if(this.past === "r"){
+                    movingBlocks[i].direction = 1;
+                    this.col = "right";
+                this.speed = 3;
+            this.x = movingBlocks[i].x - this.w / 2 -  movingBlocks[i].w/2;
+                } else if(this.past === "l"){
+                    this.col = "left";
+                    movingBlocks[i].direction = 0;
+                    this.speed = 3;
+                    this.x = movingBlocks[i].x + movingBlocks[i].w/2 + this.w/2 + 1;
+            
+            
+                }
+            }
+            if(this.y + this.h/2 >= movingBlocks[i].y - movingBlocks[i].h/2 && this.y - this.h/2 <= movingBlocks[i].y + movingBlocks[i].h/2){
+                if(this.past === "d"){
+                    this.col = "top";
+                    this.speed = 3;
+                    movingBlocks[i].direction = 2;
+                    this.y = movingBlocks[i].y - this.h / 2 - movingBlocks[i].h/2 - 1;
+                } else if(this.past === "u"){
+                    this.speed = 3;
+                    this.y = movingBlocks[i].y + movingBlocks[i].h/2 + this.h / 2 + 1;
+                    this.col = "bottom";
+                    movingBlocks[i].direction = 3;
+                }
+            }
+        }
+    }
+};
+playerBlock.prototype.reset = function(){
+    this.x = this.sx;
+    this.y = this.sy;
+    this.speed = 3;
+    this.canMove = true;
+    loadLevel();
+	player.moving = "up"
+	player.collide();
+	player.moving = "down"
+	player.collide();
+	player.moving = "left"
+	player.collide();
+	player.moving = "right"
+	player.collide();
+	this.moving = "";
+};
+loadLevel();
+player.move();
+player.reset();
+var levelButtonList = [];
+scene = "home";
+fill(100,100,100);
+rect(0,0,width,height);
+var draw = function() {
+    fill(0,0,0,20);
+    rectMode(LEFT);
+    rect(0,0,width,height);
+    if(scene === "game" || scene === "game2"){
+        if(scene === "game"){
+		fill(100,100,100);
+		rect(0,0,width,height);
+            level = 1;
+            scene = "game2";
+            started = false;
+            time = 0;
+            time2 = 0;
+        }
+        if(level > currentLevel){
+            currentLevel = level;
+        }
+        if(keyPressed){
+            started = true;
+        }
+        if(level !== plevel){
+            loadLevel(level);
+            player.reset();
+            player.moving = "";
+        }
+        
+        for(var i = 0;i < blocks.length; i++) {
+            if(blocks[i].disappeared !== true){
+                blocks[i].draw();
+            }
+        } 
+        for(var i = 0;i < lavaList.length; i++) {
+            lavaList[i].draw();
+            lavaList[i].move();
+            lavaList[i].collide();
+        } 
+        for(var i = 0;i < movingBlocks.length; i++) {
+            movingBlocks[i].draw();
+            movingBlocks[i].move();
+            movingBlocks[i].collide();
+        } 
+        plevel = level;
+        player.draw();
+        player.move();
+        player.collide();
+        if(input.R){
+            player.reset();
+        }
+        textFont(createFont("Arial"));
+        textSize(30);
+        fill(150, 87, 237);
+        textAlign(CENTER,TOP);
+        text(txt[level],width/30,height/10,width - width/60,width * 5/6);
+        fill(9, 47, 219);
+        textAlign(LEFT,TOP);
+        if(level < levels.length && started === true){
+            time += 0.0155;
+        }
+        if(time >= 59.5){
+            time = -0.44;
+            time2 += 1;
+        }
+        if(round(time) < 10){
+            text("Time: "+ time2 + ":0" + round(time),width/30,height*0.945,width*55/60,height * 5/6);
+        } else {
+            text("Time: "+ time2 + ":" + round(time),width/30,height * 0.945,width * 55/60,height*5/6);
+        }
+        if(level >= levels.length){
+            scene = "win";
+        }
+        menuButton.draw();
+        menuButton.clicked();
+	    if(mobile){
+    upButton.draw();
+    upButton.clicked();
+    leftButton.draw();
+    leftButton.clicked();
+    rightButton.draw();
+    rightButton.clicked();
+    downButton.draw();
+    downButton.clicked();
+    }
+    }
+    else if(scene === "home" || scene === "home2"){
+        if(scene === "home"){
+            level = 0;
+            loadLevel();
+            player.reset();
+            player.moving = "down";
+            scene = "home2";
+            fill(100,100,100);
+		rect(0,0,width,height);
+        }
+        textFont(createFont("Impact"));
+        textAlign(CENTER,CENTER);
+        textSize(60);
+        fill(4, 0, 255);
+        text("Slidey Block",width/2,height/5);
+        playButton.draw();
+        playButton.clicked();
+        recordButton.draw();
+        recordButton.clicked();
+        howToButton.draw();
+        howToButton.clicked();
+	
+        for(var i = 0;i < blocks.length; i++) {
+            if(blocks[i].disappeared !== true){
+                blocks[i].draw();
+            }
+        } 
+        player.move();
+        player.collide();
+        player.draw();
+        
+    }
+    if(scene === "howto"){
+	    fill(100,100,100);
+rect(0,0,width,height);
+        textAlign(CENTER,CENTER);
+        fill(4, 0, 255);
+        textSize(70);
+        textFont(createFont("Impact"));
+        text("How to",width/2,height*7/60);
+        textFont(createFont("arial"));
+        textAlign(LEFT,TOP);
+        textSize(30);
+        text("  Slidey Block is a one player puzzle game. You can use either the arrow keys or the a, w, s, and  d keys to move. Your goal is to get to the portal to move to the next level. Once you choose a direction to move, the player continues to move in that direction until you collide with something and stop moving. There are many other kinds of blocks that do different things thst are explained in the first level that they are in. Press the B key to go back to the home screen.",width/12,height/5,width - width * 1/6,height + width * 1/6);
+        if(input.B){
+            scene = "home";  
+        }
+    }
+    if(scene === "lvlselect" || scene === "lvlselect2"){
+        if(scene === "lvlselect"){
+            levelButtonList = [];
+            var startX = width/15;
+            var startY = height/15;
+            var locked;
+            for(var i = 0; i <= levels.length - 2; i++){
+    if(i % 7 === 0){
+        startX = width/10.43478261;
+        startY += height/7.5;
+    } else {
+        startX += width/7.5;
+    }
+    if(i + 1 > currentLevel){
+        locked = true;
+    } else {
+        locked = false;
+    }
+    levelButtonList.push(new button({
+    x: startX, 
+    y: startY,
+    width: width/8,
+    height: width/8,
+    r: 87, 
+    g:6,
+    b:158,
+    goto: i + 1,
+    txt: i + 1,
+    t: "level",
+    locked: locked
+    }));
+}
+        scene = "lvlselect2";
+        }
+	    if(input.H && input.A && input.C && input.K){
+		    currentLevel = levels.length - 1;
+	    }
+        textSize(70);
+        fill(4, 0, 255);
+        text("LEVELS",width/2,height * 1/15);
+        for(var i = 0; i < levelButtonList.length; i++){
+            levelButtonList[i].draw();   
+            levelButtonList[i].clicked(); 
+        }
+        fill(107, 12, 166);
+        textSize(30);
+        text("Press the B key to go back",width/2,height * 23/24);
+        if(input.B){
+            scene = "home";  
+        }
+    }
+    if(scene === "win"){
+        textSize(50);
+        fill(4, 0, 255);
+        textFont(createFont("Impact"));
+        textAlign(CENTER,CENTER);
+        if(time2*60 + round(time) < fastestTime2*60 + fastestTime && startLevel === 1){
+            fastestTime = round(time);
+            fastestTime2 = time2;
+        }
+        text("YOU BEAT ALL OF THE LEVELS!",width/2,height * 1/15);
+        textSize(30);
+        text("Your time was " + time2 + " minutes and " + round(time) + " seconds \nfrom level " + startLevel + " to the end!",width/2,height*1/3);
+        text("Now try again for a faster time!",width/2,height/2);
+    if(fastestTime < 10){
+        text("Your best time from level 1 to the end is " + fastestTime2 + ": 0" + fastestTime + "!",width/2,height * 2/3);
+    } else {
+        text("Your best time from level 1 to the end is " + fastestTime2 + ": " + fastestTime + "!",width/2,height * 2/3);
+    }
+    menuButton.draw();
+    menuButton.clicked();
+    }
+    clicked = false;
+    setCookie("username", currentLevel, 365);
+};
+
+    }};
+
+    // Get the canvas that Processing-js will use
+    var canvas = document.getElementById("mycanvas"); 
+    // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+    var processingInstance = new Processing(canvas, sketchProc); 
+ </script>
+	<center style="float:none">
+		<p>
+			Slidey Block is a one-player puzzle game where you<br>
+    use the arrow keys to get to the flashing portal. Maneuver<br>
+        lava, push blocks, sandstone and more to escape the castle.<br>
+        This game is the original Matthew's Games game.<br>
+		</p>
+		
+	</center>
+	<h2><a href="https://matthewsgames.github.io/">Check out the guy who made this!</a>
+</html>
+
+
+
