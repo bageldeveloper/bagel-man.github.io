@@ -1,0 +1,365 @@
+#version{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	font-size: 1vmin;
+}
+html{
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+body{
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+}
+input{
+	border-radius: 0 !important;
+}
+.data{
+	display: none;
+}
+#fore{
+	transition: transform .5s ease-in-out;
+	text-align: center;
+}
+.title{
+	font-family: Monoton;
+}
+#title{
+	padding-top: 20px;
+	color: white;
+	font-size: 10vmin;
+	text-shadow: 0 0 1vmin black;
+	text-align: center;
+	transform: translate3d(0, -100vh, 0);
+	transition: transform .5s ease-out;
+/* 	animation: slidetop 0.5s ease-out forwards; */
+}
+/* @keyframes slidetop{
+	0%{transform: translate3d(0, -100vh, 0)}
+}
+@keyframes leavetop{
+	100%{transform: translate3d(0, -100vh, 0)}
+}
+@keyframes slideleft{
+	0%{transform: translate3d(-100vw, 0, 0)}
+	50%{transform: translate3d(-100vw, 0, 0)}
+}
+@keyframes slideright{
+	0%{transform: translate3d(100vw, 0, 0)}
+	50%{transform: translate3d(100vw, 0, 0)}
+} */
+.menuitem{
+	color: white;
+	font-size: 7vmin;
+	text-align: center;
+	text-shadow: 0 0 1vmin black;
+	transform: translate3d(-100vw, 0, 0);
+	transition: transform .5s ease-out;
+/* 	animation: slideleft 1s -0.5s ease-out forwards; */
+}
+#name{
+	background-color: rgba(0, 0, 0, 0.5);
+	outline: none;
+	border: 1vmin solid white;
+	font-size: 10vmin;
+	text-align: center;
+	color: white;
+	padding: 1vmin;
+	width: 60vw;
+}
+#colorpicker{
+	margin: 0;
+	padding: 0;
+	width: 80vw;
+	height: 5vmin;
+	background: linear-gradient(90deg,
+		hsl(0, 100%, 50%),
+		hsl(60, 100%, 50%),
+		hsl(120, 100%, 50%),
+		hsl(180, 100%, 50%),
+		hsl(240, 100%, 50%),
+		hsl(300, 100%, 50%),
+		hsl(360, 100%, 50%)
+	);
+	border-radius: 3.5vmin;
+	border: 1vmin solid white;
+	display: inline-block;
+	cursor: pointer;
+}
+#slider{
+	margin: 0;
+	padding: 0;
+	width: 7vmin;
+	height: 7vmin;
+	border: 1vmin solid white;
+	border-radius: 4.5vmin;
+	transform: translate(-4.5vmin, -2vmin);
+	cursor: pointer;
+	box-shadow: 0 0 1vmin black;
+	transition: transform .2s;
+}
+#slider:hover{
+	transform: translate(-4.5vmin, -2vmin) scale(1.2);
+}
+#settings{
+	height: 20vmin;
+	width: 20vmin;
+	background-color: #6eb0ea;
+	position: absolute;
+	bottom: 2vmin;
+	right: 2vmin;
+	opacity: 1;
+	border-radius: 10vmin;
+	cursor: pointer;
+	box-shadow: 0 2vmin 3vmin rgba(0, 0, 0, 0.5);
+	transition: transform .2s, box-shadow .2s, background .2s;
+	transform: translate3d(50vw, 0, 0);
+	z-index: 100;
+}
+#settings::after{
+	content: "";
+	background-image: url("https://jchabin.github.io/cars/gear.png");
+	background-size: cover;
+	height: 10vmin;
+	width: 10vmin;
+	position: absolute;
+	bottom: 5vmin;
+	left: 5vmin;
+	filter: invert(1);
+	transition: transform .2s;
+}
+#settings:hover{
+	transform: scale(0.9) rotate(45deg) !important;
+	box-shadow: 0 0.5vmin 1vmin rgba(0, 0, 0, 0.5);
+}
+#toolbar{
+	width: 22vmin;
+	height: 85vmin;
+	border-radius: 11vmin;
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	right: 1vmin;
+	bottom: 1vmin;
+	transform: scaleY(0);
+	transition: transform .5s;
+	transform-origin: 50% 87.5%;
+}
+#toolbar.sel{
+	transform: scaleY(1);
+}
+.tools{
+	height: 20vmin;
+	width: 20vmin;
+	background-color: #db6262;
+	border-radius: 10vmin;
+	cursor: pointer;
+	transition: transform .2s, box-shadow .2s, background .2s;
+	margin: 1vmin;
+	box-shadow: 0 1vmin 2vmin rgba(0, 0, 0, 0.5);
+}
+.tools:hover{
+	transform: scale(0.9) !important;
+	box-shadow: 0 0.5vmin 1vmin rgba(0, 0, 0, 0.5);
+}
+.tools::after{
+	content: "";
+	display: inline-block;
+	background-image: url("https://jchabin.github.io/cars/newTrack.png");
+	filter: invert(1);
+	background-size: cover;
+	margin-top: 5vmin;
+	height: 10vmin;
+	width: 10vmin;
+	transition: transform .2s;
+}
+.tools:sel{
+	background-color: #62db68;
+}
+#edit{
+	background-color: #55db8f;
+}
+#cardboard::after{
+	background-image: url("https://jchabin.github.io/cars/cardboard.png");
+	filter: brightness(5);
+}
+#cardboard.sel{
+	background-color: #62db68;
+}
+#cardboard.disabled{
+	background-color: #a3a3a3 !important;
+	cursor: default !important;
+}
+#cardboard.disabled:hover{
+	background-color: #a3a3a3 !important;
+	transform: none !important;
+}
+#cardboard{
+	background-color: #db6262;
+}
+#help{
+	background-color: #9a55db;
+	font-family: Arial;
+	color: white;
+	font-size: 15vmin;
+	text-align: center;
+	line-height: 20vmin;
+}
+#help::after{
+	display: none;
+}
+#start{
+/* 	animation: slideleft 1s -0.25s forwards; */
+	font-size: 10vmin;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: inline-block;
+	border: 1vmin solid white;
+	padding: 2vmin;
+	cursor: pointer;
+	transition: transform .2s, box-shadow .2s;
+	text-shadow: none;
+	box-shadow: 0 2vmin 3vmin rgba(0, 0, 0, 0.5);
+}
+#start:hover{
+	transform: scale(0.9);
+	box-shadow: 0 0.5vmin 1vmin rgba(0, 0, 0, 0.5);
+}
+.button{
+	border: 1vmin solid white;
+	padding: 2vmin;
+	font-size: 10vmin !important;
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	width: 80vmin;
+	left: calc(50vw - 43vmin);
+	text-shadow: none;
+	line-height: 10vmin;
+	cursor: pointer;
+	box-shadow: 0 2vmin 3vmin rgba(0, 0, 0, 0.5);
+	transition: transform .2s, box-shadow .2s;
+}
+.button:hover{
+	transform: scale(0.9) !important;
+	box-shadow: 0 0.5vmin 1vmin rgba(0, 0, 0, 0.5);
+}
+#host{
+	top: calc(30vh - 8vmin);
+	transform: translate3d(-100vw, 0, 0);
+	transition: transform .5s ease-out, box-shadow .2s;
+/* 	-webkit-transform-style: preserve-3d; */
+/* 	animation: slideleft 1s -0.5s ease-out forwards; */
+}
+#join{
+	top: calc(70vh - 8vmin);
+	transform: translate3d(-100vw, 0, 0);
+	transition: transform .5s ease-out, box-shadow .2s;
+/* 	-webkit-transform-style: preserve-3d; */
+/* 	animation: slideleft 1s ease-out forwards; */
+}
+.info{
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: white;
+	font-size: 5vmin;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	border-bottom: 1vmin solid white;
+	z-index: 100000;
+}
+.info.title{
+	padding-top: 20px;
+}
+#code{
+	text-align: center;
+	font-size: 20vmin;
+	text-shadow: 0 0 2vmin white;
+}
+#incode{
+	text-align: center;
+	font-size: 20vmin;
+	text-shadow: 0 0 2vmin white;
+	outline: none;
+	border: none;
+	width: 80vw;
+	color: white;
+	background: none;
+	background-color: rgba(0, 0, 0, 0.5);
+	text-transform: uppercase;
+}
+#startgame{
+	position: absolute;
+	bottom: 5vmin;
+	right: 5vmin;
+	color: white;
+	border: 1vmin solid white;
+	background-color: rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	font-size: 10vmin;
+	padding: 2vmin;
+	transition: box-shadow .2s, transform .2s;
+	box-shadow: 0 2vmin 3vmin rgba(0, 0, 0, 0.5);
+	z-index: 100000;
+}
+#startgame:hover{
+	box-shadow: 0 0.5vmin 1vmin rgba(0, 0, 0, 0.5);
+	transform: scale(0.9);
+}
+.label{
+	font-family: "Press Start 2P";
+	color: white;
+	text-shadow: 0 0 1vmin black;
+	display: inline-block;
+	padding: 2vmin;
+	position: absolute;
+	font-size: 3vmin;
+	transform: translateX(-50%) translateY(-100%);
+	text-align: center;
+	line-height: 4vmin;
+	z-index: 0;
+}
+#countdown{
+	font-size: 50vmin;
+	height: 70vmin;
+	width: 100vw;
+	position: absolute;
+	top: calc(50vh - 35vmin);
+	color: white;
+	text-shadow: 0 0 2vmin white;
+	z-index: 100000;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center; 
+	line-height: 23vmin;
+}
+#lap{
+	font-size: 10vmin;
+	position: absolute;
+	color: white;
+	text-shadow: 0 0 2vmin white;
+	z-index: 100000;
+	top: 3vmin;
+	left: 3vmin;
+}
+#divider{
+	height: 100vh;
+	width: 4px;
+	position: absolute;
+	top: 0;
+	left: calc(50vw - 2px);
+	background-color: white;
+}
+.amzad{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 15vmax;
+	width: 30vmax;
+	transform: translate3d(-50vw, 0, 0);
+	transition: transform .2s;
+	
+	z-index: 0;
+}

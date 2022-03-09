@@ -1,233 +1,27 @@
-<html>
-  <head>
-    <title>Bagels!</title>
-<meta name=”Description” content=”Bagelcomics.com is a pretty cool website with stuff on it. Play some dope games or read some comics. Chat with other people from around the world or browse some dank memes.”>
-    <style>
-      * {box-sizing: border-box}
+<script data-ad-client="ca-pub-8222390470642566" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-/* Set height of body and the document to 100% */
-body, html {
-  background-color: #222 ;
-  margin: 0;
-  font-family: roboto;
-}
-.tablink {
-  background-color: #444;
-  color: white;
-  float: left;
-  border: 3;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 100%;
-  width: 20%;
-  height: 15%;
-}
-
-.tablink:hover {
-  background-color: #666;
-}
-.center{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-.tabcontent {
-  color: white;
-  display: none;
-  padding: 100px 20px;
-  height: 100%;
-  font-size: 22px;
-}
-
-
-#Home {
-  background-color: #222 ;
-}
-#Memes {
-  background-color: #222 ;
-  }
-#About {
-  background-color: #222 ;
-}
-#Game {
-  background-color: #222 ;
-}
-#Comics {
-  background-color: #222 ;
-}
-
-</style>
-</head>
-<body>
-
-
-
-
-<script>
-
-
-  function openPage(pageName,elmnt,color) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-  document.getElementById(pageName).style.display = "block";
-  elmnt.style.backgroundColor = color;
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-
-
-
-// dots is an array of Dot objects,
-// mouse is an object used to track the X and Y position
-   // of the mouse, set with a mousemove event listener below
-var dots = [],
-    mouse = {
-      x: 0,
-      y: 0
-    };
-
-// The Dot object used to scaffold the dots
-var Dot = function() {
-  this.x = 0;
-  this.y = 0;
-  this.node = (function(){
-    var n = document.createElement("div");
-    n.className = "trail";
-    document.body.appendChild(n);
-    return n;
-  }());
-};
-// The Dot.prototype.draw() method sets the position of
-  // the object's <div> node
-Dot.prototype.draw = function() {
-  this.node.style.left = this.x + "px";
-  this.node.style.top = this.y + "px";
-};
-
-// Creates the Dot objects, populates the dots array
-for (var i = 0; i < 12; i++) {
-  var d = new Dot();
-  dots.push(d);
-}
-
-// This is the screen redraw function
-function draw() {
-  // Make sure the mouse position is set everytime
-    // draw() is called.
-  var x = mouse.x,
-      y = mouse.y;
-
-  // This loop is where all the 90s magic happens
-  dots.forEach(function(dot, index, dots) {
-    var nextDot = dots[index + 1] || dots[0];
-
-    dot.x = x;
-    dot.y = y + 5;
-    dot.draw();
-    x += (nextDot.x - dot.x) * .6;
-    y += (nextDot.y - dot.y) * .6;
-
-  });
-}
-
-addEventListener("mousemove", function(event) {
-  //event.preventDefault();
-  mouse.x = event.pageX;
-  mouse.y = event.pageY;
-});
-
-// animate() calls draw() then recursively calls itself
-  // everytime the screen repaints via requestAnimationFrame().
-function animate() {
-  draw();
-  requestAnimationFrame(animate);
-}
-
-// And get it started by calling animate().
-animate();
-
-</script>
-<button class="tablink" onclick="openPage('Home', this, '#222')" id="defaultOpen">Home</button>
-<button class="tablink" onclick="openPage('Memes', this, '#222')">Memes</button>
-<button class="tablink" onclick="openPage('About', this, '#222')">Social</button>
-    <button class="tablink" onclick="openPage('Game', this, '#222')">Games</button>
-    <button class="tablink" onclick="openPage('Comics', this, '#222')">Comics</button>
-
-<div id="Home" class="tabcontent">
-  <h1>Home</h1>
-  <h2>Welcome to bagelcomics.com! We have some wacky stuff you can try out. You could play some games, look at some memes, read comics, or chat with other people! :)</h2>
-  <h4>This was made by a person</h4>
-  <h5>Join the <a href="https://discord.gg/xEwt8W5utF">Discord server</a></h5>
-  <h5>Email me at weirdwontons@gmail.com</h5>
-
-  <p>Number of visits</p>
-<a href="https://www.hitwebcounter.com" target="_blank">
-<img src="https://hitwebcounter.com/counter/counter.php?page=7288119&style=0011&nbdigits=5&type=page&initCount=0" title="User Stats" Alt="PHP Hits Count"   border="0" >
-</a> 
+<link href="https://fonts.googleapis.com/css?family=Monoton|Press+Start+2P" rel="stylesheet">
+<!-- <div id="trackcode" class="data">
+	1,-5/1,2 1,2/0,4 0,4/-1,5 -1,5/-3,6 -3,6/-7,6 -7,6/-9,5 -9,5/-10,4 -10,4/-11,2 -11,2/-11,-4 -11,-4/-10,-5 -10,-5/-8,-5 -8,-5/-7,-4 -7,-4/-7,-1 -7,-4/-6,-5 -6,-5/-4,-5 -4,-5/-3,-4 -3,-6/-3,-1 -3,-6/-2,-8 -2,-8/-1,-9 -1,-9/1,-10 1,-10/5,-10 5,-10/7,-9 7,-9/8,-8 8,-8/9,-6 9,-6/9,-1 9,-1/8,1 8,1/6,2 6,2/4,2 4,2/2,1 2,1/1,-1 -1,-5/0,-7 0,-7/2,-8 2,-8/4,-8 4,-8/6,-7 6,-7/7,-5 7,-5/7,-1 7,-1/6,0 6,0/4,0 4,0/3,-1 3,-1/3,-4 -1,-5/-1,1 -1,1/-2,3 -2,3/-4,4 -4,4/-6,4 -6,4/-8,3 -8,3/-9,1 -9,1/-9,-3 -9,0/-8,1 -8,1/-6,1 -6,1/-5,0 -5,0/-5,-3 -5,0/-4,1 -4,1/-2,1 -2,1/-1,0 1,-5/2,-6 2,-6/4,-6 4,-6/5,-5 5,-5/5,-2
+</div> -->
+<div id="trackcode" class="data">
+1,5/0,7 0,7/-1,8 -1,8/-3,9 -3,9/-7,9 -7,9/-9,8 -9,8/-10,7 -10,7/-11,5 -6,7/-4,7 -4,7/-2,6 -2,6/-1,4 -6,7/-8,6 -8,6/-9,4 -1,4/-1,0 1,0/1,5 -11,5/-11,0 -11,0/-10,-1 -10,-1/-8,-1 -8,-1/-7,0 -7,0/-7,2 -9,3/-8,4 -8,4/-6,4 -6,4/-5,3 -5,3/-5,1 -9,1/-9,4 -5,3/-4,4 -4,4/-2,4 -2,4/-1,3 -7,0/-6,-1 -6,-1/-4,-1 -4,-1/-3,0 -3,0/-3,2 -1,0/-1,-2 -1,-2/0,-4 0,-4/2,-5 2,-5/4,-5 4,-5/6,-4 6,-4/7,-2 -3,0/-3,-3 -3,-3/-2,-5 -2,-5/-1,-6 -1,-6/1,-7 1,-7/5,-7 5,-7/7,-6 7,-6/8,-5 8,-5/9,-3 9,-3/9,2 9,2/8,4 8,4/6,5 6,5/4,5 4,5/2,4 2,4/1,2 7,-2/7,2 7,2/6,3 6,3/4,3 4,3/3,2 4,-3/2,-3 2,-3/1,-2 1,-2/1,0 4,-3/5,-2 5,-2/5,1 3,2/3,-1 |-1,3/1,3 6,-4/7,-6 |-7,5 -5,6 -4,5 2,6 1,8 3,9 4,6 3,7 -3,10 -4,12 -10,11 -12,8 -14,8 -12,6 -7,10 -12,2 -15,3 -13,-1 -10,-4 -8,-2 -6,-4 -4,-3 -11,-2 -8,-3 -4,-5 -3,-6 -5,-2 0,-8 -2,-8 -4,-8 -5,-6 -3,-10 2,-9 4,-8 5,-10 6,-8 10,-7 8,-7 9,-11 9,-5 15,-4 11,-2 11,-1 10,3 16,2 12,1 8,6 7,9 6,6 -8,-7 -13,-7 -13,-4 -15,-4 -17,0 |1,3,6/22 0,3,8/55 -2,3,9/77 -8,3,9/115 -10,3,8/148 -11,3,6/166 -8,3,4/-86 -7,3,4/-83 -6,3,4/-90 -10,3,-1/-83 -9,3,-1/-88 -8,3,-1/-90 -6,3,-1/-89 -5,3,-1/-89 -4,3,-1/-89 -4,3,4/-90 -3,3,4/-90 -2,3,4/265 -3,3,-4/194 -2,3,-6/218 0,3,-7/262 6,3,-7/-69 8,3,-6/-42 9,3,-4/-16 9,3,4/40 8,3,5/70 2,3,5/135 3,3,6/122| 
 </div>
-
-<div id="Memes" class="tabcontent">
-  <h1>Memes</h1>
-  <p>ripe and dank memes</p>
-
-
-  <img src="https://inspirationfeed.com/wp-content/uploads/2020/05/dank-meme-68.jpg" width="400" class="center">
-  <img src="https://inspirationfeed.com/wp-content/uploads/2020/05/dank-meme-61.jpg" width="400" class="center">
-  <img src="https://inspirationfeed.com/wp-content/uploads/2020/05/dank-meme-60.png" width="400" class="center">
-  <img src="https://inspirationfeed.com/wp-content/uploads/2020/05/dank-meme-40.jpg" width="400" class="center">
-  <img src="https://inspirationfeed.com/wp-content/uploads/2020/05/dank-meme-15.png" width="400" class="center">
-  <img src="https://i.redd.it/he77atzsrza71.jpg" width="400" class="center">
-  <img src="https://i.redd.it/1zqfw903nya71.jpg" width="400" class="center">
-    <img src="https://i.redd.it/dyiv0tk2oza71.jpg" width="400" class="center">
-   <img src="https://preview.redd.it/pa2bopud6xa71.jpg?width=640&crop=smart&auto=webp&s=b9869e16d8b9bb842317689ba3d11179d5825be3" width="400" class="center">
-   <img src="https://preview.redd.it/np3nu8hywya71.jpg?width=640&crop=smart&auto=webp&s=f2d8145d6139f3cd93e45742904d0a495e34df5e" width="400" class="center">
-   <img src="https://i.redd.it/w7s0wrr8cya71.jpg" width="400" class="center">
-  <img src="https://preview.redd.it/xfrr2b88x0b71.png?width=640&crop=smart&auto=webp&s=45039281a786218f0c51baf609b4beab2445b519" width="400" class="center">
-  <img src="https://preview.redd.it/fcze4kc64e281.jpg?width=640&crop=smart&auto=webp&s=c3f20fec28b225017208d3c470f264d32183f4ea" width="400" class="center">
-  <img src="https://preview.redd.it/91cy9ysi7c281.jpg?width=640&crop=smart&auto=webp&s=80447ac5f39cec7b6887b0847bc3862322abb6af" width="400" class="center">
-  <img src="https://preview.redd.it/i5imsl27oa281.gif?width=640&format=mp4&s=4de45e38bb3b1b8c2ae9d301de04920b186fdd38" width="400" class="center">
-  <img src="https://i.redd.it/g3lk851xzc281.jpg" width="400" class="center">
-  <img src="https://preview.redd.it/6xl3l5ws58281.png?width=640&crop=smart&auto=webp&s=97fe0894fb4ee950b91b9c24cf4c1d3d0984dbe7" width="400" class="center">
+<div id="fore">
+	<div id="version">v1.1.3</div>
+	<div class="title" id="title">Turboboost racing game</div>
+	<div class="menuitem title">Pick a name:<br/><input id="name" class="title" ontouchstart="this.focus()" placeholder="Name"></input></div>
+	<script>
+		var color, updateColor, menu2, host, joinGame, codeCheck;
+	</script>
+	<div class="amzad" id="amzn-assoc-ad-36be7933-d9ec-4909-a713-60b9ce598691"></div><script async src=""></script>
+	<div class="menuitem title">Choose a color:<br/><div id="colorpicker" ontouchstart="event.touches[0].buttons = 1; this.onmousemove(event.touches[0])" ontouchmove="event.touches[0].buttons = 1; this.onmousemove(event.touches[0])" onmousedown="this.onmousemove(event)" onmousemove="if(event.buttons == 1){ var x = event.clientX - this.getBoundingClientRect().left; x = Math.min(this.clientWidth, Math.max(0, x)); color = Math.floor(x / this.clientWidth * 360); updateColor(); }"><div id="slider"></div></div></div>
+	<div class="menuitem title"><div id="start" onclick="menu2()">Start!</div></div>
+	<div id="settings" ontouchstart="this.onclick()" onclick="this.parentNode.children[7].className = this.parentNode.children[7].className == 'sel' ? '' : 'sel';"></div>
+	<div id="toolbar">
+		<div class="tools" id="edit" ontouchstart="this.onclick()" onclick="window.open('editor')"></div>
+		<div class="tools" 
+				 id="cardboard" ontouchstart="this.onclick()" onclick="this.className = this.className == 'tools disabled' ? this.className : this.className == 'tools sel' ? 'tools' : 'tools sel';"></div>
+		<div class="tools" id="help" ontouchstart="this.onclick()" onclick="window.open('help')">?</div>
+	</div>
 </div>
-
-<div id="About" class="tabcontent">
-  <h1>Social</h1>
-  <iframe src="chatindex.html" style="height:100%;width:100%" title="Iframe Example"></iframe>
-</div>
-
-     <div id="Game" class="tabcontent">
-       <h1>Games</h1>
-       <h2><a href="carindex.html">Hue Jumper</a> 
-       	<h2><a href="slideyblock.html">Slidey Block</a> 
-       <iframe frameborder="0" src="https://itch.io/embed-upload/5088646?color=333333" allowfullscreen="" width="100%" height="100%"><a href="https://masterbagel.itch.io/vroom-vroom">Play VROOM VROOM on itch.io</a></iframe>
-
-       <iframe src="https://scratch.mit.edu/projects/524470702/embed" allowtransparency="true" width="100%" height="200%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
-       <iframe src="https://scratch.mit.edu/projects/506746593/embed" allowtransparency="true" width="100%" height="200%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
-       <iframe src="https://scratch.mit.edu/projects/324436049/embed" allowtransparency="true"  width="100%" height="200%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
-       <iframe src="https://scratch.mit.edu/projects/386422379/embed" allowtransparency="true"  width="100%" height="200%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
-       <iframe src="https://scratch.mit.edu/projects/428683299/embed" allowtransparency="true"  width="100%" height="200%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
-       <iframe src="https://scratch.mit.edu/projects/406300826/embed" allowtransparency="true"  width="100%" height="200%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
-       <iframe src="https://scratch.mit.edu/projects/385038281/embed" allowtransparency="true"  width="100%" height="200%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
-       <iframe src="https://scratch.mit.edu/projects/385424031/embed" allowtransparency="true"  width="100%" height="200%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
-       <iframe src="https://scratch.mit.edu/projects/595497446/embed" allowtransparency="true"  width="100%" height="200%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
-</div>
-<div id="Comics" class="tabcontent">
-  <h1>Comics</h1>
-  <h2>New comics are realeased every week :)</h2>
-  <li><a href="bagel3.jpg"><img src="bagel3.jpg" height="500" class="center"></a></li>
-  <li><a href="bagel2.jpg"><img src="bagel2.jpg" height="500" class="center"></a></li>
-  <li><a href="bagel1.jpg"><img src="bagel1.jpg" height="500" class="center"></a></li>
-
-</div>
-</body>
-</html>
