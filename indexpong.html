@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Menu </title>
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script>
+<script>
+function start(){
+sjs.open();
+var menu_text = new sjs.Text("MENU",28,"black");
+menu_text.centerH(); 
+var game_text = new sjs.Text("Use the Arrow Keys and A and D to Control the Hay bales.  Don't let the chicken get by you!",28,"#ff0");
+game_text.centerH().offset(0, 30);
+var startBtn = new sjs.Button("Start", function(){
+window.location = "pong.html";
+});
+
+startBtn.center(); 
+// startBtn code is here */
+
+var info_text = new sjs.Text("Created By Bagel-Man :3",20,"black");
+
+info_text.bottom().centerH();
+
+
+} //end start
+</script>
+</head>
+<body onload="start()">
+<h1> Menu </h1>
+
+<div id="target" style="margin:auto;background:grey;"></div>
+</body>
+</html>
