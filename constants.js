@@ -24,7 +24,7 @@ const prompts = [
   
   // Possible responses, in corresponding order
   
-  const reply = [
+  const replies = [
     //0 
     ["get out of here", "hi", "yo wazzup bro", "You suck"], 
     //1
