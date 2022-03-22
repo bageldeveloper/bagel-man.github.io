@@ -186,7 +186,7 @@ function addChat(input, product) {
   botDiv.className = "bot response";
   botText.innerText = "typing...";
   botDiv.appendChild(botText);
-  botDiv.appendChild(botImg);
+
   messagesContainer.appendChild(botDiv);
   // Keep messages at most recent
   messagesContainer.scrollTop = messagesContainer.scrollHeight - messagesContainer.clientHeight;
