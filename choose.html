@@ -38,6 +38,19 @@
   background: #0080FF;
   text-shadow: none;
 }
+#bot {
+	margin-left: auto;
+}
+
+.bot {
+	font-family: Consolas, 'Courier New', Menlo, source-code-pro, Monaco,  
+	monospace;
+}
+.response {
+	display: flex;
+	align-items: center;
+	margin: 1%;
+}
 pre {
   margin: 0;
 }
@@ -64,13 +77,43 @@ pre {
     -moz-box-shadow: none;
     box-shadow: none;
     border: none;
+}
+.chat {
+	height: 300px;
+	width: 50vw;
+	display: flex;
+	flex-direction: column;
+  justify-content: center;
+	align-items: center;
+} 
+.container {
+	display: flex;
+  justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+.messages {
+	display: flex;
+	flex-direction: column;
+	overflow: scroll;
+	height: 90%;
+	width: 100%;
 
-
+	padding: 15px;
+	margin: 15px;
+}
 
 }
         </style>
 <div id="main">
-    <div>><input id="input" type="text" placeholder="Say something..." autocomplete="off"/></div>
+    <div id="container" class="container">
+		<div id="chat" class="chat">
+			<div id="messages" class="messages"></div>
+			><input id="input" type="text" placeholder="Say something..." autocomplete="off" autofocus="true" />
+		</div>
+	</div>
+
 </div>
 
 
