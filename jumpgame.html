@@ -1,26 +1,40 @@
-<h2>Arrow keys to move, collect all the coins to finish the level</h2>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Jump Game</title>
+  <link rel="stylesheet" href="./style.css">
 
+</head>
+<body align="center">
+
+<!-- partial:index.partial.html -->
+<h2>collect all da coins</h2>
+
+<!-- partial -->
+  <script  src="./script.js"></script>
+</body>
 
 <style>
-  body{
+	body{
 	background: #222;
 }
 h2{
 	color: #666;
 	font-family: monospace;
 	text-align: center;
-}
-.background {
+	}
+.background{
 	table-layout: fixed;
 	border-spacing: 0;
-}
+	}
 .background td {
 	padding: 0;
 }
 .lava, .actor {
 	background: #e55;
 }
-.wall {
+.wall{
 	background: #444;
 	border: solid 3px #333;
 	box-sizing: content-box;
@@ -28,29 +42,29 @@ h2{
 .actor{
 	position: absolute;
 }
-.coin {
+.coin{
 	background: #e2e838;
 	border-radius: 50%;
 }
-	
-.player{
+	.player{
 	background: #335699;
 	box-shadow: none;
 }
 .lost .player {
 	background: rgb(160, 64, 64);
 }
-
-.won .player {
+.won .player{ 
 	background: green;
 }
-.game {
+.game{
 	position: relative;
 	overflow: hidden;
 }
-</style>
-<script>
-  var LEVELS = [
+	</style>
+	
+	
+	<script>
+		var LEVELS = [
   ["                                                                                ",
    "                                                                                ",
    "                                                                                ",
@@ -229,7 +243,7 @@ function Lava(pos, ch) {
 		this.repeatPos = pos;
 	}
 }
-Lava.prototype.type = "Lava";
+Lava.prototype.type = "lava";
 
 function Coin(pos) {
 	this.basePos = this.pos = pos;
@@ -492,7 +506,7 @@ Level.prototype.playerTouched = function(type, actor) {
   }
 };
 
-var arrowCodes = {37: "left", 38: "up", 39: "right"};
+var arrowCodes = {65: "left", 87: "up", 68: "right",37: "left", 38: "up", 39: "right"};
 
 function trackKeys(codes) {
   var pressed = Object.create(null);
@@ -554,4 +568,5 @@ function runGame(plans, Display) {
 }
 
 runGame(LEVELS, DOMDisplay);
-</script>
+	</script>
+</html>
