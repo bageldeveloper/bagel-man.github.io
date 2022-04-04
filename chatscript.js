@@ -59,8 +59,8 @@ drone.on('error', error => {
 });
 
 function getRandomName() {
-  const adjs = ["thicc", "cool", "awesome", "big", "tubular", "radical", "wacky", "chunky"];
-  const nouns = ["dude", "bro", "bagel", "toothbrush", "mustard", "tree", "meme"];
+  const adjs = ["thicc", "cool", "awesome", "big", "tubular", "radical", "wacky", "chunky", "stupid", "slimey", "hot", "spicy", "juicy", "sussy", "sexy"];
+  const nouns = ["dude", "bro", "bagel", "toothbrush", "mustard", "tree", "meme", "peanut butter", "dumpling", "water", "leg", "baka", "sterling"];
   return (
     adjs[Math.floor(Math.random() * adjs.length)] +
     "_" +
