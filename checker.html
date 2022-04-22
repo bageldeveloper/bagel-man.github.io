@@ -1,0 +1,250 @@
+<html>
+  <head>
+    <title>Quote Checker</title>
+  </head>
+    <body>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
+        <style>
+ body {
+  background-color: black;
+  background-image: radial-gradient(
+    rgba(64, 64, 64, 0.4), black 120%
+  );
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  padding: 2rem;
+  color: white;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #C8C8C8;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(black, 0.15),
+      rgba(black, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+  }
+}
+::selection {
+  background: #0080FF;
+  text-shadow: none;
+}
+#bot {
+	margin-left: auto;
+}
+
+.bot {
+  font-size:20px;
+	color: #9ebae8;
+}
+.response {
+	display: flex;
+	align-items: center;
+	margin: 1%;
+}
+pre {
+  margin: 0;
+}
+
+#main { 
+
+    padding: 40px; 
+}
+#main div { 
+    margin: 10px; 
+} 
+#input, #input:focus { 
+    width: 70%;
+    color: white;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #C8C8C8;
+  background-color:transparent;
+  outline: none;
+  -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: none;
+}
+.chat {
+	height: 300px;
+	width: 50vw;
+	display: flex;
+	flex-direction: column;
+  justify-content: center;
+	align-items: center;
+} 
+.container {
+	display: flex;
+  justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+.messages {
+	display: flex;
+	flex-direction: column;
+	overflow: scroll;
+	height: 90%;
+	width: 100%;
+
+	padding: 15px;
+	margin: 15px;
+}
+
+
+        </style>
+<div id="main">
+    <div id="container" class="container">
+		<div id="chat" class="chat">
+			<div id="messages" class="messages"></div>
+			<input id="input" type="text" placeholder="Enter Quote..." autocomplete="off" autofocus="true" />
+		</div>
+	</div>
+
+</div>
+
+
+        <script>
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const inputField = document.getElementById("input");
+  inputField.addEventListener("keydown", (e) => {
+    if (e.code === "Enter") {
+      let input = inputField.value;
+      inputField.value = "";
+      output(input);
+    }
+  });
+});
+
+		const prompts = [
+    ["clean"],
+
+  ]
+  
+  // Possible responses, in corresponding order
+  
+  const replies = [
+    //0 
+    ["thats too dirty" ]
+    //1
+    ];
+    
+    const alternative = [
+      "Appropiate",
+      "Good for OoCD",
+      "Clean",
+      "Yep thats good",
+      "Go right ahead and text it to the group chat"
+    ];
+    
+  
+		
+function output(input) {
+  let product;
+
+  // Regex remove non word/space chars
+  // Trim trailing whitespce
+  // Remove digits - not sure if this is best
+  // But solves problem of entering something like 'hi1'
+
+  let text = input.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
+  text = text
+    .replace(/ a /g, " ")   // 'tell me a story' -> 'tell me story'
+    .replace(/i feel /g, "")
+    .replace(/whats/g, "what is")
+    .replace(/please /g, "")
+    .replace(/ please/g, "")
+    .replace(/r u/g, "are you");
+
+   if (compare(prompts, replies, text)) { 
+    // Search for exact match in `prompts`
+    product = compare(prompts, replies, text);
+  } else if (text.match(/(penis|boob|shit|fuck|vagina|pp)/gi)) {
+    // If no match, check if message contains `coronavirus`
+      product = "Inapproiate, dont put in on the OoCD"
+  } else if (text.match(/(joe|ella|drake|love|sterling|suck|love|sexy|hot|hate|hell|damn)/gi)) {
+    product = "It depends, you decide if it's appropiate"
+    // ok I'm about to say some pretty weird things, but its all for a good cause
+  } else if (text.match(/(orphan|stab|kill|murder|burn|fire)/gi)) {
+    // If no match, check if message contains `coronavirus`
+      product = "Violence is not the answer, it's a question and the answer is yes"
+  } else if (text.match(/(tom|bagel|thomas)/gi)) {
+    product = "beans"
+    // ok I'm about to say some pretty weird things, but its all for a good cause
+  } else {
+    // If all else fails: random alternative
+    product = alternative[Math.floor(Math.random() * alternative.length)];
+  }
+
+  // Update DOM
+  addChat(input, product);
+}
+
+function compare(promptsArray, repliesArray, string) {
+  let reply;
+  let replyFound = false;
+  for (let x = 0; x < promptsArray.length; x++) {
+    for (let y = 0; y < promptsArray[x].length; y++) {
+      if (promptsArray[x][y] === string) {
+        let replies = repliesArray[x];
+        reply = replies[Math.floor(Math.random() * replies.length)];
+        replyFound = true;
+        // Stop inner loop when input value matches prompts
+        break;
+      }
+    }
+    if (replyFound) {
+      // Stop outer loop when reply is found instead of interating through the entire array
+      break;
+    }
+  }
+  return reply;
+}
+
+function addChat(input, product) {
+  const messagesContainer = document.getElementById("messages");
+
+  let userDiv = document.createElement("div");
+  userDiv.id = "user";
+  userDiv.className = "user response";
+  userDiv.innerHTML = `<span>${input}</span>`;
+  messagesContainer.appendChild(userDiv);
+
+  let botDiv = document.createElement("div");
+
+  let botText = document.createElement("span");
+  botDiv.id = "bot";
+
+
+  botDiv.className = "bot response";
+  botText.innerText = "checking...";
+  botDiv.appendChild(botText);
+
+  messagesContainer.appendChild(botDiv);
+  // Keep messages at most recent
+  messagesContainer.scrollTop = messagesContainer.scrollHeight - messagesContainer.clientHeight;
+
+  // Fake delay to seem "real"
+  setTimeout(() => {
+    botText.innerText = `${product}`;
+
+  }, 2000
+  )
+
+}
+            </script>
+    </body>
+</html>
