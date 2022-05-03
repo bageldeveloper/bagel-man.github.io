@@ -28,6 +28,7 @@ body, html {
     z-index: -1;
 }
 .tablink {
+  
   background-color: #444;
 /*   background-color: red; */
   color: white;
@@ -41,6 +42,7 @@ body, html {
     font-size: 3vh;
   width: 20%;
   height: 10%;
+  
 }
 
 .tablink:hover {
@@ -62,7 +64,11 @@ body, html {
   font-size: 22px;
 }
 
-
+.navbar{
+  position: fixed;
+  width: 100%;
+    height: 100%;
+      }
 #Home {
    background-image: url("bagels!.png");
     background-size:cover;
@@ -187,12 +193,13 @@ function animate() {
 animate();
 
 </script>
+  <div class="navbar">
 <button class="tablink" onclick="openPage('Home', this, '#222')" id="defaultOpen">Home</button>
 <button class="tablink" onclick="openPage('Memes', this, '#222')">Memes</button>
 <button class="tablink" onclick="openPage('About', this, '#222')">Social</button>
     <button class="tablink" onclick="openPage('Game', this, '#222')">Games</button>
     <button class="tablink" onclick="openPage('Comics', this, '#222')">About</button>
-
+  </div>
 <div id="Home" class="tabcontent">
   <h1>Home</h1>
   <body onload="showAlert()"></body>
