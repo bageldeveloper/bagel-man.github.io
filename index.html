@@ -1,87 +1,298 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Bagel Platformer</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-      <div id="unity-mobile-warning">
-        WebGL builds are not supported on mobile devices.
-      </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Bagel Platformer</div>
-      </div>
-    </div>
-    <script>
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Downloads.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/Downloads.data",
-        frameworkUrl: buildUrl + "/Downloads.framework.js",
-        codeUrl: buildUrl + "/Downloads.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "Bagel Platformer",
-        productVersion: "1.0",
-      };
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4474724430572739"
+     crossorigin="anonymous"></script>
+    <title>Bagels!</title>
+<meta name=”Description” content=”Bagelcomics.com is a pretty cool website with stuff on it. Play some dope games, chat with other people from around the world, and browse some dank memes.”>
+    <style>
+      * {box-sizing: border-box}
 
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      var mobileWarning = document.querySelector("#unity-mobile-warning");
+/* Set height of body and the document to 100% */
+body, html {
+    z-index: inherit;
+      background-color: #222 ;
+/*   background-color: red; */
+  margin: 0;
+  font-family: roboto;
+}
+      
+      #bgiframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    border: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+}
+.tablink {
+  background-color: #444;
+/*   background-color: red; */
+  color: white;
+/*   color: yellow; */
+  float: left;
+  border: 3;
+  outline: none;
+  cursor: pointer;
+  padding: 5px 16px;
+      font-size: 16px;
+    font-size: 3vh;
+  width: 20%;
+  height: 10%;
+}
 
-      // By default Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
+.tablink:hover {
+  background-color: #666;
+/*   background-color: green; */
+}
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.tabcontent {
+/*   color: yellow; */
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+  font-size: 22px;
+}
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        container.className = "unity-mobile";
-        // Avoid draining fillrate performance on mobile devices,
-        // and default/override low DPI mode on mobile browsers.
-        config.devicePixelRatio = 1;
-        mobileWarning.style.display = "block";
-        setTimeout(() => {
-          mobileWarning.style.display = "none";
-        }, 5000);
-      } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
-      loadingBar.style.display = "block";
 
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
-    </script>
-  </body>
+#Home {
+   background-image: url("bagels!.png");
+    background-size:cover;
+  background-repeat:no-repeat;
+/*   background-color: red; */
+}
+#Memes {
+  background-color: #222 ;
+/*   background-color: red; */
+  }
+#About {
+  background-color: #222 ;
+/*     background-color: red; */
+}
+#Game {
+  background-color: #222 ;
+/*     background-color: red; */
+}
+#Comics {
+  background-color: #222 ;
+/*     background-color: red; */
+}
+
+</style>
+</head>
+<body>
+
+
+
+
+<script>
+
+
+  function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+function abert() {
+  alert("Oh hey you actually clicked me :)\nWell now that your reading I need to tell you about a secret\nThis website has a secret feature\nGo to the 'about' page, and click on the word 'years'");
+}
+
+// dots is an array of Dot objects,
+// mouse is an object used to track the X and Y position
+   // of the mouse, set with a mousemove event listener below
+var dots = [],
+    mouse = {
+      x: 0,
+      y: 0
+    };
+
+// The Dot object used to scaffold the dots
+var Dot = function() {
+  this.x = 0;
+  this.y = 0;
+  this.node = (function(){
+    var n = document.createElement("div");
+    n.className = "trail";
+    document.body.appendChild(n);
+    return n;
+  }());
+};
+// The Dot.prototype.draw() method sets the position of
+  // the object's <div> node
+Dot.prototype.draw = function() {
+  this.node.style.left = this.x + "px";
+  this.node.style.top = this.y + "px";
+};
+
+// Creates the Dot objects, populates the dots array
+for (var i = 0; i < 12; i++) {
+  var d = new Dot();
+  dots.push(d);
+}
+
+// This is the screen redraw function
+function draw() {
+  // Make sure the mouse position is set everytime
+    // draw() is called.
+  var x = mouse.x,
+      y = mouse.y;
+
+  // This loop is where all the 90s magic happens
+  dots.forEach(function(dot, index, dots) {
+    var nextDot = dots[index + 1] || dots[0];
+
+    dot.x = x;
+    dot.y = y + 5;
+    dot.draw();
+    x += (nextDot.x - dot.x) * .6;
+    y += (nextDot.y - dot.y) * .6;
+
+  });
+}
+
+addEventListener("mousemove", function(event) {
+  //event.preventDefault();
+  mouse.x = event.pageX;
+  mouse.y = event.pageY;
+});
+
+// animate() calls draw() then recursively calls itself
+  // everytime the screen repaints via requestAnimationFrame().
+function animate() {
+  draw();
+  requestAnimationFrame(animate);
+}
+
+// And get it started by calling animate().
+animate();
+
+</script>
+<button class="tablink" onclick="openPage('Home', this, '#222')" id="defaultOpen">Home</button>
+<button class="tablink" onclick="openPage('Memes', this, '#222')">Memes</button>
+<button class="tablink" onclick="openPage('About', this, '#222')">Social</button>
+    <button class="tablink" onclick="openPage('Game', this, '#222')">Games</button>
+    <button class="tablink" onclick="openPage('Comics', this, '#222')">About</button>
+
+<div id="Home" class="tabcontent">
+  <h1>Home</h1>
+  <body onload="showAlert()"></body>
+
+  <h2>Welcome to bagelcomics.com! We have some wacky stuff you can try out. You could play some games, look at some memes,  ̶r̶e̶a̶d̶ ̶s̶o̶m̶e̶ ̶c̶o̶m̶i̶c̶s̶ look at the about page, or chat with other people! :)</h2>
+    <h2>need to see if a OoCD quote is appropiate? Check out this <a href="checker.html">thing</a> I made</h2>
+  <h2>ADDED BACK SHOOTY BLOCK!</h2>
+
+<!-- ad bois -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4474724430572739"
+     data-ad-slot="4055551074"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  <p>Number of visits</p>
+<a href="https://www.hitwebcounter.com" target="_blank">
+<img src="https://hitwebcounter.com/counter/counter.php?page=7288119&style=0011&nbdigits=5&type=page&initCount=0" title="User Stats" Alt="PHP Hits Count"   border="0" >
+</a> 
+</div>
+
+<div id="Memes" class="tabcontent">
+  <h1>Memes</h1>
+  <p>ripe and dank memes</p>
+
+
+  <img src="https://inspirationfeed.com/wp-content/uploads/2020/05/dank-meme-68.jpg" width="400" class="center">
+  <img src="https://inspirationfeed.com/wp-content/uploads/2020/05/dank-meme-61.jpg" width="400" class="center">
+  <img src="https://inspirationfeed.com/wp-content/uploads/2020/05/dank-meme-60.png" width="400" class="center">
+  <img src="https://inspirationfeed.com/wp-content/uploads/2020/05/dank-meme-40.jpg" width="400" class="center">
+  <img src="https://inspirationfeed.com/wp-content/uploads/2020/05/dank-meme-15.png" width="400" class="center">
+  <img src="https://i.redd.it/he77atzsrza71.jpg" width="400" class="center">
+  <img src="https://i.redd.it/1zqfw903nya71.jpg" width="400" class="center">
+    <img src="https://i.redd.it/dyiv0tk2oza71.jpg" width="400" class="center">
+   <img src="https://preview.redd.it/pa2bopud6xa71.jpg?width=640&crop=smart&auto=webp&s=b9869e16d8b9bb842317689ba3d11179d5825be3" width="400" class="center">
+   <img src="https://preview.redd.it/np3nu8hywya71.jpg?width=640&crop=smart&auto=webp&s=f2d8145d6139f3cd93e45742904d0a495e34df5e" width="400" class="center">
+   <img src="https://i.redd.it/w7s0wrr8cya71.jpg" width="400" class="center">
+  <img src="https://preview.redd.it/xfrr2b88x0b71.png?width=640&crop=smart&auto=webp&s=45039281a786218f0c51baf609b4beab2445b519" width="400" class="center">
+  <img src="https://preview.redd.it/fcze4kc64e281.jpg?width=640&crop=smart&auto=webp&s=c3f20fec28b225017208d3c470f264d32183f4ea" width="400" class="center">
+  <img src="https://preview.redd.it/91cy9ysi7c281.jpg?width=640&crop=smart&auto=webp&s=80447ac5f39cec7b6887b0847bc3862322abb6af" width="400" class="center">
+  <img src="https://preview.redd.it/i5imsl27oa281.gif?width=640&format=mp4&s=4de45e38bb3b1b8c2ae9d301de04920b186fdd38" width="400" class="center">
+  <img src="https://i.redd.it/g3lk851xzc281.jpg" width="400" class="center">
+  <img src="https://preview.redd.it/6xl3l5ws58281.png?width=640&crop=smart&auto=webp&s=97fe0894fb4ee950b91b9c24cf4c1d3d0984dbe7" width="400" class="center">
+</div>
+
+<div id="About" class="tabcontent">
+  <h1>Social</h1>
+  <button onclick="abert()">Click me</button>
+  <h2>Cool Channels</h2>
+  
+  <h2>tired of chatting with people? check out this <a href="choose.html">chatbot</a> I made</h2>
+    <a href="https://www.youtube.com/channel/UCVsIuX-_vHvdMG7ffTlDQLA">Weird Wontons</a>
+      <a href="https://www.youtube.com/channel/UCSd4Iwf2p6o1OpdkepfC94w">JackOfAllTrades</a>
+      <a href="https://www.youtube.com/channel/UCT9jbWNkrxNBmXthZeG_crw">Master Bagel</a>
+      <a href="https://www.youtube.com/watch?v=iik25wqIuFo">Apollo and Friends</a>
+  <iframe src="chatindex.html" style="height:100%;width:100%" title="Iframe Example"></iframe>
+  
+</div>
+
+     <div id="Game" class="tabcontent">
+       <h1>Games</h1>
+       <h2>Games I DIDN'T make</h2>
+             <h2><a href="https://shooter--matthewsheppard.repl.co/">SHOOTY BLOCK!</a> 
+        <h2><a href="doom.html">Run 3</a> 
+        <h2><a href="ninja.html">Menja</a> 
+       <h2><a href="asteroids.html">Asteroids</a> 
+       <h2><a href="carindex.html">Hue Jumper</a> 
+        <h2><a href="jumpgame.html">Jump Game</a> 
+       	<h2><a href="slideyblock.html">Slidey Block</a> 
+        <h2><a href="shooter.html">Shooter Gaem</a> 
+        <h2><a href="zombie.html">Zombies</a> 
+             <h2><a href="slope.html">Slope(unblocked)</a> 
+                            <h2><a href="space.html">Space Invaders</a> 
+                                                          <h2><a href="rolling.html">Rolling Sky</a> 
+          
+                 <h2>Games I DID make</h2>
+                  <h2><a href="bagelwithagun.html">Bagel With a Gun</a> 
+   
+
+       <iframe src="https://scratch.mit.edu/projects/524470702/embed" allowtransparency="true" width="100%" height="200%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
+       <iframe src="https://scratch.mit.edu/projects/506746593/embed" allowtransparency="true" width="100%" height="200%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
+       <iframe src="https://scratch.mit.edu/projects/324436049/embed" allowtransparency="true"  width="100%" height="200%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
+       <iframe src="https://scratch.mit.edu/projects/386422379/embed" allowtransparency="true"  width="100%" height="200%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
+       <iframe src="https://scratch.mit.edu/projects/428683299/embed" allowtransparency="true"  width="100%" height="200%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
+       <iframe src="https://scratch.mit.edu/projects/406300826/embed" allowtransparency="true"  width="100%" height="200%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
+       <iframe src="https://scratch.mit.edu/projects/385038281/embed" allowtransparency="true"  width="100%" height="200%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
+       <iframe src="https://scratch.mit.edu/projects/385424031/embed" allowtransparency="true"  width="100%" height="200%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
+       <iframe src="https://scratch.mit.edu/projects/595497446/embed" allowtransparency="true"  width="100%" height="200%" frameborder="0" scrolling="no" allowfullscreen="true"></iframe>
+</div>
+<div id="Comics" class="tabcontent">
+  <h1>About</h1>
+  <h2>Yo ok this website has been a project of mine for a couple <a style="text-decoration: none; color: inherit;" href="oldindex.html">years </a>now. And I know it's not the best website out there, but I have learned so much from making it. Thanks for checking it out :)</h2>
+  <h4>This was made by a person</h4>
+  <h5>Join the <a href="https://discord.gg/xEwt8W5utF">Discord server</a></h5>
+    <h5>Join the <a href="https://discord.gg/E5VVEG3QDe">Nerd Herd</a>discord server. (only friends allowed)</h5>
+  <h5>Email me at weirdwontons@gmail.com</h5>
+
+</div>
+</body>
 </html>
