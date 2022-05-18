@@ -1,3 +1,7 @@
+let scrollID;
+let stopped = true;
+let scrollSpeed = 2; // 1 - Fast | 2 - Medium | 3 - Slow
+let scrollInterval = scrollSpeed * 3;
 // PS! Replace this with your own channel ID
 // If you use this channel ID your app will stop working in the future
 const CLIENT_ID = '4g2JP9Qwzlu7VX3m';
@@ -120,12 +124,37 @@ function createMessageElement(text, member) {
   el.className = 'message';
   return el;
 }
+function startScrolling(){
+ let ID = setInterval(function() {
+   window.scrollBy(0, 2);
+     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        // Reached end of page
+        stopScroll();
+     }
+   }, scrollInterval);
+ return ID;
+  
+}
+function stopScroll() {
+ clearInterval(scrollID);
+}
 
 function addMessageToListDOM(text, member) {
+  
   const el = DOM.messages;
   const wasTop = el.scrollTop === el.scrollHeight - el.clientHeight;
   el.appendChild(createMessageElement(text, member));
   if (wasTop) {
     el.scrollTop = el.scrollHeight - el.clientHeight;
+    
   }
+       if(stopped == true) {
+       scrollID = startScrolling();
+       stopped = false;
+     }else {
+       stopScroll();
+       stopped = true;
+     }
 }
+
+
