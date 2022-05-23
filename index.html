@@ -200,7 +200,7 @@ body, html {
                        <script>
 
 
-  function openPage(pageName,elmnt,color) {
+function openPage(pageName,elmnt,color) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -213,14 +213,11 @@ body, html {
   document.getElementById(pageName).style.display = "block";
   elmnt.style.backgroundColor = color;
 }
-function Onload(){
-    document.getElementById("home").click();
 
-}
-                         
-document.addEventListener("DOMContentLoaded", function() {
-  Onload();
-});
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("home").click();
+
+
 
 function abert() {
   alert("Oh hey you actually clicked me :)\nWell now that your reading I need to tell you about a secret\nThis website has a secret feature\nGo to the 'about' page, and click on the word 'years'");
