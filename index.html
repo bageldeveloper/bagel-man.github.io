@@ -72,7 +72,8 @@ body, html {
     height: 10%;
       }
 #Home {
-     background-color: #222 ;
+       background-color: #222 ;
+
 /*   background-color: red; */
 }
 
@@ -212,10 +213,14 @@ body, html {
   document.getElementById(pageName).style.display = "block";
   elmnt.style.backgroundColor = color;
 }
-
+function Onload(){
     document.getElementById("home").click();
-// Get the element with id="defaultOpen" and click on it
 
+}
+                         
+document.addEventListener("DOMContentLoaded", function() {
+  Onload();
+});
 
 function abert() {
   alert("Oh hey you actually clicked me :)\nWell now that your reading I need to tell you about a secret\nThis website has a secret feature\nGo to the 'about' page, and click on the word 'years'");
