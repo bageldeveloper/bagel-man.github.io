@@ -5,24 +5,64 @@
       </head>
     <body>
       <style>
-        
+        body{
+          background-color: #361422;
+        }
+        .button{
+          background-color: #b3b3b3;
+          color: #101114;
+          border-radius: 20px;
+          padding: 15px;
+          border-width: 5px;
+          font-size: 50px;
+          border-color: #4a4a4a;
+          text-shadow: 10px;
+          box-shadow: 5px 10px #141414;
+          text-shadow: 2px 2px #4a4a4a;
+          text-align: center;
+        }
+        .center{
+          text-align: center;
+        }
+        .line{
+          text-shadow: 2px 2px #4a4a4a;
+          text-align: center;
+          color: #b3b3b3;
+          margin: 50px;
+          font-size: 50px;
+          margin-bottom: 300px;
+          margin-top: 300px;
+        }
       </style>
       
-      <script>
+     <script>
         var lines = [
-          'sus',
-          'insert line here',
-          'lol',
-          'benas
+                'Are you a magnet? because your attractive.',
+            'Are you suicide? Cuz I wanna do you.',
+            'Did you fart? Because you blow me away.',
+        'Please date me',
+        'Call Area 51, cuz you outta this world',
+        'Good thing I have my library card, because I’m checking you out.',
+        'My love for you is like diarrhea, I just can’t hold it in',
+        'I like my women like I like my coffee, ground up in a can.',
+        'Are you a rope? Cuz I’d hang with you.',
+        'Are you a toaster? Cuz I wanna bathe with you',
+        'Hi'
+
           ];
-        function newQuote(){
-          
-          
+        function newLine(){
+          var randomNumber = Math.floor(Math.random() * lines.length);
+          document.getElementById('lineDisplay').innerHTML = lines[randomNumber];
         }
         
       </script>
       
-      <div id="quoteDisplay">
+      <div class="line" id="lineDisplay">
         
       </div>
-      <button onclick="newLine()">Generate</button>
+      <div class="center">
+
+      <button class="button" onclick="newLine()">Generate</button>
+      </div>
+</body>
+</html>
