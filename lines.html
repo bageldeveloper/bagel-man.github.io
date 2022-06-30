@@ -20,17 +20,25 @@
           box-shadow: 5px 10px #141414;
           text-shadow: 2px 2px #4a4a4a;
           text-align: center;
+
+   
+        
         }
         .center{
-          text-align: center;
+
+               position: fixed;
+          bottom: 30%;
+          left: 50%;
+  transform: translate(-50%, -50%);
         }
+        
         .line{
           text-shadow: 2px 2px #4a4a4a;
-          text-align: center;
+
           color: #b3b3b3;
           margin: 50px;
           font-size: 50px;
-          margin-bottom: 300px;
+                    text-align: center;
           margin-top: 300px;
         }
       </style>
@@ -113,41 +121,39 @@
 'Hi, my name is (your name), but you can call me tonight or tomorrow.',
           'Are you a bomb? because i want to drop you onto my enemies.',
           'I lost my teddy bear so will you sleep with me tonight?',
-'Are you a purple scar because I'm checking you out',
+'Are you a purple scar because Im checking you out',
 'Girl are you a scar because you are golden',
 'Girl are you a victory royale because you are my only 1 out of 100',
-'If you are a default, I'll carry you all night long',
+'If you are a default, Ill carry you all night long',
 'Are you a block of dirt? because I dig you',
 'Are you a lever? because you turn me on',
 'Are you an enderman because I wanna look you in the eyes',
-'I must be gravel blocks, or sand, because I'm falling for you',
+'I must be gravel blocks, or sand, because Im falling for you',
 'Redstone is red, Lapis is blue. I would sacrifice my diamonds just to be with you.',
 'Will you go on a date with me? Come over to my place, I will prepare a feast of roasted pork and golden apples.',
 'You have beautiful skin.',
 'You must be from nether, because you are out of this world.',
-'Are you my mom because I'd always listen to you',
+'Are you my mom because Id always listen to you',
 'Sometimes I look straight up at the sun so I can look down at you and say how bright you are',
-'I must be a Rubik's cube. The more you mess with me, the harder I get.',
+'I must be a Rubiks cube. The more you mess with me the harder I get.',
 'Are you trash? Because I just wanna take you out.',
 'I’m a piece of trash. If you care about the environment you should pick me up.',
 'Girl, I will be your pajamas tonight. Because no matter what, I will be there for you at the end of the day.',
 'Are you a mirror? Because I would cherish you. Breaking you means bad luck.',
-'Here's a picture of my girlfriend. *holds up a mirror*.',
+'Heres a picture of my girlfriend. *holds up a mirror*.',
 'Date me or I’ll stab you :)'
-
-          ];
+      ];
         function newLine(){
           var randomNumber = Math.floor(Math.random() * lines.length);
           document.getElementById('lineDisplay').innerHTML = lines[randomNumber];
         }
         
       </script>
-      
-      <div class="line" id="lineDisplay">
-        
-      </div>
-      <div class="center">
 
+      <div class="line" id="lineDisplay">
+      </div>
+
+                  <div class="center">
       <button class="button" onclick="newLine()">Generate</button>
       </div>
 </body>
