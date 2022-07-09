@@ -1,1 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Who Asked?</title>
+</head>
+<style>
+  body{
+    font-family: 'Arvo', serif;
+font-family: 'Poppins', sans-serif;
+    background-color: #262626;
+    color: #dbdbdb;
+  }
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+h1{
+    text-align: center;
+  }
+ h2{
+     text-align: center;
+  }
+  .button{
+       text-align: center; 
+  }
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: #f75454;
+}
+  .butt{
+    border-radius: 20px;
+          padding: 15px;
+          border-width: 5px;
+          font-size: 50px;
+          border-color: #4a4a4a;
+          text-shadow: 10px;
+          box-shadow: 5px 10px #141414;
+          text-shadow: 2px 2px #4a4a4a;
+          text-align: center; 
+  }
+</style>
+<body>
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo&family=Poppins:wght@500&display=swap" rel="stylesheet">
+<h1>Who Asked?</h1>
+  <h2>This application searches the entirety of the internet to find who asked.</h2>
+<div id="myProgress">
+  <div id="myBar"></div>
+</div>
 
+<br>
+  <h2 id="stat"></h2>
+  <div class="button">
+<button class="butt" onclick="move()">Search</button> 
+  </div>
+<script>
+var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    document.getElementById("stat").innerHTML = "Loading...";
+    var id = setInterval(frame, 130);
+    function frame() {
+      if (width >= 100) {
+        document.getElementById("stat").innerHTML = "No results found.";
+        clearInterval(id);
+        i = 0;
+      } else {
+        
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>
