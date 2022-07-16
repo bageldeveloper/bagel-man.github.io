@@ -10,8 +10,7 @@ const getNewYear = () => {
 };
 
 // update the year element
-const year = document.querySelector('.year');
-year.innerHTML = getNewYear().getFullYear();
+
 
 // select elements
 const app = document.querySelector('.countdown-timer');
@@ -21,6 +20,8 @@ const heading = document.querySelector('h1');
 
 
 const render = (time) => {
+    newPageTitle = time.days + " days " + time.hours  + " hrs "  + time.minutes  + " mins " + time.seconds + " secs";
+    document.title = newPageTitle;
     app.innerHTML = `
         <div class="count-down">
             <div class="timer">
