@@ -1,16 +1,45 @@
+var date = 1;
+
+function year(){
+    date = 2;
+}
+function christ(){
+    date = 3;
+}
+function hallo(){
+    date = 4;
+}
 // Get the new year 
 const getNewYear = () => {
     const currentYear = new Date().getFullYear();
     const currentMonth = new Date().getMonth();
     const currentDay = new Date().getDay();
+    if(date == 1){
     if(currentDay < 20 && currentMonth <= 4){
         return new Date(`April 20 ${currentYear} 00:00:00`);
     }
     return new Date(`April 20 ${currentYear + 1} 00:00:00`);
+}
+if(date == 2){
+
+    return new Date(`January 1 ${currentYear + 1} 00:00:00`);
+}
+if(date == 3){
+    if(currentDay < 25 && currentMonth <= 12){
+        return new Date(`December 25 ${currentYear} 00:00:00`);
+    }
+    return new Date(`December 25 ${currentYear + 1} 00:00:00`);
+}
+if(date == 4){
+    if(currentDay < 31 && currentMonth <= 10){
+        return new Date(`October 31 ${currentYear} 00:00:00`);
+    }
+    return new Date(`October 31 ${currentYear + 1} 00:00:00`);
+}
 };
 
 // update the year element
-
+var date = 1;
 
 // select elements
 const app = document.querySelector('.countdown-timer');
@@ -46,7 +75,7 @@ const render = (time) => {
 
 
 const showMessage = () => {
-    message.innerHTML = `teehee funny number day!`;
+    message.innerHTML = `les go its the holiday!`;
     app.innerHTML = '';
     heading.style.display = 'none';
 };
