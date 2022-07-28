@@ -3,33 +3,35 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/png" href="weed.png" />
+    <link rel="icon" type="image/png" href="santahat.png" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4/20 countdown</title>
+    <title>Christmas Countdown</title>
 </head>
 
 <body>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Arvo&family=Poppins:wght@500&family=Square+Peg&display=swap');
 
 body{
-    background-image: url("image0.jpeg");
-background-repeat: no-repeat;
-background-size: cover;
-    font-family: 'Rubik Bubbles', cursive;
+    font-family: 'Arvo', serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Square Peg', cursive;
+background-image: url("winter.jpg");
+
+
     color: rgb(19, 19, 19);
     text-shadow: -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke, 1px 1px 0 whitesmoke;
 }
 h1 {
     text-align: center;
-    font-size: 300%;
+    font-size: 600%;
     margin: 10px 0 40px;
 }
 
 .count-down {
     text-align: center;
-    font-size: 80px;
+    font-size: 150px;
     font-weight: bold;
 
     display: flex;
@@ -87,13 +89,13 @@ small {
     }
 
     .timer h2 {
-        font-size: 30px;
+        font-size: 70px;
         margin: 0;
         text-align: center;
     }
 
     .timer small {
-        font-size: 12px;
+        font-size: 24px;
     }
 
     .year {
@@ -106,14 +108,14 @@ small {
     }
 }
 
-
   </style>
   <script src="countdown.js"></script>
 
 
-    <h1>4/20 countdown</h1>
+    <h1>Christmas Countdown</h1>
     <div class="countdown-timer"></div>
     <div class="message"></div>
+
 
 
 
@@ -124,16 +126,15 @@ const getNewYear = () => {
     const currentMonth = new Date().getMonth();
     const currentDay = new Date().getDay();
 
-    if(currentDay < 20 && currentMonth <= 4){
-        return new Date(`April 20 ${currentYear} 00:00:00`);
+    if(currentDay < 25 && currentMonth <= 12){
+        return new Date(`December 25 ${currentYear} 00:00:00`);
     }
-    return new Date(`April 20 ${currentYear + 1} 00:00:00`);
+    return new Date(`December 25 ${currentYear + 1} 00:00:00`);
 }
 
 
 
 </script>
-
 <script src="app.js"></script>
 </body>
 </html>

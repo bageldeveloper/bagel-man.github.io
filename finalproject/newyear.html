@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="rocket.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Years Countdown</title>
+</head>
+
+<body>
+
+  <script src="countdown.js"></script>
+
+
+    <h1>New Years Countdown</h1>
+    <div class="countdown-timer"></div>
+    <div class="message"></div>
+
+
+
+<script>
+
+const getNewYear = () => {
+    const currentYear = new Date().getFullYear();
+    const currentMonth = new Date().getMonth();
+    const currentDay = new Date().getDay();
+
+    return new Date(`Janurary 1 ${currentYear + 1} 00:00:00`);
+}
+
+
+
+</script>
+
+<script src="app.js"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+ 
+ 
+ 
+ body{
+     font-family: 'Lobster', cursive;
+ background-image: url("fireworks.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+     color: rgb(19, 19, 19);
+     text-shadow: -1px -1px 0 whitesmoke, 1px -1px 0 whitesmoke, -1px 1px 0 whitesmoke, 1px 1px 0 whitesmoke;
+     font-size: 130%;
+ }
+ h1 {
+     text-align: center;
+     font-size: 400%;
+     margin: 10px 0 40px;
+ }
+ 
+ 
+ .count-down {
+     text-align: center;
+     font-size: 90px;
+     font-weight: bold;
+ 
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ 
+ .days{
+     font-size: 200%;
+ }
+ .hours{
+     font-size: 200%;
+ }
+ .minutes{
+     font-size: 200%;
+ }
+ .seconds{
+     font-size: 200%;
+ }
+ .timer {
+ 
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     margin: 15px;
+ }
+ 
+ .timer h2 {
+     margin: 0 0 20px;
+     font-size: 4rem;
+ }
+ 
+ 
+ .message {
+     font-size: 60px;
+     font-size: bold;
+ }
+ 
+ 
+ small {
+     padding-top: 5px;
+     font-size: 1.5rem;
+     text-transform: uppercase;
+     display: block;
+ }
+ 
+ .year {
+     font-size: 1000%;
+     z-index: -1;
+     opacity: 0;
+     position: absolute;
+     bottom: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     margin: 0;
+ }
+ 
+ @media (max-width: 500px) {
+     h1 {
+         font-size: 22px;
+     }
+ 
+     .timer {
+         margin: 5px;
+     }
+ 
+     .timer h2 {
+         font-size: 30px;
+         margin: 0;
+         text-align: center;
+     }
+ 
+     .timer small {
+         font-size: 12px;
+     }
+ 
+     .year {
+         font-size: 100px;
+ 
+     }
+ 
+     .message {
+         font-size: 25px;
+     }
+ }
+ 
+   </style>
+</body>
+</html>
