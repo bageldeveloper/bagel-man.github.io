@@ -113,9 +113,13 @@ body, html {
       text-align: center;
     
       }
+.anountext{
+  font-size: 150%;
+   color: #222;
+}
 .announcement {
-  text-color: #222;
-  margin: auto;
+
+
 
   border-radius: 15px;
   
@@ -125,7 +129,18 @@ body, html {
     margin-top: 20px;
    margin-bottom: 20px
 }
-
+        #moreText {
+  
+            /* Display nothing for the element */
+            display: none;
+        }
+.showbutton{
+    background-color: #ebebeb;
+    text-color: #222;
+    margin: auto;
+border-size: none;
+  border-radius: 5px;
+}
 
 </style>
 </head>
@@ -150,18 +165,15 @@ body, html {
 
 <div class="announcement">
 <h1 class="anountext">September 8th, 2022</h1>
-<h1 class="anountext"></h1>
+<h1 class="anountext">I made the announcements fancy, its pretty great</h1>
 </div>
-        <span id="points">...</span>
+        <span id="points"></span>
        <span id="moreText">
          <div class="announcement">
-<h1 class="anountext">April 18th, 2022</h1>
-<h1 class="anountext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>
+<h1 class="anountext">September 6th, 2022</h1>
+<h1 class="anountext">Added a fancy font, tell me if you like it</h1>
 </div>
-         <div class="announcement">
-<h1 class="anountext">April 10th, 2022</h1>
-<h1 class="anountext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>
-</div>
+
         </span>
     <button class="showbutton" onclick="toggleText()" id="textButton">
         Show All
@@ -276,7 +288,52 @@ body, html {
 </div>
                        <script>
 
-
+ function toggleText() {
+  
+            // Get all the elements from the page
+            var points = 
+                document.getElementById("points");
+  
+            var showMoreText =
+                document.getElementById("moreText");
+  
+            var buttonText =
+                document.getElementById("textButton");
+  
+            // If the display property of the dots 
+            // to be displayed is already set to 
+            // 'none' (that is hidden) then this 
+            // section of code triggers
+            if (points.style.display === "none") {
+  
+                // Hide the text between the span
+                // elements
+                showMoreText.style.display = "none";
+  
+                // Show the dots after the text
+                points.style.display = "inline";
+  
+                // Change the text on button to 
+                // 'Show More'
+                buttonText.innerHTML = "Show More";
+            }
+  
+            // If the hidden portion is revealed,
+            // we will change it back to be hidden
+            else {
+  
+                // Show the text between the
+                // span elements
+                showMoreText.style.display = "inline";
+  
+                // Hide the dots after the text
+                points.style.display = "none";
+  
+                // Change the text on button
+                // to 'Show Less'
+                buttonText.innerHTML = "Show Less";
+            }
+        }
 function openPage(pageName,elmnt,color) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
