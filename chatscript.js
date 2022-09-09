@@ -64,7 +64,7 @@ drone.on('error', error => {
 
 function getRandomName() {
   const adjs = ["thicc", "cool", "awesome", "big", "tubular", "radical", "wacky", "chunky", "stupid", "slimey", "hot", "spicy", "juicy", "sussy", "sexy", "grilled", "hairy", "moist"];
-  const nouns = ["dude", "bro", "bagel", "toothbrush", "mustard", "tree", "meme", "peanut_butter", "dumpling", "water", "leg", "baka", "sterling", "headphones", "turtle", "sewer", "sausage", "lamp", "gamer", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"];
+  const nouns = ["dude", "bro", "bagel", "toothbrush", "mustard", "tree", "meme", "peanut_butter", "dumpling", "water", "leg", "baka", "headphones", "turtle", "sewer", "sausage", "lamp", "gamer"];
   return (
     adjs[Math.floor(Math.random() * adjs.length)] +
     "_" +
@@ -110,7 +110,7 @@ function createMemberElement(member) {
 }
 
 function updateMembersDOM() {
-  DOM.membersCount.innerText = `${members.length} users in room:`;
+  DOM.membersCount.innerText = `${members.length} nerds in room:`;
   DOM.membersList.innerHTML = '';
   members.forEach(member =>
     DOM.membersList.appendChild(createMemberElement(member))
