@@ -1,5 +1,6 @@
 <html>
   <head>
+    <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
@@ -45,7 +46,7 @@ body, html {
   padding: 5px 16px;
       font-size: 16px;
     font-size: 3vh;
-  width: 25%;
+  width: 20%;
   height: 100%;
   
 }
@@ -84,6 +85,10 @@ body, html {
   background-color: #222 ;
 /*     background-color: red; */
 }
+      #Projects {
+  background-color: #222 ;
+/*     background-color: red; */
+}
 #Comics {
   background-color: #222 ;
 /*     background-color: red; */
@@ -114,7 +119,7 @@ body, html {
     
       }
 .anountext{
-  font-size: 150%;
+  font-size: 100%;
    color: #222;
 }
 .announcement {
@@ -142,17 +147,89 @@ border-size: none;
   border-radius: 5px;
 }
 
+    .members-count,
+    .members-list,
+    .messages {
+            border-radius: 15px;
+      color: #171717;
+      border: 1px solid #e4e4e4;
+      padding: 15px;
+      margin-bottom: 15px;
+          background-color: #d9d9d9;
+    }
+
+    .messages {
+            border-radius: 15px;
+            color: #171717;
+      flex-shrink: 1;
+      overflow: auto;
+          background-color: #d9d9d9;
+    }
+
+    .message {
+            border-radius: 15px;
+            color: #171717;
+            color: #171717;
+      padding: 5px 0;
+      background-color: #d9d9d9;
+    }
+    .message .member {
+            border-radius: 15px;
+            color: #171717;
+            color: #171717;
+      display: inline-block;
+    }
+
+    .member {
+            border-radius: 15px;
+            color: #171717;
+            color: #171717;
+      padding-right: 10px;
+      position: relative;
+          background-color: #d9d9d9;
+    }
+
+    .message-form {
+            border-radius: 15px;
+            color: #171717;
+      display: flex;
+      flex-shrink: 0;
+    }
+    .message-form__input {
+            border-radius: 15px;
+            color: #171717;
+      flex-grow: 1;
+      border: 1px solid #dfdfdf;
+      padding: 10px 15px;
+      font-size: 16px;
+      background-color: #d9d9d9; 
+    }
+    .message-form__button {
+
+            color: #171717;
+      margin: 10px;
+      padding-left: 10px;
+            padding-right: 10px;
+      padding-top: 5px;
+            padding-bottom: 5px;
+
+                background-color: #d9d9d9;
+      border-width: 2px;
+      border-radius: 15px;
+    }
+
 </style>
 </head>
 <body>
 
 
+ 
 
 
 
   <div class="navbar">
 <button class="tablink" onclick="openPage('Home', this, '#222')"  id="home">Home</button>
-
+<button class="tablink" onclick="openPage('Projects', this, '#222')">Projects</button>
 <button class="tablink" onclick="openPage('About', this, '#222')">Social</button>
     <button class="tablink" onclick="openPage('Game', this, '#222')">Games</button>
     <button class="tablink" onclick="openPage('Comics', this, '#222')">About</button>
@@ -164,11 +241,15 @@ border-size: none;
   <h1>Announcements:</h1>
 
 <div class="announcement">
-<h1 class="anountext">September 8th, 2022</h1>
-<h1 class="anountext">I made the announcements fancy, its pretty great</h1>
+<h1 class="anountext">September 9th, 2022</h1>
+<h1 class="anountext">DND club is going to be on tuesdays after school in the downstairs A-pod</h1>
 </div>
         <span id="points"></span>
        <span id="moreText">
+         <div class="announcement">
+<h1 class="anountext">September 8th, 2022</h1>
+<h1 class="anountext">I made the announcements fancy, its pretty great</h1>
+</div>
          <div class="announcement">
 <h1 class="anountext">September 6th, 2022</h1>
 <h1 class="anountext">Added a fancy font, tell me if you like it</h1>
@@ -209,21 +290,32 @@ border-size: none;
 </div>
 
 
-
-<div id="About" class="tabcontent">
-  <h1>Social</h1>
-  <button onclick="abert()">Click me</button>
-
+<div id="Projects" class="tabcontent">
+   <button onclick="abert()">Click me</button>
       <h2>need to see if a OoCD quote is appropiate? Check out this <a href="checker.html">thing</a> I made</h2>
   <h2>tired of chatting with people? check out this <a href="choose.html">chatbot</a> I made</h2>
   <h2>need a date? check out this <a href="lines.html">pickup line Generator</a> I made</h2>
+    <h2>Check out this<a href="finalproject/index.html">countdown timer</a> I made for CS50</h2>
+      <h2>For national history day I made this<a href="finalproject/index.html">website</a>, don't judge too harshly its kinda bad</h2>
 
     <h2>Cool Channels</h2>
     <a href="https://www.youtube.com/channel/UCVsIuX-_vHvdMG7ffTlDQLA">Weird Wontons</a>
       <a href="https://www.youtube.com/channel/UCSd4Iwf2p6o1OpdkepfC94w">JackOfAllTrades</a>
       <a href="https://www.youtube.com/channel/UCT9jbWNkrxNBmXthZeG_crw">Master Bagel</a>
       <a href="https://www.youtube.com/watch?v=iik25wqIuFo">Apollo and Friends</a>
-  <iframe src="chatindex.html" style="height:100%;width:100%" title="Iframe Example"></iframe>
+  </div>
+
+<div id="About" class="tabcontent">
+  
+  <h1>Social</h1>
+
+   <div class="members-count">-</div>
+  <div class="members-list">-</div>
+  <div class="messages"></div>
+  <form class="message-form" onsubmit="return false;">
+    <input class="message-form__input" placeholder="Type something.." type="text"/>
+    <input class="message-form__button" value="Send" type="submit"/>
+  </form>
   
 </div>
 
@@ -358,5 +450,6 @@ function abert() {
 }
 
 </script>
+   <script src="./chatscript.js"></script>
 </body>
 </html>
