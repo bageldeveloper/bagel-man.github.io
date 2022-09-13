@@ -140,8 +140,8 @@ function stopScroll() {
 }
 
 function addMessageToListDOM(text, member) {
- if(text.match(/(amongus|sus|test)/gi)){
-     return;
+ if(text.match(/(pp|ass|bitch|shit|cunt|cock|dick|fuck|hell|shit|nigger|nigga|pussy|slut|whore|faggot)/gi)){
+     text = "I am a stupid idiot and I suck";
      }
   const el = DOM.messages;
   const wasTop = el.scrollTop === el.scrollHeight - el.clientHeight;
