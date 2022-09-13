@@ -140,7 +140,8 @@ function stopScroll() {
 }
 
 function addMessageToListDOM(text, member) {
-  if(text.match(/(amongus|sus|test)/gi)){
+  const badwords = ["sus", "test", "amongus"];
+  if(badwords.some(v => text.includes(v)))){
      return;
      }
   const el = DOM.messages;
