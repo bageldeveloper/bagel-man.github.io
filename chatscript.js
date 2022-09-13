@@ -140,7 +140,7 @@ function stopScroll() {
 }
 
 function addMessageToListDOM(text, member) {
-  if(text.includes("butt", "amongus"){
+  if(text.match(/(amongus|sus|test)/gi)){
      return;
      }
   const el = DOM.messages;
