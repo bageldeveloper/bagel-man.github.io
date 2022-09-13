@@ -140,7 +140,7 @@ function stopScroll() {
 }
 
 function addMessageToListDOM(text, member) {
- if(text.match(/(pp|ass|bitch|shit|cunt|cock|dick|fuck|hell|shit|nigger|nigga|pussy|slut|whore|faggot)/gi)){
+ if(text.match(/(pp|ass|bitch|shit|cunt|cock|dick|fuck|hell|shit|nigger|nigga|pussy|slut|whore|faggot|tom sucks)/gi)){
      text = "I am a stupid idiot and I suck";
      }
   const el = DOM.messages;
