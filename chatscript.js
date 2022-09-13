@@ -140,7 +140,9 @@ function stopScroll() {
 }
 
 function addMessageToListDOM(text, member) {
-  
+  if(text.includes("butt", "amongus"){
+     return;
+     }
   const el = DOM.messages;
   const wasTop = el.scrollTop === el.scrollHeight - el.clientHeight;
   el.appendChild(createMessageElement(text, member));
