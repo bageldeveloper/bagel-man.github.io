@@ -390,6 +390,9 @@ function updateMembersDOM() {
 }
 
 
+//dont look at this next part if you are sensitive to swear words
+
+
 
 
 
@@ -397,7 +400,11 @@ function updateMembersDOM() {
 
 function createMessageElement(text, member) {
 
-if(text.match(/(pp|ass|bitch|shit|cunt|cock|dick|fuck|hell|shit|nigger|nigga|pussy|slut|whore|faggot|tom sucks)/gi)){
+
+
+
+
+if(text.match(/(pp|ass|bitch|shit|cunt|cock|dick|fuck|hell|shit|nigger|nigga|pussy|slut|whore|faggot|handjob|penis|cock|pussy|sex)/gi)){
      return;
      }
 
