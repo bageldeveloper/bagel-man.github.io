@@ -6,7 +6,7 @@ let scrollID;
 let stopped = true;
 
 
-let scrollSpeed = 2; // 1 - Fast | 2 - Medium | 3 - Slow
+let scrollSpeed = 1; // 1 - Fast | 2 - Medium | 3 - Slow
 
 
 let scrollInterval = scrollSpeed * 3;
@@ -300,6 +300,39 @@ DOM.form.addEventListener('submit', sendMessage);
 
 
 
+function startScrolling(){
+
+
+let ID = setInterval(function() {
+
+
+  window.scrollBy(0, 2);
+
+
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+
+
+       // Reached end of page
+
+
+       stopScroll();
+
+
+    }
+
+
+  }, scrollInterval);
+
+
+return ID;
+
+
+
+
+
+
+}
+
 
 
 function sendMessage() {
@@ -404,7 +437,7 @@ function createMessageElement(text, member) {
 
 
 
-if(text.match(/(pp|ass|bitch|shit|cunt|cock|dick|fuck|hell|shit|nigger|nigga|pussy|slut|whore|faggot|handjob|penis|cock|pussy|sex)/gi)){
+if(text.match(/(pp|ass|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|slut|whore|faggot|handjob|penis|cock|pussy|sex)/gi)){
      return;
      }
 
@@ -419,45 +452,12 @@ if(text.match(/(pp|ass|bitch|shit|cunt|cock|dick|fuck|hell|shit|nigger|nigga|pus
 
  el.className = 'message';
 
-
+startScrolling();
  return el;
 
 
 }
 
-
-function startScrolling(){
-
-
-let ID = setInterval(function() {
-
-
-  window.scrollBy(0, 2);
-
-
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-
-
-       // Reached end of page
-
-
-       stopScroll();
-
-
-    }
-
-
-  }, scrollInterval);
-
-
-return ID;
-
-
-
-
-
-
-}
 
 
 function stopScroll() {
