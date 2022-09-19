@@ -450,9 +450,40 @@ if(text.match(/(ass|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|slut|
  el.appendChild(document.createTextNode(text));
 
 
+ if (wasTop) {
+
+
+   el.scrollTop = el.scrollHeight - el.clientHeight;
+
+
+  
+
+
+ }
+
  el.className = 'message';
 
-startScrolling();
+     if(stopped == true) {
+
+
+      scrollID = startScrolling();
+
+
+      stopped = false;
+
+
+    }else {
+
+
+      stopScroll();
+
+
+      stopped = true;
+
+
+    }
+
+
  return el;
 
 
