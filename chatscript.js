@@ -437,7 +437,7 @@ function createMessageElement(text, member) {
 
 
 
-if(text.match(/(pp|ass|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|slut|whore|faggot|handjob|penis|cock|pussy|sex)/gi)){
+if(text.match(/(ass|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|slut|whore|faggot|handjob|penis|cock|pussy|sex)/gi)){
      return;
      }
 
