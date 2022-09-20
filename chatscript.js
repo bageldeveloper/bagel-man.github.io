@@ -2,7 +2,9 @@ let scrollID;
 
 
 
-
+  const coolDown = 1500 // 5s cooldown
+  let lastClick = Date.now() - coolDown // to start fresh
+  
 let stopped = true;
 
 
@@ -332,13 +334,25 @@ return ID;
 
 
 }
-
+  function startCoolDown () {
+    lastClick = Date.now() // maybe useless function
+  }
+  function checkCoolDown () {
+    const notOver = Date.now() - lastClick < coolDown
+    if (notOver) alert('ayo dude stop spamming')
+    // using an alert it will block javascript loops
+    return !notOver
+  }
 
 
 function sendMessage() {
 
 
- const value = DOM.input.value;
+
+  
+    if (checkCoolDown()) {
+      startCoolDown()
+const value = DOM.input.value;
 
 
  if (value === '') {
@@ -365,7 +379,12 @@ function sendMessage() {
  });
 
 
+
+      // do your stuff with arguments here
+    }
 }
+
+ 
 
 
 
@@ -437,7 +456,7 @@ function createMessageElement(text, member) {
 
 
 
-if(text.match(/(ass|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|slut|whore|faggot|handjob|penis|cock|pussy|sex)/gi)){
+if(text.match(/(黑鬼|ass|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|slut|whore|faggot|handjob|penis|cock|pussy|sex)/gi)){
      return;
      }
 
