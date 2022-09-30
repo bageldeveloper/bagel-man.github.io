@@ -219,25 +219,27 @@ drone.on('error', error => {
 function getRandomName() {
 
 
- const adjs = ["spooky", "scary", "creepy", "plump", "alarming", "horrid", "horrifying", "wholesome", "bloodcurdling", "frightening", "eerie"];
+//  const adjs = ["spooky", "scary", "creepy", "plump", "alarming", "horrid", "horrifying", "wholesome", "bloodcurdling", "frightening", "eerie"];
 
 
- const nouns = ["pumpkin", "skeleton", "candy", "duck", "leaf", "bagel", "spider", "corn"];
+//  const nouns = ["pumpkin", "skeleton", "candy", "duck", "leaf", "bagel", "spider", "corn"];
 
 
- return (
+//  return (
 
 
-   adjs[Math.floor(Math.random() * adjs.length)] +
+//    adjs[Math.floor(Math.random() * adjs.length)] +
 
 
-   "_" +
+//    "_" +
 
 
-   nouns[Math.floor(Math.random() * nouns.length)]
+//    nouns[Math.floor(Math.random() * nouns.length)]
 
 
- );
+//  );
+  
+  return "tom";
 
 
 }
