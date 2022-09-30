@@ -616,25 +616,7 @@ const value = DOM.input.value;
 function createMemberElement(member) {
 
   
-if(name == 'tom'){
-   const { name, color } = member.clientData;
 
-
- const el = document.createElement('div');
-
-
- el.appendChild(document.createTextNode(name));
-
-
- el.className = 'tommember';
-
-
- el.style.color = color;
-
-
- return el;
-  
-}
  const { name, color } = member.clientData;
 
 
@@ -700,24 +682,6 @@ if(text.match(/(黑鬼|ass|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|puss
      return;
      }
 
-  if(name == 'tom'){
-    
-    
- const el = document.createElement('div');
-
-
- el.appendChild(createMemberElement(member));
-
-
- el.appendChild(document.createTextNode(text));
-
-
- el.className = 'tommessage';
-
-
- return el;
-    
-  }
  const el = document.createElement('div');
 
 
