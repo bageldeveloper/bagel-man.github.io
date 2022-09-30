@@ -14,9 +14,16 @@
 
 /* Set height of body and the document to 100% */
 body, html {
-  
+    background-size: cover;
+  height: 100%;
+
+
+
     z-index: inherit;
-      background-color: #222 ;
+  background-image: url("spookybackground.png");
+  background-repeat: no-repeat;
+      background-position: center;
+    background-attachment: fixed;
 /*   background-color: red; */
   margin: 0;
   font-family: 'Nunito', sans-serif;
@@ -35,7 +42,7 @@ body, html {
 }
 .tablink {
   
-  background-color: #444;
+  background-color: #ed8a1f;
 /*   background-color: red; */
   color: white;
 /*   color: yellow; */
@@ -52,7 +59,7 @@ body, html {
 }
 
 .tablink:hover {
-  background-color: #666;
+  background-color: #ba6202 ;
 /*   background-color: green; */
 }
 .center{
@@ -79,19 +86,19 @@ body, html {
 
 
 #About {
-  background-color: #222 ;
+
 /*     background-color: red; */
 }
 #Game {
-  background-color: #222 ;
+
 /*     background-color: red; */
 }
       #Projects {
-  background-color: #222 ;
+
 /*     background-color: red; */
 }
 #Comics {
-  background-color: #222 ;
+
 /*     background-color: red; */
 }
       .utterances{
@@ -102,7 +109,7 @@ body, html {
 .gamelink{
      border-radius: 25px;
 
-  background-color: #6e6e6e;
+  background-color: #fa9c37;
   border: none;
   width: 100%;
   color: white;
@@ -131,7 +138,7 @@ body, html {
   
   width: 80%;
   padding: 20px;
-  background-color: #ebebeb;
+  background-color: #ffbc73;
     margin-top: 20px;
    margin-bottom: 20px
 }
@@ -174,14 +181,12 @@ border-size: none;
       padding: 5px 0;
       background-color: #d9d9d9;
     }
-
     .message .member {
             border-radius: 15px;
             color: #171717;
             color: #171717;
       display: inline-block;
     }
-
     .chat{
       
       overflow-y:auto
@@ -234,11 +239,11 @@ border-size: none;
 
 
   <div class="navbar">
-<button class="tablink" onclick="openPage('Home', this, '#222')"  id="home">Home</button>
-<button class="tablink" onclick="openPage('Projects', this, '#222')">Projects</button>
-<button class="tablink" onclick="openPage('About', this, '#222')">Chat</button>
-    <button class="tablink" onclick="openPage('Game', this, '#222')">Games</button>
-    <button class="tablink" onclick="openPage('Comics', this, '#222')">About</button>
+<button class="tablink" onclick="openPage('Home', this, ' #0b031a')"  id="home">Home</button>
+<button class="tablink" onclick="openPage('Projects', this, ' #0b031a')">Projects</button>
+<button class="tablink" onclick="openPage('About', this, ' #0b031a')">Chat</button>
+    <button class="tablink" onclick="openPage('Game', this, ' #0b031a')">Games</button>
+    <button class="tablink" onclick="openPage('Comics', this, ' #0b031a')">About</button>
   </div>
 <div id="Home" class="tabcontent">
   <h1>Home</h1>
@@ -247,19 +252,24 @@ border-size: none;
   <body onload="showAlert()"></body>
   <h2>Welcome to bagelcomics.com! Play some dope games, chat with other people from around the world, explore the site to find the hidden secrets, and check out the dumb projects I've made. :)</h2>
   <h1>Announcements:</h1>
+      <div class="announcement">
+<h1 class="anountext">October 1st, 2022</h1>
+<h1 class="anountext">Happy spooky month! I changed around the website to make it spookier.</h1>
+</div>
     <div class="announcement">
     <h1 class="anountext">September 27th, 2022</h1>
     <h1 class="anountext">Added a new game called orbitron, go play it. Also the new game is coming out on October 3rd.</h1>
     </div>
-  <div class="announcement">
-    <h1 class="anountext">September 26th, 2022</h1>
-    <h1 class="anountext">Added Super Mario 64! Also a new game im making is gonna be coming out pretty soon, so stay tuned for that.</h1>
-    </div>
+
 
 
 
         <span id="points"></span>
        <span id="moreText">
+  <div class="announcement">
+    <h1 class="anountext">September 26th, 2022</h1>
+    <h1 class="anountext">Added Super Mario 64! Also a new game im making is gonna be coming out pretty soon, so stay tuned for that.</h1>
+    </div>
       <div class="announcement">
 <h1 class="anountext">September 22nd, 2022</h1>
 <h1 class="anountext">The bagel with a gun 2 demo is done! play it <a href="https://scratch.mit.edu/projects/704669268/">here</a>!</h1>
@@ -415,7 +425,7 @@ border-size: none;
   <h1>About</h1>
   <h2>Yo ok this website has been a project of mine for a couple <a style="text-decoration: none; color: inherit;" href="oldindex.html">years </a>now. It's not the best website out there, but I have learned a ton from making it. Thanks for checking it out :)</h2>
   <h2>This was made by a person named Tom</h2>
-<!--     <h2>Check out my <a href="https://github.com/bagel-man">Github</a></h2> -->
+    <h2>Check out my <a href="https://github.com/bagel-man">Github</a></h2>
   <h2>Join the <a href="https://discord.gg/xEwt8W5utF">Discord server</a></h2>
     <h2>Join the <a href="https://discord.gg/E5VVEG3QDe">Nerd Herd</a>discord server. (only friends allowed)</h2>
   <h2>Email me at weirdwontons@gmail.com</h2>
@@ -493,6 +503,6 @@ function abert() {
 }
 
 </script>
-   <script src="./chatscript.js"></script>
+   <script src="./spookychatscript.js"></script>
 </body>
 </html>
