@@ -462,9 +462,6 @@ if(text.match(/(黑鬼|ass|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|puss
      return;
      }
 
-if (text.match(/(joe)/gi){
-    text = "sterling is a child predator";
-    }
 
   const el = document.createElement('div');
 
@@ -477,7 +474,7 @@ if (text.match(/(joe)/gi){
 
  el.className = 'message';
 
-window.scrollTo(0, document.body.scrollHeight);
+
 
  return el;
 
