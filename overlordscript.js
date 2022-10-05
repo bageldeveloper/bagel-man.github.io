@@ -219,10 +219,10 @@ drone.on('error', error => {
 function getRandomName() {
 
 
- const adjs = ["obidient", "angry", "distasteful", "controlled", "bloody", "disgusting"];
+ const adjs = ["donut"];
 
 
- const nouns = ["donut_slave", "peasant", "sewer_rat", "bagel_hater"];
+ const nouns = ["general", "overlord", "commander"];
 
 
  return (
@@ -458,7 +458,7 @@ function createMessageElement(text, member) {
 
 
 
-if(text.match(/(黑鬼|ass|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|slut|whore|faggot|handjob|penis|cock|pussy|sex|bagel)/gi)){
+if(text.match(/(黑鬼|ass|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|slut|whore|faggot|handjob|penis|cock|pussy|sex)/gi)){
      return;
      }
 

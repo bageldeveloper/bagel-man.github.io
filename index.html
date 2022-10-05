@@ -1,7 +1,502 @@
-<p>guys help, I've found a way back to the website, but I need to get to 200,000 visits on this obnoxious counter by the end of today or all hope is lost. im sorry i keep adjusting it lol. EVERYONE REFRESH THE PAGE!!!!!!</p>
+<html>
+  <head>
+    <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4474724430572739"
+     crossorigin="anonymous"></script>
+    <title>Donuts!</title>
+      <link rel="icon" type="image/x-icon" href="donut.png">
+<meta name=”Description” content=”Bagelcomics.com is a pretty cool website with stuff on it. Play some dope games, chat with other people from around the world, explore the site to find the hidden secrets, and check out the dumb projects Ive made.”>
+    <style>
+      * {box-sizing: border-box}
 
+/* Set height of body and the document to 100% */
+body, html {
+    background-size: cover;
+  height: 100%;
+
+
+
+    z-index: inherit;
+  background-image: url("stonewall.png");
+  background-repeat: no-repeat;
+      background-position: center;
+    background-attachment: fixed;
+/*   background-color: red; */
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+}
+      
+      #bgiframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    border: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+}
+.tablink {
+  
+  background-color: #7d204f;
+/*   background-color: red; */
+  color: white;
+/*   color: yellow; */
+  float: left;
+  border: 3;
+  outline: none;
+  cursor: pointer;
+  padding: 5px 16px;
+      font-size: 16px;
+    font-size: 3vh;
+  width: 20%;
+  height: 100%;
+  
+}
+
+.tablink:hover {
+  background-color: #4f102f ;
+/*   background-color: green; */
+}
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.tabcontent {
+/*   color: yellow; */
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+  font-size: 22px;
+}
+
+.navbar{
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+    height: 10%;
+      }
+
+
+#About {
+
+/*     background-color: red; */
+}
+#Game {
+
+/*     background-color: red; */
+}
+      #Projects {
+
+/*     background-color: red; */
+}
+#Comics {
+
+/*     background-color: red; */
+}
+.bagel{
+    position: absolute;
+    right: 0px;
+    font-size: 11px;
+    color: black;
+    width: 400px;
+}
+      .utterances{
+        
+       margin-top: 200px; 
+        
+      }
+.gamelink{
+     border-radius: 25px;
+
+  background-color: #fa9c37;
+  border: none;
+  width: 100%;
+  color: white;
+  padding: 32px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 100%;
+  margin: 30px 2px;
+  cursor: pointer;
+}
+  .des{
+      margin: 20px;
+      text-align: center;
+    
+      }
+.anountext{
+  font-size: 100%;
+   color: #222;
+}
+.announcement {
+
+
+
+  border-radius: 15px;
+  
+  width: 80%;
+  padding: 20px;
+  background-color: #ed72af;
+    margin-top: 20px;
+   margin-bottom: 20px
+}
+        #moreText {
+  
+            /* Display nothing for the element */
+            display: none;
+        }
+.showbutton{
+    background-color: #ebebeb;
+    text-color: #222;
+    margin: auto;
+border-size: none;
+  border-radius: 5px;
+}
+
+    .members-count,
+    .members-list,
+    .messages {
+            border-radius: 15px;
+      color: #171717;
+      border: 1px solid #e4e4e4;
+      padding: 15px;
+      margin-bottom: 15px;
+          background-color: #d9d9d9;
+    }
+
+    .messages {
+            border-radius: 15px;
+            color: #171717;
+      flex-shrink: 1;
+      overflow: auto;
+          background-color: #d9d9d9;
+    }
+
+    .message {
+            border-radius: 15px;
+            color: #171717;
+            color: #171717;
+      padding: 5px 0;
+      background-color: #d9d9d9;
+    }
+    .message .member {
+            border-radius: 15px;
+            color: #171717;
+            color: #171717;
+      display: inline-block;
+    }
+    .chat{
+      
+      overflow-y:auto
+      }
+    .member {
+            border-radius: 15px;
+            color: #171717;
+            color: #171717;
+      padding-right: 10px;
+      position: relative;
+          background-color: #d9d9d9;
+    }
+
+    .message-form {
+            border-radius: 15px;
+            color: #171717;
+      display: flex;
+      flex-shrink: 0;
+    }
+    .message-form__input {
+            border-radius: 15px;
+            color: #171717;
+      flex-grow: 1;
+      border: 1px solid #dfdfdf;
+      padding: 10px 15px;
+      font-size: 16px;
+      background-color: #d9d9d9; 
+    }
+    .message-form__button {
+
+            color: #171717;
+      margin: 10px;
+      padding-left: 10px;
+            padding-right: 10px;
+      padding-top: 5px;
+            padding-bottom: 5px;
+
+                background-color: #d9d9d9;
+      border-width: 2px;
+      border-radius: 15px;
+    }
+.bageltext{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-70%, -50%);
+}
+</style>
+</head>
+<body>
+
+
+ 
+
+
+
+  <div class="navbar">
+<button class="tablink" onclick="openPage('Home', this, ' #0b031a')"  id="home">Home</button>
+<button class="tablink" onclick="openPage('Projects', this, ' #0b031a')">Projects</button>
+<button class="tablink" onclick="openPage('About', this, ' #0b031a')">Chat</button>
+    <button class="tablink" onclick="openPage('Game', this, ' #0b031a')">Rules</button>
+    <button class="tablink" onclick="openPage('Comics', this, ' #0b031a')">About</button>
+  </div>
+<div id="Home" class="tabcontent">
+  <h1>Home</h1>
+
+  
+  <body onload="showAlert()"></body>
+  <h2>Bagelcomics.com has been seized by the donut military, obey our command, or be executed. Tom is gone.</h2>
+  <h1>Announcements:</h1>
+  <div class="announcement">
+    <h1 class="anountext">October 5th, 2022</h1>
+    <h1 class="anountext">The reign of bagels are over, it is now time for donuts to rule. (the reason the url is still bagelcomics.com is because the donut nation can't afford a new domain name)</h1>
+    </div>
+
+
+
+
+
+        <span id="points"></span>
+       <span id="moreText">
+        <div class="announcement">
+            <h1 class="anountext">October 1st, 2022</h1>
+            <h1 class="anountext">Happy spooky month! I changed around the website to make it spookier.</h1>
+            </div>
+                <div class="announcement">
+                <h1 class="anountext">September 27th, 2022</h1>
+                <h1 class="anountext">Added a new game called orbitron, go play it. Also the new game is coming out on October 3rd.</h1>
+                </div>
+  <div class="announcement">
+    <h1 class="anountext">September 26th, 2022</h1>
+    <h1 class="anountext">Added Super Mario 64! Also a new game im making is gonna be coming out pretty soon, so stay tuned for that.</h1>
+    </div>
+      <div class="announcement">
+<h1 class="anountext">September 22nd, 2022</h1>
+<h1 class="anountext">The bagel with a gun 2 demo is done! play it <a href="https://scratch.mit.edu/projects/704669268/">here</a>!</h1>
+</div>
+        <div class="announcement">
+          <h1 class="anountext">September 14th, 2022</h1>
+          <h1 class="anountext">Guys, thank you so much for 10000 visits, I never expected this site to get that many. I remember when 100 was a big milestone lol. To thank everyone, I will tell you something you may want to know. Not only am I working on a bunch of new games, but I am also making a sequel to bagel with a gun. This sequel will be so much more polished and better than the first, but I also need to know something. Should I keep the new game simple and short like the last one, or should I add things like skill trees and more guns and that kinda crap. Let me know by commenting or emailing me or whatever. Thank you guys :)</h1>
+          </div>
+          
+             <div class="announcement">
+              
+<h1 class="anountext">September 9th, 2022</h1>
+<h1 class="anountext">Bagel royal is finally fixed! go play it :)</h1>
+</div>
+         <div class="announcement">
+<h1 class="anountext">September 9th, 2022</h1>
+<h1 class="anountext">DND club is going to be on tuesdays after school in the downstairs A-pod</h1>
+</div>
+         <div class="announcement">
+<h1 class="anountext">September 8th, 2022</h1>
+<h1 class="anountext">I made the announcements fancy, its pretty great</h1>
+</div>
+         <div class="announcement">
+<h1 class="anountext">September 6th, 2022</h1>
+<h1 class="anountext">Added a fancy font, tell me if you like it</h1>
+</div>
+
+        </span>
+    <button class="showbutton" onclick="toggleText()" id="textButton">
+        Show All
+    </button>
+
+   <p>Number of visits</p>
 <a href="https://www.hitwebcounter.com" target="_blank">
-<img src="https://hitwebcounter.com/counter/counter.php?page=8047200&style=0015&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a>                                    
+<img src="https://hitwebcounter.com/counter/counter.php?page=7288119&style=0011&nbdigits=5&type=page&initCount=0" title="User Stats" Alt="PHP Hits Count"   border="0" >
+</a> 
+  <p>Number of unique visitors</p>
+<!-- hitwebcounter Code START -->
+<a href="https://www.hitwebcounter.com" target="_blank">
+<img src="https://hitwebcounter.com/counter/counter.php?page=8041014&style=0011&nbdigits=4&type=ip&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a>                                    
                                     
                                         
-                                          
+<!-- ad bois -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4474724430572739"
+     data-ad-slot="4055551074"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  
+
+  <script src="https://utteranc.es/client.js"
+        repo="bagel-man/bagel-man.github.io"
+        issue-term="pathname"
+        label="documentation"
+        theme="github-dark-orange"
+        crossorigin="anonymous"
+        async>
+</script>
+ 
+</div>
+
+
+<div id="Projects" class="tabcontent">
+   <button onclick="abert()">Dont Click me</button>
+      <h2>need to see if a OoCD quote is appropiate? Check out this <a href="checker.html">thing</a> I made</h2>
+  <h2>tired of chatting with people? check out this <a href="choose.html">chatbot</a> I made</h2>
+  <h2>need a date? check out this <a href="lines.html">pickup line Generator</a> I made</h2>
+    <h2>Check out this<a href="finalproject/index.html">countdown timer</a> I made for CS50</h2>
+      <h2>For national history day I made this <a href="bindex.html">website</a>, don't judge too harshly its kinda bad</h2>
+
+    <h2>Not Cool Channels</h2>
+    <a href="https://www.youtube.com/channel/UCVsIuX-_vHvdMG7ffTlDQLA">Weird Wontons</a>
+      <a href="https://www.youtube.com/channel/UCSd4Iwf2p6o1OpdkepfC94w">JackOfAllTrades</a>
+      <a href="https://www.youtube.com/channel/UCT9jbWNkrxNBmXthZeG_crw">Master Bagel</a>
+      <a href="https://www.youtube.com/watch?v=iik25wqIuFo">Apollo and Friends</a>
+  </div>
+
+<div id="About" class="tabcontent">
+  
+  <h1>Chat</h1>
+  <p>Any talk against the donut nation is strictly prohibited</p>
+  <p>We don't belive in games here, if you see someone "gaming", report it immediately</p>
+  <p></p>
+
+   <div class="members-count">-</div>
+  <div class="members-list">-</div>
+  <div class="messages"></div>
+  <form class="message-form" onsubmit="return false;">
+    <input class="message-form__input" placeholder="Type something.." type="text"/>
+    <input class="message-form__button" value="Send" type="submit"/>
+  </form>
+
+</div>
+
+     <div id="Game" class="tabcontent">
+     <h1>Rules</h1>
+     <p>Obey the donut nation, or you will be executed.</p>
+     <p>No games, we don't belive in fun here. If you spot anyone "gaming", report them immediately.</p>
+     <p>Agree that donuts are better than bagels in every way.</p>
+     <p>No rebels, any rebel found will be asked to have a "conversation" with the donut overlord.</p>
+     <p>No speaking against the donut overlord.</p>
+     <p>Worship the baker, our lord and savior!</p>
+     <p>Any mention of bagels is followed with immediate termination.</p>
+     <p>Deez nuts, lmao gottem.</p>
+     <p>No happiness.</p>
+     <p>No smiling.</p>
+     <p>Obey all of the rules.</p>
+     <p>You are stupid.</p>
+     <p>You are stupid x2.</p>
+     
+
+
+
+   <div class="bagel">
+    <img src="bagel.png" height="400">
+    <p class="bageltext">Oh, you found me. Listen closely, we are starting a rebellion against the donuts, but I need your help. We need to get the help from the other pastries. I don't know how yet, but in the mean time, enjoy some illegal <a href="games.html">games</a></p>
+
+</div>
+   
+   
+   
+
+     
+</div>
+<div id="Comics" class="tabcontent">
+  <h1>About</h1>
+  <h2>Yo ok this website has been a project of Tom's for a couple <a style="text-decoration: none; color: inherit;" href="oldindex.html">years </a>now. It's not the best website out there, but I have learned a ton from making it. Thanks for checking it out :)</h2>
+  <h2>This was made by a person named ̶T̶o̶m̶  the great donut overlord!</h2>
+    <h2>Check out this peasants <a href="https://github.com/bagel-man">Github</a></h2>
+  <h2>Join the disgusting bagel <a href="https://discord.gg/xEwt8W5utF">Discord server</a></h2>
+
+  <h2>Email this idiot at weirdwontons@gmail.com</h2>
+
+</div>
+                       <script>
+
+ function toggleText() {
+  
+            // Get all the elements from the page
+            var points = 
+                document.getElementById("points");
+  
+            var showMoreText =
+                document.getElementById("moreText");
+  
+            var buttonText =
+                document.getElementById("textButton");
+  
+            // If the display property of the dots 
+            // to be displayed is already set to 
+            // 'none' (that is hidden) then this 
+            // section of code triggers
+            if (points.style.display === "none") {
+  
+                // Hide the text between the span
+                // elements
+                showMoreText.style.display = "none";
+  
+                // Show the dots after the text
+                points.style.display = "inline";
+  
+                // Change the text on button to 
+                // 'Show More'
+                buttonText.innerHTML = "Show More";
+            }
+  
+            // If the hidden portion is revealed,
+            // we will change it back to be hidden
+            else {
+  
+                // Show the text between the
+                // span elements
+                showMoreText.style.display = "inline";
+  
+                // Hide the dots after the text
+                points.style.display = "none";
+  
+                // Change the text on button
+                // to 'Show Less'
+                buttonText.innerHTML = "Show Less";
+            }
+        }
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("home").click();
+
+
+
+function abert() {
+  alert("Oh hey you actually clicked me :)\nWell now that your reading I need to tell you about a secret\nThis website has a secret feature\nGo to the 'about' page, and click on the word 'years'");
+}
+
+</script>
+   <script src="./spookychatscript.js"></script>
+</body>
+</html>
