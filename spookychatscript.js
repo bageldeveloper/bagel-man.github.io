@@ -463,6 +463,10 @@ if(text.match(/(黑鬼|ass|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|puss
      }
 
 
+  let length = text.length;
+  if(length < 51){
+      return; 
+  }
   const el = document.createElement('div');
 
 
