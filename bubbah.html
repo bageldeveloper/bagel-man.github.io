@@ -202,35 +202,75 @@ right: 10px;
   background: #303342;
 
 }
+.gamelink:hover{
+  background-color:#3b3b42;
+}
 .gamelink{
-     border-radius: 15px;
 
-     background-color:#07070A;
+
+     background-color:#1A1C25;
   border: none;
   width: 110%;
   color: #EDF2F4;
   padding: 32px 32px;
-  text-align: center;
+
   text-decoration: none;
   display: inline-block;
   font-size: 100%;
-  margin: 10px 2px;
+
   cursor: pointer;
 }
 .gotd{
-     border-radius: 15px;
+  background-color:#07070A;
+  color:  #EDF2F4;
 
-  background-color: #a6355e;
+
   border: none;
   width: 110%;
-  color: #EDF2F4;
+
   padding: 32px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 200%;
-  margin: 10px 2px;
+  margin-bottom: 50px;
   cursor: pointer;
+}
+.collapsible {
+  background-color:#07070A;
+  color:  #EDF2F4;
+  cursor: pointer;
+  padding: 32px;
+  width: 110%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #24242d;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  width: 110%;
+
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #1A1C25;
 }
 
 </style>
@@ -341,23 +381,76 @@ right: 10px;
         <h3><a href="https://docs.google.com/document/d/1cOiJsQWjk1RCAmWv933Kd1O-TvyDF576pPDrGI7gIhk/edit?usp=sharing">Chess The Gathering Rulebook (you need to have an alpinesd email to view it)</a></h2>
       
         <p>DISCLAIMER: bagelcomics.com is not responsible for any trouble you may get in while playing these games during class.</p>
-          <div class="center">
+
         <h2>Game of the Week</h2>
-           <a href="games/pedro.html" class="gotd">My Friend Pedro</a> 
-       <p class="des">Take orders from a banana named pedro. Assasinate thugs with the ability to slow down time and collect weapons as you go along. [SLIGHT GORE WARNING]</p>
+        <a href="games/bloons.html" class="gotd">Bloons Tower Defense</a> 
            
-           <a href="games/bloons.html" class="gamelink">Bloons Tower Defense</a> 
-       <p class="des">Kill da ballons with monke</p>
+           <button class="collapsible">Favorite Games</button>
+<div class="content">
+  <a href="bwag/index.html" class="gamelink">Bagel With a Gun</a>
+  <a href="bagel/royal.html" class="gamelink">Bagel Royal</a> 
+  <a href="games/pedro.html" class="gamelink">My Friend Pedro</a> 
+  <a href="games/bloons.html" class="gamelink">Bloons Tower Defense</a> 
+  <a href="games/bloxorz.html" class="gamelink">Bloxorz</a> 
+  <a href="games/portal.html" class="gamelink">Portal Flash Version</a> 
+  <a href="slope.html" class="gamelink">Slope</a> 
+  <a href="sm64/index.html" class="gamelink">Super Mario 64</a> 
+
+</div>
+       <button class="collapsible">Tower Defense Games</button>
+<div class="content">
+  <a href="games/bloons.html" class="gamelink">Bloons Tower Defense</a> 
+  <a href="orbitron.html" class="gamelink">Orbitron</a> 
+</div>
+
+<button class="collapsible">2D Platformer Games</button>
+<div class="content">
+  <a href="bwag/index.html" class="gamelink">Bagel With a Gun</a>
+  <a href="bagelwithagun.html" class="gamelink">Bagel With a Gun Demo</a> 
+  <a href="mario/index.html" class="gamelink">Mario</a> 
+  <a href="games/supermarioflash.html" class="gamelink">Super Mario Flash</a> 
+  <a href="games/mariocombat.html" class="gamelink">Mario Combat</a> 
+  <a href="games/meatboy.html" class="gamelink">Meat Boy</a> 
+  <a href="games/portal.html" class="gamelink">Portal Flash Version</a> 
+  <a href="bagel/royal.html" class="gamelink">Bagel Royal</a> 
+  <a href="jumpgame.html" class="gamelink">Jump Game</a>
+
+  <a href="jumpgame2.html" class="gamelink">Jump Game 2</a>
+  <a href="newton.html" class="gamelink">newton</a> 
+
+
+</div>
+
+<button class="collapsible">3D Games</button>
+<div class="content">
+  <a href="games/bloxorz.html" class="gamelink">Bloxorz</a> 
+  <a href="slope.html" class="gamelink">Slope</a> 
+  <a href="sm64/index.html" class="gamelink">Super Mario 64</a> 
+  <a href="hexgl.html" class="gamelink">Hexgl</a> 
+
+</div>
+<button class="collapsible">Puzzle Games</button>
+<div class="content">
+  <a href="games/bank.html" class="gamelink">Esacping The Prison</a> 
+  <a href="games/bloxorz.html" class="gamelink">Bloxorz</a> 
+  <a href="games/stealing.html" class="gamelink">Stealing The Diamond</a> 
+  <a href="games/bigadventure.html" class="gamelink">Big Adventure</a> 
+  
+  <a href="games/quiz.html" class="gamelink">The Impossible Quiz</a> 
+
+  <a href="games/riddleschool.html" class="gamelink">Riddle School</a> 
+
+  <a href="games/riddleschool2.html" class="gamelink">Riddle School 2</a> 
+
+  <a href="games/rs3.html" class="gamelink">Riddle School 3</a> 
+
+</div>
+
        
-       <a href="bwag/index.html" class="gamelink">Bagel With a Gun</a> 
-       <p class="des">The full version where you play as a bagel shooting things</p>
-       
-       <a href="games/stealing.html" class="gamelink">Stealing The Diamond</a> 
-       <p class="des">Play as henry stickman and steal a diamond, a good ol' classic</p>
+<h1>TODO</h1>
+
        <a href="games/stickrpg.html" class="gamelink">Stick Man RPG</a> 
-       <p class="des">Play as a stick man dude in this wonky flash game</p>
-       <a href="games/supermarioflash.html" class="gamelink">Super Mario Flash</a> 
-       <p class="des">play as an italian plumber dude that stomp on turtles but for flash.</p>
+
        <a href="games/tetris.html" class="gamelink">Tetris</a> 
        <p class="des">Block game go haha</p>
        <a href="games/turtle.html" class="gamelink">Turtle Trigger</a> 
@@ -370,13 +463,11 @@ right: 10px;
        <p class="des">run as an alien</p>
        <a href="games/appleshoot.html" class="gamelink">Apple Shoot</a> 
        <p class="des">Try to shoot the apple, dont kill someone. [GORE WARNING]</p>
-       <a href="games/bank.html" class="gamelink">Esacping The Prison</a> 
-       <p class="des">Play as Henry Stickman to escape prison</p>
-       <a href="games/bigadventure.html" class="gamelink">Big Adventure</a> 
-       <p class="des">It sure is a big adventure</p>
+
+ 
        
-       <a href="games/bloxorz.html" class="gamelink">Bloxorz</a> 
-       <p class="des">put cube in hole</p>
+
+
        <a href="games/bubble.html" class="gamelink">bubble?</a> 
        <p class="des">idk what it is it didnt load for me lol</p>
        <a href="games/castle.html" class="gamelink">Castle?</a> 
@@ -404,10 +495,8 @@ right: 10px;
        <p class="des">Walk around as a hobo killing people [GORE WARNING]</p>
        <a href="games/hobo2.html" class="gamelink">Hobo 2</a> 
        <p class="des">Walk around as a hobo killing people for the second time [GORE WARNING]</p>
-       <a href="games/mariocombat.html" class="gamelink">Mario Combat</a> 
-       <p class="des">Mario but you can punch people</p>
-       <a href="games/meatboy.html" class="gamelink">Meat Boy</a> 
-       <p class="des">Play as a boy made of meat and save the princess</p>
+
+
        <a href="games/miamishark.html" class="gamelink">Miami Shark</a> 
        <p class="des">Eat people in Miami [GORE WARNING]</p>
        <a href="games/NYshark.html" class="gamelink">New York Shark</a> 
@@ -421,16 +510,8 @@ right: 10px;
        
        <a href="games/pong.html" class="gamelink">Pong</a> 
        <p class="des">I mean its obvious what this is</p>
-       <a href="games/portal.html" class="gamelink">Portal</a> 
-       <p class="des">Portal flash version</p>
-       <a href="games/quiz.html" class="gamelink">The Impossible Quiz</a> 
-       <p class="des">Answer da questions correctly</p>
-       <a href="games/riddleschool.html" class="gamelink">Riddle School</a> 
-       <p class="des">Escape the boring class</p>
-       <a href="games/riddleschool2.html" class="gamelink">Riddle School 2</a> 
-       <p class="des">Escape the boring class pt 2</p>
-       <a href="games/rs3.html" class="gamelink">Riddle School 3</a> 
-       <p class="des">escape the boring class pt 3</p>
+
+ 
        <a href="games/motox3m/index.html" class="gamelink">Motox3m</a> 
        <p class="des">motorcycles go weee</p>
            <a href="games/motox3m2/index.html" class="gamelink">Motox3m2</a> 
@@ -458,38 +539,20 @@ right: 10px;
        <p class="des">run as an alien (it says its not supported, just play anyways, it still works)</p>
        <a href="blobby/index.html" class="gamelink">Blobby</a> 
        <p class="des">My new game I've been working on. Im still working on it though. Play as a slime and shoot monsters.</p>
-       <a href="diep.io/index.html" class="gamelink">Diep.io</a> 
-       <p class="des">I stole this from scratch, but it runs much better on the website with an actual full screen and no account needed.</p>
-       <a href="sm64/index.html" class="gamelink">Super Mario 64</a> 
-       <p class="des">play as 3D italian plumber that eats mushrooms and stomps on turtles.</p>
-                 <a href="orbitron.html" class="gamelink">Orbitron</a> 
-               <p class="des">A fun tower defense game. Create towers to destrou enemies.</p>
-                <a href="bagel/royal.html" class="gamelink">Bagel Royal</a> 
-        <p class="des">Fight other bagels in this ongoing war of bloodshed and fear. Make rooms and have your friends join to kill them lol.</p>
+     
+
        
-             <a href="mario/index.html" class="gamelink">Mario</a> 
-       <p class="des">play as an italian plumber that eats mushrooms and stomps on turtles.</p>
+  
        
-       
-             <a href="newton.html" class="gamelink">newton</a> 
-       <p class="des">survive a dude throwing bomb at you from a building lol.</p>
+
        <a href="cookie/index.html" class="gamelink">Cookie Clicker</a>
         <p class="des">Click some cookies to get more upgrades to get more cookies to get more upgrades to get more cookies to get more upgrades to get more cookies.</p>
-          <a href="bagelwithagun.html" class="gamelink">Bagel With a Gun Demo</a> 
-               <p class="des">Some dumb game I made were your a bagel with a gun, creative name, I know.</p>
-       
-         <a href="slope.html" class="gamelink">Slope</a> 
-               <p class="des">You are a ball that has to survive falling down a large slope by avoiding obstacles.</p>
+
         <a href="ninja.html" class="gamelink">Menja</a> 
         <p class="des">Kinda like fruit ninja, but cube.</p>
        <a href="asteroids.html" class="gamelink">Asteroids</a> 
         <p class="des">The classic video game brought back to this dumb website.</p>
-       <a href="carindex.html" class="gamelink">Hue Jumper</a> 
-        <p class="des">A first person runner where you avoid obstacles and gain points.</p>
-        <a href="jumpgame.html" class="gamelink">Jump Game</a>
-        <p class="des">A game where you are a weird bean and you have to jump around.</p>
-       <a href="jumpgame2.html" class="gamelink">Jump Game 2</a>
-       <p class="des">I decided to make a second version of the game, and its pretty fun.</p>
+
        
        <a href="shooter.html" class="gamelink">Shooter Gaem</a> 
         <p class="des">A top down shooter where you kill zombies with your shotgun.</p>
@@ -497,14 +560,13 @@ right: 10px;
         <p class="des">Another top down shooter where you kill zombies, but with slightly different game mechanics, and other weapons.</p>
        <a href="2048.html" class="gamelink">2048</a>
         <p class="des">The classic web game where you merge blocks to get higher number blocks.</p>
-         <a href="hexgl.html" class="gamelink">Hexgl</a> 
-        <p class="des">You drive around as a spaceship and dont crash lol.</p>
+
        
                        <a href="space.html" class="gamelink">Space Invaders</a> 
                <p class="des">If you don't know what this is get out.</p>
               <a href="spaceshooter.html" class="gamelink">Space Shooter</a> 
       </div>
-    </div>
+
     <div id="Projects" class="tabcontent">
     <h1>Projects</h1>
 
@@ -536,7 +598,7 @@ right: 10px;
     
       <h2>Email me at weirdwontons@gmail.com</h2>
     
-      </div>
+    </div>
     </div>
                        <script>
 
@@ -586,6 +648,20 @@ right: 10px;
                 buttonText.innerHTML = "Show Less";
             }
         }
+        var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
         function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
