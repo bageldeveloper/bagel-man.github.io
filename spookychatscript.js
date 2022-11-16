@@ -222,7 +222,7 @@ function getRandomName() {
  const adjs = ["cool", "angry", "yummy", "slimy", "bloody", "tiny", "salty"];
 
 
- const nouns = ["bagel", "", "muffin", "carter", "keyboard", "salt"];
+ const nouns = ["bagel", "kitty", "muffin", "carter", "keyboard", "salt"];
   
 var num = Math.floor(Math.random() * 100);
 if(num == 69){
