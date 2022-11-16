@@ -222,7 +222,7 @@ function getRandomName() {
  const adjs = ["cool", "angry", "yummy", "slimy", "bloody", "tiny", "salty"];
 
 
- const nouns = ["bagel", "taco", "muffin", "carter", "keyboard", "salt"];
+ const nouns = ["bagel", "", "muffin", "carter", "keyboard", "salt"];
   
 var num = Math.floor(Math.random() * 100);
 if(num == 69){
@@ -462,13 +462,13 @@ function createMessageElement(text, member) {
 
 
 
-if(text.match(/(黑鬼|ass|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|slut|whore|faggot|handjob|penis|cock|pussy|sex|bagel|porn)/gi)){
+if(text.match(/(黑鬼|ass|retard|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|nazilut|whore|faggot|handjob|penis|cock|pussy|sex|porn)/gi)){
      return;
      }
 
 
  
-  if(text.length > 50){
+  if(text.length > 100){
       return; 
   }
   const el = document.createElement('div');
