@@ -220,7 +220,6 @@ function getRandomName() {
 
 
  return "tom";
-  
 
 
 
@@ -440,11 +439,16 @@ function createMessageElement(text, member) {
 
 
 
-if(text.match(/(黑鬼|ass|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|slut|whore|faggot|handjob|penis|cock|pussy|sex)/gi)){
+if(text.match(/(黑鬼|ass|retard|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|nazilut|whore|faggot|handjob|penis|cock|pussy|sex|porn)/gi)){
      return;
      }
 
- const el = document.createElement('div');
+
+ 
+  if(text.length > 100){
+      return; 
+  }
+  const el = document.createElement('div');
 
 
  el.appendChild(createMemberElement(member));
@@ -454,6 +458,7 @@ if(text.match(/(黑鬼|ass|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|puss
 
 
  el.className = 'message';
+
 
 
  return el;
