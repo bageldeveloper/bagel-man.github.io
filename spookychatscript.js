@@ -233,7 +233,7 @@ if(num == 69){
 //  return "Dirty Dan"; 
 // }
    
- return 
+ return (
 
 
    adjs[Math.floor(Math.random() * adjs.length)] +
