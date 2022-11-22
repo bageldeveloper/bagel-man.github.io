@@ -228,8 +228,12 @@ var num = Math.floor(Math.random() * 100);
 if(num == 69){
  return "The Ultimate Gamer"; 
 }
+var num2 = Math.floor(Math.random() * 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999);
+if(num2 == 420){
+ return "Dirty Dan"; 
+}
    
- return (
+ return 
 
 
    adjs[Math.floor(Math.random() * adjs.length)] +
