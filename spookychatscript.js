@@ -464,11 +464,11 @@ function createMessageElement(text, member) {
 
 
 
-let gamer = text.replace(/[^A-Za-z0-9\s!?]/g,”);
-
-if(gamer.match(/(黑鬼|ass|c0ck|cum|tit|retard|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|nazilut|whore|faggot|handjob|penis|cock|pussy|sex|porn)/gi)){
+// let gamer = text.replace(/[^A-Za-z0-9\s!?]/g,”);
+// testing to see if this is the problem
+  if(text.match(/(黑鬼|ass|c0ck|cum|tit|retard|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|nazilut|whore|faggot|handjob|penis|cock|pussy|sex|porn)/gi)){
      return;
-     }
+  }
 
 
  
