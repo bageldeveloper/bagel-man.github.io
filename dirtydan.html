@@ -1,0 +1,670 @@
+<html>
+  <head>
+    <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4474724430572739"
+     crossorigin="anonymous"></script>
+    <title>Bagels!</title>c
+      <link rel="icon" type="image/x-icon" href="bagel.ico">
+<meta name=”Description” content=”Bagelcomics.com is a pretty cool website with stuff on it. Play some dope games, chat with other people from around the world, explore the site to find the hidden secrets, and check out the dumb projects Ive made.”>
+    <style>
+
+* {box-sizing: border-box}
+body {
+        background-color: #1A1C25;
+        color: #EDF2F4;
+        font-family: 'Nunito', sans-serif;
+}
+
+/* Style the tab */
+.tab {
+
+  background-color:#07070A;
+  z-index: 1000;
+  width: 10%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  color: #EDF2F4;
+  display: block;
+  background-color: inherit;
+
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color:#8D99AE;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #1A1C25;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+
+  width: 90%;
+  border-left: none;
+
+}
+    
+.anountext{
+  font-size: 100%;
+  color: #EDF2F4;
+}
+.announcement {
+
+
+
+  border-radius: 15px;
+  
+  width: 80%;
+  padding: 20px;
+  background-color: #07070A;;
+    margin-top: 20px;
+   margin-bottom: 20px
+}
+        #moreText {
+  
+            /* Display nothing for the element */
+            display: none;
+        }
+        .showbutton{
+          color: #EDF2F4;
+    color: #070707;
+    margin: auto;
+border: none;
+  border-radius: 5px;
+}
+
+.members-count,
+    .members-list,
+    .messages {
+      font-size: 150%;
+            border-radius: 15px;
+      color: #171717;
+      border: 1px solid #e4e4e4;
+      padding: 15px;
+      margin-bottom: 15px;
+      color: #EDF2F4;
+    }
+
+    .messages {
+      margin-bottom: 50px;
+            border-radius: 15px;
+            color: #171717;
+      flex-shrink: 1;
+      overflow: auto;
+      color: #EDF2F4;
+    }
+
+    .message {
+
+            border-radius: 15px;
+            color: #171717;
+            color: #171717;
+      padding: 5px 0;
+      color: #EDF2F4;
+    }
+    .message .member {
+            border-radius: 15px;
+            color: #171717;
+            color: #171717;
+      display: inline-block;
+    }
+    .chat{
+ 
+      overflow-y:auto
+      }
+    .member {
+            border-radius: 15px;
+            color: #171717;
+            color: #171717;
+      padding-right: 10px;
+      position: relative;
+      color: #EDF2F4;
+    }
+
+    .message-form {
+            border-radius: 15px;
+            color: #171717;
+      display: flex;
+      flex-shrink: 0;
+    }
+    .message-form__input {
+      border: 1px solid #e4e4e4;
+            border-radius: 15px;
+
+      flex-grow: 1;
+      background-color: #1A1C25;
+      color: #EDF2F4;
+      padding: 10px 15px;
+      font-size: 150%;
+      position: fixed;
+  width: 85%;
+  bottom: 10px;
+
+    }
+    .message-form__button {
+      color: #171717;
+      margin: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-width: 2px;
+      border-radius: 15px;
+      position: fixed;
+float:right;
+width: 5%;
+bottom: 10px;
+right: 10px;
+    }
+    .crap{
+      margin-left: 10%;
+    }
+
+    /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background:#07070A;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #3b3f52;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #303342;
+
+}
+.gamelink:hover{
+  background-color:#3b3b42;
+}
+.gamelink{
+
+
+     background-color:#1A1C25;
+  border: none;
+  width: 110%;
+  color: #EDF2F4;
+  padding: 32px 32px;
+
+  text-decoration: none;
+  display: inline-block;
+  font-size: 100%;
+
+  cursor: pointer;
+}
+.gotd{
+  background-color:#07070A;
+  color:  #EDF2F4;
+
+
+  border: none;
+  width: 110%;
+  
+  padding: 32px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+ 
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+.collapsible {
+  font-family: 'Nunito', sans-serif;
+  background-color:#07070A;
+  color:  #EDF2F4;
+  cursor: pointer;
+  padding: 32px;
+  width: 110%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #24242d;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  width: 110%;
+  font-family: 'Nunito', sans-serif;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #1A1C25;
+}
+.badge {
+
+  top: -10px;
+  right: 10px;
+  margin-left: 10%;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'Home')" id="defaultOpen">Home</button>
+        <button class="tablinks" onclick="openCity(event, 'Chat')">Chat</button>
+        <button class="tablinks" onclick="openCity(event, 'Games')">Games</button>
+        <button class="tablinks" onclick="openCity(event, 'Projects')">Projects</button>
+        <button class="tablinks" onclick="openCity(event, 'About')">About</button>
+      </div>
+ 
+<div class="crap">
+      <div id="Home" class="tabcontent">
+        <h1>Home</h1>
+        <h1>hello carter, you are now at you personalized website</h1>
+              </span>
+          <button class="showbutton" onclick="toggleText()" id="textButton">
+              Show All
+          </button>
+  <p>Number of visits</p>
+          <img src="https://hitwebcounter.com/counter/counter.php?page=7288119&style=0011&nbdigits=5&type=page&initCount=0" title="User Stats" Alt="PHP Hits Count"   border="0" >
+            <p>Number of unique visitors</p>
+          <!-- hitwebcounter Code START -->
+          <a href="https://www.hitwebcounter.com" target="_blank">
+          <img src="https://hitwebcounter.com/counter/counter.php?page=8041014&style=0011&nbdigits=4&type=ip&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a>                                    
+                                              
+   <!-- ad bois -->
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-4474724430572739"
+data-ad-slot="4055551074"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script src="https://utteranc.es/client.js"
+repo="bagel-man/bagel-man.github.io"
+issue-term="pathname"
+label="documentation"
+theme="github-dark-orange"
+crossorigin="anonymous"
+async>
+</script>          
+    
+    </div>
+      
+      <div id="Chat" class="tabcontent">
+        <h1>Chat</h1>
+
+        <div class="members-count">-</div>
+        <div class="members-list">-</div>
+        <div class="messages"></div>
+        <form class="message-form" onsubmit="return false;">
+          <input class="message-form__input" placeholder="Type something.." type="text"/>
+          <!-- <input class="message-form__button" value="Send" type="submit"/> -->
+        </form>
+      
+      </div>
+      
+      <div id="Games" class="tabcontent">
+        <h1>Games</h1>
+        <h2>New games added every week!</h2>
+        <h2>Do you have a game you want to see on here? Email weirdwontons@gmail.com the name, description, and files/link for your game, and I'll add it!</h2>
+        <h2><a href="https://docs.google.com/document/d/1cOiJsQWjk1RCAmWv933Kd1O-TvyDF576pPDrGI7gIhk/edit?usp=sharing">Chess The Gathering Rulebook (you need to have an alpinesd email to view it)</a></h2>
+      
+        <p>DISCLAIMER: bagelcomics.com is not responsible for any trouble you may get in while playing these games during class.</p>
+
+        <h2>Game of the Week</h2>
+
+        <a href="eaglercraft-main/eaglercraft-main/stable-download/web/index.html" class="gotd">Minecraft</a> 
+           
+           <button class="collapsible">Favorite Games</button>
+<div class="content">
+  <a href="eaglercraft-main/eaglercraft-main/stable-download/web/index.html" class="gamelink">Minecraft</a> 
+  <a href="games/motox3m/index.html" class="gamelink">Motox3m</a> 
+
+  <a href="bwag/index.html" class="gamelink">Bagel With a Gun</a>
+  <a href="bagel/royal.html" class="gamelink">Bagel Royal</a> 
+  <a href="games/pedro.html" class="gamelink">My Friend Pedro</a> 
+  <a href="games/bloons.html" class="gamelink">Bloons Tower Defense</a> 
+  <a href="games/bloxorz.html" class="gamelink">Bloxorz</a> 
+  <a href="games/portal.html" class="gamelink">Portal Flash Version</a> 
+  <a href="slope.html" class="gamelink">Slope</a> 
+  <a href="sm64/index.html" class="gamelink">Super Mario 64</a> 
+
+</div>
+       <button class="collapsible">Tower Defense Games</button>
+<div class="content">
+  <a href="games/bloons.html" class="gamelink">Bloons Tower Defense</a> 
+  <a href="games/bloonstd2.html" class="gamelink">Bloons Tower Defense 2</a> 
+  <a href="orbitron.html" class="gamelink">Orbitron</a> 
+</div>
+
+<button class="collapsible">2D Platformer Games</button>
+<div class="content">
+  <a href="vex3/index.html" class="gamelink">Vex 3</a> 
+  <a href="vex4/index.html" class="gamelink">Vex 4</a> 
+  <a href="games/sonic.html" class="gamelink">Sonic</a> 
+  <a href="bwag/index.html" class="gamelink">Bagel With a Gun</a>
+  <a href="bagelwithagun.html" class="gamelink">Bagel With a Gun Demo</a> 
+  <a href="mario/index.html" class="gamelink">Mario</a> 
+  <a href="games/supermarioflash.html" class="gamelink">Super Mario Flash</a> 
+  <a href="games/mariocombat.html" class="gamelink">Mario Combat</a> 
+  <a href="games/meatboy.html" class="gamelink">Meat Boy</a> 
+  <a href="games/portal.html" class="gamelink">Portal Flash Version</a> 
+  <a href="bagel/royal.html" class="gamelink">Bagel Royal</a> 
+  <a href="jumpgame.html" class="gamelink">Jump Game</a>
+
+  <a href="jumpgame2.html" class="gamelink">Jump Game 2</a>
+  <a href="newton.html" class="gamelink">newton</a> 
+  
+  <a href="games/only.html" class="gamelink">This is the Only Level</a> 
+
+
+</div>
+
+<button class="collapsible">3D Games</button>
+<div class="content">
+  <a href="eaglercraft-main/eaglercraft-main/stable-download/web/index.html" class="gamelink">Minecraft</a> 
+  <a href="turkeyflap/index.html" class="gamelink">Turkey Flap</a>
+  <a href="games/minecrap/index.html" class="gamelink">Minecraft Beta</a>
+  <a href="games/waflash/run2.html" class="gamelink">Run 2</a> 
+
+  <a href="games/run.html" class="gamelink">Run</a> 
+  <a href="games/bloxorz.html" class="gamelink">Bloxorz</a> 
+  <a href="slope.html" class="gamelink">Slope</a> 
+  <a href="sm64/index.html" class="gamelink">Super Mario 64</a> 
+  <a href="hexgl.html" class="gamelink">Hexgl</a> 
+  <a href="games/cube.html" class="gamelink">Cube</a> 
+       
+</div>
+<button class="collapsible">Puzzle Games</button>
+<div class="content">
+  <a href="2048.html" class="gamelink">2048</a>
+  <a href="games/tetris.html" class="gamelink">Tetris</a> 
+  <a href="games/portal.html" class="gamelink">Portal Flash Version</a> 
+  <a href="games/bank.html" class="gamelink">Esacping The Prison</a> 
+  <a href="games/bloxorz.html" class="gamelink">Bloxorz</a> 
+  <a href="games/stealing.html" class="gamelink">Stealing The Diamond</a> 
+  <a href="games/bigadventure.html" class="gamelink">Big Adventure</a> 
+  
+  <a href="games/quiz.html" class="gamelink">The Impossible Quiz</a> 
+
+  <a href="games/riddleschool.html" class="gamelink">Riddle School</a> 
+
+  <a href="games/riddleschool2.html" class="gamelink">Riddle School 2</a> 
+
+  <a href="games/rs3.html" class="gamelink">Riddle School 3</a> 
+
+</div>
+
+<button class="collapsible">Top Down Games</button>
+<div class="content">
+  <a href="blobby/index.html" class="gamelink">Blobby</a> 
+  <a href="games/stickrpg.html" class="gamelink">Stick Man RPG</a> 
+  <a href="games/hardestgame.html" class="gamelink">Worlds Hardest Game</a> 
+
+  <a href="games/hardestgame2.html" class="gamelink">Worlds Hardest Game 2</a> 
+  <a href="games/hobo.html" class="gamelink">Hobo</a> 
+
+  <a href="games/hobo2.html" class="gamelink">Hobo 2</a> 
+  <a href="games/retrobowl/index.html" class="gamelink">Retro bowl</a> 
+  <a href="games/miniputt.html" class="gamelink">Mini Putt</a> 
+  <a href="games/dadnme.html" class="gamelink">Dad n' Me</a> 
+</div>  
+<button class="collapsible">Shooter Games</button>
+<div class="content">
+  <a href="bwag/index.html" class="gamelink">Bagel With a Gun</a>
+  <a href="bagelwithagun.html" class="gamelink">Bagel With a Gun Demo</a>  
+  <a href="bagel/royal.html" class="gamelink">Bagel Royal</a> 
+  <a href="games/turtle.html" class="gamelink">Turtle Trigger</a> 
+  <a href="games/gunblood.html" class="gamelink">Gun Blood</a> 
+  <a href="games/duckhunt.html" class="gamelink">Duck Hunt</a> 
+  <a href="games/alien.html" class="gamelink">Alien Hominid</a> 
+  <a href="games/appleshoot.html" class="gamelink">Apple Shoot</a> 
+</div>  
+<button class="collapsible">Racing Games</button>
+<div class="content">
+  <a href="games/motox3m/index.html" class="gamelink">Motox3m</a> 
+
+      <a href="games/motox3m2/index.html" class="gamelink">Motox3m2</a> 
+
+</div>
+<button class="collapsible">Retro Games</button>
+<div class="content">
+  <a href="asteroids.html" class="gamelink">Asteroids</a> 
+
+  <a href="games/retrobowl/index.html" class="gamelink">Retro bowl</a> 
+  <a href="mario/index.html" class="gamelink">Mario</a> 
+  <a href="games/sonic.html" class="gamelink">Sonic</a> 
+
+  <a href="games/Pacman.html" class="gamelink">Pacman</a> 
+
+  
+  <a href="games/pong.html" class="gamelink">Pong</a> 
+
+  <a href="sm64/index.html" class="gamelink">Super Mario 64</a> 
+  <a href="games/duckhunt.html" class="gamelink">Duck Hunt</a> 
+  <a href="games/tetris.html" class="gamelink">Tetris</a> 
+  <a href="space.html" class="gamelink">Space Invaders</a> 
+
+
+
+
+</div>
+<button class="collapsible">Other Games</button>
+<div class="content">
+
+      
+      <a href="games/ageofwar.html" class="gamelink">Age Of War</a> 
+
+
+
+
+      
+
+
+      <a href="games/bubble.html" class="gamelink">Bubble</a> 
+      <a href="games/castle.html" class="gamelink">Castle</a> 
+      <a href="games/colorcombat.html" class="gamelink">Color Combat</a> 
+      <a href="games/commando.html" class="gamelink">Commando</a> 
+
+      
+
+      <a href="games/eman2.html" class="gamelink">Eman 2</a> 
+      <a href="games/fancypants.html" class="gamelink">Fancypants</a> 
+
+
+
+
+      <a href="games/miamishark.html" class="gamelink">Miami Shark</a> 
+      <a href="games/NYshark.html" class="gamelink">New York Shark</a> 
+
+
+
+
+
+      <a href="games/papapizza.html" class="gamelink">Papas Pizza</a> 
+              <a href="games/ducklife.html" class="gamelink">Duck Life</a> 
+                  <a href="games/ducklife2.html" class="gamelink">Duck Life 2</a> 
+                  <a href="games/ducklife3.html" class="gamelink">Duck Life 3</a> 
+  
+
+      
+ 
+      
+
+      <a href="cookie/index.html" class="gamelink">Cookie Clicker</a>
+
+   
+
+      
+      <a href="shooter.html" class="gamelink">Shooter Gaem</a> 
+       <a href="zombie.html" class="gamelink">Zombies</a>
+
+
+
+
+</div>
+</div>
+
+    <div id="Projects" class="tabcontent">
+    <h1>Projects</h1>
+
+    <button onclick="abert()">Dont Click me</button>
+    <h2>need to see if a OoCD quote is appropiate? Check out this <a href="checker.html">thing</a> I made</h2>
+<h2>tired of chatting with people? check out this <a href="choose.html">chatbot</a> I made</h2>
+<h2>need a date? check out this <a href="lines.html">pickup line Generator</a> I made</h2>
+  <h2>Check out this <a href="finalproject/index.html">countdown timer</a> I made for CS50</h2>
+  <h2>Searching algorithm to find out <a href="search.html">who asked</a></h2>
+    <h2>For national history day I made this <a href="bindex.html">website</a>, don't judge too harshly its kinda bad</h2>
+
+  <h2>Cool Channels:</h2>
+  <a href="https://www.youtube.com/channel/UCVsIuX-_vHvdMG7ffTlDQLA">Weird Wontons</a>
+    <a href="https://www.youtube.com/channel/UCSd4Iwf2p6o1OpdkepfC94w">JackOfAllTrades</a>
+    <a href="https://www.youtube.com/channel/UCd5dx06pn0tdGwqn3ZVuNZQ">Magnus</a>
+    <a href="https://www.youtube.com/channel/UCRE0hq5gT69syu2ybmpuYWA">Apollo and Friends</a>
+
+    <p class="bageltext">Check in often for new stuff!</p>
+
+
+    </div>
+      <div id="About" class="tabcontent">
+      <h1>About</h1>
+    
+      <h2>Yo ok this website has been a project of mine for a couple <a style="text-decoration: none; color: inherit;" href="oldindex.html">years </a>now. It's not the best website out there, but I have learned a ton from making it. Thanks for checking it out :)</h2>
+      <h2>This was made by a person named Tom</h2>
+        <h2>Check out my <a href="https://github.com/bagel-man">Github</a></h2>
+      <h2>Join the <a href="https://discord.gg/xEwt8W5utF">Discord server</a></h2>
+    
+      <h2>Email me at weirdwontons@gmail.com</h2>
+    
+    </div>
+    </div>
+                       <script>
+
+ function toggleText() {
+  
+            // Get all the elements from the page
+            var points = 
+                document.getElementById("points");
+  
+            var showMoreText =
+                document.getElementById("moreText");
+  
+            var buttonText =
+                document.getElementById("textButton");
+  
+            // If the display property of the dots 
+            // to be displayed is already set to 
+            // 'none' (that is hidden) then this 
+            // section of code triggers
+            if (points.style.display === "none") {
+  
+                // Hide the text between the span
+                // elements
+                showMoreText.style.display = "none";
+  
+                // Show the dots after the text
+                points.style.display = "inline";
+  
+                // Change the text on button to 
+                // 'Show More'
+                buttonText.innerHTML = "Show More";
+            }
+  
+            // If the hidden portion is revealed,
+            // we will change it back to be hidden
+            else {
+  
+                // Show the text between the
+                // span elements
+                showMoreText.style.display = "inline";
+  
+                // Hide the dots after the text
+                points.style.display = "none";
+  
+                // Change the text on button
+                // to 'Show Less'
+                buttonText.innerHTML = "Show Less";
+            }
+        }
+        var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+        function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+function abert() {
+  alert("Oh hey you actually clicked me :)\nWell now that your reading I need to tell you about a secret\nThis website has a secret feature\nGo to the 'about' page, and click on the word 'years'");
+}
+
+</script>
+   <script src="./dirtydanchatscript.js"></script>
+</body>
+</html>
