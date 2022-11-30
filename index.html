@@ -94,6 +94,7 @@
          border: none;
          border-radius: 5px;
          }
+
          .members-count,
          .members-list,
          .messages {
@@ -105,7 +106,9 @@
          padding: 15px;
          margin-bottom: 15px;
          color: #EDF2F4;
+         
          }
+
          .messages {
             background-color: #1A1C25;
          margin-bottom: 50px;
@@ -141,6 +144,7 @@
          padding-right: 10px;
          position: relative;
          color: #EDF2F4;
+         width: 95%;
          }
          .message-form {
             background-color: #1A1C25;
@@ -148,6 +152,7 @@
          color: #171717;
          display: flex;
          flex-shrink: 0;
+         width: 95%;
          }
          .message-form__input {
          border: 1px solid #e4e4e4;
@@ -158,7 +163,7 @@
          padding: 10px 15px;
          font-size: 150%;
          position: fixed;
-         width: 85%;
+         width: 79%;
          bottom: 10px;
          }
          .message-form__button {
@@ -268,7 +273,14 @@
             
             z-index: 1;
          }
-
+         .thing{
+            float:right; 
+            width: 19%;
+         }
+         .thing2{
+            float:left; 
+            width: 80%;
+         }
       </style>
    </head>
    <body>
@@ -438,11 +450,15 @@
       </div>
       <div id="Chat" class="tabcontent">
          <h1>Chat</h1>
+         <div class="thing">
          <div class="members-count">-</div>
          <div class="members-list">-</div>
+      </div>
+      <div class="thing2">
          <div class="messages"></div>
          <form class="message-form" onsubmit="return false;">
             <input class="message-form__input" placeholder="Type something.." type="text"/>
+         </div>
             <!-- <input class="message-form__button" value="Send" type="submit"/> -->
          <!-- </form> -->
       </div>
