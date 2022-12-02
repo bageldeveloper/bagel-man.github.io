@@ -222,7 +222,7 @@ function getRandomName() {
  const adjs = ["maple", "angry", "fierce", "wild", "untamed", "sprinkled", "dreadful", "bloody", "predatory",];
 
 
- const nouns = ["donut", "savage", "revolutionist", "revolutionary", "shark", "sprinkle",];
+ const nouns = ["donut", "savage", "revolutionist", "revolutionary", "peasent", "zealot",];
   
 var num = Math.floor(Math.random() * 100);
 if(num == 69){
