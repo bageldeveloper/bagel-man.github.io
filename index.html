@@ -289,8 +289,13 @@
          <h1>Home</h1>
          <h2>Welcome to bagelcomics.com! Play some dope games, chat with other people from around the world, explore the site to find the hidden secrets, and check out the dumb projects I've made. :)</h2>
          <h1>Announcements:</h1>
+         <div class="announcement">
+            <h1 class="anountext">December 4th, 2022</h1>
+            <h1 class="anountext">New gaems, we got duck life 4, and all of the ridde school games. All of the papas games are coming soon, along with a bunch of other games, so check in often.
+            </h1>
+          </div>
                  <div class="announcement">
-            <h1 class="anountext">November 3rd, 2022</h1>
+            <h1 class="anountext">December 3rd, 2022</h1>
             <h1 class="anountext">New game was added, its called Super Smash Flash, its pretty fun
             </h1>
           </div>
@@ -535,6 +540,10 @@
                <a href="games/riddleschool.html" class="gamelink">Riddle School</a> 
                <a href="games/riddleschool2.html" class="gamelink">Riddle School 2</a> 
                <a href="games/rs3.html" class="gamelink">Riddle School 3</a> 
+               <a href="games/riddleschool4.html" class="gamelink">Riddle School 4</a> 
+               <a href="games/riddleschool5.html" class="gamelink">Riddle School 5</a> 
+               <a href="games/riddleschooltransfer.html" class="gamelink">Riddle School Transfer</a> 
+               <a href="games/riddleschooltransfer2.html" class="gamelink">Riddle School Transfer2</a> 
             </div>
             <button class="collapsible">Top Down Games</button>
             <div class="content">
@@ -579,6 +588,11 @@
             </div>
             <button class="collapsible">Other Games</button>
             <div class="content">
+               <a href="games/ducklife.html" class="gamelink">Duck Life</a> 
+               <a href="games/ducklife2.html" class="gamelink">Duck Life 2</a> 
+               <a href="games/ducklife3.html" class="gamelink">Duck Life 3</a> 
+               <a href="games/ducklife4.html" class="gamelink">Duck Life 4</a> 
+
                <a href="games/learntofly.html" class="gamelink">Learn To Fly</a> 
                <a href="games/learntofly2.html" class="gamelink">Learn To Fly 2</a> 
                <a href="games/learntofly3.html" class="gamelink">Learn To Fly 3</a> 
@@ -593,9 +607,7 @@
                <a href="games/miamishark.html" class="gamelink">Miami Shark</a> 
                <a href="games/NYshark.html" class="gamelink">New York Shark</a> 
                <a href="games/papapizza.html" class="gamelink">Papas Pizza</a> 
-               <a href="games/ducklife.html" class="gamelink">Duck Life</a> 
-               <a href="games/ducklife2.html" class="gamelink">Duck Life 2</a> 
-               <a href="games/ducklife3.html" class="gamelink">Duck Life 3</a> 
+  
                <a href="cookie/index.html" class="gamelink">Cookie Clicker</a>
                <a href="shooter.html" class="gamelink">Shooter Gaem</a> 
                <a href="zombie.html" class="gamelink">Zombies</a>
@@ -739,7 +751,9 @@
      if (this.x + this.vx < 0) {    this.x = 0;   this.vx = canvas.width;  }
      ctx.fill(); };}
  function drops() {  for (var i = 0; i <600; i++) {  da[i] = new drop();}}drops();
- function animate() {ctx.clearRect(0, 0, canvas.width, canvas.height); da.forEach(drop => drop.draw()); requestAnimationFrame(animate);}animate();</script>
+ function animate() {ctx.clearRect(0, 0, canvas.width, canvas.height); da.forEach(drop => drop.draw()); requestAnimationFrame(animate);}animate();
+ 
+ </script>
  
    
  
