@@ -484,6 +484,8 @@
          <h2>Some games may not work because the emulator im using, ruffle, doesnt have full support for flash games yet.</h2>
          <h2><a href="https://docs.google.com/document/d/1cOiJsQWjk1RCAmWv933Kd1O-TvyDF576pPDrGI7gIhk/edit?usp=sharing">Chess The Gathering Rulebook (you need to have an alpinesd email to view it)</a></h2>
          <p>DISCLAIMER: bagelcomics.com is not responsible for any trouble you may get in while playing these games during class.</p>
+         <button onclick="random()" class="gotd" >Random Game</button> 
+
          <h2>Game of the Week</h2>
          <a href="games/supersmashflash.html" class="gotd">Super Smash Flash</a> 
          <div class="games">
@@ -681,6 +683,12 @@
       </div>
    </div>
       <script>
+
+      function random() {
+         const list = document.getElementsByClassName('gamelink');
+         var item = list[Math.floor(Math.random()*list.length)];
+         item.click();
+}
          function toggleText() {
           
                     // Get all the elements from the page
