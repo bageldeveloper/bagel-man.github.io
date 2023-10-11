@@ -1,0 +1,3 @@
+[submodule "hl-engine-js"]
+	path = hl-engine-js
+	url = git@github.com:x8BitRain/hl-engine-js.git

@@ -1,0 +1,790 @@
+<html>
+   <head>
+      <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7079018879176395"
+     crossorigin="anonymous"></script>
+      <title>Bagels!</title>
+      <link rel="icon" type="image/x-icon" href="bagelcomicsicon.png">
+      <meta name=”Description” content=”Bagelcomics.com is a pretty cool website with stuff on it. Play some dope games, chat with other people from around the world, explore the site to find the hidden secrets, and check out the dumb projects Ive made.”>
+      <style>
+         * {box-sizing: border-box}
+         body {
+            /* background: url(bagelcomicsbgwinter.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+         padding-top: 50px;
+         background-color: #1A1C25;
+           /* background-color: #eb34b7; */
+         color: #EDF2F4;
+         font-family: 'Nunito', sans-serif;
+         }
+         /* Style the tab */
+         .header {
+         background-color:#07070A;
+         z-index: 1000;
+         width: 100%;
+         height: 50px;
+         position: fixed;
+         top: 0;
+         left: 0;
+         }
+         .header .logo{
+         margin: 10px;
+         }
+         .header .tab{
+         width: 60%;
+         float: right;
+         }
+         /* Style the buttons inside the tab */
+         .tab button {
+         color: #EDF2F4;
+         display: block;
+         background-color: inherit;
+         /* padding: 22px 16px; */
+         float: left;
+         border: none;
+         outline: none;
+         cursor: pointer;
+         padding: 5px 16px;
+         font-size: 16px;
+         font-size: 17px;
+         width: 20%;
+         height: 100%;
+         }
+         /* Change background color of buttons on hover */
+         .tab button:hover {
+         background-color:#8D99AE;
+         }
+         /* Create an active/current "tab button" class */
+         .tab button.active {
+         background-color: #1A1C25;
+         }
+         /* Style the tab content */
+         .tabcontent {
+            float: left;
+            padding: 0px 12px;
+            width: 100%;
+            border-left: none;
+         }
+         .gotdtext{
+         text-align: center;
+         }
+         .anountext{
+         font-size: 100%;
+         color: #EDF2F4;
+         }
+         .announcement {
+         border-radius: 15px;
+         width: 80%;
+         padding: 20px;
+         background-color: #07070A;;
+         margin-top: 20px;
+         margin-bottom: 20px
+         }
+         #moreText {
+         /* Display nothing for the element */
+         display: none;
+         }
+         .showbutton{
+         color: #EDF2F4;
+         color: #070707;
+         margin: auto;
+         border: none;
+         border-radius: 5px;
+         }
+         .members-count,
+         .members-list,
+         .messages {
+            background-color: #1A1C25;
+         font-size: 150%;
+         border-radius: 15px;
+         color: #171717;
+         border: 1px solid #e4e4e4;
+         padding: 15px;
+         margin-bottom: 15px;
+         color: #EDF2F4;
+         }
+         .messages {
+            background-color: #1A1C25;
+         margin-bottom: 50px;
+         border-radius: 15px;
+         color: #171717;
+         flex-shrink: 1;
+         overflow: auto;
+         color: #EDF2F4;
+         }
+         .message {
+            background-color: #1A1C25;
+         border-radius: 15px;
+         color: #171717;
+         color: #171717;
+         padding: 5px 0;
+         color: #EDF2F4;
+         }
+         .message .member {
+            background-color: #1A1C25;
+         border-radius: 15px;
+         color: #171717;
+         color: #171717;
+         display: inline-block;
+         }
+         .chat{
+         overflow-y:auto
+         }
+         .member {
+            background-color: #1A1C25;
+         border-radius: 15px;
+         color: #171717;
+         color: #171717;
+         padding-right: 10px;
+         position: relative;
+         color: #EDF2F4;
+         }
+         .message-form {
+            background-color: #1A1C25;
+         border-radius: 15px;
+         color: #171717;
+         display: flex;
+         flex-shrink: 0;
+         }
+         .message-form__input {
+         border: 1px solid #e4e4e4;
+         border-radius: 15px;
+         flex-grow: 1;
+         background-color: #1A1C25;
+         color: #EDF2F4;
+         padding: 10px 15px;
+         font-size: 150%;
+         position: fixed;
+         width: 85%;
+         bottom: 10px;
+         }
+         .message-form__button {
+
+         color: #171717;
+         margin: 10px;
+         padding-left: 10px;
+         padding-right: 10px;
+         padding-top: 5px;
+         padding-bottom: 5px;
+         border-width: 2px;
+         border-radius: 15px;
+         position: fixed;
+         float:right;
+         width: 5%;
+         bottom: 10px;
+         right: 10px;
+         }
+         /* width */
+         ::-webkit-scrollbar {
+         width: 10px;
+         }
+         /* Track */
+         ::-webkit-scrollbar-track {
+         background:#07070A;
+         }
+         /* Handle */
+         ::-webkit-scrollbar-thumb {
+         background: #3b3f52;
+         }
+         /* Handle on hover */
+         ::-webkit-scrollbar-thumb:hover {
+         background: #303342;
+         }
+         .gamelink:hover{
+         background-color:#3b3b42;
+         }
+         .gamelink{
+         background-color:#1A1C25;
+         border: none;
+         width: 100%;
+         color: #EDF2F4;
+         padding: 32px 32px;
+         text-decoration: none;
+         display: inline-block;
+         cursor: pointer;
+         }
+         .gotd{
+         background-color:#07070A;
+         color:  #EDF2F4;
+         border: none;
+         width: 100%;
+         padding: 32px 32px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         margin-bottom: 50px;
+         cursor: pointer;
+         }
+         .collapsible {
+         font-family: 'Nunito', sans-serif;
+         background-color:#07070A;
+         color:  #EDF2F4;
+         cursor: pointer;
+         padding: 32px;
+         width: 100%;
+         border: none;
+         text-align: left;
+         outline: none;
+         font-size: 15px;
+         }
+         .games .active, .collapsible:hover {
+         background-color: #24242d;
+         }
+         .collapsible:after {
+         content: '\002B';
+         color: white;
+         font-weight: bold;
+         float: right;
+         margin-left: 5px;
+         }
+         .content {
+         width: 110%;
+         font-family: 'Nunito', sans-serif;
+         max-height: 0;
+         overflow: hidden;
+         transition: max-height 0.2s ease-out;
+         background-color: #1A1C25;
+         text-align: left;
+         }
+         .badge {
+         top: -10px;
+         right: 10px;
+         margin-left: 10%;
+         padding: 5px 10px;
+         border-radius: 50%;
+         background-color: red;
+         color: white;
+         }
+         .logo{
+         height: 35px;
+         }
+         .snow{
+            position:fixed; top:0;left:0;
+            z-index: -1;
+         }
+         .everything{
+            
+            z-index: 1;
+         }
+
+      </style>
+   </head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G4303T88PB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G4303T88PB');
+</script>
+
+   <body>
+      <div class = "everthing">
+      <div class="header">
+         <a href="#" class="logo" onclick="openCity(event, 'Home')" >
+         <img class = "logo" src="bagelicontab.png"></img>
+         </a>
+         <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'Home')" id="defaultOpen">Home</button>
+            <button class="tablinks" onclick="openCity(event, 'Chat')" id="chat">Chat</button>
+            <button class="tablinks" onclick="openCity(event, 'Games')">Games</button>
+            <button style="background-color:#000000;"> <img src="https://media.tenor.com/PEDzvMlrdi0AAAAC/fire.gif" style="width:50px;height:20px;"></img> </button>
+            <button class="tablinks" onclick="openCity(event, 'About')">About</button>
+         </div>
+      </div> 
+   
+      <div id="Home" class="tabcontent">
+         <h1><a style="text-decoration: none; color: inherit;" href="MathCult.html">Home</a><h1>
+         <h2>Welcome to bagelcomics.com! Play some dope games, chat with other people from around the world, explore the site to find the hidden secrets, and check out the dumb projects I've made. :)</h2>
+           <h2>hi tom</h2>
+   
+         <p>Number of visits</p>
+         <a href="https://www.hitwebcounter.com" target="_blank">
+         <img src="https://hitwebcounter.com/counter/counter.php?page=7288119&style=0011&nbdigits=5&type=page&initCount=0" title="User Stats" Alt="PHP Hits Count"   border="0" >
+         </a> 
+         <p>Number of unique visitors</p>
+         <!-- hitwebcounter Code START -->
+         <a href="https://www.hitwebcounter.com" target="_blank">
+         <img src="https://hitwebcounter.com/counter/counter.php?page=8041014&style=0011&nbdigits=4&type=ip&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a>                                    
+         <!-- ad bois -->
+         <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-4474724430572739"
+            data-ad-slot="4055551074"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+         <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+         <script src="https://utteranc.es/client.js"
+            repo="bagel-man/bagel-man.github.io"
+            issue-term="pathname"
+            label="documentation"
+            theme="github-dark-orange"
+            crossorigin="anonymous"
+            async></script>          
+      </div>
+      <div id="Chat" class="tabcontent">
+         <h1>Chat</h1>
+         <div class="members-count">-</div>
+         <div class="members-list">-</div>
+         <div class="messages"></div>
+         <form class="message-form" onsubmit="return false;">
+            <input class="message-form__input" placeholder="Type something.." type="text"/>
+            <!-- <input class="message-form__button" value="Send" type="submit"/> -->
+         </form>
+      </div>
+    </div>
+      <div id="Games" class="tabcontent">
+         <h1>Games</h1>
+         <h2>Do you have a game you want to see on here? Email funismathhelp@gmail.com the name, description, and possible files/link for your game, and I'll add it! You can also just fill out this form i made <a href="https://forms.gle/kLmvqFA6qrF9bXkp6">here or send me the name and we'll try to put it on bagelcomics</a></h2>
+         <h1>Some games may not work because the emulator im using, ruffle, doesnt have full support for flash games yet. because of this, some games dont work. sorry.</h1>
+         <p>DISCLAIMER: bagelcomics.com is not responsible for any trouble you may get in while playing these games during class.</p>
+         <p>concept.html</p>
+         
+         <button onclick="random()" class="gotd" >Random Game</button> 
+
+         <h2 class="gotdtext">Game of the Year</h2>
+         <a href="bwag/index.html" class="gotd">Bagel With a Gun</a>
+         <h2 class="gotdtext">Game of the Month</h2>
+         <a href="N64Wasm-masterMK64/dist/index.html" class="gotd">Mario Kart 64</a> 
+         <h2 class="gotdtext">Game of the Week</h2>
+         <a href="games/emu/tcs.html" class="gotd">Lego Star Wars TCS</a>
+         <div class="games">
+            <button class="collapsible">New Games</button>
+            <div class="content">
+               <a href="games/emu/tcs.html" class="gamelink">Lego Star Wars TCS</a>
+
+               <a href="games/emu/megamanx.html" class="gamelink">Mega Man X</a>
+
+               <a href="games/emu/megamantwo.html" class="gamelink">Mega Man 2</a>
+               
+               <a href="games/emu/smw.html" class="gamelink">Super Mario World</a>
+               
+               <a href="games/emu/smk.html" class="gamelink">Super Mario Kart</a>
+               
+               <a href="games/emu/dkcountry.html" class="gamelink">Donkey Kong Country</a>
+               
+               <a href="games/emu/nbajam.html" class="gamelink">NBA Jam</a>
+               
+               <a href="games/emu/tomandjerry.html" class="gamelink">Tom and Jerry</a>
+               
+               <a href="games/emu/toystory.html" class="gamelink">Toy Story</a>
+               
+               <a href="games/emu/alladin.html" class="gamelink">Alladin</a>
+               
+               <a href="games/emu/lionking.html" class="gamelink">The Lion King</a>
+               
+               <a href="games/emu/mshwog.html" class="gamelink">Marvel SH: War of the Gems</a>
+
+               <a href="games/emu/umk3.html" class="gamelink">Ultimate Mortal Kombat 3</a>
+
+               <a href="games/emu/loz.html" class="gamelink">Legend Of Zelda NES</a>
+
+               <a href="games/emu/batman.html" class="gamelink">Batman</a>
+
+               <a href="games/emu/miketysonpunchout.html" class="gamelink">Mike Tyson's Punch Out!</a>
+
+               <a href="games/emu/punchout.html" class="gamelink">Punch Out!</a>
+
+               <a href="games/emu/smb.html" class="gamelink">Super Mario Bros</a>
+
+               <a href="games/emu/smbtwo.html" class="gamelink">Super Mario Bros. 2</a>
+
+               <a href="games/emu/smbthree.html" class="gamelink">Super Mario Bros. 3</a>
+
+               <a href="games/emu/doubledragon.html" class="gamelink">Double Dragon</a>
+
+               <a href="games/emu/contra.html" class="gamelink">Contra</a>
+
+               <a href="games/emu/ducktales.html" class="gamelink">Duck Tales</a>
+
+               <a href="games/emu/f13.html" class="gamelink">Friday the 13th</a>
+
+               <a href="games/emu/ransom.html" class="gamelink">River City Ransom</a>
+
+               <a href="halflife/index.html" class="gamelink">Half-Life</a> 
+
+               <a href="doom/public/index.html" class="gamelink">Doom 1/2</a> 
+            </div>
+            <button class="collapsible">Favorite Games</button>
+            <div class="content">
+               <a href="N64Wasm-master/dist/index.html" class="gamelink">Zelda Ocarina of Time</a>
+               <a href="N64Wasm-masterMK64/dist/index.html" class="gamelink">Mario Kart 64</a>
+               <a href="games/raftwars.html" class="gamelink">Raft Wars</a>
+               <a href="games/8ballpool.html" class="gamelink">8 Ball Pool</a> 
+               <a href="games/portal2d.html" class="gamelink">Portal 2D</a> 
+               <a href="games/1on1soccer.html" class="gamelink">1 on 1 Soccer</a> 
+               <a href="games/digtochina.html" class="gamelink">Dig To China</a>
+               <a href="Quake1-master/Quake1.htm" class="gamelink">Quake</a>
+               <a href="Quake3-master/Quake3.htm" class="gamelink">Quake 3</a>
+               <a href="eaglercraft-main/eaglercraft-main/stable-download/web/index.html" class="gamelink">Minecraft 1.5</a> 
+               <a href="eaglercraftx-1.8-main/sources/setup/workspace_template/javascript/index.html" class="gamelink">Minecraft 1.8</a> 
+               <a href="games/motox3m/index.html" class="gamelink">Motox3m</a> 
+               <a href="bwag/index.html" class="gamelink">Bagel With a Gun</a>
+               <a href="games/pedro.html" class="gamelink">My Friend Pedro</a> 
+               <a href="games/bloons.html" class="gamelink">Bloons Tower Defense</a> 
+               <a href="games/bloxorz.html" class="gamelink">Bloxorz</a> 
+               <a href="games/portal.html" class="gamelink">Portal Flash Version</a> 
+               <a href="slope.html" class="gamelink">Slope</a> 
+               <a href="games/sm64/index.html" class="gamelink">Super Mario 64</a> 
+               <a href="games/learntofly.html" class="gamelink">Learn To Fly</a> 
+            </div>
+            <button class="collapsible">Tower Defense Games</button>
+            <div class="content">
+               <a href="games/pvz.html" class="gamelink">Plants vs Zombies</a> 
+               <a href="games/pvz2.html" class="gamelink">Plants vs Zombies 2</a> 
+               <a href="games/canyondefense.html" class="gamelink">Canyon Defense</a> 
+               <a href="games/bloons.html" class="gamelink">Bloons Tower Defense</a> 
+               <a href="games/bloonstd2.html" class="gamelink">Bloons Tower Defense 2</a> 
+               <a href="games/bloonstd3.html" class="gamelink">Bloons Tower Defense 3</a> 
+               <a href="games/bloonstd4.html" class="gamelink">Bloons Tower Defense 4</a> 
+               <a href="orbitron.html" class="gamelink">Orbitron</a> 
+            </div>
+            <button class="collapsible">Platformer Games</button>
+            <div class="content">
+               <a href="games/chibiknight.html" class="gamelink">Chibi Knight</a> 
+               <a href="games/digtochina.html" class="gamelink">Dig To China</a>
+               <a href="vex3/index.html" class="gamelink">Vex 3</a> 
+               <a href="vex4/index.html" class="gamelink">Vex 4</a> 
+               <a href="games/vex6/index.html" class="gamelink">Vex 6</a> 
+               <a href="games/sonic.html" class="gamelink">Sonic</a> 
+               <a href="bwag/index.html" class="gamelink">Bagel With a Gun</a>
+               <a href="bagelwithagun.html" class="gamelink">Bagel With a Gun Demo</a>  
+               <a href="games/meatboy.html" class="gamelink">Meat Boy</a> 
+               <a href="games/portal.html" class="gamelink">Portal Flash Version</a> 
+               <a href="games/portal2d.html" class="gamelink">Portal 2D</a> 
+               <a href="jumpgame.html" class="gamelink">Jump Game</a>
+               <a href="jumpgame2.html" class="gamelink">Jump Game 2</a>
+               <a href="newton.html" class="gamelink">newton</a> 
+               <a href="games/only.html" class="gamelink">This is the Only Level</a> 
+            </div>
+            <button class="collapsible">3D Games</button>
+            <div class="content">
+               <a href="games/drift-hunters/index.html" class="gamelink">Drift Hunters</a> 
+               <a href="Quake1-master/Quake1.htm" class="gamelink">Quake</a>
+               <a href="Quake3-master/Quake3.htm" class="gamelink">Quake 3</a>
+               <a href="eaglercraft-main/eaglercraft-main/stable-download/web/index.html" class="gamelink">Minecraft</a> 
+               <a href="turkeyflap/index.html" class="gamelink">Turkey Flap</a>
+               <a href="games/minecrap/index.html" class="gamelink">Minecraft Beta</a>
+               <a href="games/waflash/run2.html" class="gamelink">Run 2</a> 
+               <a href="games/run.html" class="gamelink">Run</a> 
+               <a href="games/bloxorz.html" class="gamelink">Bloxorz</a> 
+               <a href="Slope-Game-main/index.html" class="gamelink">Slope</a> 
+               <a href="hexgl.html" class="gamelink">Hexgl</a> 
+               <a href="games/cube.html" class="gamelink">Cube</a> 
+            </div>
+            <button class="collapsible">Puzzle Games</button>
+            <div class="content">
+               <a href="games/siftheads.html" class="gamelink">Siftheads</a>
+               <a href="games/portal2d.html" class="gamelink">Portal 2D</a> 
+               <a href="2048.html" class="gamelink">2048</a>
+               <a href="games/tetris.html" class="gamelink">Tetris</a> 
+               <a href="games/portal.html" class="gamelink">Portal Flash Version</a> 
+               <a href="games/bank.html" class="gamelink">Esacping The Prison</a> 
+               <a href="games/bloxorz.html" class="gamelink">Bloxorz</a> 
+               <a href="games/stealing.html" class="gamelink">Stealing The Diamond</a> 
+               <a href="games/bigadventure.html" class="gamelink">Big Adventure</a> 
+               <a href="games/quiz.html" class="gamelink">The Impossible Quiz</a> 
+               <a href="games/riddleschool.html" class="gamelink">Riddle School</a> 
+               <a href="games/riddleschool2.html" class="gamelink">Riddle School 2</a> 
+               <a href="games/rs3.html" class="gamelink">Riddle School 3</a> 
+               <a href="games/riddleschool4.html" class="gamelink">Riddle School 4</a> 
+               <a href="games/riddleschool5.html" class="gamelink">Riddle School 5</a> 
+               <a href="games/riddleschooltransfer.html" class="gamelink">Riddle School Transfer</a> 
+               <a href="games/riddleschooltransfer2.html" class="gamelink">Riddle School Transfer 2</a> 
+            </div>
+            <button class="collapsible">Top Down Games</button>
+            <div class="content">
+               <a href="blobby/index.html" class="gamelink">Blobby</a> 
+               <a href="games/stickrpg.html" class="gamelink">Stick Man RPG</a> 
+               <a href="games/hardestgame.html" class="gamelink">Worlds Hardest Game</a> 
+               <a href="games/hardestgame2.html" class="gamelink">Worlds Hardest Game 2</a> 
+               <a href="games/hobo.html" class="gamelink">Hobo</a> 
+               <a href="games/hobo2.html" class="gamelink">Hobo 2</a> 
+               <a href="games/retrobowl/index.html" class="gamelink">Retro bowl</a> 
+               <a href="games/miniputt.html" class="gamelink">Mini Putt</a> 
+               <a href="games/dadnme.html" class="gamelink">Dad n' Me</a> 
+            </div>
+            <button class="collapsible">Shooter Games</button>
+            <div class="content">
+               <a href="games/raftwars.html" class="gamelink">Raft Wars</a>
+               <a href="games/getaway-shootout/index.html" class="gamelink">Getaway Shootout</a> 
+               <a href="games/awesometanks2.html" class="gamelink">Awesome Tanks 2</a> 
+               <a href="games/siftheads.html" class="gamelink">Siftheads</a>
+               <a href="Quake1-master/Quake1.htm" class="gamelink">Quake</a>
+               <a href="Quake3-master/Quake3.htm" class="gamelink">Quake 3</a>
+               <a href="bwag/index.html" class="gamelink">Bagel With a Gun</a>
+               <a href="bagelwithagun.html" class="gamelink">Bagel With a Gun Demo</a>  
+               <a href="games/turtle.html" class="gamelink">Turtle Trigger</a> 
+               <a href="games/gunblood.html" class="gamelink">Gun Blood</a> 
+               <a href="games/duckhunt.html" class="gamelink">Duck Hunt</a> 
+               <a href="games/alien.html" class="gamelink">Alien Hominid</a> 
+               <a href="games/appleshoot.html" class="gamelink">Apple Shoot</a> 
+            </div>
+            <button class="collapsible">Racing Games</button>
+            <div class="content">
+               <a href="games/drift-hunters/index.html" class="gamelink">Drift Hunters</a> 
+               <a href="games/motox3m/index.html" class="gamelink">Motox3m</a> 
+               <a href="games/motox3m2/index.html" class="gamelink">Motox3m2</a> 
+            </div>
+            <button class="collapsible">Retro Games</button>
+            <div class="content">
+               <a href="Quake1-master/Quake1.htm" class="gamelink">Quake</a>
+               <a href="Quake3-master/Quake3.htm" class="gamelink">Quake 3</a>
+               <a href="asteroids.html" class="gamelink">Asteroids</a> 
+               <a href="games/retrobowl/index.html" class="gamelink">Retro bowl</a> 
+               <a href="games/sonic.html" class="gamelink">Sonic</a> 
+               <a href="games/Pacman.html" class="gamelink">Pacman</a> 
+               <a href="games/pong.html" class="gamelink">Pong</a> 
+               <a href="games/duckhunt.html" class="gamelink">Duck Hunt</a> 
+               <a href="games/tetris.html" class="gamelink">Tetris</a> 
+               <a href="space.html" class="gamelink">Space Invaders</a> 
+            </div>
+            <button class="collapsible">Nintendo Games</button>
+            <div class="content">
+               <a href="games/emu/tcs.html" class="gamelink">Lego Star Wars TCS</a>
+               <a href="games/emu/smw.html" class="gamelink">Super Mario World</a>
+               <a href="games/emu/smk.html" class="gamelink">Super Mario Kart</a>
+               <a href="games/emu/dkcountry.html" class="gamelink">Donkey Kong Country</a>
+               <a href="games/emu/nbajam.html" class="gamelink">NBA Jam</a>
+               <a href="games/emu/tomandjerry.html" class="gamelink">Tom and Jerry</a>
+               <a href="games/emu/toystory.html" class="gamelink">Toy Story</a>
+               <a href="games/emu/alladin.html" class="gamelink">Alladin</a>
+               <a href="games/emu/lionking.html" class="gamelink">The Lion King</a>
+               <a href="games/emu/mshwog.html" class="gamelink">Marvel SH: War of the Gems</a>
+               <a href="N64Wasm-master/dist/index.html" class="gamelink">Zelda Ocarina of Time</a>
+               <a href="N64Wasm-masterMK64/dist/index.html" class="gamelink">Mario Kart 64</a>
+               <a href="games/sm64/index.html" class="gamelink">Super Mario 64</a> 
+               <a href="games/supermarioflash.html" class="gamelink">Super Mario Flash</a>
+               <a href="games/mario/index.html" class="gamelink">Mario</a> 
+               <a href="games/mariocombat.html" class="gamelink">Mario Combat</a>
+               <a href="games/emu/megamanx.html" class="gamelink">Mega Man X</a>
+               <a href="games/emu/megamantwo.html" class="gamelink">Mega Man 2</a>
+               <a href="games/emu/umk3.html" class="gamelink">Ultimate Mortal Kombat 3</a>
+               <a href="games/emu/loz.html" class="gamelink">Legend Of Zelda NES</a>
+               <a href="games/emu/batman.html" class="gamelink">Batman</a>
+               <a href="games/emu/miketysonpunchout.html" class="gamelink">Mike Tyson's Punch Out!</a>
+               <a href="games/emu/punchout.html" class="gamelink">Punch Out!</a>
+               <a href="games/emu/smb.html" class="gamelink">Super Mario Bros</a>
+               <a href="games/emu/smbtwo.html" class="gamelink">Super Mario Bros. 2</a>
+               <a href="games/emu/smbthree.html" class="gamelink">Super Mario Bros. 3</a>
+               <a href="games/emu/doubledragon.html" class="gamelink">Double Dragon</a>
+               <a href="games/emu/contra.html" class="gamelink">Contra</a>
+               <a href="games/emu/ducktales.html" class="gamelink">Duck Tales</a>
+               <a href="games/emu/f13.html" class="gamelink">Friday the 13th</a>
+               <a href="games/emu/ransom.html" class="gamelink">River City Ransom</a>
+            </div>
+            <button class="collapsible">Papas Games</button>
+            <div class="content">
+               <a href="games/papasfreezeria.html" class="gamelink">Papas Freezeria</a> 
+               <a href="games/papasdonuteria.html" class="gamelink">Papas Donuteria</a> 
+               <a href="games/papascupcakeria.html" class="gamelink">Papas Cupcakeria</a> 
+               <a href="games/papasscooperia.html" class="gamelink">Papas Scooperia</a>
+               <a href="games/papaspasteria.html" class="gamelink">Papas Pastaria</a>
+               <a href="games/papasbakeria.html" class="gamelink">Papas Bakeria</a>  
+               <a href="games/papassushiria.html" class="gamelink">Papas Sushiria</a> 
+               <a href="games/papascheeseria.html" class="gamelink">Papas Cheeseria</a>
+               <a href="games/papastacomia.html" class="gamelink">Papas Tacomia</a> 
+               <a href="games/papaswingeria.html" class="gamelink">Papas Wingeria</a> 
+               <a href="games/papapizza.html" class="gamelink">Papas Pizzeria</a> 
+               <a href="games/papasbugeria.html" class="gamelink">Papas Burgeria</a> 
+               <a href="games/papashotdogeria.html" class="gamelink">Papas Hotdogeria</a> 
+               <a href="games/papaspancakeria.html" class="gamelink">Papas Pancakeria</a>
+               <a href="games/jacksmith.html" class="gamelink">Jack Smith</a>
+            </div>
+            <button class="collapsible">Other Games</button>
+            <div class="content">
+               <a href="games/linerider.html" class="gamelink">Line Rider</a>
+               <a href="games/checkers.html" class="gamelink">Checkers</a> 
+               <a href="games/8ballpool.html" class="gamelink">8 Ball Pool</a> 
+               <a href="games/1on1soccer.html" class="gamelink">1on1 Soccer</a> 
+               <a href="games/digtochina.html" class="gamelink">Dig To China</a>
+               <a href="games/sas2.html" class="gamelink">Swords and Sandals 2</a> 
+               <a href="games/sas.html" class="gamelink">Swords and Sandals</a> 
+               <a href="games/ducklife.html" class="gamelink">Duck Life</a> 
+               <a href="games/ducklife2.html" class="gamelink">Duck Life 2</a> 
+               <a href="games/ducklife3.html" class="gamelink">Duck Life 3</a> 
+               <a href="games/ducklife4.html" class="gamelink">Duck Life 4</a> 
+               <a href="games/learntofly.html" class="gamelink">Learn To Fly</a> 
+               <a href="games/learntofly2.html" class="gamelink">Learn To Fly 2</a> 
+               <a href="games/learntofly3.html" class="gamelink">Learn To Fly 3</a> 
+               <a href="games/artofwar.html" class="gamelink">Art of War</a> 
+               <a href="games/ageofwar.html" class="gamelink">Age Of War</a> 
+               <a href="games/bubble.html" class="gamelink">Bubble</a> 
+               <a href="games/castle.html" class="gamelink">Castle</a> 
+               <a href="games/colorcombat.html" class="gamelink">Color Combat</a> 
+               <a href="games/commando.html" class="gamelink">Commando</a> 
+               <a href="games/eman2.html" class="gamelink">Eman 2</a> 
+               <a href="games/fancypants.html" class="gamelink">Fancypants</a> 
+               <a href="games/miamishark.html" class="gamelink">Miami Shark</a> 
+               <a href="games/NYshark.html" class="gamelink">New York Shark</a> 
+               <a href="games/cookie/index.html" class="gamelink">Cookie Clicker</a>
+               <a href="games/shooter.html" class="gamelink">Shooter Game</a> 
+               <a href="games/zombie.html" class="gamelink">Zombies</a>
+            </div>
+         </div>
+      </div>
+      <div id="Projects" class="tabcontent">
+
+         <h1>Projects</h1>
+         <button onclick="abert()">Dont Click me</button>
+         <h2>I made a discord bot, add it to your server, the link is <a href="https://discord.com/api/oauth2/authorize?client_id=1004129851759927326&permissions=534723950664&scope=bot%20applications.commands">here</a></h2>
+        
+         <h2>tired of chatting with people? check out this <a href="choose.html">chatbot</a> I made</h2>
+         <h2>need a date? check out this <a href="lines.html">pickup line Generator</a> I made</h2>
+         <h2>Check out this <a href="finalproject/index.html">countdown timer</a> I made for CS50</h2>
+         <h2>Searching algorithm to find out <a href="search.html">who asked</a></h2>
+        <!--allhailthemathcult -->
+         <h2>Cool Channels:</h2>
+         <a href="https://www.youtube.com/channel/UCVsIuX-_vHvdMG7ffTlDQLA">Weird Wontons</a>
+         <a href="https://www.youtube.com/channel/UCSd4Iwf2p6o1OpdkepfC94w">JackOfAllTrades</a>
+         <a href="https://www.youtube.com/channel/UCd5dx06pn0tdGwqn3ZVuNZQ">Magnus</a>
+         <a href="https://www.youtube.com/channel/UCRE0hq5gT69syu2ybmpuYWA">Apollo and Friends</a>
+         <p class="bageltext">Check in often for new stuff!</p>
+      </div>
+      <div id="About" class="tabcontent">
+         <h1>About</h1>
+         <h2>Yo ok this website has been a project of mine for a couple <a style="text-decoration: none; color: inherit;" href="oldindex.html">years </a>now. It's not the best website out there, but I have learned a ton from making it. Thanks for checking it out :)</h2>
+         <h2>This was made by a person named Tom with the help of carter and dirty dan</h2>
+         <h1>Dead Games</h1>
+         <h2>R.I.P. Bagel Royal. "the chance of you getting a bikini bagel was very high. Too high Daniel. I think you have a problem." -Carter/Creator</h1>
+         <h2>Icon made by Maria</h2>
+         <h2>Check out my <a href="https://github.com/bagel-man">Github</a>, (this website is a mess of files I wouldn't even bother)</h2>
+         <h2>Join the <a href="https://discord.gg/xEwt8W5utF">Discord server</a></h2>
+         <h2>How did I make bagelcomics? heres a slide show thingy: <a href="pdf.html">click me now slave</a></h2>
+         <h2>Email me at weirdwontons@gmail.com and bagelcomics.com@gmail.com</h2>
+        
+         <h1>Other cool websites:</h1>
+                  <h2><a href="https://codeprojects.org/projects/weblab/-2VkvC1Hc9_VU8yGes2VL9XBp2DL-4sNvZcAmnI0Lbk/">Bagel With a Gun thing (i thought it was cool)</a></h2>
+
+         <h2><a href="https://sites.google.com/alpinesd.org/spygs-game-lab/games-i-made?authuser=2">SpyGs Game Lab</a></h2>
+         <h2><a href="https://sites.google.com/view/sciencehelps/home?authuser=0">Science Help</a></h2>
+         <h2><a href="https://theo-hats.github.io">Theo Hats</a></h2>
+         <h2>Wanna have your website featured? email me the link and I'll add it!</h2>
+      </div>
+   </div>
+      <script>
+
+      function random() {
+         const list = document.getElementsByClassName('gamelink');
+         var item = list[Math.floor(Math.random()*list.length)];
+         item.click();
+}
+         function toggleText() {
+          
+                    // Get all the elements from the page
+                    var points = 
+                        document.getElementById("points");
+          
+                    var showMoreText =
+                        document.getElementById("moreText");
+          
+                    var buttonText =
+                        document.getElementById("textButton");
+          
+                    // If the display property of the dots 
+                    // to be displayed is already set to 
+                    // 'none' (that is hidden) then this 
+                    // section of code triggers
+                    if (points.style.display === "none") {
+          
+                        // Hide the text between the span
+                        // elements
+                        showMoreText.style.display = "none";
+          
+                        // Show the dots after the text
+                        points.style.display = "inline";
+          
+                        // Change the text on button to 
+                        // 'Show More'
+                        buttonText.innerHTML = "Show More";
+                    }
+          
+                    // If the hidden portion is revealed,
+                    // we will change it back to be hidden
+                    else {
+          
+                        // Show the text between the
+                        // span elements
+                        showMoreText.style.display = "inline";
+          
+                        // Hide the dots after the text
+                        points.style.display = "none";
+          
+                        // Change the text on button
+                        // to 'Show Less'
+                        buttonText.innerHTML = "Show Less";
+                    }
+                }
+                var coll = document.getElementsByClassName("collapsible");
+         var i;
+         
+         for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+         }
+                function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+         }
+         
+         // Get the element with id="defaultOpen" and click on it
+         document.getElementById("defaultOpen").click();
+         
+         function abert() {
+          alert("Click on 'Home' on the home page to fulfill your destiny/n");
+         }
+         
+      </script>
+<!--       
+  <script> window.console = window.console || function(t) {};</script><script>
+   if (document.location.search.match(/type=embed/gi)) {  window.parent.postMessage("resize", "*"); }</script></head><body translate="no">
+   <canvas id="canvas" width="100%" height="100%" class="snow"></canvas><script id="rendered-js">
+ const canvas = document.getElementById('canvas');ctx = canvas.getContext('2d');function sns() {  canvas.width = innerWidth;  canvas.height = innerHeight;}
+ sns();addEventListener('resize', () => { sns(); drops();});
+ var da= [];var directions = [4, -4];function drop() { this.x = canvas.width * Math.random();this.y = canvas.height * Math.random();
+   this.r = 2 + 2 * Math.random();  this.vx = 0.5;this.vy = 0.5;
+   this.direction = Math.random() *20; this.draw = () => { ctx.beginPath();
+     ctx.fillStyle = '#727272';   ctx.shadowColor = '#ffffff30';  ctx.arc(this.x + this.vx, this.y + this.vy, this.r+3, 0, 6.3, true);
+     this.vx = this.vx + this.direction * 0.05;  this.vy = this.vy + 0.5;   if (this.y + this.vy > canvas.height) {   this.y = 0;   this.vy = 0; }
+     if (this.x + this.vx > canvas.width) {    this.x = 0;    this.vx = 0;  }
+     if (this.x + this.vx < 0) {    this.x = 0;   this.vx = canvas.width;  }
+     ctx.fill(); };}
+ function drops() {  for (var i = 0; i <600; i++) {  da[i] = new drop();}}drops();
+ function animate() {ctx.clearRect(0, 0, canvas.width, canvas.height); da.forEach(drop => drop.draw()); requestAnimationFrame(animate);}animate();
+ 
+ </script> -->
+ 
+   
+ 
+ 
+ 
+ 
+  
+ </body></html>
+      <script src="./rufflebypasser.js"></script>
+   </body>
+</html>

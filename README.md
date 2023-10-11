@@ -1,2 +1,5 @@
-# bagel-man.github.io
-dumb website thats super unorganized and i dont even know man
+Yet another dumb game website tee hee.
+
+This website might possibly be one of the biggest ever created, and we're still going! We went from stupid HTML games, to super mario 64 off of a folder, to finally finding ruffle and getting flash games, to then figuring out gradients and how nice they look, to then finding an emulator that emulates snes, n64, sega genesis, and much more, to then finally making a search bar(which took days may I add), to finally starting to add PS1 games, PS2 games, and Gameboy/Gameboy advanced games. We've grown so much, and trust me, we're not stopping.
+
+Want a game that is on Flash, It's own folder, n64, snes/nes, Sega Genesis,Ps1,Ps2, or Gameboy!? Just contact funismathhelp@gmail.com with possible files, website links, or just straight up the name. I'm sure I can find it.

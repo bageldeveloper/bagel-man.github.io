@@ -20,15 +20,14 @@ let scrollInterval = scrollSpeed * 3;
 // If you use this channel ID your app will stop working in the future
 
 
-const CLIENT_ID = '4g2JP9Qwzlu7VX3m';
+const CLIENT_ID = '5Qcspn6KZFL4fZ97';
 
 
 
 
 
 
-
-const drone = new ScaleDrone(CLIENT_ID, {
+let drone = new ScaleDrone(CLIENT_ID, {
 
 
  data: { // Will be sent out as clientData via events
@@ -219,10 +218,10 @@ drone.on('error', error => {
 function getRandomName() {
 
 
- const adjs = ["cool", "angry", "giant", "fat", "stupid", "yummy", "slimy", "bloody", "floppy","tiny", "salty"];
+ const adjs = ["cool", "angry", "giant", "fat", "stupid", "yummy", "slimy", "bloody", "floppy","tiny", "salty", "dirty", "crazy", "lazy", "adorable", "average", "bored", "greasy", "chubby", "useless", "foolish", "nasty", "helpless", "nutty", "juicy"];
 
 
- const nouns = ["bagel", "kitty", "guy", "muffin", "cat", "corndog", "keyboard", "salt"];
+ const nouns = ["bagel", "kitty", "guy", "muffin", "cat", "corndog", "keyboard", "salt", "gamer", "fish", "dog", "chicken", "nugget", "nerd", "face"];
   
 var num = Math.floor(Math.random() * 100);
 if(num == 69){
@@ -355,7 +354,7 @@ return ID;
     alert('ayo dude stop spamming');
     }
     // using an alert it will block javascript loops
-    return !notOver
+    return !notOver;
   }
 
 
@@ -366,6 +365,7 @@ function sendMessage() {
   
     if (checkCoolDown()) {
       startCoolDown()
+    
 const value = DOM.input.value;
 
 
@@ -376,8 +376,15 @@ const value = DOM.input.value;
 
 
  }
-
-
+if(value.match(/(黑鬼|ass|cum|retard|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|nazi|whore|faggot|handjob|penis|cock|pussy|sex|porn|hitler)/gi)){
+      alert('cmon man why you saying that kinda stuff?');
+  return;
+  }
+      
+        if(value.length > 100){
+          alert('my guy, that message is too big.. just like your mom gottem')
+      return; 
+  }
  DOM.input.value = '';
 
 
@@ -392,8 +399,50 @@ const value = DOM.input.value;
 
  });
 
+      if (value == "2 + 2 = 4" || value == "2+2=4"){
+drone = new ScaleDrone(CLIENT_ID, {
 
 
+ data: { // Will be sent out as clientData via events
+
+
+   name: "The One",
+
+
+   color: getRandomColor(),
+
+
+ },
+
+
+});
+ drone.publish({
+
+
+   room: 'observable-room',
+
+
+   message: "It is coming...",
+
+
+ });
+        drone = new ScaleDrone(CLIENT_ID, {
+
+
+ data: { // Will be sent out as clientData via events
+
+
+   name: getRandomName(),
+
+
+   color: getRandomColor(),
+
+
+ },
+
+
+});
+      }
       // do your stuff with arguments here
     }
 }
@@ -470,15 +519,11 @@ function createMessageElement(text, member) {
 
 // let gamer = text.replace(/[^A-Za-z0-9\s!?]/g,”);
 // testing to see if this is the problem
-if(text.match(/(黑鬼|ass|cum|retard|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|nazilut|whore|faggot|handjob|penis|cock|pussy|sex|porn)/gi)){
-  return;
-  }
+
 
 
  
-  if(text.length > 100){
-      return; 
-  }
+
   const el = document.createElement('div');
 
 
@@ -528,7 +573,6 @@ function addMessageToListDOM(text, member) {
 
  el.appendChild(createMessageElement(text, member));
 
-
  if (wasTop) {
 
 
@@ -563,6 +607,3 @@ function addMessageToListDOM(text, member) {
 
 
 }
-
-
-

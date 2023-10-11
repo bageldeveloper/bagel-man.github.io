@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DougGPT</title>
+  </head>
+  <body>
+    <h1>DougGPT</h1>
+     <form id = "chat-form" action="/https://localhost:8000/chat" method="POST">
+       <label for = "user-message">Say something...</label>
+       <input type = "text" id="user-message" name = "user-message">
+       <button type = "sumbit">Send</button>
+    </form>
+    <div id = "chat-history"></div>
+    <script>
+        const chatForm = document.querySelector('#chat-form');
+        const chatHistory = document.querySelector('#chat-history');
+      
+        chatForm.addEventListener('sumbit', async (event) => {
+          event.preventDefault();
+          
+          const userMessage = chatForm.elements['user-message'].value;
+          
+          const response = await fetch('/chat' {
+            method: 'POST',
+            body: JSON.stringify(message: userMessage{}),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          });
+      
+          const responseText = await response.text();
+          const chatEntry = document.createElement('div');
+          chat.Entry.innerText = responseText;
+          chatHistroy.appendChild(chatEntry);
+      
+          chatForm.reset();
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,474 @@
+<html>
+   <head>
+      <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7079018879176395"
+     crossorigin="anonymous"></script>
+      <title>Bagels!</title>
+      <link rel="icon" type="image/x-icon" href="bagelcomicsicon.png">
+      <meta name=”Description” content=”Bagelcomics.com is a pretty cool website with stuff on it. Play some dope games, chat with other people from around the world, explore the site to find the hidden secrets, and check out the dumb projects Ive made.”>
+      <style>
+         * {box-sizing: border-box}
+         body {
+            /* background: url(bagelcomicsbgwinter.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+         padding-top: 50px;
+         background-color: #1A1C25;
+           /* background-color: #eb34b7; */
+         color: #EDF2F4;
+         font-family: 'Nunito', sans-serif;
+         }
+         /* Style the tab */
+         .header {
+         background-color:#07070A;
+         z-index: 1000;
+         width: 100%;
+         height: 50px;
+         position: fixed;
+         top: 0;
+         left: 0;
+         }
+         .header .logo{
+         margin: 10px;
+         }
+         .header .tab{
+         width: 60%;
+         float: right;
+         }
+         /* Style the buttons inside the tab */
+         .tab button {
+         color: #EDF2F4;
+         display: block;
+         background-color: inherit;
+         /* padding: 22px 16px; */
+         float: left;
+         border: none;
+         outline: none;
+         cursor: pointer;
+         padding: 5px 16px;
+         font-size: 16px;
+         font-size: 17px;
+         width: 20%;
+         height: 100%;
+         }
+         /* Change background color of buttons on hover */
+         .tab button:hover {
+         background-color:#8D99AE;
+         }
+         /* Create an active/current "tab button" class */
+         .tab button.active {
+         background-color: #1A1C25;
+         }
+         /* Style the tab content */
+         .tabcontent {
+            float: left;
+            padding: 0px 12px;
+            width: 100%;
+            border-left: none;
+         }
+         .gotdtext{
+         text-align: center;
+         }
+         .anountext{
+         font-size: 100%;
+         color: #EDF2F4;
+         }
+         .announcement {
+         border-radius: 15px;
+         width: 80%;
+         padding: 20px;
+         background-color: #07070A;;
+         margin-top: 20px;
+         margin-bottom: 20px
+         }
+         #moreText {
+         /* Display nothing for the element */
+         display: none;
+         }
+         .showbutton{
+         color: #EDF2F4;
+         color: #070707;
+         margin: auto;
+         border: none;
+         border-radius: 5px;
+         }
+         .members-count,
+         .members-list,
+         .messages {
+            background-color: #1A1C25;
+         font-size: 150%;
+         border-radius: 15px;
+         color: #171717;
+         border: 1px solid #e4e4e4;
+         padding: 15px;
+         margin-bottom: 15px;
+         color: #EDF2F4;
+         }
+         .messages {
+            background-color: #1A1C25;
+         margin-bottom: 50px;
+         border-radius: 15px;
+         color: #171717;
+         flex-shrink: 1;
+         overflow: auto;
+         color: #EDF2F4;
+         }
+         .message {
+            background-color: #1A1C25;
+         border-radius: 15px;
+         color: #171717;
+         color: #171717;
+         padding: 5px 0;
+         color: #EDF2F4;
+         }
+         .message .member {
+            background-color: #1A1C25;
+         border-radius: 15px;
+         color: #171717;
+         color: #171717;
+         display: inline-block;
+         }
+         .chat{
+         overflow-y:auto
+         }
+         .member {
+            background-color: #1A1C25;
+         border-radius: 15px;
+         color: #171717;
+         color: #171717;
+         padding-right: 10px;
+         position: relative;
+         color: #EDF2F4;
+         }
+         .message-form {
+            background-color: #1A1C25;
+         border-radius: 15px;
+         color: #171717;
+         display: flex;
+         flex-shrink: 0;
+         }
+         .message-form__input {
+         border: 1px solid #e4e4e4;
+         border-radius: 15px;
+         flex-grow: 1;
+         background-color: #1A1C25;
+         color: #EDF2F4;
+         padding: 10px 15px;
+         font-size: 150%;
+         position: fixed;
+         width: 85%;
+         bottom: 10px;
+         }
+         .message-form__button {
+
+         color: #171717;
+         margin: 10px;
+         padding-left: 10px;
+         padding-right: 10px;
+         padding-top: 5px;
+         padding-bottom: 5px;
+         border-width: 2px;
+         border-radius: 15px;
+         position: fixed;
+         float:right;
+         width: 5%;
+         bottom: 10px;
+         right: 10px;
+         }
+         /* width */
+         ::-webkit-scrollbar {
+         width: 10px;
+         }
+         /* Track */
+         ::-webkit-scrollbar-track {
+         background:#07070A;
+         }
+         /* Handle */
+         ::-webkit-scrollbar-thumb {
+         background: #3b3f52;
+         }
+         /* Handle on hover */
+         ::-webkit-scrollbar-thumb:hover {
+         background: #303342;
+         }
+         .gamelink:hover{
+         background-color:#3b3b42;
+         }
+         .gamelink{
+         background-color:#1A1C25;
+         border: none;
+         width: 100%;
+         color: #EDF2F4;
+         padding: 32px 32px;
+         text-decoration: none;
+         display: inline-block;
+         cursor: pointer;
+         }
+         .gotd{
+         background-color:#07070A;
+         color:  #EDF2F4;
+         border: none;
+         width: 100%;
+         padding: 32px 32px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         margin-bottom: 50px;
+         cursor: pointer;
+         }
+         .collapsible {
+         font-family: 'Nunito', sans-serif;
+         background-color:#07070A;
+         color:  #EDF2F4;
+         cursor: pointer;
+         padding: 32px;
+         width: 100%;
+         border: none;
+         text-align: left;
+         outline: none;
+         font-size: 15px;
+         }
+         .games .active, .collapsible:hover {
+         background-color: #24242d;
+         }
+         .collapsible:after {
+         content: '\002B';
+         color: white;
+         font-weight: bold;
+         float: right;
+         margin-left: 5px;
+         }
+         .content {
+         width: 110%;
+         font-family: 'Nunito', sans-serif;
+         max-height: 0;
+         overflow: hidden;
+         transition: max-height 0.2s ease-out;
+         background-color: #1A1C25;
+         text-align: left;
+         }
+         .badge {
+         top: -10px;
+         right: 10px;
+         margin-left: 10%;
+         padding: 5px 10px;
+         border-radius: 50%;
+         background-color: red;
+         color: white;
+         }
+         .logo{
+         height: 35px;
+         }
+         .snow{
+            position:fixed; top:0;left:0;
+            z-index: -1;
+         }
+         .everything{
+            
+            z-index: 1;
+         }
+
+      </style>
+   </head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G4303T88PB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G4303T88PB');
+</script>
+
+   <body>
+      <div class = "everthing">
+      <div class="header">
+         <a href="#" class="logo" onclick="openCity(event, 'Home')" >
+         <img class = "logo" src="bagelicontab.png"></img>
+         </a>
+         <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'Home')" id="defaultOpen">Home</button>
+            <button class="tablinks" onclick="openCity(event, 'Chat')" id="chat">Chat</button>
+         
+      </div> 
+      <div id="Home" class="tabcontent">
+         <h1><a style="text-decoration: none; color: inherit;" href="MathCult.html">Home</a><h1>
+         <h2>Welcome to the secret base I made to hail to math.</h2>
+         <h1>Announcements:</h1>
+            <div class="announcement">
+            <h1 class="anountext">May 5th, 2023</h1>
+            <h1 class="anountext">I made this place for everyone that is apart of the cult and now has a special title.
+               <br><br>
+               -Supreme Math God
+               </h1>
+    </div>
+
+            
+            <span id="points"></span>
+<!--          <span id="moreText"> -->
+         
+         </span>
+         <button class="showbutton" onclick="toggleText()" id="textButton">
+         Show All
+         </button>
+         <p>Number of visits</p>
+         <a href="https://www.hitwebcounter.com" target="_blank">
+         <img src="https://hitwebcounter.com/counter/counter.php?page=7288119&style=0011&nbdigits=5&type=page&initCount=0" title="User Stats" Alt="PHP Hits Count"   border="0" >
+         </a> 
+         <p>Number of unique visitors</p>
+         <!-- hitwebcounter Code START -->
+         <a href="https://www.hitwebcounter.com" target="_blank">
+         <img src="https://hitwebcounter.com/counter/counter.php?page=8041014&style=0011&nbdigits=4&type=ip&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a>                                    
+         <!-- ad bois -->
+         <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-4474724430572739"
+            data-ad-slot="4055551074"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+         <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+         <script src="https://utteranc.es/client.js"
+            repo="bagel-man/bagel-man.github.io"
+            issue-term="pathname"
+            label="documentation"
+            theme="github-dark-orange"
+            crossorigin="anonymous"
+            async></script>          
+      </div>
+      <div id="Chat" class="tabcontent">
+         <h1>Chat</h1>
+         <div class="members-count">-</div>
+         <div class="members-list">-</div>
+         <div class="messages"></div>
+         <form class="message-form" onsubmit="return false;">
+            <input class="message-form__input" placeholder="Type something.." type="text"/>
+            <!-- <input class="message-form__button" value="Send" type="submit"/> -->
+         </form>
+      </div>
+    </div>
+      
+    
+            <script>
+
+      function random() {
+         const list = document.getElementsByClassName('gamelink');
+         var item = list[Math.floor(Math.random()*list.length)];
+         item.click();
+}
+         function toggleText() {
+          
+                    // Get all the elements from the page
+                    var points = 
+                        document.getElementById("points");
+          
+                    var showMoreText =
+                        document.getElementById("moreText");
+          
+                    var buttonText =
+                        document.getElementById("textButton");
+          
+                    // If the display property of the dots 
+                    // to be displayed is already set to 
+                    // 'none' (that is hidden) then this 
+                    // section of code triggers
+                    if (points.style.display === "none") {
+          
+                        // Hide the text between the span
+                        // elements
+                        showMoreText.style.display = "none";
+          
+                        // Show the dots after the text
+                        points.style.display = "inline";
+          
+                        // Change the text on button to 
+                        // 'Show More'
+                        buttonText.innerHTML = "Show More";
+                    }
+          
+                    // If the hidden portion is revealed,
+                    // we will change it back to be hidden
+                    else {
+          
+                        // Show the text between the
+                        // span elements
+                        showMoreText.style.display = "inline";
+          
+                        // Hide the dots after the text
+                        points.style.display = "none";
+          
+                        // Change the text on button
+                        // to 'Show Less'
+                        buttonText.innerHTML = "Show Less";
+                    }
+                }
+                var coll = document.getElementsByClassName("collapsible");
+         var i;
+         
+         for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+         }
+                function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+         }
+         
+         // Get the element with id="defaultOpen" and click on it
+         document.getElementById("defaultOpen").click();
+         
+         function abert() {
+          alert("Click on 'Home' on the home page to fulfill your destiny/n");
+         }
+         
+      </script>
+<!--       
+  <script> window.console = window.console || function(t) {};</script><script>
+   if (document.location.search.match(/type=embed/gi)) {  window.parent.postMessage("resize", "*"); }</script></head><body translate="no">
+   <canvas id="canvas" width="100%" height="100%" class="snow"></canvas><script id="rendered-js">
+ const canvas = document.getElementById('canvas');ctx = canvas.getContext('2d');function sns() {  canvas.width = innerWidth;  canvas.height = innerHeight;}
+ sns();addEventListener('resize', () => { sns(); drops();});
+ var da= [];var directions = [4, -4];function drop() { this.x = canvas.width * Math.random();this.y = canvas.height * Math.random();
+   this.r = 2 + 2 * Math.random();  this.vx = 0.5;this.vy = 0.5;
+   this.direction = Math.random() *20; this.draw = () => { ctx.beginPath();
+     ctx.fillStyle = '#727272';   ctx.shadowColor = '#ffffff30';  ctx.arc(this.x + this.vx, this.y + this.vy, this.r+3, 0, 6.3, true);
+     this.vx = this.vx + this.direction * 0.05;  this.vy = this.vy + 0.5;   if (this.y + this.vy > canvas.height) {   this.y = 0;   this.vy = 0; }
+     if (this.x + this.vx > canvas.width) {    this.x = 0;    this.vx = 0;  }
+     if (this.x + this.vx < 0) {    this.x = 0;   this.vx = canvas.width;  }
+     ctx.fill(); };}
+ function drops() {  for (var i = 0; i <600; i++) {  da[i] = new drop();}}drops();
+ function animate() {ctx.clearRect(0, 0, canvas.width, canvas.height); da.forEach(drop => drop.draw()); requestAnimationFrame(animate);}animate();
+ 
+ </script> -->
+ 
+   
+ 
+ 
+ 
+ 
+  
+ </body></html>
+      <script src="./lordchat.js"></script>
+   </body>
+</html>

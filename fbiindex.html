@@ -1,0 +1,1136 @@
+<html>
+   <head>
+      <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7079018879176395"
+     crossorigin="anonymous"></script>
+      <title>Bagels!</title>
+      <link rel="icon" type="image/x-icon" href="bagelcomicsicon.png">
+      <meta name=”Description” content=”Bagelcomics.com is a pretty cool website with stuff on it. Play some dope games, chat with other people from around the world, explore the site to find the hidden secrets, and check out the dumb projects Ive made.”>
+      <style>
+         * {box-sizing: border-box}
+         body {
+            /* background: url(bagelcomicsbgwinter.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+         padding-top: 50px;
+         background-color: #004791;
+           /* background-color: #eb34b7; */
+         color: #EDF2F4;
+         font-family: 'Nunito', sans-serif;
+         }
+         /* Style the tab */
+         .header {
+         background-color:#F6CD2E;
+         z-index: 1000;
+         width: 100%;
+         height: 50px;
+         position: fixed;
+         top: 0;
+         left: 0;
+         }
+         .header .logo{
+         margin: 10px;
+         }
+         .header .tab{
+         width: 60%;
+         float: right;
+         }
+         /* Style the buttons inside the tab */
+         .tab button {
+         color: #EDF2F4;
+         display: block;
+         background-color: inherit;
+         /* padding: 22px 16px; */
+         float: left;
+         border: none;
+         outline: none;
+         cursor: pointer;
+         padding: 5px 16px;
+         font-size: 16px;
+         font-size: 17px;
+         width: 20%;
+         height: 100%;
+         }
+         /* Change background color of buttons on hover */
+         .tab button:hover {
+         background-color:#afd3f9;
+         }
+         /* Create an active/current "tab button" class */
+         .tab button.active {
+         background-color: #004791;
+         }
+         /* Style the tab content */
+         .tabcontent {
+            float: left;
+            padding: 0px 12px;
+            width: 100%;
+            border-left: none;
+         }
+         .gotdtext{
+         text-align: center;
+         }
+         .anountext{
+         font-size: 100%;
+         color: #EDF2F4;
+         }
+         .announcement {
+         border-radius: 15px;
+         width: 80%;
+         padding: 20px;
+         background-color: #F6CD2E;;
+         margin-top: 20px;
+         margin-bottom: 20px
+         }
+         #moreText {
+         /* Display nothing for the element */
+         display: none;
+         }
+         .showbutton{
+         color: #EDF2F4;
+         color: #070707;
+         margin: auto;
+         border: none;
+         border-radius: 5px;
+         }
+         .members-count,
+         .members-list,
+         .messages {
+            background-color: #004791;
+         font-size: 150%;
+         border-radius: 15px;
+         color: #171717;
+         border: 1px solid #e4e4e4;
+         padding: 15px;
+         margin-bottom: 15px;
+         color: #EDF2F4;
+         }
+         .messages {
+            background-color: #004791;
+         margin-bottom: 50px;
+         border-radius: 15px;
+         color: #171717;
+         flex-shrink: 1;
+         overflow: auto;
+         color: #EDF2F4;
+         }
+         .message {
+            background-color: #004791;
+         border-radius: 15px;
+         color: #171717;
+         color: #171717;
+         padding: 5px 0;
+         color: #EDF2F4;
+         }
+         .message .member {
+            background-color: #004791;
+         border-radius: 15px;
+         color: #171717;
+         color: #171717;
+         display: inline-block;
+         }
+         .chat{
+         overflow-y:auto
+         }
+         .member {
+            background-color: #004791;
+         border-radius: 15px;
+         color: #171717;
+         color: #171717;
+         padding-right: 10px;
+         position: relative;
+         color: #EDF2F4;
+         }
+         .message-form {
+            background-color: #004791;
+         border-radius: 15px;
+         color: #171717;
+         display: flex;
+         flex-shrink: 0;
+         }
+         .message-form__input {
+         border: 1px solid #e4e4e4;
+         border-radius: 15px;
+         flex-grow: 1;
+         background-color: #004791;
+         color: #EDF2F4;
+         padding: 10px 15px;
+         font-size: 150%;
+         position: fixed;
+         width: 85%;
+         bottom: 10px;
+         }
+         .message-form__button {
+
+         color: #171717;
+         margin: 10px;
+         padding-left: 10px;
+         padding-right: 10px;
+         padding-top: 5px;
+         padding-bottom: 5px;
+         border-width: 2px;
+         border-radius: 15px;
+         position: fixed;
+         float:right;
+         width: 5%;
+         bottom: 10px;
+         right: 10px;
+         }
+         /* width */
+         ::-webkit-scrollbar {
+         width: 10px;
+         }
+         /* Track */
+         ::-webkit-scrollbar-track {
+         background:#F6CD2E;
+         }
+         html::-webkit-scrollbar{
+   display: none; 
+   }
+         .gamelink:hover{
+         background-color:#eace5c;
+         }
+         .gamelink{
+         background-color:#ffe063;
+         border: none;
+         width: 100%;
+         color: #EDF2F4;
+         padding: 32px 32px;
+         text-decoration: none;
+         display: inline-block;
+         cursor: pointer;
+         }
+         .gotd{
+         background-color:#F6CD2E;
+         color:  #EDF2F4;
+         border: none;
+         width: 100%;
+         padding: 32px 32px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         margin-bottom: 50px;
+         cursor: pointer;
+         }
+         .collapsible {
+         font-family: 'Nunito', sans-serif;
+         background-color:#F6CD2E;
+         color:  #EDF2F4;
+         cursor: pointer;
+         padding: 32px;
+         width: 100%;
+         border: none;
+         text-align: left;
+         outline: none;
+         font-size: 15px;
+         }
+         .games .active, .collapsible:hover {
+         background-color: #24242d;
+         }
+         .collapsible:after {
+         content: '\002B';
+         color: white;
+         font-weight: bold;
+         float: right;
+         margin-left: 5px;
+         }
+         .content {
+         width: 110%;
+         font-family: 'Nunito', sans-serif;
+         max-height: 0;
+         overflow: hidden;
+         transition: max-height 0.2s ease-out;
+         background-color: #004791;
+         text-align: left;
+         }
+         .badge {
+         top: -10px;
+         right: 10px;
+         margin-left: 10%;
+         padding: 5px 10px;
+         border-radius: 50%;
+         background-color: red;
+         color: white;
+         }
+         .logo{
+         height: 35px;
+         }
+         .snow{
+            position:fixed; top:0;left:0;
+            z-index: -1;
+         }
+         .everything{
+            
+            z-index: 1;
+         }
+
+      </style>
+   </head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G4303T88PB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G4303T88PB');
+</script>
+
+   <body>
+      <div class = "everthing">
+      <div class="header">
+         <a href="#" class="logo" onclick="openCity(event, 'Home')" >
+         <img class = "logo" src="FBIlogo.png"></img>
+         </a>
+         <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'Home')" id="defaultOpen">Home</button>
+            <button class="tablinks" onclick="openCity(event, 'Chat')" id="chat">Chat</button>
+            <button class="tablinks" onclick="openCity(event, 'Games')">Games</button>
+            <button style="background-color:#000000;"> <img src="https://media.tenor.com/PEDzvMlrdi0AAAAC/fire.gif" style="width:50px;height:20px;"></img> </button>
+            <button class="tablinks" onclick="openCity(event, 'About')">About</button>
+         </div>
+      </div> 
+   
+      <div id="Home" class="tabcontent">
+         <h1><a style="text-decoration: none; color: inherit;" href="MathCult.html">Home</a><h1>
+         <h2>Welcome to bagelcomics.com! Play some dope games, chat with other people from around the world, explore the site to find the hidden secrets, and check out the dumb projects I've made. :)</h2>
+         <h1>Announcements:</h1>
+                       <div class="announcement">
+            <h1 class="anountext">May 18th, 2023</h1>
+            <h1 class="anountext"><img src="cutiepie.jpeg">
+               <br><br>
+               -Tom
+               </h1>
+               </div>
+         <div class="announcement">
+            <h1 class="anountext">May 15th, 2023</h1>
+            <h1 class="anountext">Sorry that theres been a lot of announcments lately. However, I come to you with great news! Bagel Comics has found an emulator for N64, NES, SNES, NDS, and some other consoles which include the SEGA Genesis. This new emulator allows you to fullscreen, and allows you to change controls to however you like, plus you can play on any device like a phone or something like that. All games that were broken before are not broken now. If you want a game from any of those consoles, just email us at funismathhelp@gmail.com and we'll add it. Literally any of them. Have Fun! Also we added Lego Star Wars the Complete Saga, Mega Man X, Ultimate Mortal Kombat 3, and a lot more that would make this announcment way too long.
+               <br><br>
+               -Dirty Dan
+               </h1>
+               </div>
+         <div class="announcement">
+            <h1 class="anountext">May 15th, 2023</h1>
+            <h1 class="anountext">Added Nintendo Games section. In this section, all n64 and NES games will be on here. There will simply be too much n64 and NES games that it would literally overflow all the other sections, so it will all just stay there. Also mario games and any nintendo owned properties will be on there.
+               <br><br>
+               -Dirty Dan
+               </h1>
+               </div>
+         <div class="announcement">
+            <h1 class="anountext">May 13th, 2023</h1>
+            <h1 class="anountext">We added Literally every Papa game ever made. If you have one that you love, its on bagel comics. Games added are Pastaria, Cheeseria, Donuteria, Freezeria, Scooperia, Sushiria, and Bakeria. All other Papas games are still here and in their own section. Jack Smith is also in that section since it was made by the same people. Now go knock yourself out kids.
+               <br><br>
+               -Dirty Dan
+               </h1>
+               </div>
+         <div class="announcement">
+            <h1 class="anountext">May 12th, 2023</h1>
+            <h1 class="anountext">Say hello to my little friends! We literally added ANOTHER ZELDA GAME, BATMAN, DUCKTALES, SUPER MARIO BROS, SUPER MARIO BROS 2, SUPER MARIO BROS 3, PUNCH OUT!, MIKE TYSON'S PUNCH OUT!, MEGA MAN 2, DOUBLE DRAGON, CONTRA, FRIDAY THE 13TH, AND RIVER CITY RANSOM!
+               <br><br>
+               -Dirty Dan
+               </h1>
+               </div>
+            <div class="announcement">
+            <h1 class="anountext">May 8th, 2023</h1>
+            <h1 class="anountext">It appears someone has destroyed the projects page. It'll look into it.
+               <br><br>
+               -Carter
+               </h1>
+               </div>
+               <span id="points"></span>
+         <span id="moreText">
+         <div class="announcement">
+            <h1 class="anountext">May 8th, 2023</h1>
+            <h1 class="anountext">Its my Birthday :&#41;
+               <br><br>
+               -Dirty Dan
+               </h1>
+               </div>
+         <div class="announcement">
+            <h1 class="anountext">May 6th, 2023</h1>
+            <h1 class="anountext">Yoooooooooooooooooooooo. Papas games arent broken anymore. Previosuly on Papa's Pizzeria was the only one that works, but with the updated ruffle, you can now play Papa's Tacomia, Papa's Wingeria, Papa's Burgeria, Papa's Hotdogeria, Papa's Pancakeria, and Jack Smith. Other games that work now are Awesome tanks 2 and Learn to fly 2. This leaves these games that are still broken: Cookie Clicker &#40;Update Only&#41;, PvZ 1, Dig to China, Btd3, Btd4, Learn to fly 3, castle, and run 2. If any other games arent working email us at funismaththelp@gmail.com
+               <br><br>
+               -Dirty Dan
+               </h1>
+               </div>
+            <div class="announcement">
+            <h1 class="anountext">May 4th, 2023</h1>
+            <h1 class="anountext">Happy May the 4th be with you! Im kinda bored rn and in honor of today I wanna make a Star Wars game based on what you would want for a game. Just tell me what I should do at funismaththelp@gmail.com
+               <br><br>
+               -Dirty Dan
+               </h1>
+               </div>
+            <div class="announcement">
+            <h1 class="anountext">May 2nd, 2023</h1>
+            <h1 class="anountext">Idk what kinda power struggle is happening right now, but no, we are not "recruiting" people. Stop filling out the forms.
+               <br><br>
+               -Tom
+               </h1>
+               </div>
+            <div class="announcement">
+            <h1 class="anountext">April 27th, 2023</h1>
+            <h1 class="anountext">I added some good old checkers :). still recruiting btw. Click here &rarr; <a href="https://forms.gle/LpVii6DSBS4t9ft16" style="text-decoration: none; color: #07f7a0;"> CLICK ME </a> and if you filled out the "all hail bagel comics form, resubmit one with the actual form.</h1>
+               </div>
+         <div class="announcement">
+            <h1 class="anountext">April 26th, 2023</h1>
+            <h1 class="anountext">Recruiting others now! click this link here &rarr; <a href="https://forms.gle/LpVii6DSBS4t9ft16" style="text-decoration: none; color: #07f7a0;"> CLICK ME </a> to apply. You will find games and give out information to spread the word. All instructions will be in the form, except for our email which is funismathhelp@gmail.com</h1>
+               </div>
+         <div class="announcement">
+            <h1 class="anountext">April 25th, 2023</h1>
+            <h1 class="anountext">New Games... Tuesday? Whatever. We added Mario Kart 64 and fixed multiple Papas games. Papas Tacomia, Papas Wingeria, Papas Burgeria, and Papas Pancakeria. Have fun!</h1>
+               </div>
+               <div class="announcement">
+            <h1 class="anountext">April 17th, 2023</h1>
+            <h1 class="anountext">im sorry tom is something else. Please accept or sencirest apologies :&#40;</h1>
+               </div>
+            
+         <div class="announcement">
+            <h1 class="anountext">April 13th, 2023</h1>
+            <h1 class="anountext">Added raft wars :&#41;
+               </div>
+            <div class="announcement">
+            <h1 class="anountext">April 11th, 2023</h1>
+            <h1 class="anountext">Dirty Dan here. Just wanted to remind you to tell your friends at other schools about the website and how to get onto bagelcomics. Last time it got so far it went to a small part of Idaho. Lets do that again, but bigger! Im thinking nationwide baby! Also I dont think our link is hidden quite good enough. Im thinking of making it more hidden but I dont know the best way to do that. So please for the love of all that is good and holy email us at funismathhelp@gmail.com for suggestions. I will be looking through every single one, so if you have a good idea dont hesitate. Thanks for listening to my Ted Talk.
+               </div>
+            <div class="announcement">
+            <h1 class="anountext">April 11th, 2023</h1>
+            <h1 class="anountext">Dirty Dan here. We added a Game of the Year and Game of the Month in the games section. Make sure to check them out every year/month/week!
+            </h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">March 23rd, 2023</h1>
+            <h1 class="anountext">I set the repository to private but that broke everything so I'm sorry that it was down yesterday.
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">March 23rd, 2023</h1>
+            <h1 class="anountext">[REDACTED]
+            </h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">March 21st, 2023</h1>
+            <h1 class="anountext">Also everyone go subscribe to my new youtube channel: <a href="https://www.youtube.com/channel/UC_OPn4qGA1BisdYbY1f6u_w">Click Me Now Slave</a>
+          </div>
+         
+         <div class="announcement">
+            <h1 class="anountext">March 21st, 2023</h1>
+            <h1 class="anountext">New game wednesday! New games are: Papas Pancakeria, Papas Hotdogeria, Papas, Bugeria (all just for you Daniel :) ), Plants vs Zombies, Plants vs Zombies 2, and Line Rider.
+         </div>
+            <div class="announcement">
+            <h1 class="anountext">March 20th, 2023</h1>
+            <h1 class="anountext">Hey guys, I'm trying to get the 1.8 client of eagler craft to work, I should get it to work by Wednesday.
+          </div>  
+            <div class="announcement">
+            <h1 class="anountext">March 15th, 2023</h1>
+            <h1 class="anountext">Forgot last week, but new games are: Vex 6, Getaway Shootout, Drift Hunters, and Awesome Tanks 2
+               </div>
+            <div class="announcement">
+            <h1 class="anountext">March 1st, 2023</h1>
+            <h1 class="anountext">Starting a new tradition called new games Wednesday or NGW! I will add 5 new games every Wednesday from now on. New games are: Canyon Defense, 1 on 1 soccer, Chibi Knight, 8 ball pool, Portal 2D, and Siftheads (yes I know it's 6 games this week).
+            </h1>
+          </div>
+               <div class="announcement">
+            <h1 class="anountext">Janurary 24th, 2023</h1>
+            <h1 class="anountext">funismath.com
+            </h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">Janurary 16th, 2023</h1>
+            <h1 class="anountext">Ayo gamers I got the 1.8 client actually working, and also theres this really cool server you should join: wss://blitzcraft.xbl1tzblqst.repl.co
+            </h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">Janurary 1st, 2023</h1>
+            <h1 class="anountext">2023? more like 2020 pee. Smash that like and subscribe button if thats a totally relateable moment gamers!!</a>
+            </h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">December 30th, 2022</h1>
+            <h1 class="anountext">Yo guys, I added another version of minecraft, this one is 1.8</a>
+            </h1>
+          </div>
+          <div class="announcement">
+            <h1 class="anountext">December 25th, 2022</h1>
+            <h1 class="anountext">MERRY CHRISTMAS!!!<a>
+            </h1>
+          </div>
+                  <div class="announcement">
+            <h1 class="anountext">December 23rd, 2022</h1>
+            <h1 class="anountext">NEW DEVLOG IS OUT, THIS ONE IS ACTUALLY GOOD: <a href="https://youtu.be/rTeJRWdPTSU">Click me</a>
+            </h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">December 19th, 2022</h1>
+            <h1 class="anountext">Yo gamers I added dig to china, by far one of my favorite flash games
+            </h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">December 16th, 2022</h1>
+            <h1 class="anountext">Hoyt Hehart found a way to unblock the website so for a little bit until the alt domain name works<a href="https://rkx9kc.sse.codesandbox.io/?s"> here </a>. The chat doesn't work but the games do. Thanks for all your support guys in keeping the website alive.
+            </h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">December 15th, 2022</h1>
+            <h1 class="anountext">I got about 3 other websites planned and a new domain name for bagelcomics.com. After the break it should be unblocked under a new name. 
+            </h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">December 12th, 2022</h1>
+            <h1 class="anountext">Tom and I have been getting tired of making the website and it's blocked now so<a href="https://github.com/bagel-man/bagel-man.github.io"> here's </a>a link to the github page, email me at bagelcomics.com@gmail.com and who ever forks it and emails first, I'll shout out so you guys can continue to keep the website alive. If you don't get chosen, keep yours incase the other one gets blocked.
+            </h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">December 9th, 2022</h1>
+            <h1 class="anountext">Yo does anyone know how to 3d model, I need it for one of my games. If you do, please email weirdwontons@gmail.com, thanks.
+            </h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">December 9th, 2022</h1>
+            <h1 class="anountext">Bagel Royal is working (not on chromebooks sadly). I also added Sword and Sandals 1 and 2. They are in the "Other Games" section.
+            </h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">December 9th, 2022</h1>
+            <h1 class="anountext">Tom may be tired, but I'm not LONG LIVE THIS WEBSITE HAHAHAHAHAHAHAHA. Also the Minecraft server is bad right now and click<a href="ads.html"> here </a>so we can get money for a better one. 
+            </h1>
+          </div>
+
+         <div class="announcement">
+            <h1 class="anountext">December 8th, 2022</h1>
+            <h1 class="anountext">I've been getting lots of game suggestions lately. Just to remind everyone, if there is a game you want on bagel comics make sure to send a link of the game or an emulator that can run it.
+            </h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">December 7th, 2022</h1>
+            <h1 class="anountext">Added jacksmith, which is a flash game someone asked for.
+            </h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">December 6th, 2022</h1>
+            <h1 class="anountext">A new plugin was added to the minecraft server so now you have to register an account and login so we can prevent people from going into eachothers accounts. here is the command list: https://github.com/AuthMe/AuthMeReloaded/blob/master/docs/commands.md
+            </h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">December 5th, 2022</h1>
+            <h1 class="anountext">Added Quake 1/3, also added Zelda orciornanannana of time or however you spell it.
+            </h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">December 4th, 2022</h1>
+            <h1 class="anountext">New gaems, we got duck life 4, and all of the ridde school games. All of the papas games are coming soon, along with a bunch of other games, so check in often.
+            </h1>
+          </div>
+          <div class="announcement">
+            <h1 class="anountext">December 3rd, 2022</h1>
+            <h1 class="anountext">New game was added, its called Super Smash Flash, its pretty fun
+            </h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">December 1st, 2022</h1>
+            <h1 class="anountext">New server: wss://bagelcraft.weirdwontons.repl.co/server</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">November 28th, 2022</h1>
+            <h1 class="anountext">Yo we got a minecraft server that works on the chromebooks. This is temporary to see how it works before I make a better dedicated server. Go into the eagler craft minecraft client and paste this into the direct connect: wss://eaglercraft-server.jacklind1.repl.co/server
+            </h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">November 24th, 2022</h1>
+            <h1 class="anountext">I KNOW ITS NOT EVEN DECEMBER YET BUT I DONT CARE HAPPY HOLIDAYS WHOOP</h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">November 23th, 2022</h1>
+            <h1 class="anountext">I made a slideshow thing so you guys stop harasing me about how I made the website lol: <a href="pdf.html">click me now slave</a></h1>
+          </div>
+         <div class="announcement">
+            <h1 class="anountext">November 22th, 2022</h1>
+            <h1 class="anountext"><button onclick="abert()">Dont Click me</button></h1>
+          </div>
+
+
+            <div class="announcement">
+               <h1 class="anountext">November 21th, 2022</h1>
+               <h1 class="anountext">The website is looking segsy, thanks you so much maria for making the icon!</h1>
+             </div>
+            <div class="announcement">
+               <h1 class="anountext">November 20th, 2022</h1>
+               <h1 class="anountext">I added a whole truck load of new games, including learn to fly 1, 2, and 3, art of war, and more. More games coming soon.</h1>
+              </div>
+            <div class="announcement">
+               <h1 class="anountext">November 19th, 2022</h1>
+               <h1 class="anountext">new devlog, heres the <a href="https://www.youtube.com/watch?v=ifoSpY4Bomk">link</a>, im gonna release them every 2 weeks so I can get more work done on them</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">November 18th, 2022</h1>
+               <h1 class="anountext">Hey guys I gave carter editing access to the website so now we are working on it together. His email is bagelcomics.com@gmail.com</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">November 17th, 2022</h1>
+               <h1 class="anountext">Hey guys, I've been feeling a little burntout lately, so I'm gonna focus less on bagelcomics.com and more on other projects. I'll still check in on it and stuff but don't expect a ton of updates over the holidays.</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">November 12th, 2022</h1>
+               <h1 class="anountext">I made a devlog for bagel with a gun 2, heres the <a href="https://www.youtube.com/watch?v=X_Z-4yz2HkA">link</a></h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">November 6th, 2022</h1>
+               <h1 class="anountext">So I added a minecraft client and its pretty much an exact port of 1.5</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">November 1st, 2022</h1>
+               <h1 class="anountext">I made a new game for Thanksgiving lol. Play it <a href="turkeyflap/index.html">here</a></h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">October 31st, 2022</h1>
+               <h1 class="anountext">The sneak peak now works</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">October 31st, 2022</h1>
+               <h1 class="anountext">It has come to my attention that the preveiw doesnt work lol, ill fix it when I can</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">October 31st, 2022</h1>
+               <h1 class="anountext">WE HAVE CONTROL OF THE WEBSITE AGAIN!! You guys should've been there, there was cannons and blood and all that crap, but it's not over yet. I have a feeling the donuts will be back, thirsty for blood. Anyways to celebrate this I slapped together an actual Bagel With a Gun 2 sneakpeak, go the games section to play it. I also revamped the website, tell me if you like it! I will not be fixing bugs on the preview because its just a little update. Happy Halloween!</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">October 19th, 2022</h1>
+               <h1 class="anountext">Welcome back from fall break you peasants, I hope you all had a terrible time.</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">October 10th, 2022</h1>
+               <h1 class="anountext">I have found a bagel invader among our ranks, this is war.</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">October 5th, 2022</h1>
+               <h1 class="anountext">Dont test me. The donut overlord reigns supreme forever. I have destroyed your futile attempts of a revolution, I eliminated the secret invader.</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">October 5th, 2022</h1>
+               <h1 class="anountext">The reign of bagels are over, it is now time for donuts to rule. (the reason the url is still bagelcomics.com is because the donut nation can't afford a new domain name)</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">October 1st, 2022</h1>
+               <h1 class="anountext">Happy spooky month! I changed around the website to make it spookier.</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">September 27th, 2022</h1>
+               <h1 class="anountext">Added a new game called orbitron, go play it. Also the new game is coming out on October 3rd.</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">September 26th, 2022</h1>
+               <h1 class="anountext">Added Super Mario 64! Also a new game im making is gonna be coming out pretty soon, so stay tuned for that.</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">September 22nd, 2022</h1>
+               <h1 class="anountext">The bagel with a gun 2 demo is done! play it <a href="https://scratch.mit.edu/projects/704669268/">here</a>!</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">September 14th, 2022</h1>
+               <h1 class="anountext">Guys, thank you so much for 10000 visits, I never expected this site to get that many. I remember when 100 was a big milestone lol. To thank everyone, I will tell you something you may want to know. Not only am I working on a bunch of new games, but I am also making a sequel to bagel with a gun. This sequel will be so much more polished and better than the first, but I also need to know something. Should I keep the new game simple and short like the last one, or should I add things like skill trees and more guns and that kinda crap. Let me know by commenting or emailing me or whatever. Thank you guys :)</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">September 9th, 2022</h1>
+               <h1 class="anountext">Bagel royal is finally fixed! go play it :)</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">September 9th, 2022</h1>
+               <h1 class="anountext">DND club is going to be on tuesdays after school in the downstairs A-pod</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">September 8th, 2022</h1>
+               <h1 class="anountext">I made the announcements fancy, its pretty great</h1>
+            </div>
+            <div class="announcement">
+               <h1 class="anountext">September 6th, 2022</h1>
+               <h1 class="anountext">Added a fancy font, tell me if you like it</h1>
+            </div>
+         </span>
+         <button class="showbutton" onclick="toggleText()" id="textButton">
+         Show All
+         </button>
+         <p>Number of visits</p>
+         <a href="https://www.hitwebcounter.com" target="_blank">
+         <img src="https://hitwebcounter.com/counter/counter.php?page=7288119&style=0011&nbdigits=5&type=page&initCount=0" title="User Stats" Alt="PHP Hits Count"   border="0" >
+         </a> 
+         <p>Number of unique visitors</p>
+         <!-- hitwebcounter Code START -->
+         <a href="https://www.hitwebcounter.com" target="_blank">
+         <img src="https://hitwebcounter.com/counter/counter.php?page=8041014&style=0011&nbdigits=4&type=ip&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a>                                    
+         <!-- ad bois -->
+         <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-4474724430572739"
+            data-ad-slot="4055551074"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+         <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+         </script>
+         <script src="https://utteranc.es/client.js"
+            repo="bagel-man/bagel-man.github.io"
+            issue-term="pathname"
+            label="documentation"
+            theme="github-dark-orange"
+            crossorigin="anonymous"
+            async></script>          
+      </div>
+      <div id="Chat" class="tabcontent">
+         <h1>Chat</h1>
+         <div class="members-count">-</div>
+         <div class="members-list">-</div>
+         <div class="messages"></div>
+         <form class="message-form" onsubmit="return false;">
+            <input class="message-form__input" placeholder="Type something.." type="text"/>
+            <!-- <input class="message-form__button" value="Send" type="submit"/> -->
+         </form>
+      </div>
+    </div>
+      <div id="Games" class="tabcontent">
+         <h1>Games</h1>
+         <h2>Do you have a game you want to see on here? Email funismathhelp@gmail.com the name, description, and possible files/link for your game, and I'll add it! You can also just fill out this form i made <a href="https://forms.gle/kLmvqFA6qrF9bXkp6">here or send me the name and we'll try to put it on bagelcomics</a></h2>
+         <h1>Some games may not work because the emulator im using, ruffle, doesnt have full support for flash games yet. because of this, some games dont work. sorry.</h1>
+         <p>DISCLAIMER: bagelcomics.com is not responsible for any trouble you may get in while playing these games during class.</p>
+         <p>concept.html</p>
+         
+         <button onclick="random()" class="gotd" >Random Game</button> 
+
+         <h2 class="gotdtext">Game of the Year</h2>
+         <a href="bwag/index.html" class="gotd">Bagel With a Gun</a>
+         <h2 class="gotdtext">Game of the Month</h2>
+         <a href="N64Wasm-masterMK64/dist/index.html" class="gotd">Mario Kart 64</a> 
+         <h2 class="gotdtext">Game of the Week</h2>
+         <a href="games/emu/tcs.html" class="gotd">Lego Star Wars TCS</a>
+         <div class="games">
+            <button class="collapsible">New Games</button>
+            <div class="content">
+               <a href="games/emu/tcs.html" class="gamelink">Lego Star Wars TCS</a>
+
+               <a href="games/emu/megamanx.html" class="gamelink">Mega Man X</a>
+
+               <a href="games/emu/megamantwo.html" class="gamelink">Mega Man 2</a>
+               
+               <a href="games/emu/smw.html" class="gamelink">Super Mario World</a>
+               
+               <a href="games/emu/smk.html" class="gamelink">Super Mario Kart</a>
+               
+               <a href="games/emu/dkcountry.html" class="gamelink">Donkey Kong Country</a>
+               
+               <a href="games/emu/nbajam.html" class="gamelink">NBA Jam</a>
+               
+               <a href="games/emu/tomandjerry.html" class="gamelink">Tom and Jerry</a>
+               
+               <a href="games/emu/toystory.html" class="gamelink">Toy Story</a>
+               
+               <a href="games/emu/alladin.html" class="gamelink">Alladin</a>
+               
+               <a href="games/emu/lionking.html" class="gamelink">The Lion King</a>
+               
+               <a href="games/emu/mshwog.html" class="gamelink">Marvel SH: War of the Gems</a>
+
+               <a href="games/emu/umk3.html" class="gamelink">Ultimate Mortal Kombat 3</a>
+
+               <a href="games/emu/loz.html" class="gamelink">Legend Of Zelda NES</a>
+
+               <a href="games/emu/batman.html" class="gamelink">Batman</a>
+
+               <a href="games/emu/miketysonpunchout.html" class="gamelink">Mike Tyson's Punch Out!</a>
+
+               <a href="games/emu/punchout.html" class="gamelink">Punch Out!</a>
+
+               <a href="games/emu/smb.html" class="gamelink">Super Mario Bros</a>
+
+               <a href="games/emu/smbtwo.html" class="gamelink">Super Mario Bros. 2</a>
+
+               <a href="games/emu/smbthree.html" class="gamelink">Super Mario Bros. 3</a>
+
+               <a href="games/emu/doubledragon.html" class="gamelink">Double Dragon</a>
+
+               <a href="games/emu/contra.html" class="gamelink">Contra</a>
+
+               <a href="games/emu/ducktales.html" class="gamelink">Duck Tales</a>
+
+               <a href="games/emu/f13.html" class="gamelink">Friday the 13th</a>
+
+               <a href="games/emu/ransom.html" class="gamelink">River City Ransom</a>
+
+               <a href="halflife/index.html" class="gamelink">Half-Life</a> 
+
+               <a href="doom/public/index.html" class="gamelink">Doom 1/2</a> 
+            </div>
+            <button class="collapsible">Favorite Games</button>
+            <div class="content">
+               <a href="N64Wasm-master/dist/index.html" class="gamelink">Zelda Ocarina of Time</a>
+               <a href="N64Wasm-masterMK64/dist/index.html" class="gamelink">Mario Kart 64</a>
+               <a href="games/raftwars.html" class="gamelink">Raft Wars</a>
+               <a href="games/8ballpool.html" class="gamelink">8 Ball Pool</a> 
+               <a href="games/portal2d.html" class="gamelink">Portal 2D</a> 
+               <a href="games/1on1soccer.html" class="gamelink">1 on 1 Soccer</a> 
+               <a href="games/digtochina.html" class="gamelink">Dig To China</a>
+               <a href="Quake1-master/Quake1.htm" class="gamelink">Quake</a>
+               <a href="Quake3-master/Quake3.htm" class="gamelink">Quake 3</a>
+               <a href="eaglercraft-main/eaglercraft-main/stable-download/web/index.html" class="gamelink">Minecraft 1.5</a> 
+               <a href="eaglercraftx-1.8-main/sources/setup/workspace_template/javascript/index.html" class="gamelink">Minecraft 1.8</a> 
+               <a href="games/motox3m/index.html" class="gamelink">Motox3m</a> 
+               <a href="bwag/index.html" class="gamelink">Bagel With a Gun</a>
+               <a href="games/pedro.html" class="gamelink">My Friend Pedro</a> 
+               <a href="games/bloons.html" class="gamelink">Bloons Tower Defense</a> 
+               <a href="games/bloxorz.html" class="gamelink">Bloxorz</a> 
+               <a href="games/portal.html" class="gamelink">Portal Flash Version</a> 
+               <a href="slope.html" class="gamelink">Slope</a> 
+               <a href="games/sm64/index.html" class="gamelink">Super Mario 64</a> 
+               <a href="games/learntofly.html" class="gamelink">Learn To Fly</a> 
+            </div>
+            <button class="collapsible">Tower Defense Games</button>
+            <div class="content">
+               <a href="games/pvz.html" class="gamelink">Plants vs Zombies</a> 
+               <a href="games/pvz2.html" class="gamelink">Plants vs Zombies 2</a> 
+               <a href="games/canyondefense.html" class="gamelink">Canyon Defense</a> 
+               <a href="games/bloons.html" class="gamelink">Bloons Tower Defense</a> 
+               <a href="games/bloonstd2.html" class="gamelink">Bloons Tower Defense 2</a> 
+               <a href="games/bloonstd3.html" class="gamelink">Bloons Tower Defense 3</a> 
+               <a href="games/bloonstd4.html" class="gamelink">Bloons Tower Defense 4</a> 
+               <a href="orbitron.html" class="gamelink">Orbitron</a> 
+            </div>
+            <button class="collapsible">Platformer Games</button>
+            <div class="content">
+               <a href="games/chibiknight.html" class="gamelink">Chibi Knight</a> 
+               <a href="games/digtochina.html" class="gamelink">Dig To China</a>
+               <a href="vex3/index.html" class="gamelink">Vex 3</a> 
+               <a href="vex4/index.html" class="gamelink">Vex 4</a> 
+               <a href="games/vex6/index.html" class="gamelink">Vex 6</a> 
+               <a href="games/sonic.html" class="gamelink">Sonic</a> 
+               <a href="bwag/index.html" class="gamelink">Bagel With a Gun</a>
+               <a href="bagelwithagun.html" class="gamelink">Bagel With a Gun Demo</a>  
+               <a href="games/meatboy.html" class="gamelink">Meat Boy</a> 
+               <a href="games/portal.html" class="gamelink">Portal Flash Version</a> 
+               <a href="games/portal2d.html" class="gamelink">Portal 2D</a> 
+               <a href="jumpgame.html" class="gamelink">Jump Game</a>
+               <a href="jumpgame2.html" class="gamelink">Jump Game 2</a>
+               <a href="newton.html" class="gamelink">newton</a> 
+               <a href="games/only.html" class="gamelink">This is the Only Level</a> 
+            </div>
+            <button class="collapsible">3D Games</button>
+            <div class="content">
+               <a href="games/drift-hunters/index.html" class="gamelink">Drift Hunters</a> 
+               <a href="Quake1-master/Quake1.htm" class="gamelink">Quake</a>
+               <a href="Quake3-master/Quake3.htm" class="gamelink">Quake 3</a>
+               <a href="eaglercraft-main/eaglercraft-main/stable-download/web/index.html" class="gamelink">Minecraft</a> 
+               <a href="turkeyflap/index.html" class="gamelink">Turkey Flap</a>
+               <a href="games/minecrap/index.html" class="gamelink">Minecraft Beta</a>
+               <a href="games/waflash/run2.html" class="gamelink">Run 2</a> 
+               <a href="games/run.html" class="gamelink">Run</a> 
+               <a href="games/bloxorz.html" class="gamelink">Bloxorz</a> 
+               <a href="Slope-Game-main/index.html" class="gamelink">Slope</a> 
+               <a href="hexgl.html" class="gamelink">Hexgl</a> 
+               <a href="games/cube.html" class="gamelink">Cube</a> 
+            </div>
+            <button class="collapsible">Puzzle Games</button>
+            <div class="content">
+               <a href="games/siftheads.html" class="gamelink">Siftheads</a>
+               <a href="games/portal2d.html" class="gamelink">Portal 2D</a> 
+               <a href="2048.html" class="gamelink">2048</a>
+               <a href="games/tetris.html" class="gamelink">Tetris</a> 
+               <a href="games/portal.html" class="gamelink">Portal Flash Version</a> 
+               <a href="games/bank.html" class="gamelink">Esacping The Prison</a> 
+               <a href="games/bloxorz.html" class="gamelink">Bloxorz</a> 
+               <a href="games/stealing.html" class="gamelink">Stealing The Diamond</a> 
+               <a href="games/bigadventure.html" class="gamelink">Big Adventure</a> 
+               <a href="games/quiz.html" class="gamelink">The Impossible Quiz</a> 
+               <a href="games/riddleschool.html" class="gamelink">Riddle School</a> 
+               <a href="games/riddleschool2.html" class="gamelink">Riddle School 2</a> 
+               <a href="games/rs3.html" class="gamelink">Riddle School 3</a> 
+               <a href="games/riddleschool4.html" class="gamelink">Riddle School 4</a> 
+               <a href="games/riddleschool5.html" class="gamelink">Riddle School 5</a> 
+               <a href="games/riddleschooltransfer.html" class="gamelink">Riddle School Transfer</a> 
+               <a href="games/riddleschooltransfer2.html" class="gamelink">Riddle School Transfer 2</a> 
+            </div>
+            <button class="collapsible">Top Down Games</button>
+            <div class="content">
+               <a href="blobby/index.html" class="gamelink">Blobby</a> 
+               <a href="games/stickrpg.html" class="gamelink">Stick Man RPG</a> 
+               <a href="games/hardestgame.html" class="gamelink">Worlds Hardest Game</a> 
+               <a href="games/hardestgame2.html" class="gamelink">Worlds Hardest Game 2</a> 
+               <a href="games/hobo.html" class="gamelink">Hobo</a> 
+               <a href="games/hobo2.html" class="gamelink">Hobo 2</a> 
+               <a href="games/retrobowl/index.html" class="gamelink">Retro bowl</a> 
+               <a href="games/miniputt.html" class="gamelink">Mini Putt</a> 
+               <a href="games/dadnme.html" class="gamelink">Dad n' Me</a> 
+            </div>
+            <button class="collapsible">Shooter Games</button>
+            <div class="content">
+               <a href="games/raftwars.html" class="gamelink">Raft Wars</a>
+               <a href="games/getaway-shootout/index.html" class="gamelink">Getaway Shootout</a> 
+               <a href="games/awesometanks2.html" class="gamelink">Awesome Tanks 2</a> 
+               <a href="games/siftheads.html" class="gamelink">Siftheads</a>
+               <a href="Quake1-master/Quake1.htm" class="gamelink">Quake</a>
+               <a href="Quake3-master/Quake3.htm" class="gamelink">Quake 3</a>
+               <a href="bwag/index.html" class="gamelink">Bagel With a Gun</a>
+               <a href="bagelwithagun.html" class="gamelink">Bagel With a Gun Demo</a>  
+               <a href="games/turtle.html" class="gamelink">Turtle Trigger</a> 
+               <a href="games/gunblood.html" class="gamelink">Gun Blood</a> 
+               <a href="games/duckhunt.html" class="gamelink">Duck Hunt</a> 
+               <a href="games/alien.html" class="gamelink">Alien Hominid</a> 
+               <a href="games/appleshoot.html" class="gamelink">Apple Shoot</a> 
+            </div>
+            <button class="collapsible">Racing Games</button>
+            <div class="content">
+               <a href="games/drift-hunters/index.html" class="gamelink">Drift Hunters</a> 
+               <a href="games/motox3m/index.html" class="gamelink">Motox3m</a> 
+               <a href="games/motox3m2/index.html" class="gamelink">Motox3m2</a> 
+            </div>
+            <button class="collapsible">Retro Games</button>
+            <div class="content">
+               <a href="Quake1-master/Quake1.htm" class="gamelink">Quake</a>
+               <a href="Quake3-master/Quake3.htm" class="gamelink">Quake 3</a>
+               <a href="asteroids.html" class="gamelink">Asteroids</a> 
+               <a href="games/retrobowl/index.html" class="gamelink">Retro bowl</a> 
+               <a href="games/sonic.html" class="gamelink">Sonic</a> 
+               <a href="games/Pacman.html" class="gamelink">Pacman</a> 
+               <a href="games/pong.html" class="gamelink">Pong</a> 
+               <a href="games/duckhunt.html" class="gamelink">Duck Hunt</a> 
+               <a href="games/tetris.html" class="gamelink">Tetris</a> 
+               <a href="space.html" class="gamelink">Space Invaders</a> 
+            </div>
+            <button class="collapsible">Nintendo Games</button>
+            <div class="content">
+               <a href="games/emu/tcs.html" class="gamelink">Lego Star Wars TCS</a>
+               <a href="games/emu/smw.html" class="gamelink">Super Mario World</a>
+               <a href="games/emu/smk.html" class="gamelink">Super Mario Kart</a>
+               <a href="games/emu/dkcountry.html" class="gamelink">Donkey Kong Country</a>
+               <a href="games/emu/nbajam.html" class="gamelink">NBA Jam</a>
+               <a href="games/emu/tomandjerry.html" class="gamelink">Tom and Jerry</a>
+               <a href="games/emu/toystory.html" class="gamelink">Toy Story</a>
+               <a href="games/emu/alladin.html" class="gamelink">Alladin</a>
+               <a href="games/emu/lionking.html" class="gamelink">The Lion King</a>
+               <a href="games/emu/mshwog.html" class="gamelink">Marvel SH: War of the Gems</a>
+               <a href="N64Wasm-master/dist/index.html" class="gamelink">Zelda Ocarina of Time</a>
+               <a href="N64Wasm-masterMK64/dist/index.html" class="gamelink">Mario Kart 64</a>
+               <a href="games/sm64/index.html" class="gamelink">Super Mario 64</a> 
+               <a href="games/supermarioflash.html" class="gamelink">Super Mario Flash</a>
+               <a href="games/mario/index.html" class="gamelink">Mario</a> 
+               <a href="games/mariocombat.html" class="gamelink">Mario Combat</a>
+               <a href="games/emu/megamanx.html" class="gamelink">Mega Man X</a>
+               <a href="games/emu/megamantwo.html" class="gamelink">Mega Man 2</a>
+               <a href="games/emu/umk3.html" class="gamelink">Ultimate Mortal Kombat 3</a>
+               <a href="games/emu/loz.html" class="gamelink">Legend Of Zelda NES</a>
+               <a href="games/emu/batman.html" class="gamelink">Batman</a>
+               <a href="games/emu/miketysonpunchout.html" class="gamelink">Mike Tyson's Punch Out!</a>
+               <a href="games/emu/punchout.html" class="gamelink">Punch Out!</a>
+               <a href="games/emu/smb.html" class="gamelink">Super Mario Bros</a>
+               <a href="games/emu/smbtwo.html" class="gamelink">Super Mario Bros. 2</a>
+               <a href="games/emu/smbthree.html" class="gamelink">Super Mario Bros. 3</a>
+               <a href="games/emu/doubledragon.html" class="gamelink">Double Dragon</a>
+               <a href="games/emu/contra.html" class="gamelink">Contra</a>
+               <a href="games/emu/ducktales.html" class="gamelink">Duck Tales</a>
+               <a href="games/emu/f13.html" class="gamelink">Friday the 13th</a>
+               <a href="games/emu/ransom.html" class="gamelink">River City Ransom</a>
+            </div>
+            <button class="collapsible">Papas Games</button>
+            <div class="content">
+               <a href="games/papasfreezeria.html" class="gamelink">Papas Freezeria</a> 
+               <a href="games/papasdonuteria.html" class="gamelink">Papas Donuteria</a> 
+               <a href="games/papascupcakeria.html" class="gamelink">Papas Cupcakeria</a> 
+               <a href="games/papasscooperia.html" class="gamelink">Papas Scooperia</a>
+               <a href="games/papaspasteria.html" class="gamelink">Papas Pastaria</a>
+               <a href="games/papasbakeria.html" class="gamelink">Papas Bakeria</a>  
+               <a href="games/papassushiria.html" class="gamelink">Papas Sushiria</a> 
+               <a href="games/papascheeseria.html" class="gamelink">Papas Cheeseria</a>
+               <a href="games/papastacomia.html" class="gamelink">Papas Tacomia</a> 
+               <a href="games/papaswingeria.html" class="gamelink">Papas Wingeria</a> 
+               <a href="games/papapizza.html" class="gamelink">Papas Pizzeria</a> 
+               <a href="games/papasbugeria.html" class="gamelink">Papas Burgeria</a> 
+               <a href="games/papashotdogeria.html" class="gamelink">Papas Hotdogeria</a> 
+               <a href="games/papaspancakeria.html" class="gamelink">Papas Pancakeria</a>
+               <a href="games/jacksmith.html" class="gamelink">Jack Smith</a>
+            </div>
+            <button class="collapsible">Other Games</button>
+            <div class="content">
+               <a href="games/linerider.html" class="gamelink">Line Rider</a>
+               <a href="games/checkers.html" class="gamelink">Checkers</a> 
+               <a href="games/8ballpool.html" class="gamelink">8 Ball Pool</a> 
+               <a href="games/1on1soccer.html" class="gamelink">1on1 Soccer</a> 
+               <a href="games/digtochina.html" class="gamelink">Dig To China</a>
+               <a href="games/sas2.html" class="gamelink">Swords and Sandals 2</a> 
+               <a href="games/sas.html" class="gamelink">Swords and Sandals</a> 
+               <a href="games/ducklife.html" class="gamelink">Duck Life</a> 
+               <a href="games/ducklife2.html" class="gamelink">Duck Life 2</a> 
+               <a href="games/ducklife3.html" class="gamelink">Duck Life 3</a> 
+               <a href="games/ducklife4.html" class="gamelink">Duck Life 4</a> 
+               <a href="games/learntofly.html" class="gamelink">Learn To Fly</a> 
+               <a href="games/learntofly2.html" class="gamelink">Learn To Fly 2</a> 
+               <a href="games/learntofly3.html" class="gamelink">Learn To Fly 3</a> 
+               <a href="games/artofwar.html" class="gamelink">Art of War</a> 
+               <a href="games/ageofwar.html" class="gamelink">Age Of War</a> 
+               <a href="games/bubble.html" class="gamelink">Bubble</a> 
+               <a href="games/castle.html" class="gamelink">Castle</a> 
+               <a href="games/colorcombat.html" class="gamelink">Color Combat</a> 
+               <a href="games/commando.html" class="gamelink">Commando</a> 
+               <a href="games/eman2.html" class="gamelink">Eman 2</a> 
+               <a href="games/fancypants.html" class="gamelink">Fancypants</a> 
+               <a href="games/miamishark.html" class="gamelink">Miami Shark</a> 
+               <a href="games/NYshark.html" class="gamelink">New York Shark</a> 
+               <a href="games/cookie/index.html" class="gamelink">Cookie Clicker</a>
+               <a href="games/shooter.html" class="gamelink">Shooter Game</a> 
+               <a href="games/zombie.html" class="gamelink">Zombies</a>
+            </div>
+         </div>
+      </div>
+      <div id="Projects" class="tabcontent">
+
+         <h1>Projects</h1>
+         <button onclick="abert()">Dont Click me</button>
+         <h2>I made a discord bot, add it to your server, the link is <a href="https://discord.com/api/oauth2/authorize?client_id=1004129851759927326&permissions=534723950664&scope=bot%20applications.commands">here</a></h2>
+        
+         <h2>tired of chatting with people? check out this <a href="choose.html">chatbot</a> I made</h2>
+         <h2>need a date? check out this <a href="lines.html">pickup line Generator</a> I made</h2>
+         <h2>Check out this <a href="finalproject/index.html">countdown timer</a> I made for CS50</h2>
+         <h2>Searching algorithm to find out <a href="search.html">who asked</a></h2>
+        <!--allhailthemathcult -->
+         <h2>Cool Channels:</h2>
+         <a href="https://www.youtube.com/channel/UCVsIuX-_vHvdMG7ffTlDQLA">Weird Wontons</a>
+         <a href="https://www.youtube.com/channel/UCSd4Iwf2p6o1OpdkepfC94w">JackOfAllTrades</a>
+         <a href="https://www.youtube.com/channel/UCd5dx06pn0tdGwqn3ZVuNZQ">Magnus</a>
+         <a href="https://www.youtube.com/channel/UCRE0hq5gT69syu2ybmpuYWA">Apollo and Friends</a>
+         <p class="bageltext">Check in often for new stuff!</p>
+      </div>
+      <div id="About" class="tabcontent">
+         <h1>About</h1>
+         <h2>Yo ok this website has been a project of mine for a couple <a style="text-decoration: none; color: inherit;" href="oldindex.html">years </a>now. It's not the best website out there, but I have learned a ton from making it. Thanks for checking it out :)</h2>
+         <h2>This was made by a person named Tom with the help of carter and dirty dan</h2>
+         <h1>Dead Games</h1>
+         <h2>R.I.P. Bagel Royal. "the chance of you getting a bikini bagel was very high. Too high Daniel. I think you have a problem." -Carter/Creator</h1>
+         <h2>Icon made by Maria</h2>
+         <h2>Check out my <a href="https://github.com/bagel-man">Github</a>, (this website is a mess of files I wouldn't even bother)</h2>
+         <h2>Join the <a href="https://discord.gg/xEwt8W5utF">Discord server</a></h2>
+         <h2>How did I make bagelcomics? heres a slide show thingy: <a href="pdf.html">click me now slave</a></h2>
+         <h2>Email me at weirdwontons@gmail.com and bagelcomics.com@gmail.com</h2>
+        
+         <h1>Other cool websites:</h1>
+                  <h2><a href="https://codeprojects.org/projects/weblab/-2VkvC1Hc9_VU8yGes2VL9XBp2DL-4sNvZcAmnI0Lbk/">Bagel With a Gun thing (i thought it was cool)</a></h2>
+
+         <h2><a href="https://sites.google.com/alpinesd.org/spygs-game-lab/games-i-made?authuser=2">SpyGs Game Lab</a></h2>
+         <h2><a href="https://sites.google.com/view/sciencehelps/home?authuser=0">Science Help</a></h2>
+         <h2><a href="https://theo-hats.github.io">Theo Hats</a></h2>
+         <h2>Wanna have your website featured? email me the link and I'll add it!</h2>
+      </div>
+   </div>
+      <script>
+
+      function random() {
+         const list = document.getElementsByClassName('gamelink');
+         var item = list[Math.floor(Math.random()*list.length)];
+         item.click();
+}
+         function toggleText() {
+          
+                    // Get all the elements from the page
+                    var points = 
+                        document.getElementById("points");
+          
+                    var showMoreText =
+                        document.getElementById("moreText");
+          
+                    var buttonText =
+                        document.getElementById("textButton");
+          
+                    // If the display property of the dots 
+                    // to be displayed is already set to 
+                    // 'none' (that is hidden) then this 
+                    // section of code triggers
+                    if (points.style.display === "none") {
+          
+                        // Hide the text between the span
+                        // elements
+                        showMoreText.style.display = "none";
+          
+                        // Show the dots after the text
+                        points.style.display = "inline";
+          
+                        // Change the text on button to 
+                        // 'Show More'
+                        buttonText.innerHTML = "Show More";
+                    }
+          
+                    // If the hidden portion is revealed,
+                    // we will change it back to be hidden
+                    else {
+          
+                        // Show the text between the
+                        // span elements
+                        showMoreText.style.display = "inline";
+          
+                        // Hide the dots after the text
+                        points.style.display = "none";
+          
+                        // Change the text on button
+                        // to 'Show Less'
+                        buttonText.innerHTML = "Show Less";
+                    }
+                }
+                var coll = document.getElementsByClassName("collapsible");
+         var i;
+         
+         for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+         }
+                function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+         }
+         
+         // Get the element with id="defaultOpen" and click on it
+         document.getElementById("defaultOpen").click();
+         
+         function abert() {
+          alert("Click on 'Home' on the home page to fulfill your destiny/n");
+         }
+         
+      </script>
+<!--       
+  <script> window.console = window.console || function(t) {};</script><script>
+   if (document.location.search.match(/type=embed/gi)) {  window.parent.postMessage("resize", "*"); }</script></head><body translate="no">
+   <canvas id="canvas" width="100%" height="100%" class="snow"></canvas><script id="rendered-js">
+ const canvas = document.getElementById('canvas');ctx = canvas.getContext('2d');function sns() {  canvas.width = innerWidth;  canvas.height = innerHeight;}
+ sns();addEventListener('resize', () => { sns(); drops();});
+ var da= [];var directions = [4, -4];function drop() { this.x = canvas.width * Math.random();this.y = canvas.height * Math.random();
+   this.r = 2 + 2 * Math.random();  this.vx = 0.5;this.vy = 0.5;
+   this.direction = Math.random() *20; this.draw = () => { ctx.beginPath();
+     ctx.fillStyle = '#727272';   ctx.shadowColor = '#ffffff30';  ctx.arc(this.x + this.vx, this.y + this.vy, this.r+3, 0, 6.3, true);
+     this.vx = this.vx + this.direction * 0.05;  this.vy = this.vy + 0.5;   if (this.y + this.vy > canvas.height) {   this.y = 0;   this.vy = 0; }
+     if (this.x + this.vx > canvas.width) {    this.x = 0;    this.vx = 0;  }
+     if (this.x + this.vx < 0) {    this.x = 0;   this.vx = canvas.width;  }
+     ctx.fill(); };}
+ function drops() {  for (var i = 0; i <600; i++) {  da[i] = new drop();}}drops();
+ function animate() {ctx.clearRect(0, 0, canvas.width, canvas.height); da.forEach(drop => drop.draw()); requestAnimationFrame(animate);}animate();
+ 
+ </script> -->
+ 
+   
+ 
+ 
+ 
+ 
+  
+ </body></html>
+      <script src="./spookychatscript.js"></script>
+   </body>
+</html>

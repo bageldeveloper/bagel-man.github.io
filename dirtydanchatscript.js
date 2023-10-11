@@ -4,7 +4,7 @@ let scrollID;
 
   const coolDown = 1500 // 5s cooldown
   let lastClick = Date.now() - coolDown // to start fresh
-
+  
 let stopped = true;
 
 
@@ -20,15 +20,14 @@ let scrollInterval = scrollSpeed * 3;
 // If you use this channel ID your app will stop working in the future
 
 
-const CLIENT_ID = '4g2JP9Qwzlu7VX3m';
+const CLIENT_ID = '5Qcspn6KZFL4fZ97';
 
 
 
 
 
 
-
-const drone = new ScaleDrone(CLIENT_ID, {
+let drone = new ScaleDrone(CLIENT_ID, {
 
 
  data: { // Will be sent out as clientData via events
@@ -218,8 +217,10 @@ drone.on('error', error => {
 
 function getRandomName() {
 
+ return "Dirty Dan"; 
 
- return "Dirty Dan";
+ );
+  
 
 
 
@@ -234,7 +235,7 @@ function getRandomName() {
 function getRandomColor() {
 
 
- return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+ return "#30D5C8";
 
 
 }
@@ -322,9 +323,13 @@ return ID;
   }
   function checkCoolDown () {
     const notOver = Date.now() - lastClick < coolDown
-    if (notOver) alert('ayo dude stop spamming')
+    if (notOver){
+      var audio = new Audio('stopspamming.mp3');
+      audio.play();
+    alert('ayo dude stop spamming');
+    }
     // using an alert it will block javascript loops
-    return !notOver
+    return !notOver;
   }
 
 
@@ -332,9 +337,10 @@ function sendMessage() {
 
 
 
-
+  
     if (checkCoolDown()) {
       startCoolDown()
+    
 const value = DOM.input.value;
 
 
@@ -345,8 +351,15 @@ const value = DOM.input.value;
 
 
  }
-
-
+if(value.match(/(黑鬼|ass|cum|retard|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|nazi|whore|faggot|handjob|penis|cock|pussy|sex|porn|hitler)/gi)){
+      alert('cmon man why you saying that kinda stuff?');
+  return;
+  }
+      
+        if(value.length > 100){
+          alert('my guy, that message is too big.. just like your mom gottem')
+      return; 
+  }
  DOM.input.value = '';
 
 
@@ -361,13 +374,55 @@ const value = DOM.input.value;
 
  });
 
+      if (value == "2 + 2 = 4" || value == "2+2=4"){
+drone = new ScaleDrone(CLIENT_ID, {
 
 
+ data: { // Will be sent out as clientData via events
+
+
+   name: "The One",
+
+
+   color: getRandomColor(),
+
+
+ },
+
+
+});
+ drone.publish({
+
+
+   room: 'observable-room',
+
+
+   message: "It is coming...",
+
+
+ });
+        drone = new ScaleDrone(CLIENT_ID, {
+
+
+ data: { // Will be sent out as clientData via events
+
+
+   name: getRandomName(),
+
+
+   color: getRandomColor(),
+
+
+ },
+
+
+});
+      }
       // do your stuff with arguments here
     }
 }
 
-
+ 
 
 
 
@@ -437,17 +492,13 @@ function createMessageElement(text, member) {
 
 
 
-
-
-if(text.match(/(黑鬼|ass|retard|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|nazilut|whore|faggot|handjob|penis|cock|pussy|sex|porn)/gi)){
-     return;
-     }
+// let gamer = text.replace(/[^A-Za-z0-9\s!?]/g,”);
+// testing to see if this is the problem
 
 
 
-  if(text.length > 100){
-      return; 
-  }
+ 
+
   const el = document.createElement('div');
 
 
@@ -497,14 +548,13 @@ function addMessageToListDOM(text, member) {
 
  el.appendChild(createMessageElement(text, member));
 
-
  if (wasTop) {
 
 
    el.scrollTop = el.scrollHeight - el.clientHeight;
 
 
-
+  
 
 
  }
@@ -532,5 +582,3 @@ function addMessageToListDOM(text, member) {
 
 
 }
-
-
