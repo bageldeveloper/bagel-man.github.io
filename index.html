@@ -16,7 +16,7 @@
       <style>
          * {box-sizing: border-box}
          .bodycss {
-            background: url(bagelcomicsbgwitches.png) no-repeat center center fixed; 
+            background: url(spookybackground.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -89,13 +89,13 @@
             margin-top: 0px;
             height: 108%;
             padding-bottom: 12px;
-            background: linear-gradient(#161618,#1A1C25) padding-box,
+            background: linear-gradient(#161618,#0b031a) padding-box,
          linear-gradient(to right, #f1b04d, #f09204) border-box;
          border-top-left-radius: 15px;
          border-top-right-radius: 15px;
   		   border: 4px solid transparent;
          border-bottom: none;
-         background-color: #1A1C25;
+         background-color: #0b031a;
          }
          /* Style the tab content */
          .tabcontent {
@@ -174,6 +174,7 @@
          .chat{
          overflow-y:auto
          }
+
          .member {
             background-color: #1A1C25;
          border-radius: 15px;
@@ -317,13 +318,16 @@
          margin-left: 5px;
          }
          .pedro {
-            text-shadow: 2px 2px 8px #cc7d06;
   		   font-size: 70px;
-  		   background: linear-gradient(to top, #f7c16f, #cc7d06);
-  		   -webkit-text-fill-color: transparent;
+         -webkit-text-fill-color: #f7c16f;
   		   -webkit-background-clip: text;
          background-clip: text;
-         
+		   }
+         .divness {
+  		   background-image: url(nicetomeetyou.jpg);
+         width: 105%;
+         outline: #787878;
+         left: -30px;
 		   }
          .content {
          width: 110%;
@@ -384,9 +388,7 @@
 /* a Pen by Diaco m.lotfollahi  : https://diacodesign.com */
 </script>
 <script src="https://codepen.io/MAW/pen/XVRpEE.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
-   <body class="bodycss">
-      
+   <body class="bodycss" onload="openCity(event, 'Home')">
       <div class = "everthing">
       <div class="header">
          <a href="#" class="logo" onclick="openCity(event, 'Home')" >
@@ -394,18 +396,59 @@
          </a>
          <div class="tab">
             <button class="tablinks" onclick="openCity(event, 'Home')" id="defaultOpen">Home</button>
-            <button class="tablinks" onclick="openCity(event, 'Chat')" id="chat">Chat</button>
+            <button class="tablinks" onclick="openCity(event, 'Chat')">Chat</button>
             <button class="tablinks" onclick="openCity(event, 'Games')">Games</button>
             <button class="tablinks" onclick="openCity(event, 'Projects')">Projects</button>
-
             <button class="tablinks" onclick="openCity(event, 'About')">About</button>
          </div>
       </div> 
-      <div id="container">
       <div id="Home" class="tabcontent">
-         <h1 class="pedro">Home<h1>
+         <h1 class="pedro">Home</h1>
          <h2>Welcome to bagelcomics.com! Play some dope games, chat with other people from around the world, explore the site to find the hidden secrets, and check out the dumb projects I've made. :&#41;</h2>
          <h1>Announcements:</h1>
+         <div class="announcement">
+            <h1 class="anountext">October 28th, 2023</h1>
+          <h1 class="anountext">Go sign up for the game jam gamers. Also added chat back, but most importantly, we now have a Patreon! It has benefits and honestly it's hard for us to want to do stuff when we make nothing off of it. Theres also a free teir so sign up for that, and on the top teir only 10 people can join and im sure theres more to come. Heres the link: <a href="https://patreon.com/user?u=105233266" style="color: #f7c16f">Patreon</a>
+             <br><br>
+             -The whole bagelcomics team
+             </h1>
+             </div>
+	       <div class="announcement">
+		        <h1 class="anountext">October 26th, 2023</h1>
+            <h1 class="anountext">Anyways we are going to be hositng a game jam, maybe. if we get enough people filling out this form saying they want to do one ill include more info about it, but i was thinking it would be any game you could think of with a certain theme, and the top 3 games would be put onto bagel comics. That means that the game has to be able to be run on the web if you want it to win, you dont have to, but if you want your game on the website it has to be web compatible. any engine would be fine, and the time constraint would be like 1-2 weeks maybe. anyways fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSecDxY8KrqsHFVIlELCItWMb86lgTH8J7Re0RBcRF8ybHP9hA/viewform?usp=sf_link">this form</a>
+               <br><br>
+               -Tom
+               </h1>
+               </div>
+	      <div class="announcement">
+            <h1 class="anountext">October 26th, 2023</h1>
+		       <img src="skele.gif">
+            <h1 class="anountext">hey to that one middle schooler that came up to me and said getaway shootout was broken it works fine for me so your just stupid
+               <br><br>
+               -Tom
+               </h1>
+               </div>
+         <div class="announcement">
+            <h1 class="anountext">October 25th, 2023</h1>
+            <h1 class="anountext">I add some art of something for new games wednesday, go play them or something
+               <br><br>
+               -Carter
+               </h1>
+               </div>
+               <span id="points"></span>
+               <span id="moreText">
+         <div class="announcement">
+            <h1 class="anountext">October 18th, 2023</h1>
+            <h1 class="anountext">Yooooo NGW is back. We added the rest of the Hobo Games which include the 3rd, 4th, 5th, 6th, and 7th games. Also bagelcomics is back uwu<br><br>
+               -Dirty Dan
+               </h1>
+               </div>
+         <div class="announcement">
+            <h1 class="anountext">October 10th, 2023</h1>
+            <h1 class="anountext">bagelcomics.com is dead, we are EGGYOLKERS (also i removed the chat cuz no one used it and it kept breaking lol)<br><br>
+               -Tom
+               </h1>
+               </div>
          <div class="announcement">
             <h1 class="anountext">October 8th, 2023</h1>
             <h1 class="anountext">Yo. Tom started this tradition back in March, and we kinda quit after like 4 weeks. It's all good, but we are starting it up again. Welcome back our old friend, New Game Wednesdays! We call it NGW. If you don't know what it is, you are an imbicile and I hate you but it's fine because you're about to learn it. NGW is where we add new games every wednesday, usually around 5 games, but could be a little more or less. This time it's on a monday, but that's only for this week. New games added are the waitress and Escape Series, which include escape the room, escape the classroom, escape the bathroom, escape the closet, and escape the ladies room. Next week is gonna be even better!<br><br>
@@ -451,8 +494,6 @@
                -Dirty Dan
                </h1>
                </div>
-               <span id="points"></span>
-               <span id="moreText">
 	<div class="announcement">
             <h1 class="anountext">September 25th, 2023</h1>
             <h1 class="anountext">Unfortunately, Tom doesn't want to work on this anymore so it's just me and Daniel<br><br>
@@ -722,121 +763,105 @@
             </h1>
           </div>
          <div class="announcement">
-            <h1 class="anountext">December 1st, 2022</h1>
-            <h1 class="anountext">New server: wss://bagelcraft.weirdwontons.repl.co/server</h1>
-         </div>
-         <div class="announcement">
-            <h1 class="anountext">November 28th, 2022</h1>
-            <h1 class="anountext">Yo we got a minecraft server that works on the chromebooks. This is temporary to see how it works before I make a better dedicated server. Go into the eagler craft minecraft client and paste this into the direct connect: wss://eaglercraft-server.jacklind1.repl.co/server
-            </h1>
-          </div>
-         <div class="announcement">
-            <h1 class="anountext">November 24th, 2022</h1>
-            <h1 class="anountext">I KNOW ITS NOT EVEN DECEMBER YET BUT I DONT CARE HAPPY HOLIDAYS WHOOP</h1>
-          </div>
-         <div class="announcement">
-            <h1 class="anountext">November 23th, 2022</h1>
+            <h1 class="anountext">November 23rd, 2022</h1>
             <h1 class="anountext">I made a slideshow thing so you guys stop harasing me about how I made the website lol: <a href="pdf.html">click me now slave</a></h1>
           </div>
-         <div class="announcement">
-            <h1 class="anountext">November 22th, 2022</h1>
-            <h1 class="anountext"><button onclick="abert()">Dont Click me</button></h1>
+          <div class="announcement">
+            <h1 class="anountext">November 21st, 2022</h1>
+            <h1 class="anountext">The website is looking segsy, thanks you so much maria for making the icon!</h1>
           </div>
-
-
-            <div class="announcement">
-               <h1 class="anountext">November 21th, 2022</h1>
-               <h1 class="anountext">The website is looking segsy, thanks you so much maria for making the icon!</h1>
-             </div>
-            <div class="announcement">
-               <h1 class="anountext">November 20th, 2022</h1>
-               <h1 class="anountext">I added a whole truck load of new games, including learn to fly 1, 2, and 3, art of war, and more. More games coming soon.</h1>
-              </div>
-            <div class="announcement">
-               <h1 class="anountext">November 19th, 2022</h1>
-               <h1 class="anountext">new devlog, heres the <a href="https://www.youtube.com/watch?v=ifoSpY4Bomk">link</a>, im gonna release them every 2 weeks so I can get more work done on them</h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">November 18th, 2022</h1>
-               <h1 class="anountext">Hey guys I gave carter editing access to the website so now we are working on it together. His email is bagelcomics.com@gmail.com</h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">November 17th, 2022</h1>
-               <h1 class="anountext">Hey guys, I've been feeling a little burntout lately, so I'm gonna focus less on bagelcomics.com and more on other projects. I'll still check in on it and stuff but don't expect a ton of updates over the holidays.</h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">November 12th, 2022</h1>
-               <h1 class="anountext">I made a devlog for bagel with a gun 2, heres the <a href="https://www.youtube.com/watch?v=X_Z-4yz2HkA">link</a></h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">November 6th, 2022</h1>
-               <h1 class="anountext">So I added a minecraft client and its pretty much an exact port of 1.5</h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">November 1st, 2022</h1>
-               <h1 class="anountext">I made a new game for Thanksgiving lol. Play it <a href="turkeyflap/index.html">here</a></h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">October 31st, 2022</h1>
-               <h1 class="anountext">The sneak peak now works</h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">October 31st, 2022</h1>
-               <h1 class="anountext">It has come to my attention that the preveiw doesnt work lol, ill fix it when I can</h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">October 31st, 2022</h1>
-               <h1 class="anountext">WE HAVE CONTROL OF THE WEBSITE AGAIN!! You guys should've been there, there was cannons and blood and all that crap, but it's not over yet. I have a feeling the donuts will be back, thirsty for blood. Anyways to celebrate this I slapped together an actual Bagel With a Gun 2 sneakpeak, go the games section to play it. I also revamped the website, tell me if you like it! I will not be fixing bugs on the preview because its just a little update. Happy Halloween!</h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">October 19th, 2022</h1>
-               <h1 class="anountext">Welcome back from fall break you peasants, I hope you all had a terrible time.</h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">October 10th, 2022</h1>
-               <h1 class="anountext">I have found a bagel invader among our ranks, this is war.</h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">October 5th, 2022</h1>
-               <h1 class="anountext">Dont test me. The donut overlord reigns supreme forever. I have destroyed your futile attempts of a revolution, I eliminated the secret invader.</h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">October 5th, 2022</h1>
-               <h1 class="anountext">The reign of bagels are over, it is now time for donuts to rule. (the reason the url is still bagelcomics.com is because the donut nation can't afford a new domain name)</h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">October 1st, 2022</h1>
-               <h1 class="anountext">Happy spooky month! I changed around the website to make it spookier.</h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">September 27th, 2022</h1>
-               <h1 class="anountext">Added a new game called orbitron, go play it. Also the new game is coming out on October 3rd.</h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">September 26th, 2022</h1>
-               <h1 class="anountext">Added Super Mario 64! Also a new game im making is gonna be coming out pretty soon, so stay tuned for that.</h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">September 22nd, 2022</h1>
-               <h1 class="anountext">The bagel with a gun 2 demo is done! play it <a href="https://scratch.mit.edu/projects/704669268/">here</a>!</h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">September 14th, 2022</h1>
-               <h1 class="anountext">Guys, thank you so much for 10000 visits, I never expected this site to get that many. I remember when 100 was a big milestone lol. To thank everyone, I will tell you something you may want to know. Not only am I working on a bunch of new games, but I am also making a sequel to bagel with a gun. This sequel will be so much more polished and better than the first, but I also need to know something. Should I keep the new game simple and short like the last one, or should I add things like skill trees and more guns and that kinda crap. Let me know by commenting or emailing me or whatever. Thank you guys :)</h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">September 9th, 2022</h1>
-               <h1 class="anountext">Bagel royal is finally fixed! go play it :)</h1>
-            </div>
-
-            <div class="announcement">
-               <h1 class="anountext">September 8th, 2022</h1>
-               <h1 class="anountext">I made the announcements fancy, its pretty great</h1>
-            </div>
-            <div class="announcement">
-               <h1 class="anountext">September 6th, 2022</h1>
-               <h1 class="anountext">Added a fancy font, tell me if you like it</h1>
-            </div>
+         <div class="announcement">
+            <h1 class="anountext">November 20th, 2022</h1>
+            <h1 class="anountext">I added a whole truck load of new games, including learn to fly 1, 2, and 3, art of war, and more. More games coming soon.</h1>
+           </div>
+         <div class="announcement">
+            <h1 class="anountext">November 19th, 2022</h1>
+            <h1 class="anountext">new devlog, heres the <a href="https://www.youtube.com/watch?v=ifoSpY4Bomk">link</a>, im gonna release them every 2 weeks so I can get more work done on them</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">November 18th, 2022</h1>
+            <h1 class="anountext">Hey guys I gave carter editing access to the website so now we are working on it together. His email is bagelcomics.com@gmail.com</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">November 17th, 2022</h1>
+            <h1 class="anountext">Hey guys, I've been feeling a little burntout lately, so I'm gonna focus less on bagelcomics.com and more on other projects. I'll still check in on it and stuff but don't expect a ton of updates over the holidays.</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">November 12th, 2022</h1>
+            <h1 class="anountext">I made a devlog for bagel with a gun 2, heres the <a href="https://www.youtube.com/watch?v=X_Z-4yz2HkA">link</a></h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">November 6th, 2022</h1>
+            <h1 class="anountext">So I added a minecraft client and its pretty much an exact port of 1.5</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">November 1st, 2022</h1>
+            <h1 class="anountext">I made a new game for Thanksgiving lol. Play it <a href="turkeyflap/index.html">here</a></h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">October 31st, 2022</h1>
+            <h1 class="anountext">The sneak peak now works</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">October 31st, 2022</h1>
+            <h1 class="anountext">It has come to my attention that the preveiw doesnt work lol, ill fix it when I can</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">October 31st, 2022</h1>
+            <h1 class="anountext">WE HAVE CONTROL OF THE WEBSITE AGAIN!! You guys should've been there, there was cannons and blood and all that crap, but it's not over yet. I have a feeling the donuts will be back, thirsty for blood. Anyways to celebrate this I slapped together an actual Bagel With a Gun 2 sneakpeak, go the games section to play it. I also revamped the website, tell me if you like it! I will not be fixing bugs on the preview because its just a little update. Happy Halloween!</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">October 19th, 2022</h1>
+            <h1 class="anountext">Welcome back from fall break you peasants, I hope you all had a terrible time.</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">October 10th, 2022</h1>
+            <h1 class="anountext">I have found a bagel invader among our ranks, this is war.</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">October 5th, 2022</h1>
+            <h1 class="anountext">Dont test me. The donut overlord reigns supreme forever. I have destroyed your futile attempts of a revolution, I eliminated the secret invader.</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">October 5th, 2022</h1>
+            <h1 class="anountext">The reign of bagels are over, it is now time for donuts to rule. (the reason the url is still bagelcomics.com is because the donut nation can't afford a new domain name)</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">October 1st, 2022</h1>
+            <h1 class="anountext">Happy spooky month! I changed around the website to make it spookier.</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">September 27th, 2022</h1>
+            <h1 class="anountext">Added a new game called orbitron, go play it. Also the new game is coming out on October 3rd.</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">September 26th, 2022</h1>
+            <h1 class="anountext">Added Super Mario 64! Also a new game im making is gonna be coming out pretty soon, so stay tuned for that.</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">September 22nd, 2022</h1>
+            <h1 class="anountext">The bagel with a gun 2 demo is done! play it <a href="https://scratch.mit.edu/projects/704669268/">here</a>!</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">September 14th, 2022</h1>
+            <h1 class="anountext">Guys, thank you so much for 10000 visits, I never expected this site to get that many. I remember when 100 was a big milestone lol. To thank everyone, I will tell you something you may want to know. Not only am I working on a bunch of new games, but I am also making a sequel to bagel with a gun. This sequel will be so much more polished and better than the first, but I also need to know something. Should I keep the new game simple and short like the last one, or should I add things like skill trees and more guns and that kinda crap. Let me know by commenting or emailing me or whatever. Thank you guys :)</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">September 9th, 2022</h1>
+            <h1 class="anountext">Bagel royal is finally fixed! go play it :)</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">September 9th, 2022</h1>
+            <h1 class="anountext">DND club is going to be on tuesdays after school in the downstairs A-pod</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">September 8th, 2022</h1>
+            <h1 class="anountext">I made the announcements fancy, its pretty great</h1>
+         </div>
+         <div class="announcement">
+            <h1 class="anountext">September 6th, 2022</h1>
+            <h1 class="anountext">Added a fancy font, tell me if you like it</h1>
+         </div>
          </span>
          <button class="showbutton" onclick="toggleText()" id="textButton">
          Show All
@@ -869,6 +894,7 @@
       </div>
       <div id="Chat" class="tabcontent">
          <h1 class="pedro">Chat</h1>
+         <h4>You better support our Patreon to get a costum name. Link: <a href="https://patreon.com/user?u=105233266" style="color: #f7c16f">Patreon</a></h4>
          <div class="members-count">-</div>
          <div class="members-list">-</div>
          <div class="messages"></div>
@@ -877,13 +903,11 @@
             <!-- <input class="message-form__button" value="Send" type="submit"/> -->
          </form>
       </div>
-    </div>
       <div id="Games" class="tabcontent">
          <h1 class="pedro">Games</h1>
-         <h5>Want a game on here? I'm sure we can find it! we use mainly Flash, n64, snes/nes, and the Sega Genesis. If you don't know, just tell me the name. Just contact funismathhelp@gmail.com with possible files, website links, or just straight up the name. I'm sure I can find it.</a></h2>
+         <h5>Want a game on here? I'm sure we can find it! we use mainly Flash, n64, snes/nes, and the Sega Genesis. If you don't know, just tell me the name. Just contact funismathhelp@gmail.com with possible files, website links, or just straight up the name. I'm sure I can find it. Also some games might not work. if you want me to fix them, just contact me and i'll try to fix them</a></h2>
+         <h4>You should just like Support us on our Patreon and even get any game (that's possible to get) within 24 hours whenever you want. Link: <a href="https://patreon.com/user?u=105233266" style="color: #f7c16f">Patreon</a></h4>
          <p>DISCLAIMER: bagelcomics.com is not responsible for any trouble you may get in while playing these games during class.</p>
-         <p>DISCLAIMER: Some games might not work. if you want me to fix them, just contact me. I might not be able to fix it, but i can still try.</p>
-         
          <button onclick="random()" class="randrange" >Random Game</button> 
 
          <h2 class="gotdtext">Game of the Year</h2>
@@ -891,53 +915,26 @@
          <h2 class="gotdtext">Game of the Month</h2>
          <a href="N64Wasm-masterMK64/dist/index.html" class="gotd">Mario Kart 64</a> 
          <h2 class="gotdtext">Game of the Week</h2>
-         <a href="games/emu/tcs.html" class="gotd">Lego Star Wars TCS</a>
+         <a href="games/html/hardestgame.html" class="gotd">Worlds Hardest Game</a>
          <div>
             <input type="text" placeholder="search..." id="searchbagel">
             <div id="search-results"></div>
          </div>
          <div class="games">
-
-            <!-- <button class="collapsible">New Games</button>
-            <div class="content"></div>
-
-            <button class="collapsible">Favorite Games</button>
-            <div class="content"></div>
-
-            <button class="collapsible">Strategy Games</button>
-            <div class="content"></div>
-
-            <button class="collapsible">Action Games</button>
-            <div class="content">
-            </div>
-            <button class="collapsible">Race Games</button>
-            <div class="content"></div>
-
-            <button class="collapsible">Shooter Games</button>
-            <div class="content"></div>
-
-            <button class="collapsible">Papa's Games</button>
-            <div class="content"></div>
-
-            <button class="collapsible">Console Games</button>
-            <div class="content"></div> -->
          </div>
       </div>
       <div id="Projects" class="tabcontent">
 
          <h1 class="pedro">Projects</h1>
+         <h4>You should just support our Patreon anyways, but you can also get your own project on here through the benefits. Go check it out. Link: <a href="https://patreon.com/user?u=105233266" style="color: #f7c16f">Patreon</a></h4>
          <button onclick="abert()">Dont Click me</button>
          <h2>I made a discord bot, add it to your server, the link is <a href="https://discord.com/api/oauth2/authorize?client_id=1004129851759927326&permissions=534723950664&scope=bot%20applications.commands">here</a></h2>
-        
          <h2>tired of chatting with people? check out this <a href="choose.html">chatbot</a> I made</h2>
          <h2>need a date? check out this <a href="lines.html">pickup line Generator</a> I made</h2>
          <h2>Check out this <a href="finalproject/index.html">countdown timer</a> I made for CS50</h2>
-         <h2>Searching algorithm to find out <a href="search.html">who asked</a></h2>
-        <!--allhailthemathcult -->
+         <h2>Searching algorithm to find out <a href="search.html">who asked?</a></h2>
          <h2>Cool Channels:</h2>
          <a href="https://www.youtube.com/@bageldev">Bagel Dev</a>
-         <a href="https://www.youtube.com/channel/UCSd4Iwf2p6o1OpdkepfC94w">JackOfAllTrades</a>
-         <a href="https://www.youtube.com/channel/UCd5dx06pn0tdGwqn3ZVuNZQ">Magnus</a>
          <p class="bageltext">Check in often for new stuff!</p>
       </div>
       <div id="Math" class="tabcontent">
@@ -946,25 +943,16 @@
       <div id="About" class="tabcontent">
          <h1 class="pedro">About</h1>
          <h2>Yo ok this website has been a project of mine for a couple <a style="text-decoration: none; color: inherit;" href="oldindex.html">years </a>now. It's not the best website out there, but I have learned a ton from making it. Thanks for checking it out :)</h2>
-         <h2>This was made by a person named Tom, but he didn't want to work on it anymore so this website is made entirely by Dirty Dan with the help of Carter</h2>
-         <h1>Dead Games</h1>
-         <h2>R.I.P. Bagel Royal. "the chance of you getting a bikini bagel was very high. Too high Daniel. I think you have a problem." -Carter/Creator</h1>
+         <h2>This was made by a person named Tom along with his friends Dirty Dan and Carter</h2>
+         <h2>Hey we like have a Patreon. Go support us so we can feed our starving children: <a href="https://patreon.com/user?u=105233266" style="color: #f7c16f">Patreon</a></h2>
          <h2>Icon made by Maria</h2>
          <h2>Check out my <a href="https://github.com/bagel-man">Github</a>, (this website is a mess of files I wouldn't even bother)</h2>
          <h2>Join the <a href="https://discord.gg/xEwt8W5utF">Discord server</a></h2>
-         <h2>How did I make bagelcomics? heres a slide show thingy: <a href="pdf.html">click me now slave</a></h2>
-         <h2>Email me at funismathhelp@gmail.com or bagelcomics.com@gmail.com</h2>
-        
-         <h1>Other cool websites:</h1>
-                  <h2><a href="https://codeprojects.org/projects/weblab/-2VkvC1Hc9_VU8yGes2VL9XBp2DL-4sNvZcAmnI0Lbk/">Bagel With a Gun thing (i thought it was cool)</a></h2>
-
-         <h2><a href="https://sites.google.com/alpinesd.org/spygs-game-lab/games-i-made?authuser=2">SpyGs Game Lab</a></h2>
-         <h2><a href="https://sites.google.com/view/sciencehelps/home?authuser=0">Science Help</a></h2>
-         <h2><a href="https://theo-hats.github.io">Theo Hats</a></h2>
-         <h2>Wanna have your website featured? email me the link and I'll add it!</h2>
+         <h2>Email me at funismathhelp@gmail.com</h2>
+         <h2><a href="https://codeprojects.org/projects/weblab/-2VkvC1Hc9_VU8yGes2VL9XBp2DL-4sNvZcAmnI0Lbk/">Bagel With a Gun thing (I thought it was cool)</a></h2>
       </div>
    </div>
-</div>
+
       <script>
 
 function random() {
@@ -1063,11 +1051,12 @@ function R(min,max) {return min+Math.random()*(max-min)};
           evt.currentTarget.className += " active";
          }
          
+         openCity(event, 'Home');
          // Get the element with id="defaultOpen" and click on it
          document.getElementById("defaultOpen").click();
          
          function abert() {
-          alert("Click on 'Home' on the home page to fulfill your destiny/n");
+          alert("Oh hey you actually clicked me :)\nWell now that your reading I need to tell you about a secret\nThis website has a secret feature\nGo to the 'about' page, and click on the word 'years'\nLove you guys :)");
          }
          
       </script>
@@ -1078,8 +1067,8 @@ function R(min,max) {return min+Math.random()*(max-min)};
  
  
   
-
       <script src="./spookychatscript.js"></script>
+
       <script>
          $(()=>{
             console.log(gamersgaming)
