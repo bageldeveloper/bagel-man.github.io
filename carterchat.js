@@ -20,7 +20,7 @@ let scrollInterval = scrollSpeed * 3;
 // If you use this channel ID your app will stop working in the future
 
 
-const CLIENT_ID = '4g2JP9Qwzlu7VX3m';
+const CLIENT_ID = '5Qcspn6KZFL4fZ97';
 
 
 

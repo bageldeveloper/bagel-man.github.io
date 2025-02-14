@@ -12,15 +12,18 @@
       <title>Bagels!</title>
       <link rel="icon" type="image/x-icon" href="bagelcomicsicon.png">
       <meta name="color-scheme" content="only light">
-      <meta name=”Description” content=”Bagelcomics.com is a pretty cool website with stuff on it. Play some dope games, chat with other people from around the world, explore the site to find the hidden secrets, and check out the dumb projects Ive made.”>
+      <meta name="description" content="Bagelcomics.org is a pretty cool website with stuff on it, and bagelcomics.com's sister site. Play some dope games, chat with other people from around the world, explore the site to find the hidden secrets, and check out the dumb projects Ive made.">
+      <meta name="keywords" content="Games, Gaming, Chat, Unblocked, Bagel, Comics, Secrets, Minecraft, Projects, MotoX3M, Retro, Bowl, Retrobowl, Motox3m2, Papa, Fireboy, Watergirl">
+      <meta name="author" content="Tom">
       <style>
          * {box-sizing: border-box}
          .bodycss {
-            background: url(spookybackground.png) no-repeat center center fixed; 
+            /*background: url(thanksgiving.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover; */
+  background: none;
          padding-top: 50px;
          background-color: #1A1C25;
            /* background-color: #eb34b7; */
@@ -73,8 +76,7 @@
             color: ivory;
             background: linear-gradient(#07070A, #07070A) padding-box,linear-gradient(to right, #f7c16f, #cc7d06) border-box;
             border: 4px solid transparent;
-            border-radius: 45px;
-            height: 10%;
+            border-radius: 25px;
             width: 100%;
             padding: 32px 32px;
             font-size: 200%;
@@ -89,13 +91,13 @@
             margin-top: 0px;
             height: 108%;
             padding-bottom: 12px;
-            background: linear-gradient(#161618,#0b031a) padding-box,
+            background: linear-gradient(#1A1C25,#1A1C25) padding-box,
          linear-gradient(to right, #f1b04d, #f09204) border-box;
          border-top-left-radius: 15px;
          border-top-right-radius: 15px;
   		   border: 4px solid transparent;
          border-bottom: none;
-         background-color: #0b031a;
+         background-color: #1A1C25;
          }
          /* Style the tab content */
          .tabcontent {
@@ -106,6 +108,8 @@
          }
          .gotdtext{
          text-align: center;
+         width: 24.4%;
+         display: inline-block;
          }
          .anountext{
          font-size: 100%;
@@ -173,6 +177,9 @@
          }
          .chat{
          overflow-y:auto
+         }
+         .patreon{
+            color: #f7c16f;
          }
          .patreon:hover{
             color: #cc7d06;
@@ -259,11 +266,25 @@
          background: linear-gradient(#1A1C25, #1A1C25) padding-box;
          width: 90.9%;
          color: #EDF2F4;
-         padding: 32px 32px;
+         padding: 32px;
          text-decoration: none;
          display: inline-block;
          cursor: pointer;
          overflow-x: none;
+         }
+         .results{
+         border-radius: 15px;
+         background: linear-gradient(#07070A, #07070A) padding-box,
+         linear-gradient(to right, #f7c16f, #cc7d06) border-box;
+         color:  #EDF2F4;
+         border: 4px solid transparent;
+         width: 24.4%;
+         padding: 32px 32px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         margin-bottom: 30px;
+         cursor: pointer;
          }
          .randrange{
          border-radius: 15px;
@@ -275,7 +296,7 @@
          padding: 32px 32px;
          text-align: center;
          text-decoration: none;
-         display: block;
+         display: inline-block;
          margin-bottom: 30px;
          cursor: pointer;
          }
@@ -285,11 +306,11 @@
          linear-gradient(to right, #f7c16f, #cc7d06) border-box;
          color:  #EDF2F4;
          border: 4px solid transparent;
-         width: 100%;
-         padding: 32px 32px;
+         width: 24.4%;
+         padding: 40px;
          text-align: center;
          text-decoration: none;
-         display: block;
+         display: inline-block;
          margin-bottom: 50px;
          cursor: pointer;
          }
@@ -403,14 +424,97 @@
             <button class="tablinks" onclick="openCity(event, 'Projects')">Projects</button>
             <button class="tablinks" onclick="openCity(event, 'About')">About</button>
          </div>
-      </div> 
+      </div>
       <div id="Home" class="tabcontent">
          <h1 class="pedro">Home</h1>
          <h2>Welcome to bagelcomics.com! Play some dope games, chat with other people from around the world, explore the site to find the hidden secrets, and check out the dumb projects I've made. :&#41;</h2>
          <h1>Announcements:</h1>
          <div class="announcement">
+            <h1 class="anountext">Feburary 14th, 2025</h1>
+          <h1 class="anountext">I updated the site so it's new and now has more games, very rare update just felt like it. The Jimmy Bean game is now on here so thats fun.
+             <br><br>
+             -Tom
+             </h1>
+             </div>
+	      <div class="announcement">
+            <h1 class="anountext">November 15th, 2023</h1>
+          <h1 class="anountext">Hey guys! Haven't really done much this past month. We are gonna start it back up hopefully. Idk
+             <br><br>
+             -carter
+             </h1>
+             </div>
+             <div class="announcement">
+            <h1 class="anountext">November 15th, 2023</h1>
+          <h1 class="anountext">NEW GAME RELEASE ON THANKSGIVING
+             <br><br>
+             -carter
+             </h1>
+             </div>
+             <span id="points"></span>
+             <span id="moreText">
+	         <div class="announcement">
+            <h1 class="anountext">November 13th, 2023</h1>
+            <img src="welcome.gif">
+          <h1 class="anountext">THE NEW WEBSITE IS BAGELCOMICS.ORG GUYS GO TO IT NOW
+             <br><br>
+             -tom
+             </h1>
+             </div>
+         <div class="announcement">
+            <h1 class="anountext">November 9th, 2023</h1>
+            <img src="bonk.gif">
+          <h1 class="anountext">Bruh like sewiouswy bwuh we get blocked after like 20 minutes?! I love teachers but a few of them are crazy. Like who cares if we are playing games and not paying attention. Anyways new site will be bagelcomics.org . Make this one last a little longer guys im literally going broke unless someone subscribes to the patreon Edit: SOMEONE SUBSCRIBED TO THE PATREON!!!!!
+             <br><br>
+             -Dirty Dan
+             </h1>
+             </div>
+         <div class="announcement">
+            <h1 class="anountext">November 8th, 2023</h1>
+          <h1 class="anountext">Added some new chat names with some weird, disturbing, and possibly graphic possibilities. Idk what I added man. Also NGW baby! Added Crush the castle 1 and 2, + strike force heroes 1, 2, and 3.
+             <br><br>
+             -Dirty Dan
+             </h1>
+             </div>
+           
+         <div class="announcement">
+            <h1 class="anountext">November 6th, 2023</h1>
+            <img src="darkvader.gif">
+          <h1 class="anountext">Added a sterling quote of the day in the projects page. Check it everyday for out of context sterling quotes
+             <br><br>
+             -Dirty Dan
+             </h1>
+             </div>
+         <div class="announcement">
+            <h1 class="anountext">November 6th, 2023</h1>
+          <h1 class="anountext">We added a Game of the Day section to keep things new and fresh every day for you guys. Also kinda changed some search stuff but that will probably be it for now
+             <br><br>
+             -Dirty Dan
+             </h1>
+             </div>
+         <div class="announcement">
+            <h1 class="anountext">November 1st, 2023</h1>
+          <h1 class="anountext">Halloween is over. Now its time to focus on the more important holiday, Thanksgiving. Added some games for NGW. These are Zelda Link to the past, earthbound, Banjo Kazooie, Line rider 2, and Line Rider 3, along with this one version of line rider with an undo button. On the Patreon we also added a shop where we can celebrate your birthday. Sorry that it's not dirt cheap I couldnt go any lower, and along with that we also created a new way to suggest games. On the patreon there's this free post that you can comment on if you have an account and signed up for free, so if you want a game thats how you can suggest it to us. Here's the link in case you missed it: <a target="_blank" class="patreon" href="https://patreon.com/user?u=105233266">Patreon</a>
+             <br><br>
+             -Dirty Dan
+             </h1>
+             </div>
+	      <div class="announcement">
+            <h1 class="anountext">October 31st, 2023</h1>
+          <h1 class="anountext">Hey sorry that the website was broken this morning, hopefully we fixed it. Happy Halloween!
+             <br><br>
+             -Tom
+             </h1>
+             </div>
+	      <div class="announcement">
+            <h1 class="anountext">October 30th, 2023</h1>
+          <h1 class="anountext">the patreon is for paying for the domain name, i still think its a little goofy but whatever. Daniel you go girl. here's the link if you want to support us:  <a target="_blank" class="patreon" href="https://patreon.com/user?u=105233266">Patreon</a>
+             <br><br>
+             -Tom
+             </h1>
+             </div>
+         <div class="announcement">
             <h1 class="anountext">October 28th, 2023</h1>
-          <h1 class="anountext">Go sign up for the game jam gamers. Also added chat back, but most importantly, we now have a Patreon! It has benefits and honestly it's hard for us to want to do stuff when we make nothing off of it. Theres also a free teir so sign up for that, and on the top teir only 10 people can join and im sure theres more to come. Heres the link: <a target="_blank" class="patreon" href="https://patreon.com/user?u=105233266" style="color: #f7c16f">Patreon</a>
+          <h1 class="anountext">Go sign up for the game jam gamers. Also added chat back, but most importantly, we now have a Patreon! It has benefits and honestly it's hard for us to want to do stuff when we make nothing off of it. Theres also a free teir so sign up for that, and on the top teir only 10 people can join and im sure theres more to come. Heres the link: <a target="_blank" class="patreon" href="https://patreon.com/user?u=105233266">Patreon</a>
              <br><br>
              -The whole bagelcomics team
              </h1>
@@ -437,8 +541,6 @@
                -Carter
                </h1>
                </div>
-               <span id="points"></span>
-               <span id="moreText">
          <div class="announcement">
             <h1 class="anountext">October 18th, 2023</h1>
             <h1 class="anountext">Yooooo NGW is back. We added the rest of the Hobo Games which include the 3rd, 4th, 5th, 6th, and 7th games. Also bagelcomics is back uwu<br><br>
@@ -896,29 +998,30 @@
       </div>
       <div id="Chat" class="tabcontent">
          <h1 class="pedro">Chat</h1>
-         <h4>You better support our Patreon to get a costum name. Link: <a target="_blank" class="patreon" href="https://patreon.com/user?u=105233266" style="color: #f7c16f">Patreon</a></h4>
+         <h4>You better support our Patreon to get a costum name. Link: <a target="_blank" class="patreon" href="https://patreon.com/user?u=105233266">Patreon</a></h4>
          <div class="members-count">-</div>
          <div class="members-list">-</div>
          <div class="messages"></div>
          <form class="message-form" onsubmit="return false;">
-            <input class="message-form__input" placeholder="Type something.." type="text"/>
+            <input class="message-form__input" placeholder="Say something..." type="text"/>
             <!-- <input class="message-form__button" value="Send" type="submit"/> -->
          </form>
       </div>
       <div id="Games" class="tabcontent">
          <h1 class="pedro">Games</h1>
-         <h3>Current unblocked site: https://eggyolker.com</h3>
          <h5>Want a game on here? I'm sure we can find it! we use mainly Flash, n64, snes/nes, and the Sega Genesis. If you don't know, just tell me the name. Just contact funismathhelp@gmail.com with possible files, website links, or just straight up the name. I'm sure I can find it. Also some games might not work. if you want me to fix them, just contact me and i'll try to fix them</a></h2>
-         <h4>You should just like Support us on our Patreon and even get any game (that's possible to get) within 48 hours whenever you want. Link: <a target="_blank" class="patreon" class="patreon" href="https://patreon.com/user?u=105233266" style="color: #f7c16f">Patreon</a></h4>
+         <h4>You should just like Support us on our Patreon and even get any game (that's possible to get) within 48 hours whenever you want. Link: <a target="_blank" class="patreon" href="https://patreon.com/user?u=105233266">Patreon</a></h4>
          <p>DISCLAIMER: bagelcomics.com is not responsible for any trouble you may get in while playing these games during class.</p>
          <button onclick="random()" class="randrange" >Random Game</button> 
 
          <h2 class="gotdtext">Game of the Year</h2>
-         <a href="bwag/index.html" class="gotd">Bagel With a Gun</a>
          <h2 class="gotdtext">Game of the Month</h2>
-         <a href="N64Wasm-masterMK64/dist/index.html" class="gotd">Mario Kart 64</a> 
          <h2 class="gotdtext">Game of the Week</h2>
-         <a href="games/html/hardestgame.html" class="gotd">Worlds Hardest Game</a>
+         <h2 class="gotdtext">Game of the Day</h2>
+         <a href="bwag/index.html" class="gotd">Bagel With a Gun</a>
+         <a href="Quake3-master/Quake3.htm" class="gotd">Quake 3</a>
+         <a href="games/emu/megamanx.html" class="gotd">Mega Man X</a>
+         <a href="games/html/Pacman.html" class="gotd">Pacman</a>
          <div>
             <input type="text" placeholder="search..." id="searchbagel">
             <div id="search-results"></div>
@@ -929,13 +1032,16 @@
       <div id="Projects" class="tabcontent">
 
          <h1 class="pedro">Projects</h1>
-         <h4>You should just support our Patreon anyways, but you can also get your own project on here through the benefits. Go check it out. Link: <a target="_blank" class="patreon" href="https://patreon.com/user?u=105233266" style="color: #f7c16f">Patreon</a></h4>
+         <h4>You should just support our Patreon anyways, but you can also get your own project on here through the benefits. Go check it out. Link: <a target="_blank" class="patreon" href="https://patreon.com/user?u=105233266">Patreon</a></h4>
          <button onclick="abert()">Dont Click me</button>
+         <h1>Sterling Quote of the day:  Just let me touch you!</h1>
+         <br>
          <h2>I made a discord bot, add it to your server, the link is <a href="https://discord.com/api/oauth2/authorize?client_id=1004129851759927326&permissions=534723950664&scope=bot%20applications.commands">here</a></h2>
          <h2>tired of chatting with people? check out this <a href="choose.html">chatbot</a> I made</h2>
          <h2>need a date? check out this <a href="lines.html">pickup line Generator</a> I made</h2>
          <h2>Check out this <a href="finalproject/index.html">countdown timer</a> I made for CS50</h2>
          <h2>Searching algorithm to find out <a href="search.html">who asked?</a></h2>
+         <h2>Join the <a href="https://discord.gg/xEwt8W5utF">Discord server</a></h2>
          <h2>Cool Channels:</h2>
          <a href="https://www.youtube.com/@bageldev">Bagel Dev</a>
          <p class="bageltext">Check in often for new stuff!</p>
@@ -946,13 +1052,20 @@
       <div id="About" class="tabcontent">
          <h1 class="pedro">About</h1>
          <h2>Yo ok this website has been a project of mine for a couple <a style="text-decoration: none; color: inherit;" href="oldindex.html">years </a>now. It's not the best website out there, but I have learned a ton from making it. Thanks for checking it out :)</h2>
-         <h2>This was made by a person named Tom along with his friends Dirty Dan and Carter</h2>
-         <h2>Hey we like have a Patreon. Go support us so we can feed our starving children: <a target="_blank" class="patreon" href="https://patreon.com/user?u=105233266" style="color: #f7c16f">Patreon</a></h2>
+         <h2>This was made by a person named Tom along with his friends Daniel (or dirty dan) and Carter</h2>
+         <h2>Hey we like have a Patreon. Go support us so we can feed our starving children: <a target="_blank" class="patreon" href="https://patreon.com/user?u=105233266">Patreon</a></h2>
          <h2>Icon made by Maria</h2>
          <h2>Check out my <a href="https://github.com/bagel-man">Github</a>, (this website is a mess of files I wouldn't even bother)</h2>
          <h2>Join the <a href="https://discord.gg/xEwt8W5utF">Discord server</a></h2>
+         <h2>How did I make bagelcomics? heres a slide show thingy: <a href="pdf.html">click me now slave</a></h2>
          <h2>Email me at funismathhelp@gmail.com</h2>
          <h2><a href="https://codeprojects.org/projects/weblab/-2VkvC1Hc9_VU8yGes2VL9XBp2DL-4sNvZcAmnI0Lbk/">Bagel With a Gun thing (I thought it was cool)</a></h2>
+         <h1>Our Patreon Supporters!</h1>
+         <h3>Top teir! Bagel with a gun: Teletubby</h3>
+         <h3>Bagel Royal:</h3>
+         <h3>Bagel 64:</h3>
+         <h3>Bagel Comic:</h3>
+         <h3>Bagel Dude:</h3>
       </div>
    </div>
 
@@ -1070,7 +1183,7 @@ function R(min,max) {return min+Math.random()*(max-min)};
  
  
   
-      <script src="./spookychatscript.js"></script>
+      <script src="./chatscript.js"></script>
 
       <script>
          $(()=>{
@@ -1083,7 +1196,6 @@ function R(min,max) {return min+Math.random()*(max-min)};
             'console',
             'difficult',
             'henrystickmin',
-            'indie',
             'papa',
             'platformer',
             'puzzle',
@@ -1091,6 +1203,7 @@ function R(min,max) {return min+Math.random()*(max-min)};
             'simulation',
             'sports',
             'strategy',
+            'tower-defense',
             'racing'
             ]
 
@@ -1132,7 +1245,7 @@ function R(min,max) {return min+Math.random()*(max-min)};
                   let results = Object.values(gamersgaming).filter(a=>a.name.toLowerCase().includes(search))
                   results.forEach(game=>{
                      $('#search-results').append(`
-                        <a class="randrange" href="${game.url}">${game.name}</a>
+                        <a class="results" href="${game.url}">${game.name}</a>
                      `)
                   })
                   // $('#search-results').append('<hr style="margin:0; border-color:black">')

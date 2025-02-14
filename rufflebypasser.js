@@ -221,7 +221,7 @@ function getRandomName() {
 
 
    
- return "tom";
+ return "Tom";
   
 
 
@@ -353,15 +353,6 @@ const value = DOM.input.value;
 
 
  }
-if(value.match(/(黑鬼|ass|cum|retard|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|nazi|whore|faggot|handjob|penis|cock|pussy|sex|porn|hitler)/gi)){
-      alert('cmon man why you saying that kinda stuff?');
-  return;
-  }
-      
-        if(value.length > 100){
-          alert('my guy, that message is too big.. just like your mom gottem')
-      return; 
-  }
  DOM.input.value = '';
 
 
