@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Drats!</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <style>
+      html, body {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #231F20;
+      }
+      #unity-container {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100vw;
+          height: 100vh;
+      }
+      #unity-canvas {
+          width: 100%;
+          height: 100%;
+          display: block;
+      }
+      #fullscreen-button {
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          padding: 10px 20px;
+          background: url('fullscreen-button.png') no-repeat center;
+          color: white;
+          border: none;
+          font-size: 16px;
+          cursor: pointer;
+          z-index: 100;
+          border-radius: 5px;
+      }
+      #fullscreen-button:hover {
+          background-color: rgba(0, 0, 0, 0.9);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="unity-container">
+      <canvas id="unity-canvas"></canvas>
+      <button id="fullscreen-button"><img style="height:50px; width:50px"src="TemplateData/fullscreen-button.png"></img></button>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var canvas = document.getElementById("unity-canvas");
+      var fullscreenButton = document.getElementById("fullscreen-button");
+      var loadingBar = document.getElementById("unity-loading-bar");
+      var progressBarFull = document.getElementById("unity-progress-bar-full");
+
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/TSADrats.loader.js";
+      var config = {
+          dataUrl: buildUrl + "/TSADrats.data",
+          frameworkUrl: buildUrl + "/TSADrats.framework.js",
+          codeUrl: buildUrl + "/TSADrats.wasm",
+          streamingAssetsUrl: "StreamingAssets",
+          companyName: "Bagel Studios",
+          productName: "Drats",
+          productVersion: "1.0",
+          showBanner: (msg, type) => {
+              alert(msg);
+          },
+      };
+
+      config.matchWebGLToCanvasSize = true;
+
+      loadingBar.style.display = "block";
+
+      var unityInstance;
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+          createUnityInstance(canvas, config, (progress) => {
+              progressBarFull.style.width = `${100 * progress}%`;
+          }).then((instance) => {
+              unityInstance = instance;
+              loadingBar.style.display = "none";
+          }).catch((message) => {
+              alert(message);
+          });
+      };
+      document.body.appendChild(script);
+
+      // Fullscreen Button Functionality
+      fullscreenButton.addEventListener("click", () => {
+          if (unityInstance) {
+              unityInstance.SetFullscreen(1);
+          }
+      });
+
+      // Resize function to maintain 16:9 aspect ratio
+      function resizeCanvas() {
+          let width = window.innerWidth;
+          let height = window.innerHeight;
+
+          if (width / height > 16 / 9) {
+              width = height * (16 / 9);
+          } else {
+              height = width * (9 / 16);
+          }
+
+          canvas.style.width = `${width}px`;
+          canvas.style.height = `${height}px`;
+      }
+
+      window.addEventListener("resize", resizeCanvas);
+      resizeCanvas();
+    </script>
+  </body>
+</html>
