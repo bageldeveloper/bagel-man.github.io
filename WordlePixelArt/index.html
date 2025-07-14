@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Pixel Art</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header-row">
+          <h1>Wordle Pixel Art</h1>
+        </div>
+        <label for="wordInput">Enter a 5 letter word:</label>
+        <input type="text" id="wordInput" maxlength="5" pattern="[A-Za-z]{5}" autocomplete="off">
+        <button id="startBtn">Start Drawing</button>
+        <div id="gridContainer"></div>
+        <div class="toggle-switch-wrapper">
+          <label style="margin:12px 0;">
+            <input class='toggle-checkbox' id='darkModeToggle' type='checkbox'>
+            <div class='toggle-slot'>
+              <div class='sun-icon-wrapper'>
+                <span class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></span>
+              </div>
+              <div class='toggle-button'></div>
+              <div class='moon-icon-wrapper'>
+                <span class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></span>
+              </div>
+            </div>
+          </label>
+        </div>
+        <div id="solutionArea"></div>
+    </div>
+    <script src="index.js"></script>
+    <footer class="footer">
+      <div>Wordle Pixel Art Generator 2025 - bageldev</div>
+      <div style="margin-top:6px;">
+        <a href="https://codepen.io/bheberer/pen/BaNZKmq" target="_blank" rel="noopener">Light/Dark Mode Toggle</a> |
+        <a href="https://github.com/bageldeveloper" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </footer>
+</body>
+</html>
