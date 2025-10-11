@@ -1012,7 +1012,7 @@ const gamersgaming = {
     "WheresMyWater": {
         "name": "Where's my Water!",
         "url": "games/Wheres-My-Water/index.html",
-        tags:['puzzle','simulation',racing','action','difficult','strategy','console']
+        tags:['puzzle','simulation','racing','action','difficult','strategy','console']
     },
     "AngryBirds": {
         "name": "Angry Birds",
@@ -1039,12 +1039,12 @@ const gamersgaming = {
         "url": "games/html/graviteewars.html",
         tags:['simulation','strategy']
     },
-    "HackervsHacker": { SKULL
+    "HackervsHacker": {
         "name": "Hacker vs Hacker",
         "url": "games/html/hackervshacker.html",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
-    "KamikazePigs": { SKULL
+    "KamikazePigs": {
         "name": "Kamikaze Pigs",
         "url": "games/html/kamikazepigs.html",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
@@ -1127,12 +1127,12 @@ const gamersgaming = {
     "Pandemic": {
         "name": "Pandemic",
         "url": "games/html/pandemic.html",
-        tags:[simulation','strategy']
+        tags:['simulation','strategy']
     },
     "Pandemic2": {
         "name": "Pandemic 2",
         "url": "games/html/pandemic2.html",
-        tags:[simulation','strategy']
+        tags:['simulation','strategy']
     },
     "PCBreakdown": {
         "name": "PC Breakdown",
@@ -1292,7 +1292,7 @@ const gamersgaming = {
     "PandemicExtinction": {
         "name": "Pandemic Extinction of Man",
         "url": "games/html/pandemicextinction.html",
-        tags:[simulation','strategy']
+        tags:['simulation','strategy']
     },
     "PapaLouie": {
         "name": "Papa Louie",
@@ -1347,32 +1347,32 @@ const gamersgaming = {
     "MassMayhem": {
         "name": "Mass Mayhem",
         "url": "games/html/massmayhem.html",
-        tags:['simulation','shooter','action',]
+        tags:['simulation','shooter','action']
     },
     "MassMayhem2": {
         "name": "Mass Mayhem 2",
         "url": "games/html/massmayhem2.html",
-        tags:['simulation','shooter','action',]
+        tags:['simulation','shooter','action']
     },
     "MassMayhem3": {
         "name": "Mass Mayhem 3",
         "url": "games/html/massmayhem3.html",
-        tags:['simulation','shooter','action',]
+        tags:['simulation','shooter','action']
     },
     "MassMayhem4": {
         "name": "Mass Mayhem 4",
         "url": "games/html/massmayhem4.html",
-        tags:['simulation','shooter','action',]
+        tags:['simulation','shooter','action']
     },
     "MassMayhemZombie": {
         "name": "Mass Mayhem Zombie Apocalypse",
         "url": "games/html/massmayhemzombie.html",
-        tags:['simulation','shooter','action',]
+        tags:['simulation','shooter','action']
     },
     "MassMayhemZombieExp": {
         "name": "Mass Mayhem Zombie Apocalypse Expansion",
         "url": "games/html/massmayhemzombieexp.html",
-        tags:['simulation','shooter','action',]
+        tags:['simulation','shooter','action']
     },
     "Hapland": {
         "name": "Hapland",
@@ -1412,7 +1412,7 @@ const gamersgaming = {
     "Gta5Flash": {
         "name": "Gta V Flash",
         "url": "games/html/gta5.html",
-        tags:['adventure',''shooter',,'action','console']
+        tags:['adventure','shooter','action','console']
     },
     "ChaosFaction": {
         "name": "Chaos Faction",
