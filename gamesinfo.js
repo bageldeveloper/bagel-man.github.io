@@ -514,15 +514,15 @@ const gamersgaming = {
         "url": "games/emu/miketysonpunchout.html",
         tags:['action','sports','difficult','strategy','console']
     },
-    "Minecraft": {
+    "Minecraft 1.5.2": {
         "name": "Minecraft",
         "url": "eaglercraft-main/eaglercraft-main/stable-download/web/index.html",
         tags:['adventure','simulation','shooter','action','platformer','strategy','favorite','console']
     },
-    "MinecraftBeta": {
+    "Minecraft 1.8.8": {
         "name": "Minecraft Beta",
         "url": "games/minecrap/index.html",
-        tags:['adventure','platformer','strategy','console']
+        tags:['adventure','simulation','shooter','action','platformer','strategy','favorite','console']
     },
     "MiniPutt": {
         "name": "Mini Putt",
@@ -974,8 +974,6 @@ const gamersgaming = {
         "url": "games/html/zombie.html",
         tags:['action','shooter','strategy']
     },
-    /*
-    Next 5 games to add are below
     "HueJumper": {
         "name": "Hue Jumper",
         "url": "carindex.html",
@@ -1566,6 +1564,7 @@ const gamersgaming = {
         "url": "games/html/crosswordpuzzle.html",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
+    /*
     Todo: Add Tycoon, Add more swf games, get those console games + PS1/2 on here + Gamecube
     */
 }
