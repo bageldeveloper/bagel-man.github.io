@@ -776,7 +776,7 @@ const gamersgaming = {
     },
     "Slope": {
         "name": "Slope",
-        "url": "Slope-Game-main/index.html",
+        "url": "games/Slope-Game-main/index.html",
         tags:['racing','platformer','favorite']
     },
     "Sonic": {
