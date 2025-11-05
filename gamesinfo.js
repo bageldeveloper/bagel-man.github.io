@@ -6,7 +6,7 @@ const gamersgaming = {
     },
     "2048": {
         "name": "2048",
-        "url": "2048.html",
+        "url": "games/2048/index.html",
         tags:['strategy','puzzle']
     },
     "8BallPool": {
