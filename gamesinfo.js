@@ -1569,6 +1569,8 @@ const gamersgaming = {
     */
 }
 
+module.exports = { gamersgaming };
+
                /*
                tags:['adventure','puzzle','simulation','shooter','tower-defense','racing','sports','action','platformer','difficult','strategy','console']
                */
