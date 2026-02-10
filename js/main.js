@@ -2,27 +2,17 @@ function normalizeTag(tag) {
   return tag.toLowerCase().trim();
 }
 
-const sidebarTags = [
-  'action',
-  'puzzle',
-  'strategy',
-  'platformer',
-  'shooter',
-  'adventure',
-  'racing',
-  'sports',
-  'tower-defense',
-  'simulation',
-  'console',
-  'favorite',
-  'new',
-  'difficult'
-];
-
+// --- CONTAINERS ---
 const genreRowsContainer = document.getElementById("genreRows");
+const gameGrid = document.getElementById("gameGrid");
+const categoryList = document.getElementById('categoryList');
+const randomBtn = document.getElementById('randomGame');
+const searchInput = document.getElementById('searchInput');
 
-// Get all genres from your games
-const genreMap = {}; // { genreName: [game1, game2, ...] }
+let activeCategory = 'all';
+
+// --- ROWS LOGIC (ALL GAMES) ---
+const genreMap = {};
 
 Object.values(gamersgaming).forEach(game => {
   game.tags.forEach(tag => {
@@ -32,7 +22,6 @@ Object.values(gamersgaming).forEach(game => {
   });
 });
 
-// Render each genre row
 function createGenreRow(genre, games) {
   const row = document.createElement("div");
   row.className = "genre-row";
@@ -58,9 +47,18 @@ function createGenreRow(genre, games) {
   games.forEach(game => {
     const card = document.createElement("a");
     card.href = game.url;
-    card.className = "card";
+    card.className = "card game-card";
     card.dataset.tags = game.tags.map(normalizeTag).join(",");
-    card.innerHTML = `<h4>${game.name}</h4>`;
+    card.dataset.name = game.name.toLowerCase();
+  const imgSrc = game.image ? game.image : "https://www.bisecthosting.com/_ipx/q_100/static/img/blog/cat-minecraft.webp";
+
+  card.innerHTML = `
+    <div class="card-bg" style="background-image: url('${imgSrc}')"></div>
+    <div class="card-overlay">
+      <h4 class="game-title">${game.name}</h4>
+    </div>
+  `;
+
     rowGames.appendChild(card);
   });
 
@@ -69,82 +67,173 @@ function createGenreRow(genre, games) {
   wrapper.appendChild(nextBtn);
   row.appendChild(wrapper);
 
+  // Horizontal scroll
   let index = 0;
-  const visibleCount = 4; // number of cards visible per row
-  const cardWidth = 180 + 12; // card width + gap (adjust gap to match CSS)
+  const visibleCount = 4;
+  const cardWidth = 180 + 12;
 
-  prevBtn.onclick = () => {
+  function updateArrows() {
+    prevBtn.style.visibility = index === 0 ? 'hidden' : 'visible';
+    nextBtn.style.visibility = index >= games.length - visibleCount ? 'hidden' : 'visible';
+  }
+
+  prevBtn.addEventListener('click', () => {
     index = Math.max(index - 1, 0);
     rowGames.style.transform = `translateX(-${index * cardWidth}px)`;
-  };
+    updateArrows();
+  });
 
-  nextBtn.onclick = () => {
+  nextBtn.addEventListener('click', () => {
     index = Math.min(index + 1, games.length - visibleCount);
     rowGames.style.transform = `translateX(-${index * cardWidth}px)`;
-  };
+    updateArrows();
+  });
 
+  updateArrows();
   return row;
 }
 
-// Render all rows
-Object.entries(genreMap).forEach(([genre, games]) => {
-  const row = createGenreRow(genre, games);
-  genreRowsContainer.appendChild(row);
-});
+// Render all rows initially
+function renderAllRows() {
+  genreRowsContainer.innerHTML = '';
+  Object.entries(genreMap).forEach(([genre, games]) => {
+    const row = createGenreRow(genre, games);
+    genreRowsContainer.appendChild(row);
+  });
+}
 
+renderAllRows();
 
+// --- GRID LOGIC (SPECIFIC GENRES) ---
+function renderGridGames(tag) {
+  gameGrid.innerHTML = '';
+  gameGrid.style.display = 'grid';
+  genreRowsContainer.style.display = 'none';
 
-const categoryList = document.getElementById('categoryList');
-const gameGrid = document.getElementById('gameGrid');
-const randomBtn = document.getElementById('randomGame');
-const searchInput = document.getElementById('searchInput');
+  const filteredGames = Object.values(gamersgaming).filter(game => game.tags.map(normalizeTag).includes(tag));
 
-let activeCategory = 'all';
+  filteredGames.forEach(game => {
+    const card = document.createElement('a');
+    card.href = game.url;
+    card.className = 'card game-card';
+    card.dataset.tags = game.tags.map(normalizeTag).join(',');
+    card.dataset.name = game.name.toLowerCase();
 
-/* SIDEBAR */
+  const imgSrc = game.image ? game.image : "https://www.bisecthosting.com/_ipx/q_100/static/img/blog/cat-minecraft.webp";
 
+  card.innerHTML = `
+    <div class="card-bg" style="background-image: url('${imgSrc}')"></div>
+    <div class="card-overlay">
+      <h4 class="game-title">${game.name}</h4>
+    </div>
+  `;
+
+    gameGrid.appendChild(card);
+  });
+
+  // Update main header
+  document.querySelector('main h1').textContent = tag.replace('-', ' ');
+}
+
+// --- SIDEBAR BUTTONS ---
 function createCategoryButton(tag) {
   const btn = document.createElement('button');
   btn.textContent = tag.replace('-', ' ');
   btn.dataset.category = tag;
 
-  btn.onclick = () => {
-    document.querySelectorAll('.game-categories button')
-      .forEach(b => b.classList.remove('active'));
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.game-categories button').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+
     activeCategory = tag;
-    filterGames();
-  };
+
+    if (tag === 'all') {
+      genreRowsContainer.style.display = '';
+      gameGrid.style.display = 'none';
+      document.querySelector('main h1').textContent = 'Games';
+    } else {
+      renderGridGames(tag);
+    }
+  });
 
   return btn;
 }
 
-const allBtn = document.createElement('button');
-allBtn.textContent = 'All';
-allBtn.classList.add('active');
-allBtn.onclick = () => {
-  activeCategory = 'all';
-  filterGames();
-};
-categoryList.appendChild(allBtn);
-
+// --- GET ALL UNIQUE TAGS FROM GAMES ---
 const allTags = new Set();
 Object.values(gamersgaming).forEach(game => {
   game.tags.forEach(tag => allTags.add(normalizeTag(tag)));
 });
 
-sidebarTags.forEach(tag => {
-  if (allTags.has(tag)) {
-    categoryList.appendChild(createCategoryButton(tag));
-  }
+// --- ADD "All" BUTTON ---
+const allBtn = document.createElement('button');
+allBtn.textContent = 'All';
+allBtn.classList.add('active');
+allBtn.addEventListener('click', () => {
+  activeCategory = 'all';
+  genreRowsContainer.style.display = '';
+  gameGrid.style.display = 'none';
+  document.querySelector('main h1').textContent = 'Games';
+
+  // Highlight active button
+  document.querySelectorAll('.game-categories button').forEach(b => b.classList.remove('active'));
+  allBtn.classList.add('active');
+});
+categoryList.appendChild(allBtn);
+
+// --- ADD BUTTONS FOR EACH TAG ---
+allTags.forEach(tag => {
+  const btn = document.createElement('button');
+  btn.textContent = tag.replace('-', ' ');
+  btn.dataset.category = tag;
+
+  btn.addEventListener('click', () => {
+    activeCategory = tag;
+
+    // Highlight active button
+    document.querySelectorAll('.game-categories button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Switch display
+    genreRowsContainer.style.display = 'none';
+    renderGridGames(tag);
+  });
+
+  categoryList.appendChild(btn);
 });
 
-/* GAMES */
+// --- SEARCH ---
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.toLowerCase().trim();
 
-function renderGames() {
+  if (!query) {
+    // If search is empty, go back to normal display
+    if (activeCategory === 'all') {
+      genreRowsContainer.style.display = '';
+      gameGrid.style.display = 'none';
+    } else {
+      renderGridGames(activeCategory);
+    }
+    document.querySelector('main h1').textContent = activeCategory === 'all' ? 'Games' : activeCategory.replace('-', ' ');
+    return;
+  }
+
+  // Show all matching games in a grid
+  renderSearchResults(query);
+});
+
+function renderSearchResults(query) {
+  // Hide rows
+  genreRowsContainer.style.display = 'none';
+  gameGrid.style.display = 'grid';
+  gameGrid.classList.add('card-grid'); // ensure proper grid styling
   gameGrid.innerHTML = '';
 
-  Object.values(gamersgaming).forEach(game => {
+  const filteredGames = Object.values(gamersgaming).filter(game =>
+    game.name.toLowerCase().includes(query)
+  );
+
+  filteredGames.forEach(game => {
     const card = document.createElement('a');
     card.href = game.url;
     card.className = 'card game-card';
@@ -152,38 +241,21 @@ function renderGames() {
     card.dataset.name = game.name.toLowerCase();
 
     card.innerHTML = `
-      <h3>${game.name}</h3>
-      <p>${game.tags.slice(0, 3).join(', ')}</p>
+      <img src="https://via.placeholder.com/180x100.png?text=Thumbnail" alt="${game.name}">
+      <h4 class="game-title">${game.name}</h4>
+      <p class="game-desc">${game.tags.slice(0,3).join(', ')}</p>
     `;
 
     gameGrid.appendChild(card);
   });
+
+  document.querySelector('main h1').textContent = `Search: "${query}"`;
 }
 
-function filterGames() {
-  const query = searchInput.value.toLowerCase();
 
-  document.querySelectorAll('.game-card').forEach(card => {
-    const tags = card.dataset.tags.split(',');
-    const matchesCategory =
-      activeCategory === 'all' || tags.includes(activeCategory);
-    const matchesSearch =
-      card.dataset.name.includes(query);
-
-    card.style.display = matchesCategory && matchesSearch ? '' : 'none';
-  });
-}
-
-/* SEARCH */
-
-searchInput.addEventListener('input', filterGames);
-
-/* RANDOM */
-
-randomBtn.onclick = () => {
+// --- RANDOM GAME ---
+randomBtn.addEventListener('click', () => {
   const games = Object.values(gamersgaming);
   const pick = games[Math.floor(Math.random() * games.length)];
   window.location.href = pick.url;
-};
-
-renderGames();
+});

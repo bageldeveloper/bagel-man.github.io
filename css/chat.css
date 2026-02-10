@@ -14,7 +14,7 @@
   height: calc(100vh - 64px); /* leave space for header */
   background-color: #12141a;
   color: #edf2f4;
-  padding: 1rem;
+  margin-top: 64px; /* same as topbar height */
 }
 
 .chat-layout {
