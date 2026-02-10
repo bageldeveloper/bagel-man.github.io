@@ -1,0 +1,140 @@
+/* CHAT PAGE RESET */
+.chat-page,
+.chat-page * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", system-ui, sans-serif;
+}
+
+/* CHAT PAGE LAYOUT */
+.chat-page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 64px); /* leave space for header */
+  background-color: #12141a;
+  color: #edf2f4;
+  padding: 1rem;
+}
+
+.chat-layout {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  gap: 1rem;
+}
+
+/* MEMBERS SIDEBAR */
+.members-sidebar {
+  width: 220px;
+  background-color: #1a1d26;
+  border-right: 1px solid #2c3140;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: auto;
+}
+
+.members-sidebar h3 {
+  color: #f7c16f;
+  margin-bottom: 0.5rem;
+}
+
+.members-list {
+  flex: 1;
+  overflow-y: auto;
+  color: #edf2f4;
+}
+
+/* CHAT MAIN */
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1d26;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* MESSAGES AREA */
+.messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #1a1d26;
+}
+
+/* INDIVIDUAL MESSAGE */
+.messages .message {
+  background-color: #232733;
+  padding: 0.5rem 0.8rem;
+  border-radius: 12px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+/* YOUR MESSAGE DIFFERENT COLOR */
+.messages .message.self {
+  background-color: #f7c16f;
+  color: #000;
+  align-self: flex-end;
+}
+
+/* MESSAGE FORM STICKED TO BOTTOM */
+.message-form {
+  display: flex;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #2c3140;
+  background-color: #1a1d26;
+  gap: 0.5rem;
+}
+
+/* INPUT */
+.message-form__input {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border-radius: 14px;
+  border: 1px solid #2c3140;
+  background-color: #12141a;
+  color: #edf2f4;
+}
+
+.message-form__input::placeholder {
+  color: #9aa4b2;
+}
+
+/* SEND BUTTON */
+.message-form__send {
+  padding: 0.6rem 1rem;
+  border-radius: 14px;
+  border: none;
+  background-color: #f7c16f;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.message-form__send:hover {
+  background-color: #cc7d06;
+}
+
+/* SCROLLBAR */
+.messages::-webkit-scrollbar,
+.members-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages::-webkit-scrollbar-thumb,
+.members-list::-webkit-scrollbar-thumb {
+  background-color: #2c3140;
+  border-radius: 4px;
+}
+
+.messages::-webkit-scrollbar-track,
+.members-list::-webkit-scrollbar-track {
+  background: #12141a;
+}

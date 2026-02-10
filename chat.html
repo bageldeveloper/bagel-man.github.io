@@ -1,78 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4474724430572739"
-     crossorigin="anonymous"></script>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <title>Chatroom</title>
-  <style>
-      #input { border-bottom: 1px solid #ccc; background-color: #383838; padding: 0.25em; outline: 0; }
-    #input::before { content: "> "; }
-    body { background-color: #333; font-size: 1.5em; padding: 0em 0.25em; }
-    pre { color: #fff; white-space: pre-wrap; word-wrap: break-word; text-shadow: 0 0 10px #ccc; }
+  <meta charset="UTF-8">
+  <title>Bagels Chat</title>
 
+  <!-- MAIN SITE CSS (header etc) -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- CHAT SPECIFIC CSS -->
+  <link rel="stylesheet" href="css/chat.css">
 
-  </style>
-  <script>
-    function log(message) {
-      document.getElementById("log").textContent += message + "\n";
-    }
-    
-  </script>
-  <script src="https://chr15m.github.io/bugout/bugout.min.js" type="application/javascript"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-STZFN2TW1E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-STZFN2TW1E');
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-STZFN2TW1E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-STZFN2TW1E');
-</script>
+  <script src="https://cdn.scaledrone.com/scaledrone.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 </head>
+
 <body>
-  <div class="topnav">
-    <a class="active" href="oldindex.html">Home</a>
-    <a href="pickles.html">Memes</a>
-    <a href="wut.html">Insanity</a>
-    <a href="gamechoice.html">Games</a>
-    <a href="comics.html">Comics</a>
-    <a href="chat.html">Chat</a>
-  
+  <!-- TOP BAR (same as index.html) -->
+  <header class="topbar">
+    <div class="logo-area">
+      <a href="index.html"><img src="bagelicontab.png" alt="Bagel"></a>
+    </div>
+
+    <div class="topbar-center">
+    </div>
+
+    <nav class="topbar-right">
+      <a href="chat.html">Chat</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <!-- CHAT PAGE -->
+  <div class="chat-page">
+    <h1 class="pedro">Chat</h1>
+
+    <div class="chat-layout">
+      <!-- MEMBERS LIST -->
+      <aside class="members-sidebar">
+        <h3><span class="members-count">-</span></h3>
+        <div class="members-list">-</div>
+      </aside>
+
+      <!-- CHAT MAIN -->
+      <main class="chat-main">
+        <div class="messages"></div>
+
+        <form class="message-form" onsubmit="return false;">
+          <input class="message-form__input" placeholder="Say something..." type="text">
+          <button class="message-form__send" type="submit">Send</button>
+        </form>
+      </main>
+    </div>
   </div>
-  
-  <pre id="log"></pre>
-  <pre id="input" contenteditable="true"></pre>
+
+  <script src="./chatscript.js"></script>
 </body>
-<script>
-  log("Chatroom");
-
-  /***** Your code goes here! *****/
-  var b = Bugout("bugout-chat-tutorial");
-b.on("seen", function(address) { log(address + " [ seen ]"); });
-log(b.address() + " [ me ]");
-b.on("message", function(address, message) {
-  log(address + ": " + message);
-});
-document.getElementById("input").onkeydown = function(ev) {
-    if (ev.keyCode == 13) {
-      if (b.lastwirecount) {
-        b.send(ev.target.textContent);
-        ev.target.textContent = "";
-      }
-      ev.preventDefault();
-    }
-  }
-
-</script>
 </html>
