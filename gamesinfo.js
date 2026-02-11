@@ -270,21 +270,25 @@ const gamersgaming = {
     "DuckLife": {
         "name": "Duck Life",
         "url": "games/html/ducklife.html",
+        "image": "thumbnails/ducklife.jpg",
         tags:['action','adventure','sports']
     },
     "DuckLife2": {
         "name": "Duck Life 2",
         "url": "games/html/ducklife2.html",
+        "image": "thumbnails/ducklife2.jpg",
         tags:['action','adventure','sports']
     },
     "DuckLife3": {
         "name": "Duck Life 3",
         "url": "games/html/ducklife3.html",
+        "image": "thumbnails/ducklife3.jpg",
         tags:['action','adventure','sports']
     },
     "DuckLife4": {
         "name": "Duck Life 4",
         "url": "games/html/ducklife4.html",
+        "image": "thumbnails/ducklife4.jpg",
         tags:['action','adventure','sports']
     },
     "DuckTales": {
@@ -475,6 +479,7 @@ const gamersgaming = {
     "LineRider3": {
         "name": "Line Rider 3",
         "url": "games/html/linerider3.html",
+        "image": "thumbnails/linerider3.png",
         tags:['strategy','platformer','puzzle','simulation','sports']
     },
     "LineRiderUndo": {
@@ -495,6 +500,7 @@ const gamersgaming = {
     "MarioCombat": {
         "name": "Mario Combat",
         "url": "games/html/mariocombat.html",
+        "image": "thumbnails/mariocombat.jpg",
         tags:['shooter','action','sports','console']
     },
     "MarioKart64": {
@@ -515,16 +521,19 @@ const gamersgaming = {
     "MegaManX": {
         "name": "Mega Man X",
         "url": "games/emu/megamanx.html",
+        "image": "thumbnails/megamanx.png",
         tags:['adventure','shooter','action','platformer','difficult','strategy','console']
     },
     "MegaManX2": {
         "name": "Mega Man X2",
         "url": "games/emu/megamanx2.html",
+        "image": "thumbnails/megamanx2.jpg",
         tags:['adventure','shooter','action','platformer','strategy','console']
     },
     "MegaManX3": {
         "name": "Mega Man X3",
         "url": "games/emu/megamanx3.html",
+        "image": "thumbnails/megamanx3.jpg",
         tags:['adventure','shooter','action','platformer','strategy','console']
     },
     "MiamiShark": {
@@ -880,6 +889,7 @@ const gamersgaming = {
     "SuperMarioWorld": {
         "name": "Super Mario World",
         "url": "games/emu/smw.html",
+        "image": "thumbnails/supermarioworld.jpg",
         tags:['adventure','action','platformer','strategy','console']
     },
     "SuperPunchOut!!": {
@@ -920,6 +930,7 @@ const gamersgaming = {
     "TheLegendOfZeldaLinkTothePast": {
         "name": "The Legend of Zelda: Link to the Past",
         "url": "games/emu/linktothepast.html",
+        "image": "thumbnails/linktothepast.jpg",
         tags:['adventure','puzzle','action','console']
     },
     "TheLegendofZeldaOcarinaofTime": {
