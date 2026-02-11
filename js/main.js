@@ -240,12 +240,14 @@ function renderSearchResults(query) {
     card.dataset.tags = game.tags.map(normalizeTag).join(',');
     card.dataset.name = game.name.toLowerCase();
 
-    card.innerHTML = `
-      <img src="https://via.placeholder.com/180x100.png?text=Thumbnail" alt="${game.name}">
-      <h4 class="game-title">${game.name}</h4>
-      <p class="game-desc">${game.tags.slice(0,3).join(', ')}</p>
-    `;
+  const imgSrc = game.image ? game.image : "https://www.bisecthosting.com/_ipx/q_100/static/img/blog/cat-minecraft.webp";
 
+  card.innerHTML = `
+    <div class="card-bg" style="background-image: url('${imgSrc}')"></div>
+    <div class="card-overlay">
+      <h4 class="game-title">${game.name}</h4>
+    </div>
+  `;
     gameGrid.appendChild(card);
   });
 

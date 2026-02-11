@@ -2,36 +2,43 @@ const gamersgaming = {
     "1on1Soccer": {
         "name": "1on1 Soccer",
         "url": "games/html/1on1soccer.html",
+        "image": "thumbnails/1on1soccer.jpg",
         tags:['sports','strategy']
     },
     "2048": {
         "name": "2048",
         "url": "games/2048/index.html",
+        "image": "thumbnails/2048.jpg",
         tags:['strategy','puzzle']
     },
     "8BallPool": {
         "name": "8 Ball Pool",
         "url": "games/html/8ballpool.html",
+        "image": "thumbnails/8ballpool.avif",
         tags:['Board', 'strategy','sports']
     },
     "AbobbosBigAdventure": {
         "name": "Abobbo's Big Adventure",
         "url": "games/html/bigadventure.html",
+        "image": "thumbnails/bigadventure.jpg",
         tags:['action','adventure',]
     },
     "AgeOfDefense": {
         "name": "Age Of Defense",
         "url": "games/html/ageofdefense.html",
+        "image": "thumbnails/ageofdefense.webp",
         tags:['adventure','action','simulation','strategy']
     },
     "AgeOfDefense3": {
         "name": "Age Of Defense 3",
         "url": "games/html/ageofdefense3.html",
+        "image": "thumbnails/ageofdefense3.jpg",
         tags:['adventure','action','simulation','strategy']
     },
     "AgeOfDefense4": {
         "name": "Age Of Defense 4",
         "url": "games/html/ageofdefense4.html",
+        "image": "thumbnails/ageofdefense4.jpg",
         tags:['adventure','action','simulation','strategy']
     },
     "AgeOfWar": {
@@ -82,6 +89,7 @@ const gamersgaming = {
     "BagelWithaGun": {
         "name": "Bagel With a Gun",
         "url": "bwag/index.html",
+        "image": "thumbnails/bwag.png",
         tags:['adventure','platformer','puzzle','action','shooter','strategy','favorite']
     },
     "BagelWithaGunDemo": {

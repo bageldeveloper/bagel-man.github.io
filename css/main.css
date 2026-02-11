@@ -31,6 +31,7 @@ body {
   --card-height: 180px;
   --topbar-height: 64px;
 }
+
 /* TOP BAR */
 .topbar {
   position: fixed;
@@ -81,13 +82,17 @@ body {
   gap: 1rem;
 }
 
-.topbar-right a {
+.topbar-right button{
   color: var(--muted);
   font-weight: 700;
   text-decoration: none;
+  height: 100%;
+    background: transparent;
+    border: 0px;
+
 }
 
-.topbar-right a:hover {
+.topbar-right button:hover {
   color: var(--accent);
 }
 
@@ -105,9 +110,10 @@ body {
   top: 64px;
   height: calc(100vh - 64px);
   overflow-y: auto;
-  background: linear-gradient(180deg, #1a1d26, #12141a);
-  border-right: 1px solid var(--border);
+  background: var(--surface);
+  border-right: 2px solid var(--border);
   padding: 1rem;
+  width: 200px;
 }
 
 .game-categories {
@@ -122,6 +128,7 @@ body {
   color: var(--muted);
   text-align: left;
   padding: 0.6rem 0.8rem;
+  width: 200%;
   border-radius: 10px;
   font-weight: 900;
   cursor: pointer;
@@ -133,7 +140,8 @@ body {
 }
 
 .game-categories button.active {
-  background: rgba(247,193,111,0.18);
+  background: var(--bg);
+    border: 0px solid var(--border);
   color: var(--accent);
 }
 
@@ -258,4 +266,8 @@ box-shadow: inset 0 -40px 12px -6px rgba(0, 0, 0, 0.614);
 
 .row-arrow.next {
   right: 0;
+}
+
+.selected{
+  color:var(--accent) !important;
 }
