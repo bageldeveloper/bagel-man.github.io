@@ -109,6 +109,7 @@ const gamersgaming = {
     "Bagelwithlegs": {
         "name": "Bagel With Legs",
         "url": "games/html/bagelwithlegs.html",
+        "image": "thumbnails/bagelwithlegs.png",
         tags:['action','adventure','platformer','strategy']
     },
     "BanjoKazooie": {
@@ -120,6 +121,7 @@ const gamersgaming = {
     "Batman": {
         "name": "Batman",
         "url": "games/emu/batman.html",
+        "image": "thumbnail/batman.png",
         tags:['adventure','puzzle','simulation','shooter','action','platformer','difficult','strategy','console']
     },
     "Blobby": {
