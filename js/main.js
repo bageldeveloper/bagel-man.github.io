@@ -2,6 +2,15 @@ function normalizeTag(tag) {
   return tag.toLowerCase().trim();
 }
 
+function shuffleArray(array) {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
 // --- CONTAINERS ---
 const genreRowsContainer = document.getElementById("genreRows");
 const gameGrid = document.getElementById("gameGrid");
@@ -23,6 +32,8 @@ Object.values(gamersgaming).forEach(game => {
 });
 
 function createGenreRow(genre, games) {
+  const shuffledGames = shuffleArray(games);
+  
   const row = document.createElement("div");
   row.className = "genre-row";
 
@@ -44,7 +55,7 @@ function createGenreRow(genre, games) {
   const rowGames = document.createElement("div");
   rowGames.className = "row-games";
 
-  games.forEach(game => {
+  shuffledGames.forEach(game => {
     const card = document.createElement("a");
     card.href = game.url;
     card.className = "card game-card";
