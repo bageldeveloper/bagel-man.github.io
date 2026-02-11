@@ -50,7 +50,7 @@ function createGenreRow(genre, games) {
     card.className = "card game-card";
     card.dataset.tags = game.tags.map(normalizeTag).join(",");
     card.dataset.name = game.name.toLowerCase();
-  const imgSrc = game.image ? game.image : "https://www.bisecthosting.com/_ipx/q_100/static/img/blog/cat-minecraft.webp";
+  const imgSrc = game.image ? game.image : "skele.gif";
 
   card.innerHTML = `
     <div class="card-bg" style="background-image: url('${imgSrc}')"></div>
@@ -119,7 +119,7 @@ function renderGridGames(tag) {
     card.dataset.tags = game.tags.map(normalizeTag).join(',');
     card.dataset.name = game.name.toLowerCase();
 
-  const imgSrc = game.image ? game.image : "https://www.bisecthosting.com/_ipx/q_100/static/img/blog/cat-minecraft.webp";
+  const imgSrc = game.image ? game.image : "skele.gif";
 
   card.innerHTML = `
     <div class="card-bg" style="background-image: url('${imgSrc}')"></div>
@@ -240,7 +240,7 @@ function renderSearchResults(query) {
     card.dataset.tags = game.tags.map(normalizeTag).join(',');
     card.dataset.name = game.name.toLowerCase();
 
-  const imgSrc = game.image ? game.image : "https://www.bisecthosting.com/_ipx/q_100/static/img/blog/cat-minecraft.webp";
+  const imgSrc = game.image ? game.image : "skele.gif";
 
   card.innerHTML = `
     <div class="card-bg" style="background-image: url('${imgSrc}')"></div>
