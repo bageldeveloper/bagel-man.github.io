@@ -365,7 +365,7 @@ const gamersgaming = {
     "EscapingThePrison": {
         "name": "Escaping The Prison",
         "url": "games/html/henryprison.html",
-        "image": "thumbnails/escapingthebank.avif",
+        "image": "thumbnails/escapingtheprison.avif",
         tags:['action','puzzle','adventure','simulation','strategy','henrystickmin']
     },
     "Fancypants": {
@@ -377,31 +377,37 @@ const gamersgaming = {
     "FireboyAndWatergirl1": {
         "name": "Fireboy and Watergirl 1 - The Forest Temple",
         "url": "games/html/fireandwater1.html",
+        "image": "thumbnails/fireboyandwatergirl.avif",
         tags:['adventure','puzzle','action','platformer','strategy',]
     },
     "FireboyAndWatergirl2": {
         "name": "Fireboy and Watergirl 2 - The Light Temple",
         "url": "games/html/fireandwater2.html",
+        "image": "thumbnails/fireboyandwatergirl2.webp",
         tags:['adventure','puzzle','action','platformer','strategy',]
     },
     "FireboyAndWatergirl3": {
         "name": "Fireboy and Watergirl 3 - The Ice Temple",
         "url": "games/html/fireandwater3.html",
+        "image": "thumbnails/fireboyandwatergirl3.png",
         tags:['adventure','puzzle','action','platformer','strategy',]
     },
     "FireboyAndWatergirl4": {
         "name": "Fireboy and Watergirl 4 - The Crystal Temple",
         "url": "games/html/fireandwater4.html",
+        "image": "thumbnails/fireboyandwatergirl.png",
         tags:['adventure','puzzle','action','platformer','strategy',]
     },
     "FleeingTheComplex": {
         "name": "Fleeing the Complex",
         "url": "games/html/henrycomplex.html",
+        "image": "thumbnails/fleeingthecomplex.avif",
         tags:['action','puzzle','adventure','simulation','henrystickmin','strategy']
     },
     "Fridaythe13th": {
         "name": "Friday the 13th",
         "url": "games/emu/f13.html",
+        "image": "thumbnails/fridaythe13th.jpg",
         tags:['adventure','simulation','action','strategy','console']
     },
     "GetawayShootout": {
@@ -487,11 +493,13 @@ const gamersgaming = {
     "LearnTo Fly 2": {
         "name": "Learn To Fly 2",
         "url": "games/html/learntofly2.html",
+        "image": "thumbnails/learntofly2.png",
         tags:['strategy','adventure']
     },
     "LearnTo Fly 3": {
         "name": "Learn To Fly 3",
         "url": "games/html/learntofly3.html",
+        "image": "thumbnails/learntofly3.jpg",
         tags:['strategy','adventure']
     },
     "LegoStarWarsTCS": {
@@ -582,11 +590,19 @@ const gamersgaming = {
     "Minecraft 1.5.2": {
         "name": "Minecraft",
         "url": "eaglercraft-main/eaglercraft-main/stable-download/web/index.html",
+        "image": "thumbnails/minecraft1.5.jpg",
         tags:['adventure','simulation','shooter','action','platformer','strategy','favorite','console']
     },
     "Minecraft 1.8.8": {
-        "name": "Minecraft Beta",
+        "name": "Minecraft 1.8.8",
         "url": "games/minecrap/index.html",
+        "image": "thumbnails/minecraft1.8.jpg",
+        tags:['adventure','simulation','shooter','action','platformer','strategy','favorite','console']
+    },
+    "Minecraft 1.12": {
+        "name": "Minecraft 1.12",
+        "url": "eaglercraft-1.12.html",
+        "image": "thumbnails/minecraft1.12.avif",
         tags:['adventure','simulation','shooter','action','platformer','strategy','favorite','console']
     },
     "MiniPutt": {
@@ -707,11 +723,13 @@ const gamersgaming = {
     "PlantsvsZombies": {
         "name": "Plants vs Zombies",
         "url": "games/html/pvz.html",
+        "image": "thumbnails/plantsvszombies.png",
         tags:['tower-defense','strategy']
     },
     "PlantsvsZombies2": {
         "name": "Plants vs Zombies 2",
         "url": "games/html/pvz2.html",
+        "image": "thumbnails/plantsvszombies2.avif",
         tags:['tower-defense','strategy']
     },
     "Pong": {
@@ -832,6 +850,7 @@ const gamersgaming = {
     "Run3": {
         "name": "Run 3",
         "url": "games/html/run3.html",
+        "image": "thumbnails/run 3.jpg",
         tags:['action','adventure','platformer','strategy']
     },
     "Siftheads": {
@@ -892,21 +911,25 @@ const gamersgaming = {
     "SuperMario64": {
         "name": "Super Mario 64",
         "url": "games/sm64/index.html",
+        "image": "thumbnails/supermario64.jpg",
         tags:['adventure','puzzle','action','platformer','difficult','strategy','favorite','console']
     },
     "SuperMarioBros": {
         "name": "Super Mario Bros",
         "url": "games/emu/smb.html",
+        "image": "thumbnails/supermariobros.jpg",
         tags:['adventure','puzzle','action','platformer','strategy','console']
     },
     "SuperMarioBros2": {
         "name": "Super Mario Bros. 2",
         "url": "games/emu/smbtwo.html",
+        "image": "thumbnails/supermariobros2.png",
         tags:['adventure','puzzle','action','platformer','strategy','console']
     },
     "SuperMarioBros3": {
         "name": "Super Mario Bros. 3",
         "url": "games/emu/smbthree.html",
+        "image": "thumbnails/supermariobros3.jpg",
         tags:['adventure','puzzle','action','platformer','strategy','console']
     },
     "SuperMarioFlash": {
@@ -917,6 +940,7 @@ const gamersgaming = {
     "SuperMarioKart": {
         "name": "Super Mario Kart",
         "url": "games/emu/smk.html",
+        "image": "thumbnails/supermariokart.png",
         tags:['action','sports','racing','strategy','console']
     },
     "SuperMarioWorld": {
@@ -1014,16 +1038,19 @@ const gamersgaming = {
     "Vex3": {
         "name": "Vex 3",
         "url": "vex3/index.html",
+        "image": "thumbnails/vex3.jpg",
         tags:['action','puzzle','platformer','adventure']
     },
     "Vex4": {
         "name": "Vex 4",
         "url": "vex4/index.html",
+        "image": "thumbnails/vex4.jpg",
         tags:['action','puzzle','platformer','adventure']
     },
     "Vex6": {
         "name": "Vex 6",
         "url": "games/vex6/index.html",
+        "image": "thumbnails/vex6.jpg",
         tags:['action','puzzle','platformer','adventure']
     },
     "WorldsHardestGame": {
