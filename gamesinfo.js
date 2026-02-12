@@ -923,56 +923,67 @@ const gamersgaming = {
     "Siftheads": {
         "name": "Siftheads",
         "url": "games/html/siftheads.html",
+        "image": "thumbnails/siftheads.png",
         tags:['action','shooter','strategy']
     },
     "Slope": {
         "name": "Slope",
         "url": "games/Slope-Game-main/index.html",
+        "image": "thumbnails/slope.jpg",
         tags:['racing','platformer','favorite']
     },
     "Sonic": {
         "name": "Sonic",
         "url": "games/html/sonic.html",
+        "image": "thumbnails/sonic.png",
         tags:['adventure','puzzle','action','racing','platformer','difficult','strategy','console']
     },
     "SpaceInvaders": {
         "name": "Space Invaders",
         "url": "space.html",
+        "image": "thumbnails/spaceinvaders.gif",
         tags:['shooter','action','strategy','console']
     },
     "StarWarsEpisodeOneRacer": {
         "name": "Star Wars Episode One: Racer",
         "url": "games/emu/episodeoneracer.html",
+        "image": "thumbnails/starwarsracer.jpg",
         tags:['racing','action','difficult','strategy','favorite','console']
     },
     "StealingTheDiamond": {
         "name": "Stealing The Diamond",
         "url": "games/html/henrystealing.html",
+        "image": "thumbnails/stealthediamond.jpg",
         tags:['action','puzzle','adventure','simulation','strategy','henrystickmin']
     },
     "StickRPGbeta": {
         "name": "Stick RPG Beta",
         "url": "games/html/stickrpgbeta.html",
+        "image": "thumbnails/stickrpgbeta.jpg",
         tags:['adventure','simulation','strategy']
     },
     "StopGMO": {
         "name": "Stop GMO",
         "url": "games/html/stopgmo.html",
+        "image": "thumbnails/stopgmo.jpg",
         tags:['action','shooter','strategy']
     },
     "StrikeForceHeroes": {
         "name": "Strike Force Heroes",
         "url": "games/html/strikeforceheroes.html",
+        "image": "thumbnails/herostrikeforce.jpg",
         tags:['shooter','action','strategy','new']
     },
     "StrikeForceHeroes2": {
         "name": "Strike Force Heroes 2",
         "url": "games/html/strikeforceheroes2.html",
+        "image": "thumbnails/herostrikeforce2.png",
         tags:['shooter','action','strategy','new']
     },
     "StrikeForceHeroes 3": {
         "name": "Strike Force Heroes 3",
         "url": "games/html/strikeforceheroes3.html",
+        "image": "thumbnails/herostrikeforce3.jpg",
         tags:['shooter','action','strategy','new']
     },
     "SuperMario64": {
@@ -1019,11 +1030,13 @@ const gamersgaming = {
     "SuperPunchOut!!": {
         "name": "Super Punch Out!!",
         "url": "games/emu/spo.html",
+        "image": "thumbnails/superpunchout.jpg",
         tags:['simulation','action','sports','strategy','console']
     },
     "SuperSmashBros": {
         "name": "Super Smash Bros",
         "url": "games/emu/supersmash.html",
+        "image": "thumbnails/smash.jpg",
         tags:['shooter','action','platformer','favorite','console']
     },
     "SwordsandSandals": {
