@@ -44,46 +44,55 @@ const gamersgaming = {
     "AgeOfWar": {
         "name": "Age Of War",
         "url": "games/html/ageofwar.html",
+        "image": "thumbnails/ageofwar.jpg",
         tags:['adventure','action','simulation','strategy']
     },
     "AgeOfWar2": {
         "name": "Age Of War 2",
         "url": "games/html/ageofwar2.html",
+        "image": "thumbnails/ageofwar2.jpg",
         tags:['adventure','action','simulation','strategy']
     },
     "Aladdin": {
         "name": "Aladdin",
         "url": "games/emu/alladin.html",
+        "image": "thumbnails/alladin.jpg",
         tags:['adventure','puzzle','action','platformer','difficult','strategy','console']
     },
     "AlienHominid": {
         "name": "Alien Hominid",
         "url": "games/html/alien.html",
+        "image": "thumbnails/alien.png",
         tags:['action','shooter','strategy']
     },
     "AppleShooter": {
         "name": "Apple Shooter",
         "url": "games/html/appleshoot.html",
+        "image": "thumbnails/appleshooter.jpg",
         tags:['shooter']
     },
     "ArtofWar": {
         "name": "Art of War",
         "url": "games/html/artofwar.html",
+        "image": "thumbnails/artofwar.webp",
         tags:['adventure','action','simulation','strategy']
     },
     "ArtofWar2": {
         "name": "Art of War 2",
         "url": "games/html/artofwar2.html",
+        "image": "thumbnails/artofwar2.jpg",
         tags:['adventure','action','simulation','strategy']
     },
     "Asteroids": {
         "name": "Asteroids",
         "url": "/games/html/assroid.html",
+        "image": "thumbnails/asteroids.png",
         tags:['shooter','action','strategy','console']
     },
     "AwesomeTanks2": {
         "name": "Awesome Tanks 2",
         "url": "games/html/awesometanks2.html",
+        "image": "thumbnails/awesometanks2.jpg",
         tags:['action','shooter','strategy']
     },
     "BagelWithaGun": {
@@ -105,6 +114,7 @@ const gamersgaming = {
     "BanjoKazooie": {
         "name": "Banjo Kazooie",
         "url": "games/emu/Banjo.html",
+        "image": "thumbnails/banjo.png",
         tags:['adventure','puzzle','action','console']
     },
     "Batman": {
@@ -120,26 +130,31 @@ const gamersgaming = {
     "BloonsTowerDefense": {
         "name": "Bloons Tower Defense",
         "url": "games/html/bloons.html",
+        "image": "thumbnails/bloonstd.jpg",
         tags:['tower-defense','strategy','favorite']
     },
     "BloonsTowerDefense2": {
         "name": "Bloons Tower Defense 2",
         "url": "games/html/bloonstd2.html",
+        "image": "thumbnails/bloonstd2.jpg",
         tags:['tower-defense','strategy']
     },
     "BloonsTowerDefense3": {
         "name": "Bloons Tower Defense 3",
         "url": "games/html/bloonstd3.html",
+        "image": "thumbnails/bloonstd3.jpg",
         tags:['tower-defense','strategy']
     },
     "BloonsTowerDefense4": {
         "name": "Bloons Tower Defense 4",
         "url": "games/html/bloonstd4.html",
+        "image": "thumbnails/bloonstd4.jpg",
         tags:['tower-defense','strategy']
     },
     "Bloxorz": {
         "name": "Bloxorz",
         "url": "games/html/bloxorz.html",
+        "image": "thumbnails/bloxorz.jpg",
         tags:['puzzle','strategy']
     },
     "Bloxstrike": {

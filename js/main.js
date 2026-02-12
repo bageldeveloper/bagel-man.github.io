@@ -159,11 +159,13 @@ function createCategoryButton(tag) {
   return btn;
 }
 
+
+const tags = ['favorite','adventure','puzzle','simulation','shooter','tower-defense','racing','sports','action','platformer','difficult','strategy','console']
 // --- GET ALL UNIQUE TAGS FROM GAMES ---
-const allTags = new Set();
-Object.values(gamersgaming).forEach(game => {
-  game.tags.forEach(tag => allTags.add(normalizeTag(tag)));
-});
+const allTags = tags
+// Object.values(gamersgaming).forEach(game => {
+//   game.tags.forEach(tag => allTags.add(normalizeTag(tag)));
+// });
 
 // --- ADD "All" BUTTON ---
 const allBtn = document.createElement('button');
@@ -181,7 +183,6 @@ allBtn.addEventListener('click', () => {
 });
 categoryList.appendChild(allBtn);
 
-// --- ADD BUTTONS FOR EACH TAG ---
 allTags.forEach(tag => {
   const btn = document.createElement('button');
   btn.textContent = tag.replace('-', ' ');
