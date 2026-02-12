@@ -167,106 +167,127 @@ const gamersgaming = {
     "BreakingtheBank": {
         "name": "Breaking the Bank",
         "url": "games/html/henrybank.html",
+        "image": "thumbnails/breakingthebank.png",
         tags:['action','puzzle','adventure','simulation','henrystickmin','strategy']
     },
     "BubbleShooter": {
         "name": "Bubble Shooter",
         "url": "games/html/bubbleshooter.html",
+        "image": "thumbnails/bubbleshooter.png",
         tags:['shooter']
     },
     "CanyonDefense": {
         "name": "Canyon Defense",
         "url": "games/html/canyondefense.html",
+        "image": "thumbnails/canyondefense.jpg",
         tags:['tower-defense','strategy']
     },
     "Castle": {
         "name": "Castle",
         "url": "games/html/castle.html",
+        "image": "thumbnails/castle.jpg",
         tags:['strategy','adventure']
     },
     "Checkers": {
         "name": "Checkers",
         "url": "games/html/checkers.html",
+        "image": "thumbnails/checkers.jpg",
         tags:['Board', 'strategy']
     },
     "ChibiKnight": {
         "name": "Chibi Knight",
         "url": "games/html/chibiknight.html",
+        "image": "thumbnails/chibiknight.jpg",
         tags:['action','adventure']
     },
     "ColorCombat": {
         "name": "Color Combat",
         "url": "games/html/colorcombat.html",
+        "image": "thumbnails/colorcombat.jpg",
         tags:['action','strategy']
     },
     "Commando": {
         "name": "Commando",
         "url": "games/html/commando.html",
+        "image": "thumbnails/commando.jpg",
         tags:['action','shooter','strategy']
     },
     "Contra": {
         "name": "Contra",
         "url": "games/emu/contra.html",
+        "image": "thumbnails/contra.jpg",
         tags:['adventure','shooter','action','strategy','console']
     },
     "CookieClicker": {
         "name": "Cookie Clicker",
         "url": "games/cookie/index.html",
+        "image": "thumbnails/cookieclicker.avif",
         tags:['strategy','action']
     },
     "CrossingThePit": {
         "name": "Crossing the Pit",
         "url": "games/html/henrypit.html",
+        "image": "thumbnails/crossingthepit.webp",
         tags:['simulation','henrystickmin']
     },
     "Crushthecastle": {
         "name": "Crush the Castle",
         "url": "games/html/crushthecastle.html",
+        "image": "thumbnails/crushthecastle.jpg",
         tags:['puzzle','simulation','shooter','action','strategy','new']
     },
     "Crushthecastle2": {
         "name": "Crush the Castle 2",
         "url": "games/html/crushthecastle2.html",
+        "image": "thumbnails/crushthecastle2.jpg",
         tags:['puzzle','simulation','shooter','action','strategy','new']
     },
     "Cube": {
         "name": "Cube Field",
         "url": "games/html/cube.html",
+        "image": "thumbnails/cube.png",
         tags:['adventure']
     },
     "DadnMe": {
         "name": "Dad n' Me",
         "url": "games/html/dadnme.html",
+        "image": "thumbnails/DadnMe.webp",
         tags:['action','simulation','strategy']
     },
     "DigToChina": {
         "name": "Dig To China",
         "url": "games/html/digtochina.html",
+        "image": "thumbnails/digtochina.webp",
         tags:['adventure','strategy','favorite']
     },
     "DonkeyKongCountry": {
         "name": "Donkey Kong Country",
         "url": "games/emu/dkcountry.html",
+        "image": "thumbnails/donkeykongcountry.jpg",
         tags:['adventure','puzzle','action','platformer','console']
     },
     "Doom1/2": {
         "name": "Doom 1/2",
         "url": "doom/public/index.html",
+        "image": "thumbnails/doom.jpg",
         tags:['adventure','puzzle','shooter','action','difficult','strategy','favorite','console']
     },
     "DoubleDragon": {
         "name": "Double Dragon",
         "url": "games/emu/doubledragon.html",
+        "image": "thumbnails/doubledragon.jpg",
         tags:['adventure','action','strategy','console']
     },
     "DriftHunters": {
         "name": "Drift Hunters",
         "url": "games/html/drift-hunters/index.html",
+        "image": "thumbnails/drifthunters.jpg",
         tags:['action','adventure','racing']
     },
     "DuckHunt": {
         "name": "Duck Hunt",
         "url": "games/html/duckhunt.html",
+        "image": "thumbnails/duckhunt.jpg",
         tags:['simulation','shooter','action','strategy','console']
     },
     "DuckLife": {
@@ -296,51 +317,61 @@ const gamersgaming = {
     "DuckTales": {
         "name": "Duck Tales",
         "url": "games/emu/ducktales.html",
+        "image": "thumbnails/ducktales.jpg",
         tags:['adventure','puzzle','action','platformer','difficult','strategy','console']
     },
     "Earthbound": {
         "name": "Earthbound",
         "url": "games/emu/earthbound.html",
+        "image": "thumbnails/earthbound.jpg",
         tags:['adventure','action','console']
     },
     "ElectricMan2": {
         "name": "ElectricMan 2",
         "url": "games/html/eman2.html",
+        "image": "thumbnails/electricman2.jpg",
         tags:['adventure','strategy']
     },
     "Escapethebathroom": {
         "name": "Escape the Bathroom",
         "url": "games/html/escapethebathroom.html",
+        "image": "thumbnails/escapethebathroom.png",
         tags:['simulation','puzzle','strategy']
     },
     "Escapetheclassroom": {
         "name": "Escape the Classroom",
         "url": "games/html/escapetheclassroom.html",
+        "image": "thumbnails/escapetheclassroom.jpg",
         tags:['simulation','puzzle','strategy']
     },
     "Escapethecloset": {
         "name": "Escape the Closet",
         "url": "games/html/escapethecloset.html",
+        "image": "thumbnails/escapethecloset.jpg",
         tags:['simulation','puzzle','strategy']
     },
     "Escapetheladiesroom": {
         "name": "Escape the Ladies Room",
         "url": "games/html/escapetheladies.html",
+        "image": "thumbnails/escapetheladiesroom.jpg",
         tags:['simulation','puzzle','strategy']
     },
     "Escapetheroom": {
         "name": "Escape the Room",
         "url": "games/html/escapetheroom.html",
+        "image": "thumbnails/escapetheroom.jpg",
         tags:['simulation','puzzle','strategy']
     },
     "EscapingThePrison": {
         "name": "Escaping The Prison",
         "url": "games/html/henryprison.html",
+        "image": "thumbnails/escapingthebank.avif",
         tags:['action','puzzle','adventure','simulation','strategy','henrystickmin']
     },
     "Fancypants": {
         "name": "Fancypants",
         "url": "games/html/fancypants.html",
+        "image": "thumbnails/superfancypantsadventure.jpg",
         tags:['adventure','strategy']
     },
     "FireboyAndWatergirl1": {
