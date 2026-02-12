@@ -655,6 +655,7 @@ const gamersgaming = {
     "NBAJam": {
         "name": "NBA Jam",
         "url": "games/emu/nbajam.html",
+        "image": "thumbnails/nbajam.jpg",
         tags:['simulation','shooter','action','sports','console']
     },
     "Newton": {
@@ -665,86 +666,103 @@ const gamersgaming = {
     "NewYorkShark": {
         "name": "New York Shark",
         "url": "games/html/NYshark.html",
+        "image": "thumbnails/newyorkshark.png",
         tags:['adventure','simulation','strategy']
     },
     "Orbitron": {
         "name": "Orbitron",
         "url": "orbitron.html",
+        "image": "thumbnails/orbitron.jpg",
         tags:['simulation','tower-defense','strategy']
     },
     "Pacman": {
         "name": "Pacman",
         "url": "games/html/Pacman.html",
+        "image": "thumbnails/pacman.gif",
         tags:['adventure','racing','action','difficult','strategy','console']
     },
     "PapasBakeria": {
         "name": "Papa's Bakeria",
         "url": "games/html/papasbakeria.html",
+        "image": "thumbnails/papasbakeria.jpg",
         tags:['adventure','puzzle','strategy','papa']
     },
     "PapasBurgeria": {
         "name": "Papa's Burgeria",
         "url": "games/html/papasbugeria.html",
+        "image": "thumbnails/papasburgeria.jpg",
         tags:['adventure','puzzle','strategy','papa']
     },
     "PapasCheeseria": {
         "name": "Papa's Cheeseria",
         "url": "games/html/papascheeseria.html",
+        "image": "thumbnails/papascheeseria.jpg",
         tags:['adventure','puzzle','strategy','papa']
     },
     "PapasCupcakeria": {
         "name": "Papa's Cupcakeria",
         "url": "games/html/papascupcakeria.html",
+        "image": "thumbnails/papascupcakeria.jpg",
         tags:['adventure','puzzle','strategy','papa']
     },
     "PapasDonuteria": {
         "name": "Papa's Donuteria",
         "url": "games/html/papasdonuteria.html",
+        "image": "thumbnails/papasdonuteria.jpg",
         tags:['adventure','puzzle','strategy','papa']
     },
     "PapasFreezeria": {
         "name": "Papa's Freezeria",
         "url": "games/html/papasfreezeria.html",
+        "image": "thumbnails/papasfreezeria.jpg",
         tags:['adventure','puzzle','strategy','papa']
     },
     "PapasHotdogeria": {
         "name": "Papa's Hotdogeria",
         "url": "games/html/papashotdogeria.html",
+        "image": "thumbnails/papashotdogeria.jpg",
         tags:['adventure','puzzle','strategy','papa']
     },
     "PapasPancakeria": {
         "name": "Papa's Pancakeria",
         "url": "games/html/papaspancakeria.html",
+        "image": "thumbnails/papaspancakeria.jpg",
         tags:['adventure','puzzle','strategy','papa']
     },
     "PapasPastaria": {
         "name": "Papa's Pastaria",
         "url": "games/html/papaspasteria.html",
+        "image": "thumbnails/papaspasteria.jpg",
         tags:['adventure','puzzle','strategy','papa']
     },
     "PapasPizzeria": {
         "name": "Papa's Pizzeria",
         "url": "games/html/papapizza.html",
+        "image": "thumbnails/papaspizzeria.jpg",
         tags:['adventure','puzzle','strategy','papa']
     },
     "PapasScooperia": {
         "name": "Papa's Scooperia",
         "url": "games/html/papasscooperia.html",
+        "image": "thumbnails/papasscooperia.jpg",
         tags:['adventure','puzzle','strategy','papa']
     },
     "PapasSushiria": {
         "name": "Papa's Sushiria",
         "url": "games/html/papassushiria.html",
+        "image": "thumbnails/papassushiria.jpg",
         tags:['adventure','puzzle','strategy','papa']
     },
     "PapasTacomia": {
         "name": "Papa's Tacomia",
         "url": "games/html/papastacomia.html",
+        "image": "thumbnails/papastacomia.jpg",
         tags:['adventure','puzzle','strategy','papa']
     },
     "PapasWingeria": {
         "name": "Papa's Wingeria",
         "url": "games/html/papaswingeria.html",
+        "image": "thumbnails/papaswingeria.jpg",
         tags:['adventure','puzzle','strategy','papa']
     },
     "PlantsvsZombies": {
@@ -767,111 +785,133 @@ const gamersgaming = {
     "Portal2D": {
         "name": "Portal 2D",
         "url": "games/html/portal2d.html",
+        "image": "thumbnails/portal2D.png",
         tags:['platformer','puzzle','favorite','strategy']
     },
     "PortalFlashVersion": {
         "name": "Portal Flash Version",
         "url": "games/html/portal.html",
+        "image": "thumbnails/portalflash.jpg",
         tags:['platformer','puzzle','strategy']
     },
     "PunchOut!": {
         "name": "Punch Out!",
         "url": "games/emu/punchout.html",
+        "image": "thumbnails/punchout.jpg",
         tags:['simulation','action','sports','strategy','console']
     },
     "Quake": {
         "name": "Quake",
         "url": "Quake1-master/Quake1.htm",
+        "image": "thumbnails/quake.png",
         tags:['shooter','action','platformer','strategy','console']
     },
     "Quake3": {
         "name": "Quake 3",
         "url": "Quake3-master/Quake3.htm",
+        "image": "thumbnails/quake3.jpg",
         tags:['shooter','action','platformer','difficult','strategy','favorite','console']
     },
     "RaftWars": {
         "name": "Raft Wars",
         "url": "games/html/raftwars.html",
+        "image": "thumbnails/raftwars.png",
         tags:['action','shooter','strategy','favorite']
     },
     "RedBall": {
         "name": "Red Ball",
         "url": "games/html/redball.html",
+        "image": "thumbnails/redball.gif",
         tags:['adventure','puzzle','platformer','strategy']
     },
     "RedBall2": {
         "name": "Red Ball 2",
         "url": "games/html/redball2.html",
+        "image": "thumbnails/redball.png",
         tags:['adventure','puzzle','platformer','strategy']
     },
     "RedBall4": {
         "name": "Red Ball 4",
         "url": "games/html/redball4.html",
+        "image": "thumbnails/redball4.png",
         tags:['adventure','puzzle','platformer','strategy']
     },
     "RedBall4v2": {
         "name": "Red Ball 4 Volume. 2",
         "url": "games/html/redball4v2.html",
+        "image": "thumbnails/redball4.png",
         tags:['adventure','puzzle','platformer','action','strategy']
     },
     "RedBall4v3": {
         "name": "Red Ball 4 Volume. 3",
         "url": "games/html/redball4v3.html",
+        "image": "thumbnails/redball4.png",
         tags:['adventure','puzzle','platformer','action','strategy']
     },
     "Retrobowl": {
         "name": "Retro bowl",
         "url": "games/retrobowl/index.html",
+        "image": "thumbnails/retrobowl.png",
         tags:['simulation','sports','strategy']
     },
     "RiddleSchool": {
         "name": "Riddle School",
         "url": "games/html/riddleschool.html",
+        "image": "thumbnails/riddleschool.png",
         tags:['adventure','puzzle','strategy']
     },
     "RiddleSchool 2": {
         "name": "Riddle School 2",
         "url": "games/html/riddleschool2.html",
+        "image": "thumbnails/riddleschool2.jpg",
         tags:['adventure','puzzle','strategy']
     },
     "RiddleSchool 3": {
         "name": "Riddle School 3",
         "url": "games/html/riddleschool3.html",
+        "image": "thumbnails/riddleschool3.jpg",
         tags:['adventure','puzzle','strategy']
     },
     "RiddleSchool 4": {
         "name": "Riddle School 4",
         "url": "games/html/riddleschool4.html",
+        "image": "thumbnails/riddleschool4.jpg",
         tags:['adventure','puzzle','strategy']
     },
     "RiddleSchool 5": {
         "name": "Riddle School 5",
         "url": "games/html/riddleschool5.html",
+        "image": "thumbnails/riddleschool5.jpg",
         tags:['adventure','puzzle','strategy']
     },
     "RiddleTransfer": {
         "name": "Riddle Transfer",
         "url": "games/html/riddleschooltransfer.html",
+        "image": "thumbnails/riddleschooltransfer.png",
         tags:['adventure','puzzle','strategy']
     },
     "RiddleTransfer2": {
         "name": "Riddle Transfer 2",
         "url": "games/html/riddleschooltransfer2.html",
+        "image": "thumbnails/riddleschooltransfer2.png",
         tags:['adventure','puzzle','strategy']
     },
     "RiverCityRansom": {
         "name": "River City Ransom",
         "url": "games/emu/ransom.html",
+        "image": "thumbnails/riverransomcity.jpg",
         tags:['adventure','action','console']
     },
     "Run": {
         "name": "Run",
         "url": "games/html/run.html",
+        "image": "thumbnails/run.jpg",
         tags:['action','adventure','platformer','strategy']
     },
     "Run2": {
         "name": "Run 2",
         "url": "games/html/run2.html",
+        "image": "thumbnails/run 2.jpg",
         tags:['action','adventure','platformer','strategy']
     },
     "Run3": {
