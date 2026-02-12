@@ -121,7 +121,7 @@ const gamersgaming = {
     "Batman": {
         "name": "Batman",
         "url": "games/emu/batman.html",
-        "image": "thumbnail/batman.png",
+        "image": "thumbnail/batman.jpg",
         tags:['adventure','puzzle','simulation','shooter','action','platformer','difficult','strategy','console']
     },
     "Blobby": {
@@ -413,61 +413,73 @@ const gamersgaming = {
     "GetawayShootout": {
         "name": "Getaway Shootout",
         "url": "games/getaway-shootout/index.html",
+        "image": "thumbnails/getawayshootout.avif",
         tags:['action','shooter','strategy']
     },
     "GunBlood": {
         "name": "Gun Blood",
         "url": "games/html/gunblood.html",
+        "image": "thumbnails/gunblood.png",
         tags:['action','shooter','strategy']
     },
     "HalfLife": {
         "name": "Half-Life",
         "url": "halflife/index.html",
+        "image": "thumbnails/halflife.jpg",
         tags:['adventure','shooter','action','strategy','console']
     },
     "Hexgl": {
         "name": "Hexgl",
         "url": "hexgl.html",
+        "image": "thumbnails/hexgl.jpg",
         tags:['racing']
     },
     "Hobo": {
         "name": "Hobo",
         "url": "games/html/hobo.html",
+        "image": "thumbnails/hobo.jpg",
         tags:['action','strategy']
     },
     "Hobo2": {
         "name": "Hobo 2 - Prison Brawl",
         "url": "games/html/hobo2.html",
+        "image": "thumbnails/hobo2.jpg",
         tags:['action','strategy']
     },
     "Hobo3": {
         "name": "Hobo 3 - Wanted",
         "url": "games/html/hobo3.html",
+        "image": "thumbnails/hobo3.jpg",
         tags:['action','strategy']
     },
     "Hobo4": {
         "name": "Hobo 4 - Total War",
         "url": "games/html/hobo4.html",
+        "image": "thumbnails/hobo4.jpg",
         tags:['action','strategy']
     },
     "Hobo5": {
         "name": "Hobo 5 - Space Brawls",
         "url": "games/html/hobo5.html",
+        "image": "thumbnails/hobo5.png",
         tags:['action','strategy']
     },
     "Hobo6": {
         "name": "Hobo 6 - Hell",
         "url": "games/html/hobo6.html",
+        "image": "thumbnails/hobo6.jpg",
         tags:['action','strategy']
     },
     "Hobo7": {
         "name": "Hobo 7 - Heaven",
         "url": "games/html/hobo7.html",
+        "image": "thumbnails/hobo7.png",
         tags:['action','strategy']
     },
     "infiltratingTheAirship": {
         "name": "Infiltrating the Airship",
         "url": "games/html/henryairship.html",
+        "image": "thumbnails/infiltratingtheairship.png",
         tags:['action','puzzle','adventure','simulation','henrystickmin','strategy']
     },
     "JumpGame": {
@@ -483,6 +495,7 @@ const gamersgaming = {
     "JackSmith": {
         "name": "Jack Smith",
         "url": "games/html/jacksmith.html",
+        "image": "thumbnails/jacksmith.jpg",
         tags:['adventure','puzzle','strategy','papa']
     },
     "learnToFly": {
@@ -505,15 +518,18 @@ const gamersgaming = {
     "LegoStarWarsTCS": {
         "name": "Lego Star Wars TCS",
         "url": "games/emu/tcs.html",
+        "image": "thumbnails/legostarwarstcs.jpg",
         tags:['strategy','puzzle']
     },
     "LineRider": {
         "name": "Line Rider",
         "url": "games/html/linerider.html",
+        "image": "thumbnails/linerider3.png",
         tags:['strategy','puzzle']
     },
     "LineRider2": {
         "name": "Line Rider 2",
+        "image": "thumbnails/linerider3.png",
         "url": "games/html/linerider2.html",
         tags:['strategy']
     },
@@ -526,11 +542,13 @@ const gamersgaming = {
     "LineRiderUndo": {
         "name": "Line Rider with Undo",
         "url": "games/html/lineriderundo.html",
+        "image": "thumbnails/linerider3.png",
         tags:['strategy','platformer','puzzle','simulation','sports']
     },
     "MarvelSuperHeroes:WaroftheGems": {
         "name": "Marvel Super Heroes: War of the Gems",
         "url": "games/emu/mshwog.html",
+        "image": "thumbnails/marvelheros.jpg",
         tags:['adventure','shooter','action','platformer','strategy','console']
     },
     "Mario": {
@@ -547,16 +565,19 @@ const gamersgaming = {
     "MarioKart64": {
         "name": "Mario Kart 64",
         "url": "N64Wasm-masterMK64/dist/index.html",
+        "image": "thumbnails/mariokart64.jpg",
         tags:['action','sports','racing','strategy','favorite','console']
     },
     "MeatBoy": {
         "name": "Meat Boy",
         "url": "games/html/meatboy.html",
+        "image": "thumbnails/meatboy.jpg",
         tags:['action','adventure','platformer']
     },
     "MegaMan2": {
         "name": "Mega Man 2",
         "url": "games/emu/megamantwo.html",
+        "image": "thumbnails/megaman2.jpg",
         tags:['adventure','shooter','action','platformer','strategy','console']
     },
     "MegaManX": {
@@ -580,11 +601,13 @@ const gamersgaming = {
     "MiamiShark": {
         "name": "Miami Shark",
         "url": "games/html/miamishark.html",
+        "image": "thumbnails/miamishark.jpg",
         tags:['adventure','strategy']
     },
     "MikeTysonsPunchOut!": {
         "name": "Mike Tyson's Punch Out!",
         "url": "games/emu/miketysonpunchout.html",
+        "image": "thumbnails/mtpunchout.jpg",
         tags:['action','sports','difficult','strategy','console']
     },
     "Minecraft 1.5.2": {
@@ -608,21 +631,25 @@ const gamersgaming = {
     "MiniPutt": {
         "name": "Mini Putt",
         "url": "games/html/miniputt.html",
+        "image": "thumbnails/miniputt.png",
         tags:['simulation','sports', 'strategy']
     },
     "MotoX3m": {
         "name": "MotoX3m",
         "url": "games/motox3m/index.html",
+        "image": "thumbnails/motox3m.jpg",
         tags:['action','adventure','racing','favorite','sports']
     },
     "MotoX3m2": {
         "name": "MotoX3m 2",
         "url": "games/motox3m2/index.html",
+        "image": "thumbnails/motox3m2.jpg",
         tags:['action','adventure','racing','sports']
     },
     "MyFriendPedro": {
         "name": "My Friend Pedro",
         "url": "games/html/pedro.html",
+        "image": "thumbnails/myfriendpedro.jpg",
         tags:['adventure','shooter','action','platformer','strategy','favorite','console']
     },
     "NBAJam": {
