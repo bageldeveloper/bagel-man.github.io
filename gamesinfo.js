@@ -485,11 +485,13 @@ const gamersgaming = {
     "JumpGame": {
         "name": "Jump Game",
         "url": "jumpgame.html",
+        "image": "thumbnails/jumpgame.png",
         tags:['platformer']
     },
     "JumpGame 2": {
         "name": "Jump Game 2",
         "url": "jumpgame2.html",
+        "image": "thumbnails/jumpgame.png",
         tags:['platformer']
     },
     "JackSmith": {
@@ -501,6 +503,7 @@ const gamersgaming = {
     "learnToFly": {
         "name": "Learn To Fly",
         "url": "games/html/learntofly.html",
+        "image": "thumbnails/learntofly.jpg",
         tags:['strategy','favorite','adventure']
     },
     "LearnTo Fly 2": {
@@ -554,6 +557,7 @@ const gamersgaming = {
     "Mario": {
         "name": "Mario",
         "url": "games/mario/index.html",
+        "image": "thumbnails/mario.png",
         tags:['adventure','puzzle','action','platformer','strategy','console']
     },
     "MarioCombat": {
@@ -657,11 +661,6 @@ const gamersgaming = {
         "url": "games/emu/nbajam.html",
         "image": "thumbnails/nbajam.jpg",
         tags:['simulation','shooter','action','sports','console']
-    },
-    "Newton": {
-        "name": "Newton",
-        "url": "newton.html",
-        tags:['action']
     },
     "NewYorkShark": {
         "name": "New York Shark",
@@ -780,6 +779,7 @@ const gamersgaming = {
     "Pong": {
         "name": "Pong",
         "url": "games/html/pong.html",
+        "image": "thumbnails/pong.jpg",
         tags:['simulation','shooter','sports','action','strategy','console']
     },
     "Portal2D": {
@@ -1114,6 +1114,7 @@ const gamersgaming = {
     "TurkeyFlap": {
         "name": "Turkey Flap",
         "url": "turkeyflap/index.html",
+        "image": "thumbnails/turkeyflap.webp",
         tags:['platformer','strategy']
     },
     "TurtleTrigger": {
@@ -1161,6 +1162,7 @@ const gamersgaming = {
     "Zombies": {
         "name": "Zombies",
         "url": "games/html/zombie.html",
+        "image": "thumbnails/zombies.png",
         tags:['action','shooter','strategy']
     },
     "HueJumper": {
@@ -1340,71 +1342,85 @@ const gamersgaming = {
     "Motherload": {
         "name": "Motherload",
         "url": "games/html/motherload.html",
+        "image": "thumbnails/motherload.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "Pandemic": {
         "name": "Pandemic",
         "url": "games/html/pandemic.html",
+        "image": "thumbnails/pandemic.jpg",
         tags:['simulation','strategy']
     },
     "Pandemic2": {
         "name": "Pandemic 2",
         "url": "games/html/pandemic2.html",
+        "image": "thumbnails/pandemic2.webp",
         tags:['simulation','strategy']
     },
     "PCBreakdown": {
         "name": "PC Breakdown",
         "url": "games/html/pcbreakdown.html",
+        "image": "thumbnails/pcbreakdown.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "BattleGear": {
         "name": "Battle Gear",
         "url": "games/html/battlegear.html",
+        "image": "thumbnails/battlegear.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "BattleGear2": {
         "name": "Battle Gear 2",
         "url": "games/html/battlegear2.html",
+        "image": "thumbnails/battlegear2.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "BattleGear3": {
         "name": "Battle Gear 3",
         "url": "games/html/battlegear3.html",
+        "image": "thumbnails/battlegear2.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "BattleMechs": {
         "name": "Battle Mechs",
         "url": "games/html/battlemechs.html",
+        "image": "thumbnails/battlemechs.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "Battleship": {
         "name": "Battleship",
         "url": "games/html/battleship.html",
+        "image": "thumbnails/battleship.png",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "BMXextreme": {
         "name": "BMX Extreme",
         "url": "games/html/bmxextreme.html",
+        "image": "thumbnails/bmxextreme.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "BMXmaster": {
         "name": "BMX Master",
         "url": "games/html/bmxmaster.html",
+        "image": "thumbnails/bmxmaster.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "BMXpark": {
         "name": "BMX Park",
         "url": "games/html/bmxpark.html",
+        "image": "thumbnails/bmxpark.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "Bowman": {
         "name": "Bowman",
         "url": "games/html/bowman.html",
+        "image": "thumbnails/bowman.png",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "Bowman2": {
         "name": "Bowman 2",
         "url": "games/html/bowman2.html",
+        "image": "thumbnails/bowman2.png",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "AliceIsDead": {
@@ -1706,6 +1722,46 @@ const gamersgaming = {
         "name": "Earth Taken 2",
         "url": "games/html/earthtaken2.html",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
+    },
+    "Wheely": {
+        "name": "Wheely",
+        "url": "games/html/wheely.html",
+        tags:['puzzle']
+    },
+    "Wheely2": {
+        "name": "Wheely 2",
+        "url": "games/html/wheely2.html",
+        tags:['puzzle']
+    },
+    "Wheely3": {
+        "name": "Wheely 3",
+        "url": "games/html/wheely3.html",
+        tags:['puzzle']
+    },
+    "Wheely4": {
+        "name": "Wheely 4",
+        "url": "games/html/wheely4.html",
+        tags:['puzzle']
+    },
+    "Wheely5": {
+        "name": "Wheely 5",
+        "url": "games/html/wheely5.html",
+        tags:['puzzle']
+    },
+    "Wheely6": {
+        "name": "Wheely 6",
+        "url": "games/html/wheely6.html",
+        tags:['puzzle']
+    },
+    "Wheely7": {
+        "name": "Wheely 7",
+        "url": "games/html/wheely7.html",
+        tags:['puzzle']
+    },
+    "Wheely8": {
+        "name": "Wheely 8",
+        "url": "games/html/wheely8.html",
+        tags:['puzzle']
     },
     "EarthTaken3": {
         "name": "Earth Taken 3",
