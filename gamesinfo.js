@@ -1042,26 +1042,31 @@ const gamersgaming = {
     "SwordsandSandals": {
         "name": "Swords and Sandals",
         "url": "games/html/sas.html",
+        "image": "thumbnails/swordsandsandals.jpg",
         tags:['adventure','puzzle','strategy','action']
     },
     "SwordsandSandals2": {
         "name": "Swords and Sandals 2",
         "url": "games/html/sas2.html",
+        "image": "thumbnails/swordsandsandals2.webp",
         tags:['adventure','puzzle','strategy','action']
     },
     "Tetris": {
         "name": "Tetris",
         "url": "games/html/tetris.html",
+        "image": "thumbnails/tetris.webp",
         tags:['puzzle','strategy','console']
     },
     "TheImpossibleQuiz": {
         "name": "The Impossible Quiz",
         "url": "games/html/quiz.html",
+        "image": "thumbnails/impossiblequiz.png",
         tags:['puzzle','strategy']
     },
     "TheLegendOfZelda": {
         "name": "The Legend of Zelda",
         "url": "games/emu/loz.html",
+        "image": "thumbnails/legendofzelda.webp",
         tags:['adventure','puzzle','action','strategy','console']
     },
     "TheLegendOfZeldaLinkTothePast": {
@@ -1073,31 +1078,37 @@ const gamersgaming = {
     "TheLegendofZeldaOcarinaofTime": {
         "name": "The Legend of Zelda: Ocarina of Time",
         "url": "N64Wasm-master/dist/index.html",
+        "image": "thumbnails/ocarinaoftime.jpg",
         tags:['adventure','puzzle','action','platformer','difficult','strategy','favorite','console']
     },
     "TheLionKing": {
         "name": "The Lion King",
         "url": "games/emu/lionking.html",
+        "image": "thumbnails/lionking.jpg",
         tags:['adventure','puzzle','action','platformer','difficult','strategy','console']
     },
     "Thewaitress": {
         "name": "The Waitress",
         "url": "games/html/thewaitress.html",
+        "image": "thumbnails/ocarinaoftime.webp",
         tags:['simulation','strategy']
     },
     "ThisistheOnlyLevel": {
         "name": "This is the Only Level",
         "url": "games/html/only.html",
+        "image": "thumbnails/onylevel.webp",
         tags:['adventure','puzzle','platformer']
     },
     "TomandJerry": {
         "name": "Tom and Jerry",
         "url": "games/emu/tomandjerry.html",
+        "image": "thumbnails/tomandjerry.webp",
         tags:['adventure','action','platformer','strategy','console']
     },
     "ToyStory": {
         "name": "Toy Story",
         "url": "games/emu/toystory.html",
+        "image": "thumbnails/toystory.jpg",
         tags:['adventure','puzzle','platformer','strategy','console']
     },
     "TurkeyFlap": {
@@ -1108,11 +1119,13 @@ const gamersgaming = {
     "TurtleTrigger": {
         "name": "Turtle Trigger",
         "url": "games/html/turtle.html",
+        "image": "thumbnails/turtletrigger.webp",
         tags:['shooter','strategy']
     },
     "UltimateMortalKombat3": {
         "name": "Ultimate Mortal Kombat 3",
         "url": "games/emu/umk3.html",
+        "image": "thumbnails/mortalcombat3.png",
         tags:['action','strategy','console']
     },
     "Vex3": {
@@ -1136,11 +1149,13 @@ const gamersgaming = {
     "WorldsHardestGame": {
         "name": "Worlds Hardest Game",
         "url": "games/html/hardestgame.html",
+        "image": "thumbnails/worldshardestgame.jpg",
         tags:['strategy']
     },
     "WorldsHardestGame2": {
         "name": "Worlds Hardest Game 2",
         "url": "games/html/hardestgame2.html",
+        "image": "thumbnails/worldshardestgame2.png",
         tags:['strategy']
     },
     "Zombies": {
@@ -1151,11 +1166,13 @@ const gamersgaming = {
     "HueJumper": {
         "name": "Hue Jumper",
         "url": "carindex.html",
+        "image": "thumbnails/huejumper.png",
         tags:['simulation','racing']
     },
     "Animatorvsanimation": {
         "name": "Animator vs Animation",
         "url": "games/html/animatorvsanimation.html",
+        "image": "thumbnails/animatorvsanimation.jpg",
         tags:['adventure','simulation']
     },
     "Animatorvsanimation2": {
