@@ -43,8 +43,11 @@ body {
   align-items: center;
   padding: 0 1.25rem;
   background-color: var(--surface);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--border);
   z-index: 100;
+  box-shadow: 0px 4px 4px #000000,
+  inset 0px 4px 4px var(--surface-hover);
+
 }
 
 .logo-area {
@@ -68,9 +71,11 @@ body {
   max-width: 420px;
   padding: 0.55rem 0.9rem;
   border-radius: 10px;
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   background-color: var(--bg);
   color: var(--text);
+  box-shadow: inset 0px -2px 4px var(--surface-hover),
+  inset 0px 4px 4px black;
 }
 
 .topbar-center input::placeholder {
@@ -114,6 +119,8 @@ body {
   border-right: 2px solid var(--border);
   padding: 1rem;
   width: 200px;
+  box-shadow: 4px 0px 4px #000000;
+
 }
 
 .game-categories {
@@ -123,8 +130,9 @@ body {
 }
 
 .game-categories button {
+  margin-bottom: 0.5rem;
   background: transparent;
-  border: none;
+  border: 2px solid var(--border);
   color: var(--muted);
   text-align: left;
   padding: 0.6rem 0.8rem;
@@ -132,17 +140,20 @@ body {
   border-radius: 10px;
   font-weight: 900;
   cursor: pointer;
+  box-shadow: inset 0 -10px 12px -6px rgba(0, 0, 0, 0.614),
+inset 0px 5px 6px rgba(255, 255, 255, 0.13), 0px 4px 4px #000000;
 }
 
 .game-categories button:hover {
   background: rgba(255,255,255,0.06);
-  transform: translateX(4px);
+  transform:  translateX(-8px);
 }
 
 .game-categories button.active {
   background: var(--bg);
-    border: 0px solid var(--border);
   color: var(--accent);
+    box-shadow: inset 0px 5px 6px rgba(0, 0, 0, 0.541);
+    transform:  translateX(8px);
 }
 
 /* MAIN CONTENT */
@@ -158,13 +169,16 @@ body {
   height: var(--card-height);
   border-radius: var(--radius);
   overflow: hidden;
+  border: 2px solid var(--border);
   position: relative;
   display: flex;
   align-items: flex-end; /* text at bottom */
   color: var(--text);
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
   background-color: var(--surface); /* fallback if image fails */
   cursor: pointer;
   transition: transform 0.15s ease;
+  box-shadow: 0px 4px 4px #000000;
 }
 
 .card-bg {
@@ -174,7 +188,8 @@ body {
   background-position: center;
   z-index: 0;
   transition: transform 0.3s ease;
-box-shadow: inset 0 -40px 12px -6px rgba(0, 0, 0, 0.614);
+box-shadow: inset 0 -40px 12px -6px rgba(0, 0, 0, 0.614),
+inset 0px 5px 6px rgba(255, 255, 255, 0.13);
 }
 
 .card-overlay {
@@ -207,11 +222,11 @@ box-shadow: inset 0 -40px 12px -6px rgba(0, 0, 0, 0.614);
 
 
 .card:hover {
-  transform: translateY(-4px) rotate(-0.4deg);
+  transform: translateY(-8px) rotate(-1deg);
 }
 
 .card:nth-child(3n):hover {
-  transform: translateY(-4px) rotate(0.6deg);
+  transform: translateY(-8px) rotate(2deg);
 }
 
 /* GRID */
