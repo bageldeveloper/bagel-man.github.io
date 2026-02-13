@@ -1426,16 +1426,19 @@ const gamersgaming = {
     "AliceIsDead": {
         "name": "Alice Is Dead",
         "url": "games/html/aliceisdead.html",
+        "image": "thumbnails/aliceisdead.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "AliceIsDead2": {
         "name": "Alice Is Dead 2",
         "url": "games/html/aliceisdead2.html",
+        "image": "thumbnails/aliceisdead2.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "AliceIsDead3": {
         "name": "Alice Is Dead 3",
         "url": "games/html/aliceisdead3.html",
+        "image": "thumbnails/aliceisdead3.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "Alchemy": {
@@ -1446,216 +1449,259 @@ const gamersgaming = {
     "BigTruckAdventures2": {
         "name": "Big Truck Adventures 2",
         "url": "games/html/bigtruckadventures2.html",
+        "image": "thumbnails/bigtruckadventures2.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "BigTruckAdventures3": {
         "name": "Big Truck Adventures 3",
         "url": "games/html/bigtruckadventures3.html",
+        "image": "thumbnails/bigtruckadventures.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "Bowmaster": {
         "name": "Bowmaster",
         "url": "games/html/bowmaster.html",
+        "image": "thumbnails/bowmaster.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "BowmasterPrelude": {
         "name": "Bowmaster Prelude",
         "url": "games/html/bowmasterprelude.html",
+        "image": "thumbnails/bowmasterprelude.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "DesktopTD": {
         "name": "Desktop Tower Defense",
         "url": "games/html/desktoptowerdefense.html",
+        "image": "thumbnails/desktoptd.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "FreeRider": {
         "name": "Free Rider",
         "url": "games/html/freerider.html",
+        "image": "thumbnails/freerider.png",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "FreeRider2": {
         "name": "Free Rider 2",
         "url": "games/html/freerider2.html",
+        "image": "thumbnails/freerider2.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
-    "FreeRun": {
-        "name": "Free Run",
+    "FreeRunning": {
+        "name": "Free Running",
         "url": "games/html/freerun.html",
+        "image": "thumbnails/freerunning.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "GoGoPlant": {
         "name": "Go Go Plant",
         "url": "games/html/gogoplant.html",
+        "image": "thumbnails/gogoplant.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "GoGoPlant2": {
         "name": "Go Go Plant 2",
         "url": "games/html/gogoplant2.html",
+        "image": "thumbnails/gogoplant2.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "GreyhoundTycoon": {
         "name": "Greyhound Tycoon",
         "url": "games/html/greyhoundtycoon.html",
+        "image": "thumbnails/greyhoundtycoon.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "Grow Cube": {
         "name": "Grow Cube",
         "url": "games/html/growcube.html",
+        "image": "thumbnails/growcube.png",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "Grow Island": {
         "name": "Grow Island",
         "url": "games/html/growisland.html",
+        "image": "thumbnails/growisland.png",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "Grow Valley": {
         "name": "Grow Valley",
         "url": "games/html/growvalley.html",
+        "image": "thumbnails/growisland.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "MiniPutt2": {
         "name": "Mini Putt 2",
         "url": "games/html/miniputt2.html",
+        "image": "thumbnails/miniputt2.jpg",
         tags:['simulation','sports', 'strategy']
     },
     "MiniPutt3": {
         "name": "Mini Putt 3",
         "url": "games/html/miniputt3.html",
+        "image": "thumbnails/miniputt3.png",
         tags:['simulation','sports', 'strategy']
     },
     "PandemicExtinction": {
         "name": "Pandemic Extinction of Man",
         "url": "games/html/pandemicextinction.html",
+        "image": "thumbnails/pandemic.png",
         tags:['simulation','strategy']
     },
     "PapaLouie": {
         "name": "Papa Louie",
         "url": "games/html/papalouie.html",
+        "image": "thumbnails/papalouie.webp",
         tags:['adventure','puzzle','papa','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "PortalEnergetic": {
         "name": "Portal the Energetic Chain",
         "url": "games/html/portaltheenergeticchain.html",
+        "image": "thumbnails/portalenergetic.webp",
         tags:['simulation','platformer','puzzle','strategy']
     },
     "Ray": {
         "name": "Ray",
         "url": "games/html/ray.html",
+        "image": "thumbnails/ray.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "Ray2": {
         "name": "Ray 2",
         "url": "games/html/ray2.html",
+        "image": "thumbnails/ray2.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "Ray3": {
         "name": "Ray 3",
         "url": "games/html/ray3.html",
+        "image": "thumbnails/ray3.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "RedCar": {
         "name": "Red Car",
         "url": "games/html/redcar.html",
+        "image": "thumbnails/redcar.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "RedCar2": {
         "name": "Red Car 2",
         "url": "games/html/redcar2.html",
+        "image": "thumbnails/redcar2.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "ReturnMan2": {
         "name": "Return Man 2",
         "url": "games/html/returnman2.html",
+        "image": "thumbnails/returnman2.avif",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "ReturnMan2Mud": {
         "name": "Return Man 2 - Mud Bowl",
         "url": "games/html/returnman2mudbowl.html",
+        "image": "thumbnails/returnman2mud.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "ReturnMan2": {
         "name": "Return Man 2 - Zombies",
         "url": "games/html/returnman2zombies.html",
+        "image": "thumbnails/returnman2zombies.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "MassMayhem": {
         "name": "Mass Mayhem",
         "url": "games/html/massmayhem.html",
+        "image": "thumbnails/massmayhem.jpg",
         tags:['simulation','shooter','action']
     },
     "MassMayhem2": {
         "name": "Mass Mayhem 2",
         "url": "games/html/massmayhem2.html",
+        "image": "thumbnails/massmayhem2.webp",
         tags:['simulation','shooter','action']
     },
     "MassMayhem3": {
         "name": "Mass Mayhem 3",
         "url": "games/html/massmayhem3.html",
+        "image": "thumbnails/massmayhem3.jpg",
         tags:['simulation','shooter','action']
     },
     "MassMayhem4": {
         "name": "Mass Mayhem 4",
         "url": "games/html/massmayhem4.html",
+        "image": "thumbnails/massmayhem4.jpg",
         tags:['simulation','shooter','action']
     },
     "MassMayhemZombie": {
         "name": "Mass Mayhem Zombie Apocalypse",
         "url": "games/html/massmayhemzombie.html",
+        "image": "thumbnails/massmayhemzombie.jpg",
         tags:['simulation','shooter','action']
     },
     "MassMayhemZombieExp": {
         "name": "Mass Mayhem Zombie Apocalypse Expansion",
         "url": "games/html/massmayhemzombieexp.html",
+        "image": "thumbnails/massmayhemzombieepo.jpg",
         tags:['simulation','shooter','action']
     },
     "Hapland": {
         "name": "Hapland",
         "url": "games/html/hapland.html",
+        "image": "thumbnails/hapland.jpg",
         tags:['puzzle','difficult','strategy']
     },
     "Hapland2": {
         "name": "Hapland 2",
         "url": "games/html/hapland2.html",
+        "image": "thumbnails/hapland2.jpg",
         tags:['puzzle','strategy']
     },
     "Hapland3": {
         "name": "Hapland 3",
         "url": "games/html/hapland.html",
+        "image": "thumbnails/hapland3.jpg",
         tags:['puzzle','strategy']
     },
     "GumDropHop": {
         "name": "Gum Drop Hop",
         "url": "games/html/gumdrophop.html",
+        "image": "thumbnails/gumdrophop.webp",
         tags:['adventure','platformer']
     },
     "GumDropHop2": {
         "name": "Gum Drop Hop 2",
         "url": "games/html/gumdrophop2.html",
+        "image": "thumbnails/gumdrophop2.webp",
         tags:['adventure','platformer']
     },
     "GumDropHop3": {
         "name": "Gum Drop Hop 3",
         "url": "games/html/gumdrophop3.html",
+        "image": "thumbnails/gumdrophop3.jpg",
         tags:['adventure','platformer']
     },
     "GumDropHop4": {
         "name": "Gum Drop Hop 4",
         "url": "games/html/gumdrophop4.html",
+        "image": "thumbnails/gumdrophop4.jpg",
         tags:['adventure','platformer']
     },
     "Gta5Flash": {
         "name": "Gta V Flash",
         "url": "games/html/gta5.html",
+        "image": "thumbnails/gta5.jpg",
         tags:['adventure','shooter','action','console']
     },
     "ChaosFaction": {
         "name": "Chaos Faction",
         "url": "games/html/chaosfaction.html",
+        "image": "thumbnails/chaosfaction.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "ChaosFaction2": {
         "name": "Chaos Faction 2",
         "url": "games/html/chaosfaction2.html",
+        "image": "thumbnails/chaosfaction2.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "ChooseYourWeapon": {
