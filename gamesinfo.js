@@ -1178,136 +1178,163 @@ const gamersgaming = {
     "Animatorvsanimation2": {
         "name": "Animator vs Animation 2",
         "url": "games/html/animatorvsanimation2.html",
+        "image": "thumbnails/animatorvsanimation2.jpg",
         tags:['adventure','simulation']
     },
     "FactoryBalls": {
         "name": "Factory Balls",
         "url": "games/html/factoryballs.html",
+        "image": "thumbnails/factoryballs.png",
         tags:['puzzle','simulation','strategy']
     },
     "FactoryBalls2": {
         "name": "Factory Balls 2",
         "url": "games/html/factoryballs2.html",
+        "image": "thumbnails/factoryballs2.png",
         tags:['puzzle','simulation','strategy']
     },
     "FactoryBalls3": {
         "name": "Factory Balls 3",
         "url": "games/html/factoryballs3.html",
+        "image": "thumbnails/factoryballs3.png",
         tags:['puzzle','simulation','strategy']
     },
     "FactoryBallsChristmas": {
         "name": "Factory Balls Christmas",
         "url": "games/html/factoryballschristmas.html",
+        "image": "thumbnails/factoryballschristmas.png",
         tags:['puzzle','simulation','strategy']
     },
     "WheresMyWater": {
         "name": "Where's my Water!",
         "url": "games/Wheres-My-Water/index.html",
+        "image": "thumbnails/wheresmywater.png",
         tags:['puzzle','simulation','racing','action','difficult','strategy','console']
     },
     "AngryBirds": {
         "name": "Angry Birds",
         "url": "games/html/angrybirds.html",
+        "image": "thumbnails/angrybirds.jpg",
         tags:['adventure','puzzle','shooter','action','difficult','strategy','console']
     },
     "BurritoBison": {
         "name": "Burrito Bison",
         "url": "games/html/burritobison.html",
+        "image": "thumbnails/burritobison.png",
         tags:['puzzle','action','platformer']
     },
     "Droidassault": {
         "name": "Droid Assault",
         "url": "games/html/droidassault.html",
+        "image": "thumbnails/droidassault.jpg",
         tags:['adventure','shooter','action']
     },
     "Exitpath": {
         "name": "Exit Path",
         "url": "games/html/exitpath.html",
+        "image": "thumbnails/exitpath.jpg",
         tags:['puzzle','racing','action','platformer']
     },
     "Graviteewars": {
         "name": "Gravitee Wars",
         "url": "games/html/graviteewars.html",
+        "image": "thumbnails/graviteewars.jpg",
         tags:['simulation','strategy']
     },
     "HackervsHacker": {
         "name": "Hacker vs Hacker",
         "url": "games/html/hackervshacker.html",
+        "image": "thumbnails/hackervshacker.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "KamikazePigs": {
         "name": "Kamikaze Pigs",
         "url": "games/html/kamikazepigs.html",
+        "image": "thumbnails/kamikazepigs.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "StickBrawl": {
         "name": "Stick Brawl",
         "url": "games/html/stickbrawl.html",
+        "image": "thumbnails/stickbrawl.webp",
         tags:['shooter','action','platformer']
     },
     "Superfighters": {
         "name": "Superfighters",
         "url": "games/html/superfighters.html",
+        "image": "thumbnails/superfighters.jpg",
         tags:['shooter','action','platformer']
     },
     "TerritoryWar": {
         "name": "Territory War",
         "url": "games/html/territorywar.html",
+        "image": "thumbnails/terroritywar.jpg",
         tags:['simulation','action']
     },
     "Vex2": {
         "name": "Vex 2",
         "url": "games/html/vex2.html",
+        "image": "thumbnails/vex2.jpg",
         tags:['action','puzzle','platformer','adventure']
     },
     "SpiderMan": {
         "name": "Spider Man",
         "url": "games/html/spiderman.html",
+        "image": "thumbnails/spiderman.png",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "Rubiks Cube": {
         "name": "Rubiks Cube",
         "url": "games/html/rubikscube.html",
+        "image": "thumbnails/rubikscube.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "Tron": {
         "name": "Tron",
         "url": "games/html/tron.html",
+        "image": "thumbnails/tron.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "UnfairMario": {
         "name": "Unfair Mario",
         "url": "games/html/unfairmario.html",
+        "image": "thumbnails/unfairmario.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "SwordsandSandalsGladiator": {
         "name": "Swords and Sandals Gladiator",
         "url": "games/html/sasgladiator.html",
+        "image": "thumbnails/swordsandsandalsg.jpg",
         tags:['adventure','puzzle','strategy','action']
     },
     "SuperSmashFlash": {
         "name": "Super Smash Flash",
         "url": "games/html/supersmashflash.html",
+        "image": "thumbnails/supersmashflash.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "SuperSmashFlash2": {
         "name": "Super Smash Flash 2",
         "url": "games/html/supersmashflash2.html",
+        "image": "thumbnails/supersmashflash2.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "AchievementUnlocked": {
         "name": "Achievement Unlocked",
         "url": "games/html/achievementunlocked.html",
+        "image": "thumbnails/achievementunlocked.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "AirportTycoon": {
         "name": "Airport Tycoon",
         "url": "games/html/airporttycoon.html",
+        "image": "thumbnails/airporttycoon.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "MarioKartFlash": {
         "name": "Mario Kart Flash",
         "url": "games/html/mariokartflash.html",
+        "image": "thumbnails/mariokartflash.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "Motherload": {
