@@ -109,7 +109,7 @@ const gamersgaming = {
     "Bagelwithlegs": {
         "name": "Bagel With Legs",
         "url": "games/html/bagelwithlegs.html",
-        "image": "thumbnails/bagelwithlegs.png",
+        "image": "thumbnails/bagelwithlegs.avif",
         tags:['action','adventure','platformer','strategy']
     },
     "BanjoKazooie": {
@@ -227,7 +227,7 @@ const gamersgaming = {
     "CrossingThePit": {
         "name": "Crossing the Pit",
         "url": "games/html/henrypit.html",
-        "image": "thumbnails/crossingthepit.webp",
+        "image": "thumbnails/CrossingThePit.webp",
         tags:['simulation','henrystickmin']
     },
     "Crushthecastle": {
@@ -281,7 +281,7 @@ const gamersgaming = {
     "DriftHunters": {
         "name": "Drift Hunters",
         "url": "games/html/drift-hunters/index.html",
-        "image": "thumbnails/drifthunters.jpg",
+        "image": "thumbnails/drifthunters.png",
         tags:['action','adventure','racing']
     },
     "DuckHunt": {
@@ -359,7 +359,7 @@ const gamersgaming = {
     "Escapetheroom": {
         "name": "Escape the Room",
         "url": "games/html/escapetheroom.html",
-        "image": "thumbnails/escapetheroom.jpg",
+        "image": "thumbnails/escapetheroom.webp",
         tags:['simulation','puzzle','strategy']
     },
     "EscapingThePrison": {
@@ -395,7 +395,7 @@ const gamersgaming = {
     "FireboyAndWatergirl4": {
         "name": "Fireboy and Watergirl 4 - The Crystal Temple",
         "url": "games/html/fireandwater4.html",
-        "image": "thumbnails/fireboyandwatergirl.png",
+        "image": "thumbnails/fireboyandwatergirl4.png",
         tags:['adventure','puzzle','action','platformer','strategy',]
     },
     "FleeingTheComplex": {
@@ -455,7 +455,7 @@ const gamersgaming = {
     "Hobo4": {
         "name": "Hobo 4 - Total War",
         "url": "games/html/hobo4.html",
-        "image": "thumbnails/hobo4.jpg",
+        "image": "thumbnails/hobo4.png",
         tags:['action','strategy']
     },
     "Hobo5": {
@@ -601,7 +601,7 @@ const gamersgaming = {
     "MiamiShark": {
         "name": "Miami Shark",
         "url": "games/html/miamishark.html",
-        "image": "thumbnails/miamishark.jpg",
+        "image": "thumbnails/miamishark.png",
         tags:['adventure','strategy']
     },
     "MikeTysonsPunchOut!": {
@@ -611,13 +611,13 @@ const gamersgaming = {
         tags:['action','sports','difficult','strategy','console']
     },
     "Minecraft 1.5.2": {
-        "name": "Minecraft",
+        "name": "Minecraft 1.5",
         "url": "eaglercraft-main/eaglercraft-main/stable-download/web/index.html",
-        "image": "thumbnails/minecraft1.5.jpg",
+        "image": "thumbnails/minecraft15.jpg",
         tags:['adventure','simulation','shooter','action','platformer','strategy','favorite','console']
     },
     "Minecraft 1.8.8": {
-        "name": "Minecraft 1.8.8",
+        "name": "Minecraft 1.8",
         "url": "games/minecrap/index.html",
         "image": "thumbnails/minecraft1.8.jpg",
         tags:['adventure','simulation','shooter','action','platformer','strategy','favorite','console']
@@ -720,7 +720,7 @@ const gamersgaming = {
     "PapasHotdogeria": {
         "name": "Papa's Hotdogeria",
         "url": "games/html/papashotdogeria.html",
-        "image": "thumbnails/papashotdogeria.jpg",
+        "image": "thumbnails/papashotdoggeria.jpg",
         tags:['adventure','puzzle','strategy','papa']
     },
     "PapasPancakeria": {
@@ -732,7 +732,7 @@ const gamersgaming = {
     "PapasPastaria": {
         "name": "Papa's Pastaria",
         "url": "games/html/papaspasteria.html",
-        "image": "thumbnails/papaspasteria.jpg",
+        "image": "thumbnails/papaspastaria.jpg",
         tags:['adventure','puzzle','strategy','papa']
     },
     "PapasPizzeria": {
@@ -762,7 +762,7 @@ const gamersgaming = {
     "PapasWingeria": {
         "name": "Papa's Wingeria",
         "url": "games/html/papaswingeria.html",
-        "image": "thumbnails/papaswingeria.jpg",
+        "image": "thumbnails/papaswingeria.png",
         tags:['adventure','puzzle','strategy','papa']
     },
     "PlantsvsZombies": {
@@ -774,7 +774,7 @@ const gamersgaming = {
     "PlantsvsZombies2": {
         "name": "Plants vs Zombies 2",
         "url": "games/html/pvz2.html",
-        "image": "thumbnails/plantsvszombies2.avif",
+        "image": "thumbnails/plantsvszombies2.jpg",
         tags:['tower-defense','strategy']
     },
     "Pong": {
@@ -827,7 +827,7 @@ const gamersgaming = {
     "RedBall2": {
         "name": "Red Ball 2",
         "url": "games/html/redball2.html",
-        "image": "thumbnails/redball.png",
+        "image": "thumbnails/redball2.png",
         tags:['adventure','puzzle','platformer','strategy']
     },
     "RedBall4": {
@@ -911,7 +911,7 @@ const gamersgaming = {
     "Run2": {
         "name": "Run 2",
         "url": "games/html/run2.html",
-        "image": "thumbnails/run 2.jpg",
+        "image": "thumbnails/run 2.png",
         tags:['action','adventure','platformer','strategy']
     },
     "Run3": {
@@ -1018,7 +1018,7 @@ const gamersgaming = {
     "SuperMarioKart": {
         "name": "Super Mario Kart",
         "url": "games/emu/smk.html",
-        "image": "thumbnails/supermariokart.png",
+        "image": "thumbnails/supermariokart.jpg",
         tags:['action','sports','racing','strategy','console']
     },
     "SuperMarioWorld": {
