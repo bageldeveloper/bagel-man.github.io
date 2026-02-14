@@ -719,7 +719,7 @@ const gamersgaming = {
     "PapasHotdogeria": {
         "name": "Papa's Hotdogeria",
         "url": "games/html/papashotdogeria.html",
-        "image": "thumbnails/papashotdoggeria.jpg",
+        "image": "thumbnails/papahotdoggeria.jpg",
         tags:['adventure','puzzle','strategy','papa']
     },
     "PapasPancakeria": {
@@ -1090,7 +1090,7 @@ const gamersgaming = {
     "Thewaitress": {
         "name": "The Waitress",
         "url": "games/html/thewaitress.html",
-        "image": "thumbnails/ocarinaoftime.webp",
+        "image": "thumbnails/waitress.webp",
         tags:['simulation','strategy']
     },
     "ThisistheOnlyLevel": {
@@ -1198,7 +1198,7 @@ const gamersgaming = {
     "FactoryBalls3": {
         "name": "Factory Balls 3",
         "url": "games/html/factoryballs3.html",
-        "image": "thumbnails/factoryballs3.png",
+        "image": "thumbnails/factoryballs3.jpg",
         tags:['puzzle','simulation','strategy']
     },
     "FactoryBallsChristmas": {
@@ -1455,7 +1455,7 @@ const gamersgaming = {
     "BigTruckAdventures3": {
         "name": "Big Truck Adventures 3",
         "url": "games/html/bigtruckadventures3.html",
-        "image": "thumbnails/bigtruckadventures.webp",
+        "image": "thumbnails/bigtruckadventures3.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "Bowmaster": {
@@ -1503,7 +1503,7 @@ const gamersgaming = {
     "GoGoPlant2": {
         "name": "Go Go Plant 2",
         "url": "games/html/gogoplant2.html",
-        "image": "thumbnails/gogoplant2.jpg",
+        "image": "thumbnails/gogoplant2.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "GreyhoundTycoon": {
@@ -1527,7 +1527,7 @@ const gamersgaming = {
     "Grow Valley": {
         "name": "Grow Valley",
         "url": "games/html/growvalley.html",
-        "image": "thumbnails/growisland.jpg",
+        "image": "thumbnails/growvalley.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "MiniPutt2": {
@@ -1713,7 +1713,7 @@ const gamersgaming = {
     "ChooseYourWeapon2": {
         "name": "Choose Your Weapon 2",
         "url": "games/html/chooseyourweapon2.html",
-        "image": "thumbnails/chooseyourweapon2.jpg",
+        "image": "thumbnails/chooseyourweapon.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "ChooseYourWeapon3": {
@@ -1737,7 +1737,7 @@ const gamersgaming = {
     "ClearVision3": {
         "name": "Clear Vision 3",
         "url": "games/html/clearvision3.html",
-        "image": "thumbnails/clearvision.png",
+        "image": "thumbnails/clearvision3.png",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "ClearVision4": {
