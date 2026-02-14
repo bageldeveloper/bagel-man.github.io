@@ -1707,185 +1707,223 @@ const gamersgaming = {
     "ChooseYourWeapon": {
         "name": "Choose Your Weapon",
         "url": "games/html/chooseyourweapon.html",
+        "image": "thumbnails/chooseyourweapon.png",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "ChooseYourWeapon2": {
         "name": "Choose Your Weapon 2",
         "url": "games/html/chooseyourweapon2.html",
+        "image": "thumbnails/chooseyourweapon2.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "ChooseYourWeapon3": {
         "name": "Choose Your Weapon 3",
         "url": "games/html/chooseyourweapon3.html",
+        "image": "thumbnails/chooseyourweapon3.png",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "ClearVision": {
         "name": "Clear Vision",
         "url": "games/html/clearvision.html",
+        "image": "thumbnails/clearvision.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "ClearVision2": {
         "name": "Clear Vision 2",
         "url": "games/html/clearvision2.html",
+        "image": "thumbnails/clearvision2.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "ClearVision3": {
         "name": "Clear Vision 3",
         "url": "games/html/clearvision3.html",
+        "image": "thumbnails/clearvision.png",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "ClearVision4": {
         "name": "Clear Vision 4",
         "url": "games/html/clearvision4.html",
+        "image": "thumbnails/clearvision4.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "EndlessWar": {
         "name": "Endless War",
         "url": "games/html/endlesswar.html",
+        "image": "thumbnails/endlesswar.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "EndlessWar2": {
         "name": "Endless War 2",
         "url": "games/html/endlesswar2.html",
+        "image": "thumbnails/endlesswar2.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "EndlessWar3": {
         "name": "Endless War 3",
         "url": "games/html/endlesswar3.html",
+        "image": "thumbnails/endlesswar3.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "EndlessWar4": {
         "name": "Endless War 4",
         "url": "games/html/endlesswar4.html",
+        "image": "thumbnails/endlesswar4.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "EarthTaken": {
         "name": "Earth Taken",
         "url": "games/html/earthtaken.html",
+        "image": "thumbnails/earthtaken.png",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "EarthTaken2": {
         "name": "Earth Taken 2",
         "url": "games/html/earthtaken2.html",
+        "image": "thumbnails/earthtaken2.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "Wheely": {
         "name": "Wheely",
         "url": "games/html/wheely.html",
+        "image": "thumbnails/wheely.jpg",
         tags:['puzzle']
     },
     "Wheely2": {
         "name": "Wheely 2",
         "url": "games/html/wheely2.html",
+        "image": "thumbnails/wheely2.webp",
         tags:['puzzle']
     },
     "Wheely3": {
         "name": "Wheely 3",
         "url": "games/html/wheely3.html",
+        "image": "thumbnails/wheely3.jpg",
         tags:['puzzle']
     },
     "Wheely4": {
         "name": "Wheely 4",
         "url": "games/html/wheely4.html",
+        "image": "thumbnails/wheely4.jpg",
         tags:['puzzle']
     },
     "Wheely5": {
         "name": "Wheely 5",
         "url": "games/html/wheely5.html",
+        "image": "thumbnails/wheely5.jpg",
         tags:['puzzle']
     },
     "Wheely6": {
         "name": "Wheely 6",
         "url": "games/html/wheely6.html",
+        "image": "thumbnails/wheely6.webp",
         tags:['puzzle']
     },
     "Wheely7": {
         "name": "Wheely 7",
         "url": "games/html/wheely7.html",
+        "image": "thumbnails/wheely7.jpg",
         tags:['puzzle']
     },
     "Wheely8": {
         "name": "Wheely 8",
         "url": "games/html/wheely8.html",
+        "image": "thumbnails/wheely8.jpg",
         tags:['puzzle']
     },
     "EarthTaken3": {
         "name": "Earth Taken 3",
         "url": "games/html/earthtaken3.html",
+        "image": "thumbnails/earthtaken3.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "DrawSomething": {
         "name": "Draw Something",
         "url": "games/html/drawsomething.html",
+        "image": "thumbnails/drawsomething.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "DragRacer": {
         "name": "Drag Racer",
         "url": "games/html/dragracer.html",
+        "image": "thumbnails/dragracer.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "DragRacer2": {
         "name": "Drag Racer 2",
         "url": "games/html/dragracer2.html",
+        "image": "thumbnails/dragracer2.gif",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "DragRacer3": {
         "name": "Drag Racer 3",
         "url": "games/html/dragracer3.html",
+        "image": "thumbnails/dragracer3.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "DouchebagWorkout": {
         "name": "Douchebag Workout",
         "url": "games/html/douchebagworkout.html",
+        "image": "thumbnails/dworkout.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "DouchebagWorkout2": {
         "name": "Douchebag Workout 2",
         "url": "games/html/douchebagworkout2.html",
+        "image": "thumbnails/dworkout2.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "DouchebagLife": {
         "name": "Douchebag Life",
         "url": "games/html/douchebaglife.html",
+        "image": "thumbnails/dlife.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "DouchebagChick": {
         "name": "Douchebag Chick",
         "url": "games/html/douchebagchick.html",
+        "image": "thumbnails/dchick.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "DontWhackYourTeacher": {
         "name": "Dont Whack Your Teacher",
         "url": "games/html/dontwhackyourteacher.html",
+        "image": "thumbnails/dontwhackyourteacher.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "DarkCut": {
         "name": "Dark Cut",
         "url": "games/html/darkcut.html",
+        "image": "thumbnails/darkcutr.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "DarkCut2": {
         "name": "Dark Cut 2",
         "url": "games/html/darkcut2.html",
+        "image": "thumbnails/darkcut2.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "DarkCut3": {
         "name": "Dark Cut 3",
         "url": "games/html/darkcut3.html",
+        "image": "thumbnails/darkcut3.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "Crossword": {
         "name": "Crossword",
         "url": "games/html/crossword.html",
+        "image": "thumbnails/crossword.png",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "CrosswordPuzzle": {
         "name": "Crossword Puzzle",
         "url": "games/html/crosswordpuzzle.html",
+        "image": "thumbnails/crossword.png",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     /*
     Todo: Add Tycoon, Add more swf games, get those console games + PS1/2 on here + Gamecube
+
+    If anybody adds more games, you better add a thumbnail >:(
     */
 }
 
