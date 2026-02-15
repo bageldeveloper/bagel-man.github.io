@@ -359,7 +359,7 @@ const gamersgaming = {
     "Escapetheroom": {
         "name": "Escape the Room",
         "url": "games/html/escapetheroom.html",
-        "image": "thumbnails/escapetheroom.webp",
+        "image": "thumbnails/escaperoom.webp",
         tags:['simulation','puzzle','strategy']
     },
     "EscapingThePrison": {
