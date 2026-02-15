@@ -82,21 +82,21 @@ function renderTimeBasedSections() {
   const dailyPick = getTimeBasedGames('daily', 1);
   dailyPick.forEach(game => dailyGames.appendChild(createTimeBasedCard(game)));
 
-  // Weekly picks - 3 games
+  // Weekly pick - 1 game
   const weeklySection = document.getElementById('weeklySection');
   const weeklyGames = weeklySection.querySelector('.time-games');
   weeklyGames.innerHTML = '';
-  const weeklyPicks = getTimeBasedGames('weekly', 3);
-  weeklyPicks.forEach(game => weeklyGames.appendChild(createTimeBasedCard(game)));
+  const weeklyPick = getTimeBasedGames('weekly', 1);
+  weeklyPick.forEach(game => weeklyGames.appendChild(createTimeBasedCard(game)));
 
-  // Monthly picks - 5 games
+  // Monthly pick - 1 game
   const monthlySection = document.getElementById('monthlySection');
   const monthlyGames = monthlySection.querySelector('.time-games');
   monthlyGames.innerHTML = '';
-  const monthlyPicks = getTimeBasedGames('monthly', 5);
-  monthlyPicks.forEach(game => monthlyGames.appendChild(createTimeBasedCard(game)));
+  const monthlyPick = getTimeBasedGames('monthly', 1);
+  monthlyPick.forEach(game => monthlyGames.appendChild(createTimeBasedCard(game)));
 
-  // Yearly favorites - 8 games, only from favorites
+  // Yearly favorite - 1 game, only from favorites
   const yearlySection = document.getElementById('yearlySection');
   const yearlyGames = yearlySection.querySelector('.time-games');
   yearlyGames.innerHTML = '';
@@ -105,35 +105,9 @@ function renderTimeBasedSections() {
   const favoriteGames = allGames.filter(game => game.tags.includes('favorite'));
   
   // Only use favorite games for yearly selection
-  const yearlyPicks = getTimeBasedGames('yearly', Math.min(8, favoriteGames.length));
+  const yearlyPick = getTimeBasedGames('yearly', Math.min(1, favoriteGames.length));
   
-  // Ensure we have exactly 8 unique games by cycling through favorites if needed
-  const uniqueYearlyPicks = [];
-  const seen = new Set();
-  
-  // First, add all unique picks
-  for (const game of yearlyPicks) {
-    if (!seen.has(game.name) && uniqueYearlyPicks.length < 8) {
-      uniqueYearlyPicks.push(game);
-      seen.add(game.name);
-    }
-  }
-  
-  // If we need more games to reach 8, cycle through favorites again
-  while (uniqueYearlyPicks.length < 8 && favoriteGames.length > 0) {
-    for (const game of favoriteGames) {
-      if (!seen.has(game.name) && uniqueYearlyPicks.length < 8) {
-        uniqueYearlyPicks.push(game);
-        seen.add(game.name);
-      }
-    }
-    // If we've gone through all favorites and still don't have 8, break
-    if (uniqueYearlyPicks.length < 8 && seen.size >= favoriteGames.length) {
-      break;
-    }
-  }
-  
-  uniqueYearlyPicks.forEach(game => yearlyGames.appendChild(createTimeBasedCard(game)));
+  yearlyPick.forEach(game => yearlyGames.appendChild(createTimeBasedCard(game)));
 }
 
 // --- CONTAINERS ---

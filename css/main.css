@@ -257,7 +257,9 @@ inset 0px 5px 6px rgba(255, 255, 255, 0.13);
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
+  max-width: var(--card-width);
+  margin: 0 auto;
 }
 
 .time-card {
