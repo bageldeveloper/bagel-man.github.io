@@ -232,6 +232,60 @@ inset 0px 5px 6px rgba(255, 255, 255, 0.13);
   transform: translateY(-8px) rotate(2deg);
 }
 
+/* TIME-BASED SECTIONS */
+#timeBasedSections {
+  margin-bottom: 2rem;
+}
+
+.time-section {
+  margin-bottom: 2rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border: 2px solid var(--border);
+  box-shadow: 0px 4px 4px #000000;
+}
+
+.time-section h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.8rem;
+  color: var(--accent);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.time-games {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.time-card {
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.time-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+/* Responsive adjustments for time-based sections */
+@media (max-width: 768px) {
+  .time-games {
+    justify-content: center;
+  }
+  
+  .time-section {
+    padding: 1rem;
+  }
+  
+  .time-section h2 {
+    font-size: 1.4rem;
+  }
+}
+
 /* GRID */
 .card-grid {
   display: grid;
