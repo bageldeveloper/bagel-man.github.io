@@ -133,7 +133,7 @@ const gamersgaming = {
         "name": "Bloons Tower Defense",
         "url": "games/html/bloons.html",
         "image": "thumbnails/bloonstd.jpg",
-        tags:['tower-defense','strategy','favorite']
+        tags:['tower-defense','strategy']
     },
     "BloonsTowerDefense2": {
         "name": "Bloons Tower Defense 2",
@@ -151,7 +151,7 @@ const gamersgaming = {
         "name": "Bloons Tower Defense 4",
         "url": "games/html/bloonstd4.html",
         "image": "thumbnails/bloonstd4.jpg",
-        tags:['tower-defense','strategy']
+        tags:['tower-defense','strategy','favorite']
     },
     "Bloxorz": {
         "name": "Bloxorz",
@@ -258,7 +258,7 @@ const gamersgaming = {
         "name": "Dig To China",
         "url": "games/html/digtochina.html",
         "image": "thumbnails/digtochina.webp",
-        tags:['adventure','strategy','favorite']
+        tags:['adventure','strategy']
     },
     "DonkeyKongCountry": {
         "name": "Donkey Kong Country",
@@ -270,7 +270,7 @@ const gamersgaming = {
         "name": "Doom 1/2",
         "url": "doom/public/index.html",
         "image": "thumbnails/doom.jpg",
-        tags:['adventure','puzzle','shooter','action','difficult','strategy','favorite','console']
+        tags:['adventure','puzzle','shooter','action','difficult','strategy', 'console']
     },
     "DoubleDragon": {
         "name": "Double Dragon",
@@ -378,7 +378,7 @@ const gamersgaming = {
         "name": "Fireboy and Watergirl 1 - The Forest Temple",
         "url": "games/html/fireandwater1.html",
         "image": "thumbnails/fireboyandwatergirl.avif",
-        tags:['adventure','puzzle','action','platformer','strategy',]
+        tags:['adventure','puzzle','action','platformer','strategy','favorite']
     },
     "FireboyAndWatergirl2": {
         "name": "Fireboy and Watergirl 2 - The Light Temple",
@@ -570,7 +570,7 @@ const gamersgaming = {
         "name": "Mario Kart 64",
         "url": "N64Wasm-masterMK64/dist/index.html",
         "image": "thumbnails/mariokart64.jpg",
-        tags:['action','sports','racing','strategy','favorite','console']
+        tags:['action','sports','racing','strategy', 'console']
     },
     "MeatBoy": {
         "name": "Meat Boy",
@@ -582,7 +582,7 @@ const gamersgaming = {
         "name": "Mega Man 2",
         "url": "games/emu/megamantwo.html",
         "image": "thumbnails/megaman2.jpg",
-        tags:['adventure','shooter','action','platformer','strategy','console']
+        tags:['adventure','shooter','action','platformer','strategy','console','favorite']
     },
     "MegaManX": {
         "name": "Mega Man X",
@@ -618,13 +618,13 @@ const gamersgaming = {
         "name": "Minecraft 1.5",
         "url": "eaglercraft-main/eaglercraft-main/stable-download/web/index.html",
         "image": "thumbnails/minecraft15.jpg",
-        tags:['adventure','simulation','shooter','action','platformer','strategy','favorite','console']
+        tags:['adventure','simulation','shooter','action','platformer','strategy','console']
     },
     "Minecraft 1.8.8": {
         "name": "Minecraft 1.8",
         "url": "games/minecrap/index.html",
         "image": "thumbnails/minecraft1.8.jpg",
-        tags:['adventure','simulation','shooter','action','platformer','strategy','favorite','console']
+        tags:['adventure','simulation','shooter','action','platformer','strategy','console']
     },
     "Minecraft 1.12": {
         "name": "Minecraft 1.12",
@@ -786,7 +786,7 @@ const gamersgaming = {
         "name": "Portal 2D",
         "url": "games/html/portal2d.html",
         "image": "thumbnails/portal2D.png",
-        tags:['platformer','puzzle','favorite','strategy']
+        tags:['platformer','puzzle','strategy']
     },
     "PortalFlashVersion": {
         "name": "Portal Flash Version",
@@ -954,7 +954,7 @@ const gamersgaming = {
         "name": "Stealing The Diamond",
         "url": "games/html/henrystealing.html",
         "image": "thumbnails/stealthediamond.jpg",
-        tags:['action','puzzle','adventure','simulation','strategy','henrystickmin']
+        tags:['action','puzzle','adventure','simulation','strategy','henrystickmin','favorite']
     },
     "StickRPGbeta": {
         "name": "Stick RPG Beta",
@@ -1073,13 +1073,13 @@ const gamersgaming = {
         "name": "The Legend of Zelda: Link to the Past",
         "url": "games/emu/linktothepast.html",
         "image": "thumbnails/linktothepast.jpg",
-        tags:['adventure','puzzle','action','console']
+        tags:['adventure','puzzle','action','console','favorite']
     },
     "TheLegendofZeldaOcarinaofTime": {
         "name": "The Legend of Zelda: Ocarina of Time",
         "url": "N64Wasm-master/dist/index.html",
         "image": "thumbnails/ocarinaoftime.jpg",
-        tags:['adventure','puzzle','action','platformer','difficult','strategy','favorite','console']
+        tags:['adventure','puzzle','action','platformer','difficult','strategy','console']
     },
     "TheLionKing": {
         "name": "The Lion King",
