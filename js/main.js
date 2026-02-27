@@ -74,6 +74,82 @@ function createTimeBasedCard(game) {
   return card;
 }
 
+// --- MANUAL SELECTION STATE ---
+let monthlyFavorites = [];
+let currentMonthlyIndex = 0;
+let yearlyFavorites = [];
+let currentYearlyIndex = 0;
+
+function initializeManualSelections() {
+  const allGames = Object.values(gamersgaming);
+  monthlyFavorites = allGames.filter(game => game.tags.includes('favorite'));
+  yearlyFavorites = allGames.filter(game => game.tags.includes('favorite'));
+  
+  if (monthlyFavorites.length > 0) {
+    const stored = localStorage.getItem('monthlyGameIndex');
+    currentMonthlyIndex = stored ? parseInt(stored) : 0;
+    if (currentMonthlyIndex >= monthlyFavorites.length) currentMonthlyIndex = 0;
+  }
+  
+  if (yearlyFavorites.length > 0) {
+    const stored = localStorage.getItem('yearlyGameIndex');
+    currentYearlyIndex = stored ? parseInt(stored) : 0;
+    if (currentYearlyIndex >= yearlyFavorites.length) currentYearlyIndex = 0;
+  }
+}
+
+function updateMonthlyIndex(delta) {
+  if (monthlyFavorites.length === 0) return;
+  currentMonthlyIndex = (currentMonthlyIndex + delta + monthlyFavorites.length) % monthlyFavorites.length;
+  localStorage.setItem('monthlyGameIndex', currentMonthlyIndex);
+  renderMonthlySection();
+}
+
+function updateYearlyIndex(delta) {
+  if (yearlyFavorites.length === 0) return;
+  currentYearlyIndex = (currentYearlyIndex + delta + yearlyFavorites.length) % yearlyFavorites.length;
+  localStorage.setItem('yearlyGameIndex', currentYearlyIndex);
+  renderYearlySection();
+}
+
+function renderMonthlySection() {
+  const monthlySection = document.getElementById('monthlySection');
+  const monthlyGames = monthlySection.querySelector('.time-games');
+  monthlyGames.innerHTML = '';
+  
+  if (monthlyFavorites.length > 0) {
+    const game = monthlyFavorites[currentMonthlyIndex];
+    monthlyGames.appendChild(createTimeBasedCard(game));
+  }
+  
+  const prevBtn = monthlySection.querySelector('.monthly-prev');
+  const nextBtn = monthlySection.querySelector('.monthly-next');
+  const counter = monthlySection.querySelector('.monthly-counter');
+  
+  if (prevBtn) prevBtn.style.visibility = monthlyFavorites.length > 1 ? 'visible' : 'hidden';
+  if (nextBtn) nextBtn.style.visibility = monthlyFavorites.length > 1 ? 'visible' : 'hidden';
+  if (counter) counter.textContent = `${currentMonthlyIndex + 1} / ${monthlyFavorites.length}`;
+}
+
+function renderYearlySection() {
+  const yearlySection = document.getElementById('yearlySection');
+  const yearlyGames = yearlySection.querySelector('.time-games');
+  yearlyGames.innerHTML = '';
+  
+  if (yearlyFavorites.length > 0) {
+    const game = yearlyFavorites[currentYearlyIndex];
+    yearlyGames.appendChild(createTimeBasedCard(game));
+  }
+  
+  const prevBtn = yearlySection.querySelector('.yearly-prev');
+  const nextBtn = yearlySection.querySelector('.yearly-next');
+  const counter = yearlySection.querySelector('.yearly-counter');
+  
+  if (prevBtn) prevBtn.style.visibility = yearlyFavorites.length > 1 ? 'visible' : 'hidden';
+  if (nextBtn) nextBtn.style.visibility = yearlyFavorites.length > 1 ? 'visible' : 'hidden';
+  if (counter) counter.textContent = `${currentYearlyIndex + 1} / ${yearlyFavorites.length}`;
+}
+
 function renderTimeBasedSections() {
   // Daily pick - 1 game
   const dailySection = document.getElementById('dailySection');
@@ -89,25 +165,9 @@ function renderTimeBasedSections() {
   const weeklyPick = getTimeBasedGames('weekly', 1);
   weeklyPick.forEach(game => weeklyGames.appendChild(createTimeBasedCard(game)));
 
-  // Monthly pick - 1 game
-  const monthlySection = document.getElementById('monthlySection');
-  const monthlyGames = monthlySection.querySelector('.time-games');
-  monthlyGames.innerHTML = '';
-  const monthlyPick = getTimeBasedGames('monthly', 1);
-  monthlyPick.forEach(game => monthlyGames.appendChild(createTimeBasedCard(game)));
-
-  // Yearly favorite - 1 game, only from favorites
-  const yearlySection = document.getElementById('yearlySection');
-  const yearlyGames = yearlySection.querySelector('.time-games');
-  yearlyGames.innerHTML = '';
-  
-  const allGames = Object.values(gamersgaming);
-  const favoriteGames = allGames.filter(game => game.tags.includes('favorite'));
-  
-  // Only use favorite games for yearly selection
-  const yearlyPick = getTimeBasedGames('yearly', Math.min(1, favoriteGames.length));
-  
-  yearlyPick.forEach(game => yearlyGames.appendChild(createTimeBasedCard(game)));
+  // Monthly and Yearly now use manual selection
+  renderMonthlySection();
+  renderYearlySection();
 }
 
 // --- CONTAINERS ---
@@ -214,8 +274,28 @@ function renderAllRows() {
 
 renderAllRows();
 
+// Initialize manual selections for monthly and yearly
+initializeManualSelections();
+
 // Render time-based sections
 renderTimeBasedSections();
+
+// Setup navigation buttons
+const monthlySection = document.getElementById('monthlySection');
+if (monthlySection) {
+  const monthlyPrevBtn = monthlySection.querySelector('.monthly-prev');
+  const monthlyNextBtn = monthlySection.querySelector('.monthly-next');
+  if (monthlyPrevBtn) monthlyPrevBtn.addEventListener('click', () => updateMonthlyIndex(-1));
+  if (monthlyNextBtn) monthlyNextBtn.addEventListener('click', () => updateMonthlyIndex(1));
+}
+
+const yearlySection = document.getElementById('yearlySection');
+if (yearlySection) {
+  const yearlyPrevBtn = yearlySection.querySelector('.yearly-prev');
+  const yearlyNextBtn = yearlySection.querySelector('.yearly-next');
+  if (yearlyPrevBtn) yearlyPrevBtn.addEventListener('click', () => updateYearlyIndex(-1));
+  if (yearlyNextBtn) yearlyNextBtn.addEventListener('click', () => updateYearlyIndex(1));
+}
 
 // --- GRID LOGIC (SPECIFIC GENRES) ---
 function renderGridGames(tag) {
