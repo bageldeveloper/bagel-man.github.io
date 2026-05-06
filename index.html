@@ -3,80 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <title>Bagels!</title>
-
   <link rel="icon" href="bagelcomicsicon.png">
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4474724430572739"
-     crossorigin="anonymous"></script>
-
   <link rel="stylesheet" href="css/main.css">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
-
+  <script src="https://cdn.scaledrone.com/scaledrone.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
   <script src="./gamesinfo.js"></script>
-</head>
 
+</head>
 <body>
   <header class="topbar">
     <div class="logo-area">
       <img src="bagelicontab.png" alt="Bagel">
     </div>
-
-<div class="topbar-center">
-    <div class="search-wrapper">
-
-  <input id="searchInput" placeholder="search games...">
-  <div id="searchIcon" class="search-icon">🔍</div>
-  <div id="searchSuggestions" class="search-suggestions"></div>
-  </div>
-</div>
-
+    <div class="topbar-center">
+      <div class="search-wrapper">
+        <input id="searchInput" placeholder="search games...">
+        
+        <div id="searchIcon" class="search-icon"><img style="width:20px;"src="images/icons/search.png"></div>
+        <div id="searchSuggestions" class="search-suggestions"></div>
+      </div>
+    </div>
     <nav class="topbar-right">
-      <a href="index.html"><button class="selected">Games</button></a>
-      <a href="chat.html"><button>Chat</button></a>
-      <a href="projects.html"><button>Projects</button></a>
-      <a href="about.html"><button>About</button></a>
+      <button id="chat-toggle-btn" onclick="toggleChat()"><img class="icons" src="images/icons/chat.png"><span id="online-count">0</span></button>
+      <button id="announce-btn" onclick="toggleAnnouncePanel()"><img class="icons" src="images/icons/announcements.png"><span id="announce-dot"></span></button>
+      <button onclick="toggleSettings()"><img class="icons" src="images/icons/settings.png"></button>
+
     </nav>
   </header>
 
-  <div class="layout">
+  <!-- ANNOUNCEMENT PANEL -->
+  <div id="announce-panel">
+    <div class="ann-tabs">
+      <button class="ann-tab active" id="tab-new" onclick="switchAnnTab('new')">New</button>
+      <button class="ann-tab" id="tab-all" onclick="switchAnnTab('all')">All</button>
+    </div>
 
-    <!-- SIDEBAR (MANUAL = CLEAN) -->
+    <!-- NEW tab -->
+    <div class="ann-pane active" id="pane-new">
+      <div id="ann-new-content"></div>
+    </div>
+
+    <!-- ALL tab -->
+    <div class="ann-pane" id="pane-all">
+      <div id="ann-all-list"></div>
+    </div>
+  </div>
+
+
+  <!-- SETTINGS PANEL -->
+  <div id="settings-panel">
+    <div class="settings-title">Settings</div>
+
+    <div class="settings-row">
+      <label>
+        Light mode
+        <span class="sub">Swap to a lighter theme</span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="toggle-light" onchange="applyLightMode(this.checked)">
+        <div class="toggle-track"></div>
+        <div class="toggle-thumb"></div>
+      </label>
+    </div>
+
+    <hr class="settings-divider">
+
+    <div class="settings-row">
+      <label>
+        Block ads
+        <span class="sub">Hides AdSense scripts & slots</span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="toggle-ads" onchange="applyAdBlock(this.checked)">
+        <div class="toggle-track"></div>
+        <div class="toggle-thumb"></div>
+      </label>
+    </div>
+  </div>
+  <!-- SLIDE-IN CHAT PANEL -->
+  <div id="chat-panel">
+    <div class="chat-panel-header">
+      <div>
+        <h3>Chat</h3>
+        <span class="members-count-inline" id="panel-member-count">connecting...</span>
+        <span class="members-count-inline" id="panel-my-name" style="font-weight:900;"></span>
+      </div>
+      <button class="chat-panel-close" onclick="toggleChat()">✖</button>
+    </div>
+    <div class="chat-panel-members" id="panel-members-list"></div>
+    <div class="chat-panel-messages" id="panel-messages"></div>
+    <form class="chat-panel-form" id="panel-form">
+      <input id="panel-input" placeholder="Say something..." type="text" maxlength="100">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <div class="layout">
+    
     <aside class="sidebar">
       <div class="game-categories">
-
-        <button class="active" data-genre="all">🎮 All Games</button>
-        <button data-genre="favorite">⭐ Favorites</button>
-        <button data-genre="adventure">🧭 Adventure</button>
-        <button data-genre="puzzle">🧩 Puzzle</button>
-        <button data-genre="simulation">🖥️ Simulation</button>
-        <button data-genre="shooter">🔫 Shooter</button>
-        <button data-genre="towerDefense">🏰 Tower Defense</button>
-        <button data-genre="racing">🏎️ Racing</button>
-        <button data-genre="sports">🏀 Sports</button>
-        <button data-genre="action">⚔️ Action</button>
-        <button data-genre="platformer">🕹️ Platformer</button>
-        <button data-genre="strategy">🧠 Strategy</button>
-
+        <button class="active" data-genre="all"><img class="gameicon" src="images/icons/home.png"> All Games</button>
+        <button data-genre="favorite"><img class="gameicon" src="images/icons/favorites.png">  Favorites</button>
+        <button data-genre="adventure"><img class="gameicon" src="images/icons/adventure.png">  Adventure</button>
+        <button data-genre="puzzle"><img class="gameicon" src="images/icons/puzzle.png">  Puzzle</button>
+        <button data-genre="simulation"><img class="gameicon" src="images/icons/simulation.png">  Simulation</button>
+        <button data-genre="shooter"><img class="gameicon" src="images/icons/shooter.png">  Shooter</button>
+        <button data-genre="towerDefense"><img class="gameicon" src="images/icons/tower.png">  Tower Defense</button>
+        <button data-genre="racing"><img class="gameicon" src="images/icons/racing.png">  Racing</button>
+        <button data-genre="sports"><img class="gameicon" src="images/icons/sports.png">  Sports</button>
+        <button data-genre="action"><img class="gameicon" src="images/icons/action.png">  Action</button>
+        <button data-genre="platformer"><img class="gameicon" src="images/icons/platformer.png">  Platformer</button>
+        <button data-genre="strategy"><img class="gameicon" src="images/icons/strategy.png">  Strategy</button>
       </div>
     </aside>
-
-    <!-- MAIN -->
     <main class="main-content">
-
       <h1 id="pageTitle">All Games</h1>
-
-
       <section id="gameGrid" class="card-grid"></section>
-
       <section id="genreRows"></section>
-
     </main>
-
   </div>
 
   <script src="js/main.js"></script>
+<script src="chatscript.js"></script>
+
 </body>
 </html>

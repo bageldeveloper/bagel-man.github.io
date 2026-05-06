@@ -1,608 +1,100 @@
-let scrollID;
-
-
-
-  const coolDown = 1500 // 5s cooldown
-  let lastClick = Date.now() - coolDown // to start fresh
-  
-let stopped = true;
-
-
-let scrollSpeed = 1; // 1 - Fast | 2 - Medium | 3 - Slow
-
-
-let scrollInterval = scrollSpeed * 3;
-
-
-// PS! Replace this with your own channel ID
-
-
-// If you use this channel ID your app will stop working in the future
-
-
-const CLIENT_ID = '5Qcspn6KZFL4fZ97';
-
-
-
-
-
-
-let drone = new ScaleDrone(CLIENT_ID, {
-
-
- data: { // Will be sent out as clientData via events
-
-
-   name: getRandomName(),
-
-
-   color: getRandomColor(),
-
-
- },
-
-
-});
-
-
-
-
-
-
-
-let members = [];
-
-
-
-
-
-
-
-drone.on('open', error => {
-
-
- if (error) {
-
-
-   return console.error(error);
-
-
- }
-
-
- console.log('Successfully connected to Scaledrone');
-
-
-
-
-
-
-
- const room = drone.subscribe('observable-room');
-
-
- room.on('open', error => {
-
-
-   if (error) {
-
-
-     return console.error(error);
-
-
-   }
-
-
-   console.log('Successfully joined room');
-
-
- });
-
-
-
-
-
-
-
- room.on('members', m => {
-
-
-   members = m;
-
-
-   updateMembersDOM();
-
-
- });
-
-
-
-
-
-
-
- room.on('member_join', member => {
-
-
-   members.push(member);
-
-
-   updateMembersDOM();
-
-
- });
-
-
-
-
-
-
-
- room.on('member_leave', ({id}) => {
-
-
-   const index = members.findIndex(member => member.id === id);
-
-
-   members.splice(index, 1);
-
-
-   updateMembersDOM();
-
-
- });
-
-
-
-
-
-
-
- room.on('data', (text, member) => {
-
-
-   if (member) {
-
-
-     addMessageToListDOM(text, member);
-
-
-   } else {
-
-
-     // Message is from server
-
-
-   }
-
-
- });
-
-
-});
-
-
-
-
-
-
-
-drone.on('close', event => {
-
-
- console.log('Connection was closed', event);
-
-
-});
-
-
-
-
-
-
-
-drone.on('error', error => {
-
-
- console.error(error);
-
-
-});
-
-
-
-
-
-
-
-function getRandomName() {
-
-
- const adjs = ["cool", "angry", "giant", "fat", "stupid", "yummy", "slimy", "bloody", "floppy","tiny", "salty", "dirty", "crazy", "lazy", "adorable", "average", "bored", "greasy", "chubby", "useless", "foolish", "nasty", "helpless", "nutty", "juicy","itchy","sportsy","jolly","hot","cold","saucy","old","innocent","embarrassing","monstrous","powerful","sexy","darth","deadly","star_spangled","patriotic","short_handed","mentally_insane","insane","ice_cold","man-eating","cold_blooded","long_distance","shocking","agents_of","disturbing","burning","frosty","chilly","freeze","beefy","radical","wacky","moist","hairy","spicy","slimy","totally_tubular","tubular","literally_insane","gaming","eating_this"];
-
-
- const nouns = ["bagel", "kitty", "guy", "muffin", "cat", "corndog", "keyboard", "salt", "gamer", "fish", "dog", "chicken", "nugget", "nerd", "face","paper","hotdog","burger","fries","drink","mouse","tiger","doofus","president","taylor_swift","discord_mod","policeman","spider","fridge","robot","rice","ninja","egg","sausage","girlfriend","boyfriend","bro","dude","sterling","turtle","toothbrush","peanut_butter","spider_man","vader","star","iron_man","destroyer","captain","michael_jordan","bull","maul","batman","alien","big_mac","stormtrooper","shield","mickey_mouse","zombie","ghost","snowman","turkey","jerky","mustard","tree","meme","baka","smuggler","bounty_hunter","officer","critical","copyright"];
-  
-var num = Math.floor(Math.random() * 100);
-if(num == 69){
- return "The Ultimate Gamer"; 
-}
-var num2 = Math.floor(Math.random() * 1000000000000);
-if(num2 == 420){
- return "Dirty Dan"; 
-}
-   
- return (
-
-
-   adjs[Math.floor(Math.random() * adjs.length)] +
-
-
-   "_" +
-
-
-   nouns[Math.floor(Math.random() * nouns.length)]
-
-
- );
-  
-
-
-
-}
-
-
-
-
-
-
-
-function getRandomColor() {
-
-
- return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
-
-
-}
-
-
-
-
-
-
-
-//------------- DOM STUFF
-
-
-
-
-
-
-
-const DOM = {
-
-
- membersCount: document.querySelector('.members-count'),
-
-
- membersList: document.querySelector('.members-list'),
-
-
- messages: document.querySelector('.messages'),
-
-
- input: document.querySelector('.message-form__input'),
-
-
- form: document.querySelector('.message-form'),
-
-
-};
-
-
-
-
-
-
-
-DOM.form.addEventListener('submit', sendMessage);
-
-
-
-
-
-function startScrolling(){
-
-
-let ID = setInterval(function() {
-
-
-  window.scrollBy(0, 2);
-
-
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-
-
-       // Reached end of page
-
-
-       stopScroll();
-
-
+    // ---- CHAT PANEL LOGIC ----
+    // ---- CHAT PANEL LOGIC ----
+ 
+    const CLIENT_ID = '5Qcspn6KZFL4fZ97';
+    const coolDown = 1500;
+    let lastClick = Date.now() - coolDown;
+    let members = [];
+    let chatDrone;
+ 
+    function getRandomName() {
+      const adjs = ["cool","angry","giant","fat","stupid","yummy","slimy","bloody","floppy","tiny","salty","dirty","crazy","lazy","adorable","average","bored","greasy","chubby","useless","foolish","nasty","helpless","nutty","juicy","itchy","sportsy","jolly","hot","cold","saucy","old","innocent","embarrassing","monstrous","powerful","sexy","darth","deadly","star_spangled","patriotic","short_handed","mentally_insane","insane","ice_cold","man-eating","cold_blooded","long_distance","shocking","agents_of","disturbing","burning","frosty","chilly","freeze","beefy","radical","wacky","moist","hairy","spicy","slimy","totally_tubular","tubular","literally_insane","gaming","eating_this"];
+      const nouns = ["bagel","kitty","guy","muffin","cat","corndog","keyboard","salt","gamer","fish","dog","chicken","nugget","nerd","face","paper","hotdog","burger","fries","drink","mouse","tiger","doofus","president","taylor_swift","discord_mod","policeman","spider","fridge","robot","rice","ninja","egg","sausage","girlfriend","boyfriend","bro","dude","sterling","turtle","toothbrush","peanut_butter","spider_man","vader","star","iron_man","destroyer","captain","michael_jordan","bull","maul","batman","alien","big_mac","stormtrooper","shield","mickey_mouse","zombie","ghost","snowman","turkey","jerky","mustard","tree","meme","baka","smuggler","bounty_hunter","officer","critical","copyright"];
+      if (Math.floor(Math.random() * 100) === 69) return "The Ultimate Gamer";
+      if (Math.floor(Math.random() * 1000000000000) === 420) return "Dirty Dan";
+      return adjs[Math.floor(Math.random() * adjs.length)] + "_" + nouns[Math.floor(Math.random() * nouns.length)];
     }
-
-
-  }, scrollInterval);
-
-
-return ID;
-
-
-
-
-
-
-}
-  function startCoolDown () {
-    lastClick = Date.now() // maybe useless function
-  }
-  function checkCoolDown () {
-    const notOver = Date.now() - lastClick < coolDown
-    if (notOver){
-      var audio = new Audio('stopspamming.mp3');
-      audio.play();
-    alert('ayo dude stop spamming');
+    function getRandomColor() {
+      return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, '0');
     }
-    // using an alert it will block javascript loops
-    return !notOver;
-  }
-
-
-function sendMessage() {
-
-
-
-  
-    if (checkCoolDown()) {
-      startCoolDown()
-    
-const value = DOM.input.value;
-
-
- if (value === '') {
-
-
-   return;
-
-
- }
-if(value.match(/(黑鬼|ass|cum|retard|bitch|shit|cunt|cock|dick|fuck|shit|nigger|nigga|pussy|nazi|whore|faggot|handjob|penis|cock|pussy|sex|hitler|niger|titties|gay|tit|boob|@ss|c0ck|b!tch|pu\$\$y|por|nigas|pp|incest|p0r|rape|r@pe|slut|threesum|foursum|twosum|shiz|slut|p0r|nigg)/gi)){
-      alert('cmon man why you saying that kinda stuff?');
-  return;
-  }
-      
-        if(value.length > 100){
-          alert('my guy, that message is too big.. just like your mom gottem')
-      return; 
-  }
- DOM.input.value = '';
-
-
- drone.publish({
-
-
-   room: 'observable-room',
-
-
-   message: value,
-
-
- });
-
-      if (value == "2 + 2 = 4" || value == "2+2=4"){
-drone = new ScaleDrone(CLIENT_ID, {
-
-
- data: { // Will be sent out as clientData via events
-
-
-   name: "The One",
-
-
-   color: getRandomColor(),
-
-
- },
-
-
-});
- drone.publish({
-
-
-   room: 'observable-room',
-
-
-   message: "It is coming...",
-
-
- });
-        drone = new ScaleDrone(CLIENT_ID, {
-
-
- data: { // Will be sent out as clientData via events
-
-
-   name: getRandomName(),
-
-
-   color: getRandomColor(),
-
-
- },
-
-
-});
+ 
+    // Connect immediately on page load — counts you as online right away
+    chatDrone = new ScaleDrone(CLIENT_ID, {
+      data: { name: getRandomName(), color: getRandomColor() }
+    });
+ 
+    chatDrone.on('open', () => {
+      const room = chatDrone.subscribe('observable-room');
+      room.on('members', m => { members = m; updatePanelMembers(); });
+      room.on('member_join', m => { members.push(m); updatePanelMembers(); });
+      room.on('member_leave', ({ id }) => {
+        members.splice(members.findIndex(m => m.id === id), 1);
+        updatePanelMembers();
+      });
+      room.on('data', (text, member) => {
+        if (member) addPanelMessage(text, member);
+      });
+    });
+ 
+    function updatePanelMembers() {
+      const count = members.length;
+      document.getElementById('online-count').textContent = count;
+      document.getElementById('panel-member-count').textContent = count + ' nerd' + (count !== 1 ? 's' : '') + ' online';
+      const list = document.getElementById('panel-members-list');
+      list.innerHTML = '';
+      members.forEach(m => {
+        const el = document.createElement('span');
+        el.className = 'member';
+        el.textContent = m.clientData.name;
+        el.style.color = m.clientData.color;
+        list.appendChild(el);
+      });
+    }
+ 
+    function addPanelMessage(text, member) {
+      const box = document.getElementById('panel-messages');
+      const msg = document.createElement('div');
+      msg.className = 'message';
+      const nameEl = document.createElement('span');
+      nameEl.className = 'member';
+      nameEl.textContent = member.clientData.name;
+      nameEl.style.color = member.clientData.color;
+      msg.appendChild(nameEl);
+      msg.appendChild(document.createTextNode(text));
+      box.appendChild(msg);
+      box.scrollTop = box.scrollHeight;
+    }
+ 
+    // Single submit handler — covers both Enter and button click, never double-fires
+    document.getElementById('panel-form').addEventListener('submit', e => {
+      e.preventDefault();
+ 
+      const now = Date.now();
+      // Always update lastClick first so blocked messages still reset the timer
+      const isSpam = now - lastClick < coolDown;
+      lastClick = now;
+ 
+      if (isSpam) {
+        new Audio('stopspamming.mp3').play();
+        alert('ayo dude stop spamming');
+        return;
       }
-      // do your stuff with arguments here
-    }
-}
-
  
-
-
-
-
-
-
-
-function createMemberElement(member) {
-
-
- const { name, color } = member.clientData;
-
-
- const el = document.createElement('div');
-
-
- el.appendChild(document.createTextNode(name));
-
-
- el.className = 'member';
-
-
- el.style.color = color;
-
-
- return el;
-
-
-}
-
-
-
-
-
-
-
-function updateMembersDOM() {
-
-
- DOM.membersCount.innerText = `${members.length} nerds in room:`;
-
-
- DOM.membersList.innerHTML = '';
-
-
- members.forEach(member =>
-
-
-   DOM.membersList.appendChild(createMemberElement(member))
-
-
- );
-
-
-}
-
-
-//dont look at this next part if you are sensitive to swear words
-
-
-
-
-
-
-
-function createMessageElement(text, member) {
-
-
-
-// let gamer = text.replace(/[^A-Za-z0-9\s!?]/g,”);
-// testing to see if this is the problem
-
-
-
+      const input = document.getElementById('panel-input');
+      const value = input.value.trim();
+      if (!value) return;
+      if (value.match(/(黑鬼|ass|cum|retard|bitch|shit|cunt|cock|dick|fuck|nigger|nigga|pussy|nazi|whore|faggot|handjob|penis|sex|hitler|niger|titties|gay|tit|boob|@ss|c0ck|b!tch|pu\$\$y|por|nigas|pp|incest|p0r|rape|r@pe|slut|threesum|foursum|twosum|shiz|p0r|nigg)/gi)) {
+        alert('cmon man why you saying that kinda stuff?');
+        return;
+      }
+      if (value.length > 100) {
+        alert('my guy, that message is too big.. just like your mom gottem');
+        return;
+      }
+      input.value = '';
+      chatDrone.publish({ room: 'observable-room', message: value });
+    });
  
-
-  const el = document.createElement('div');
-
-
- el.appendChild(createMemberElement(member));
-
-
- el.appendChild(document.createTextNode(text));
-
-
- el.className = 'message';
-
-
-
- return el;
-
-
-}
-
-
-
-function stopScroll() {
-
-
-clearInterval(scrollID);
-
-
-}
-
-
-
-
-
-
-
-function addMessageToListDOM(text, member) {
-
-
-
-
-
- const el = DOM.messages;
-
-
- const wasTop = el.scrollTop === el.scrollHeight - el.clientHeight;
-
-
- el.appendChild(createMessageElement(text, member));
-
- if (wasTop) {
-
-
-   el.scrollTop = el.scrollHeight - el.clientHeight;
-
-
-  
-
-
- }
-
-
-      if(stopped == true) {
-
-
-      scrollID = startScrolling();
-
-
-      stopped = false;
-
-
-    }else {
-
-
-      stopScroll();
-
-
-      stopped = true;
-
-
+    function toggleChat() {
+      document.getElementById('chat-panel').classList.toggle('open');
     }
-
-
-}
