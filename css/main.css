@@ -1,4 +1,6 @@
-/* RESET & BASICS */
+/* =========================
+   RESET & BASICS
+========================= */
 *,
 *::before,
 *::after {
@@ -24,7 +26,7 @@ body {
   --border: #2c3140;
   --text: #edf2f4;
   --muted: #9aa4b2;
-  --accent: #f7c16f;
+  --accent: #f7c06e;
   --accent-dark: #cc7d06;
   --radius: 14px;
   --card-width: 220px;
@@ -32,8 +34,11 @@ body {
   --topbar-height: 64px;
 }
 
-/* TOP BAR */
+/* =========================
+   TOP BAR
+========================= */
 .topbar {
+    font-family: "Nunito", system-ui, sans-serif;
   position: fixed;
   top: 0;
   left: 0;
@@ -46,8 +51,7 @@ body {
   border-bottom: 2px solid var(--border);
   z-index: 100;
   box-shadow: 0px 4px 4px #000000,
-  inset 0px 4px 4px var(--surface-hover);
-
+    inset 0px 4px 4px var(--surface-hover);
 }
 
 .logo-area {
@@ -57,29 +61,54 @@ body {
 }
 
 .logo-area img {
-  width: 200px;
+  width: 300px;
 }
 
 .topbar-center {
   flex: 1;
   display: flex;
   justify-content: center;
+  position: relative;
+}
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
 }
 
 .topbar-center input {
   width: 100%;
-  max-width: 420px;
-  padding: 0.55rem 0.9rem;
+  padding: 0.55rem 2.4rem 0.55rem 0.9rem;
   border-radius: 10px;
   border: 2px solid var(--border);
   background-color: var(--bg);
   color: var(--text);
   box-shadow: inset 0px -2px 4px var(--surface-hover),
-  inset 0px 4px 4px black;
+    inset 0px 4px 4px black;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.topbar-center input::placeholder {
-  color: var(--muted);
+.topbar-center input:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 12px rgba(247, 193, 111, 0.25);
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  opacity: 0.75;
+  transition: all 0.2s ease;
+  user-select: none;
+  font-size: 18px;
+}
+.search-section-label { font-size: 12px; opacity: 0.6; padding: 8px 10px 4px; pointer-events: none; user-select: none; }
+.search-icon:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
 }
 
 .topbar-right {
@@ -87,52 +116,61 @@ body {
   gap: 1rem;
 }
 
-.topbar-right button{
+.topbar-right button {
+    font-family: "Nunito", system-ui, sans-serif;
   font-size: 1rem;
   color: var(--muted);
   font-weight: 700;
-  text-decoration: none;
-  height: 100%;
-    background: transparent;
-    border: 0px;
-
+  background: transparent;
+  border: 0;
+  cursor: pointer;
 }
 
 .topbar-right button:hover {
   color: var(--accent);
 }
 
-
-/* LAYOUT */
+/* =========================
+   LAYOUT
+========================= */
 .layout {
   display: flex;
   min-height: 100vh;
-  padding-top: 64px;
+  padding-top: var(--topbar-height);
 }
 
-/* SIDEBAR */
+/* =========================
+   SIDEBAR
+========================= */
 .sidebar {
+    font-family: "Nunito", system-ui, sans-serif;
   position: sticky;
-  top: 64px;
-  height: calc(100vh - 64px);
+  top: var(--topbar-height);
+  height: calc(100vh - var(--topbar-height));
   overflow-y: auto;
   background: var(--surface);
   border-right: 2px solid var(--border);
   padding: 1rem;
   width: 200px;
   box-shadow: 4px 0px 4px #000000;
+  animation: sidebarIn 0.5s ease-out;
+}
 
+@keyframes sidebarIn {
+  from { transform: translateX(-300px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }
 
 .game-categories {
+    font-family: "Nunito", system-ui, sans-serif;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
 }
 
 .game-categories button {
-    font-size: 1rem;
-
+    font-family: "Nunito", system-ui, sans-serif;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
   background: transparent;
   border: 2px solid var(--border);
@@ -143,30 +181,40 @@ body {
   border-radius: 10px;
   font-weight: 900;
   cursor: pointer;
-  box-shadow: inset 0 -10px 12px -6px rgba(0, 0, 0, 0.614),
-inset 0px 5px 6px rgba(255, 255, 255, 0.13), 0px 4px 4px #000000;
+  box-shadow: inset 0 -10px 12px -6px rgba(0,0,0,0.6),
+    inset 0px 5px 6px rgba(255,255,255,0.13),
+    0px 4px 4px #000000;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .game-categories button:hover {
+  transform: translateX(-12px);
   background: rgba(255,255,255,0.06);
-  transform:  translateX(-8px);
 }
 
 .game-categories button.active {
-  background: var(--bg);
   color: var(--accent);
-    box-shadow: inset 0px 5px 6px rgba(0, 0, 0, 0.541);
-    transform:  translateX(8px);
+  animation: activePulse 1.5s ease infinite;
 }
 
-/* MAIN CONTENT */
+@keyframes activePulse {
+  0% { box-shadow: 0 0 0 0 rgba(247,193,111,0.2); }
+  50% { box-shadow: 0 0 10px 2px rgba(247,193,111,0.25); }
+  100% { box-shadow: 0 0 0 0 rgba(247,193,111,0.2); }
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
 .main-content {
   flex: 1;
   padding-left: 1rem;
   overflow: auto;
 }
 
-/* CARDS (same size for grid and rows) */
+/* =========================
+   CARDS
+========================= */
 .card {
   width: var(--card-width);
   height: var(--card-height);
@@ -175,124 +223,62 @@ inset 0px 5px 6px rgba(255, 255, 255, 0.13), 0px 4px 4px #000000;
   border: 2px solid var(--border);
   position: relative;
   display: flex;
-  align-items: flex-end; /* text at bottom */
+  align-items: flex-end;
   color: var(--text);
   text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
-  background-color: var(--surface); /* fallback if image fails */
+  background-color: var(--surface);
   cursor: pointer;
-  transition: transform 0.15s ease;
   box-shadow: 0px 4px 4px #000000;
+
+  opacity: 0;
+  transform: scale(0.85);
 }
 
-.card-bg {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-  transition: transform 0.3s ease;
-box-shadow: inset 0 -40px 12px -6px rgba(0, 0, 0, 0.614),
-inset 0px 5px 6px rgba(255, 255, 255, 0.13);
+.card.enter {
+  animation: cardPop 0.35s ease forwards;
 }
 
-.card-overlay {
-  position: relative;
-  z-index: 1;
-  padding: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+@keyframes cardPop {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
 }
-
-.card:hover .card-bg {
-  transform: scale(1.05);
-}
-
-.game-title {
-    position: absolute;
-    white-space: nowrap;
-  font-size: 1.1rem;
-  font-weight: 900;
-  color: var(--text);
-    left: 8px;      /* small padding from left */
-  bottom: -15px;
-}
-
-.game-desc {
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
 
 .card:hover {
   transform: translateY(-8px) rotate(-1deg);
+  transition: transform 0.15s ease;
 }
 
 .card:nth-child(3n):hover {
   transform: translateY(-8px) rotate(2deg);
 }
 
-/* TIME-BASED SECTIONS */
-#timeBasedSections {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+.card-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-size: cover; background-position: center; z-index: 0; transition: transform 0.3s ease; box-shadow: inset 0 -40px 12px -6px rgba(0, 0, 0, 0.614), inset 0px 5px 6px rgba(255, 255, 255, 0.13); }
 
-  max-width: 1400px;   /* controls total grid width */
-  margin: 0 auto;      /* centers horizontally */
-
-  padding: 0 1rem;     /* padding on edges */
+.card:hover .card-bg {
+  transform: scale(1.05);
 }
 
-.time-section h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.8rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.time-card {
-  flex-shrink: 0;
-  width: 260px;
-  height: 230px;
-  transition: all 0.3s ease;
-}
-
-.time-card:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  z-index: 10;
-}
-
-/* Responsive adjustments for time-based sections */
-@media (max-width: 768px) {
-  .time-games {
-    justify-content: center;
-  }
-  
-  .time-section {
-    padding: 1rem;
-  }
-  
-  .time-section h2 {
-    font-size: 1.4rem;
-  }
-}
-
-/* GRID */
+.game-title { position: absolute; white-space: nowrap; font-size: 1.1rem; font-weight: 900; color: var(--text); left: 8px; /* small padding from left */ bottom: -15px; }
+/* =========================
+   GRID
+========================= */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--card-width), 1fr));
   gap: 1rem;
 }
 
-/* HORIZONTAL ROWS */
+/* =========================
+   ROWS
+========================= */
 .genre-row {
   margin-bottom: 2rem;
+  animation: rowIn 0.4s ease both;
 }
 
-.genre-row h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
+@keyframes rowIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .row-wrapper {
@@ -309,7 +295,6 @@ inset 0px 5px 6px rgba(255, 255, 255, 0.13);
   transition: transform 0.3s ease;
 }
 
-/* Arrows for horizontal scroll */
 .row-arrow {
   position: absolute;
   top: 50%;
@@ -320,73 +305,57 @@ inset 0px 5px 6px rgba(255, 255, 255, 0.13);
   font-weight: 900;
   cursor: pointer;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.781);
-  border: 0px;
+  background-color: rgba(0,0,0,0.78);
+  border: 0;
 }
 
-.row-arrow.prev {
-  left: 0;
-}
+.row-arrow.prev { left: 0; }
+.row-arrow.next { right: 0; }
 
-.row-arrow.next {
-  right: 0;
-}
+.selected { color: var(--accent) !important; }
 
-.selected{
-  color:var(--accent) !important;
-}
-/* From Uiverse.io by elijahgummer */ 
+/* =========================
+   RANDOM BUTTON
+========================= */
 .random {
-  touch-action: manipulation;
   display: inline-block;
-  outline: none;
-  font-family: inherit;
-  font-size: 1em;
-  box-sizing: border-box;
   border: none;
   border-radius: 0.3em;
   height: 2.75em;
-  line-height: 2.5em;
-  text-transform: uppercase;
   padding: 0 1em;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
-    inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
-    inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
-  background-image: linear-gradient(
-    160deg,
-    #a54e07,
-    #b47e11,
-    #fef1a2,
-    #bc881b,
-    #a54e07
-  );
-  border: 1px solid #a55d07;
-  color: rgb(120, 50, 5);
-  text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  background-size: 100% 100%;
-  background-position: center;
+  text-transform: uppercase;
+  background-image: linear-gradient(160deg,#a54e07,#b47e11,#fef1a2,#bc881b,#a54e07);
+  color: rgb(120,50,5);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.random:focus,
 .random:hover {
-  background-size: 150% 150%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
-    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
-  border: 1px solid rgba(165, 93, 7, 0.6);
-  color: rgba(120, 50, 5, 0.8);
+  transform: scale(1.06);
+  filter: brightness(1.15);
 }
 
-.random:active {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
-    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+/* =========================
+   SEARCH SUGGESTIONS
+========================= */
+.search-suggestions {
+  position: absolute;
+  top: 48px;
+  width: 420px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  z-index: 999;
 }
-.announcement{
-    box-shadow: inset 0 -10px 12px -6px rgba(0, 0, 0, 0.614),
-inset 0px 5px 6px rgba(255, 255, 255, 0.13), 0px 4px 4px #000000;
-margin-bottom: 20px;
+
+.search-suggestions div {
+  padding: 10px;
+  cursor: pointer;
 }
-.anountext{
-  font-size: 15px;
+
+.search-suggestions div:hover {
+  background: var(--surface-hover);
 }

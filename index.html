@@ -19,15 +19,19 @@
 </head>
 
 <body>
-  <!-- TOP BAR -->
   <header class="topbar">
     <div class="logo-area">
       <img src="bagelicontab.png" alt="Bagel">
     </div>
 
-    <div class="topbar-center">
-      <input id="searchInput" placeholder="search games...">
-    </div>
+<div class="topbar-center">
+    <div class="search-wrapper">
+
+  <input id="searchInput" placeholder="search games...">
+  <div id="searchIcon" class="search-icon">🔍</div>
+  <div id="searchSuggestions" class="search-suggestions"></div>
+  </div>
+</div>
 
     <nav class="topbar-right">
       <a href="index.html"><button class="selected">Games</button></a>
@@ -37,75 +41,39 @@
     </nav>
   </header>
 
-  <!-- LAYOUT -->
   <div class="layout">
-    <!-- SIDE BAR -->
-  <!-- SIDEBAR -->
-<aside class="sidebar">
-  <div id="categoryList" class="game-categories">
-  </div>
-</aside>
 
+    <!-- SIDEBAR (MANUAL = CLEAN) -->
+    <aside class="sidebar">
+      <div class="game-categories">
 
-<!-- MAIN CONTENT -->
-<main class="main-content">
-  <!-- WELCOME HERO -->
-  <section class="hero">
-    <h1>All Games</h1>
-    <p class="stats">Welcome to bagelcomics.com! Play some online games, chat with others, or check out some weird projects we've made!</p>
-  </section>
-  <button class="random" id="randomGame">Random Game</button>
-<section id="gameGrid" class="card-grid" style="display:none;"></section>
+        <button class="active" data-genre="all">🎮 All Games</button>
+        <button data-genre="favorite">⭐ Favorites</button>
+        <button data-genre="adventure">🧭 Adventure</button>
+        <button data-genre="puzzle">🧩 Puzzle</button>
+        <button data-genre="simulation">🖥️ Simulation</button>
+        <button data-genre="shooter">🔫 Shooter</button>
+        <button data-genre="towerDefense">🏰 Tower Defense</button>
+        <button data-genre="racing">🏎️ Racing</button>
+        <button data-genre="sports">🏀 Sports</button>
+        <button data-genre="action">⚔️ Action</button>
+        <button data-genre="platformer">🕹️ Platformer</button>
+        <button data-genre="strategy">🧠 Strategy</button>
 
-  <!-- TIME-BASED SECTIONS -->
-  <section id="timeBasedSections">
-    <div class="time-section" id="dailySection">
-      <h2>Game of the Day</h2>
-      <div class="time-games">
-        <!-- Daily game will be inserted here -->
       </div>
-    </div>
-    
-    <div class="time-section" id="weeklySection">
-      <h2>Game of the Week</h2>
-      <div class="time-games">
-        <!-- Weekly games will be inserted here -->
-      </div>
-    </div>
-    
-    <div class="time-section" id="monthlySection">
-      <h2>Game of the Month</h2>
-      <div class="time-games">
-        <!-- Monthly favorite game will be inserted here -->
-      </div>
-    </div>
-    
-    <div class="time-section" id="yearlySection">
-      <h2>Game of the Year</h2>
-      <div class="time-games">
-        <!-- Yearly favorite game will be inserted here -->
-      </div>
-    </div>
-  </section>
+    </aside>
 
-  <!-- GENRE ROWS -->
-  <section id="genreRows">
-    <!-- Rows will be generated dynamically by JS -->
-    <!-- Example row structure:
-    <div class="genre-row">
-      <h3>Driving Games</h3>
-      <div class="row-games">
-        <a class="card" href="#">Game 1</a>
-        <a class="card" href="#">Game 2</a>
-      </div>
-    </div>
-    -->
-  </section>
+    <!-- MAIN -->
+    <main class="main-content">
 
-  <!-- RANDOM GAME BUTTON -->
-  
-</main>
+      <h1 id="pageTitle">All Games</h1>
 
+
+      <section id="gameGrid" class="card-grid"></section>
+
+      <section id="genreRows"></section>
+
+    </main>
 
   </div>
 
