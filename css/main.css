@@ -90,7 +90,8 @@ body {
 }
 
 .topbar-center input:focus {
-  transform: scale(1.02);
+    animation: gelatine 0.3s;
+
   box-shadow: 0 0 12px rgba(247, 193, 111, 0.25);
 }
 
@@ -107,9 +108,17 @@ body {
 }
 .search-section-label { font-size: 12px; opacity: 0.6; padding: 8px 10px 4px; pointer-events: none; user-select: none; }
 .search-icon:hover {
+  /* animation: gelatine 0.5s; */
   opacity: 1;
   transform: translateY(-50%) scale(1.1);
 }
+@keyframes gelatine {
+  from, to { transform: scale(1, 1); }
+  25% { transform: scale(0.9, 1.1); }
+  50% { transform: scale(1.1, 0.9); }
+  75% { transform: scale(0.95, 1.05); }
+}
+
 
 .topbar-right {
   display: flex;
@@ -150,7 +159,7 @@ body {
   overflow-y: auto;
   background: var(--surface);
   border-right: 2px solid var(--border);
-  padding: 1rem;
+  /* padding: 1rem; */
   width: 200px;
   box-shadow: 4px 0px 4px #000000;
   animation: sidebarIn 0.5s ease-out;
@@ -165,30 +174,29 @@ body {
     font-family: "Nunito", system-ui, sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  /* gap: 0.35rem; */
 }
 
 .game-categories button {
     font-family: "Nunito", system-ui, sans-serif;
   font-size: 1rem;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
   background: transparent;
-  border: 2px solid var(--border);
+  border: 0px solid var(--border);
   color: var(--muted);
   text-align: left;
   padding: 0.6rem 0.8rem;
-  width: 200%;
-  border-radius: 10px;
+  width: 100%;
   font-weight: 900;
   cursor: pointer;
-  box-shadow: inset 0 -10px 12px -6px rgba(0,0,0,0.6),
+  /* box-shadow: inset 1em -10px 12px -6px rgba(0,0,0,0.6),
     inset 0px 5px 6px rgba(255,255,255,0.13),
-    0px 4px 4px #000000;
+    0px 4px 4px #000000; */
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .game-categories button:hover {
-  transform: translateX(-12px);
+  transform: translateX(12px);
   background: rgba(255,255,255,0.06);
 }
 
@@ -255,7 +263,7 @@ body {
 .card-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-size: cover; background-position: center; z-index: 0; transition: transform 0.3s ease; box-shadow: inset 0 -40px 12px -6px rgba(0, 0, 0, 0.614), inset 0px 5px 6px rgba(255, 255, 255, 0.13); }
 
 .card:hover .card-bg {
-  transform: scale(1.05);
+  transform: scale(1.2);
 }
 
 .game-title { position: absolute; white-space: nowrap; font-size: 1.1rem; font-weight: 900; color: var(--text); left: 8px; /* small padding from left */ bottom: -15px; }
@@ -272,7 +280,7 @@ body {
    ROWS
 ========================= */
 .genre-row {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   animation: rowIn 0.4s ease both;
 }
 
@@ -286,7 +294,7 @@ body {
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding: 10px 0;
+  padding: 00px 0;
 }
 
 .row-games {
@@ -296,18 +304,44 @@ body {
 }
 
 .row-arrow {
+    animation: rowarrowstophover 0.2s ease both;
+
   position: absolute;
   top: 50%;
+
   transform: translateY(-50%);
-  height: calc(100% - 20px);
+  height: calc(100% - 0px);
   width: 75px;
-  color: var(--accent);
+
   font-weight: 900;
   cursor: pointer;
+  -webkit-text-stroke-color: var(--accent);
+  -webkit-text-stroke-width: 5px;
+ color: var(--accent);
+ font-size: 10px;
   z-index: 10;
   background-color: rgba(0,0,0,0.78);
   border: 0;
 }
+.row-arrow:hover{
+  animation: rowarrowhover 0.2s ease both;
+
+}
+
+.row-arrow:active{
+  animation: rowarrowstophover 0.2s;
+
+}
+
+@keyframes rowarrowhover {
+  from { opacity: 1; font-size: 10px; }
+  to { opacity: 1;font-size: 20px; }
+}
+@keyframes rowarrowstophover {
+  from { opacity: 1; font-size: 20px; }
+  to { opacity: 1;font-size: 10px; }
+}
+
 
 .row-arrow.prev { left: 0; }
 .row-arrow.next { right: 0; }
@@ -340,6 +374,9 @@ body {
    SEARCH SUGGESTIONS
 ========================= */
 .search-suggestions {
+    /* animation: gelatine 0.5s; */
+    animation: searchSuggestionsIn 0.3s;
+
   position: absolute;
   top: 48px;
   width: 420px;
@@ -348,7 +385,7 @@ body {
   border-radius: 10px;
   display: none;
   flex-direction: column;
-  z-index: 999;
+  z-index: -50;
 }
 
 .search-suggestions div {
@@ -358,4 +395,14 @@ body {
 
 .search-suggestions div:hover {
   background: var(--surface-hover);
+}
+@keyframes gelatine {
+  from, to { transform: scale(1, 1); }
+  25% { transform: scale(0.9, 1.1); }
+  50% { transform: scale(1.1, 0.9); }
+  75% { transform: scale(0.95, 1.05); }
+}
+@keyframes searchSuggestionsIn {
+  from { transform: translateY(-300px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
