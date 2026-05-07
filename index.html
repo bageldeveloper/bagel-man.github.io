@@ -82,23 +82,66 @@
       </label>
     </div>
   </div>
-  <!-- SLIDE-IN CHAT PANEL -->
-  <div id="chat-panel">
-    <div class="chat-panel-header">
-      <div>
-        <h3>Chat</h3>
-        <span class="members-count-inline" id="panel-member-count">connecting...</span>
-        <span class="members-count-inline" id="panel-my-name" style="font-weight:900;"></span>
-      </div>
-      <button class="chat-panel-close" onclick="toggleChat()">✖</button>
+<!-- SLIDE-IN CHAT PANEL -->
+<div id="chat-panel">
+
+  <div class="chat-panel-header">
+    <div>
+      <h3>Chat</h3>
+      <span class="members-count-inline" id="panel-member-count">connecting...</span>
     </div>
-    <div class="chat-panel-members" id="panel-members-list"></div>
-    <div class="chat-panel-messages" id="panel-messages"></div>
-    <form class="chat-panel-form" id="panel-form">
-      <input id="panel-input" placeholder="Say something..." type="text" maxlength="100">
-      <button type="submit">Send</button>
-    </form>
+    <button class="chat-panel-close" onclick="toggleChat()">✖</button>
   </div>
+
+  <!-- MEMBERS -->
+  <div class="chat-panel-members" id="panel-members-list"></div>
+
+  <!-- MESSAGES -->
+  <div class="chat-panel-messages" id="panel-messages"></div>
+
+  <!-- PROFILE (COLLAPSIBLE) -->
+<div id="profile-panel">
+
+  <button class="profiletoggle" onclick="toggleProfile()">
+    Profile
+  </button>
+
+  <div id="profile-content" class="profile-content collapsed">
+
+    <div class="chat-profile-preview">
+      <span id="profile-preview-name"></span>
+    </div>
+
+    <div class="profile-row">
+
+      <input
+        id="profile-name-input"
+        maxlength="30"
+        placeholder="your name"
+        oninput="refreshProfilePreview()"
+      />
+
+      <input
+        id="profile-color-input"
+        type="color"
+        oninput="refreshProfilePreview()"
+      />
+
+      <button onclick="saveProfile()">
+        Save
+      </button>
+
+    </div>
+
+  </div>
+</div>
+  <!-- INPUT -->
+  <form class="chat-panel-form" id="panel-form">
+    <input id="panel-input" placeholder="Say something..." maxlength="100">
+    <button type="submit">Send</button>
+  </form>
+
+</div>
 
   <div class="layout">
     

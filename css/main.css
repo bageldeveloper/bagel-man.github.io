@@ -624,3 +624,111 @@ body {
     .chat-panel-messages::-webkit-scrollbar { width: 6px; }
     .chat-panel-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
     .chat-panel-messages::-webkit-scrollbar-track {background : transparent; }
+
+    /* =========================
+   CHAT PROFILE COLLAPSIBLE
+========================= */
+
+
+/* =========================
+   PROFILE PANEL
+========================= */
+
+#profile-panel {
+  background: var(--surface);
+  border-bottom: 2px solid var(--border);
+  padding: 0.75rem;
+}
+
+/* toggle button */
+.profiletoggle {
+  padding: 0.5rem 0.9rem; border-radius: 10px; border: 2px solid var(--border);
+      background: var(--accent); color: #000; font-weight: 900; cursor: pointer; font-family: "Nunito", sans-serif;
+}
+
+.profiletoggle:hover {
+  transform: translateX(6px);
+  color: var(--text);
+}
+
+/* collapsible container */
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+/* preview */
+.chat-profile-preview {
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: var(--accent);
+  padding: 0.4rem 0.6rem;
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+/* INPUT ROW (name + color + save) */
+.profile-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* name input */
+#profile-name-input {
+  flex: 1;
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.85rem;
+}
+
+#profile-name-input:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(247, 193, 111, 0.25);
+  border-color: var(--accent);
+}
+
+/* color picker */
+#profile-color-input {
+  width: 42px;
+  height: 38px;
+  padding: 0;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* save button */
+#profile-content button {
+  padding: 0.5rem 0.8rem;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  background: var(--accent);
+  color: #000;
+  font-weight: 900;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+#profile-content button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* collapsed state */
+.profile-content.collapsed {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}

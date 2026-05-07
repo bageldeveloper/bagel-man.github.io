@@ -1,100 +1,374 @@
-    // ---- CHAT PANEL LOGIC ----
-    // ---- CHAT PANEL LOGIC ----
- 
-    const CLIENT_ID = '5Qcspn6KZFL4fZ97';
-    const coolDown = 1500;
-    let lastClick = Date.now() - coolDown;
-    let members = [];
-    let chatDrone;
- 
-    function getRandomName() {
-      const adjs = ["cool","angry","giant","fat","stupid","yummy","slimy","bloody","floppy","tiny","salty","dirty","crazy","lazy","adorable","average","bored","greasy","chubby","useless","foolish","nasty","helpless","nutty","juicy","itchy","sportsy","jolly","hot","cold","saucy","old","innocent","embarrassing","monstrous","powerful","sexy","darth","deadly","star_spangled","patriotic","short_handed","mentally_insane","insane","ice_cold","man-eating","cold_blooded","long_distance","shocking","agents_of","disturbing","burning","frosty","chilly","freeze","beefy","radical","wacky","moist","hairy","spicy","slimy","totally_tubular","tubular","literally_insane","gaming","eating_this"];
-      const nouns = ["bagel","kitty","guy","muffin","cat","corndog","keyboard","salt","gamer","fish","dog","chicken","nugget","nerd","face","paper","hotdog","burger","fries","drink","mouse","tiger","doofus","president","taylor_swift","discord_mod","policeman","spider","fridge","robot","rice","ninja","egg","sausage","girlfriend","boyfriend","bro","dude","sterling","turtle","toothbrush","peanut_butter","spider_man","vader","star","iron_man","destroyer","captain","michael_jordan","bull","maul","batman","alien","big_mac","stormtrooper","shield","mickey_mouse","zombie","ghost","snowman","turkey","jerky","mustard","tree","meme","baka","smuggler","bounty_hunter","officer","critical","copyright"];
-      if (Math.floor(Math.random() * 100) === 69) return "The Ultimate Gamer";
-      if (Math.floor(Math.random() * 1000000000000) === 420) return "Dirty Dan";
-      return adjs[Math.floor(Math.random() * adjs.length)] + "_" + nouns[Math.floor(Math.random() * nouns.length)];
+// =====================
+// CHAT PANEL LOGIC
+// =====================
+
+const CLIENT_ID = '5Qcspn6KZFL4fZ97';
+const coolDown = 1500;
+
+let lastClick = Date.now() - coolDown;
+let members = [];
+let chatDrone;
+const profileMap = {};
+
+// =====================
+// DEV ACCOUNTS
+// =====================
+
+const DEV_PASSWORD = "bagel2025";
+
+const DEV_ACCOUNTS = {
+  carter: { colors: ["#f857a6", "#ff5858"], label: "Carter" },
+  daniel: { colors: ["#43e97b", "#38f9d7"], label: "Daniel" },
+  tom:    { colors: ["#f7971e", "#ffd200"], label: "Tom" }
+};
+
+let devName     = localStorage.getItem("bagel_dev_name") || null;
+let customName  = localStorage.getItem("bagel_custom_name") || null;
+let customColor = localStorage.getItem("bagel_custom_color") || null;
+
+let isDev = false;
+
+// =====================
+// NAME + COLOR
+// =====================
+
+function getMyName() {
+  if (devName && DEV_ACCOUNTS[devName]) {
+    return DEV_ACCOUNTS[devName].label;
+  }
+
+  if (customName) return customName;
+
+  const adjs = ["cool","angry","giant","lazy","tiny","salty","spicy","mystic","crazy"];
+  const nouns = ["bagel","cat","gamer","robot","ninja","burger","ghost","wizard"];
+
+  const generated =
+    adjs[Math.floor(Math.random() * adjs.length)] +
+    "_" +
+    nouns[Math.floor(Math.random() * nouns.length)];
+
+  sessionStorage.setItem("bagel_session_name", generated);
+  return generated;
+}
+
+function getMyColor() {
+  if (devName && DEV_ACCOUNTS[devName]) {
+    return DEV_ACCOUNTS[devName].colors[0];
+  }
+
+  if (customColor) return customColor;
+
+  let c = sessionStorage.getItem("bagel_session_color");
+
+  if (!c) {
+    c = '#' + Math.floor(Math.random() * 0xFFFFFF)
+      .toString(16)
+      .padStart(6, '0');
+
+    sessionStorage.setItem("bagel_session_color", c);
+  }
+
+  return c;
+}
+
+// =====================
+// DEV GRADIENT NAME
+// =====================
+
+function makeGradientNameEl(label, colors) {
+  const w = label.length * 8 + 20;
+  const id = 'g' + Math.random().toString(36).slice(2);
+
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("width", w);
+  svg.setAttribute("height", 20);
+
+  svg.innerHTML = `
+    <defs>
+      <linearGradient id="${id}">
+        <stop offset="0%" stop-color="${colors[0]}"/>
+        <stop offset="100%" stop-color="${colors[1]}"/>
+      </linearGradient>
+    </defs>
+    <text x="50%" y="15" text-anchor="middle"
+      font-size="14"
+      font-family="Nunito"
+      font-weight="900"
+      fill="url(#${id})">
+      ${label}
+    </text>
+  `;
+
+  return svg;
+}
+
+// =====================
+// NAME STYLING
+// =====================
+
+function styleNameEl(el, member) {
+  const data = profileMap[member.id] || member.clientData || {};
+
+  const name = data.name;
+  const color = data.color;
+
+  const devKey = Object.keys(DEV_ACCOUNTS)
+    .find(k => DEV_ACCOUNTS[k].label === name);
+
+  // =====================
+  // DEV ACCOUNT
+  // =====================
+  if (devKey) {
+    el.innerHTML = "";
+
+const wrapper = document.createElement("span");
+wrapper.style.display = "inline-flex";
+wrapper.style.alignItems = "center";
+wrapper.style.gap = "0px"; // tighter than before
+
+    const nameEl = makeGradientNameEl(
+      DEV_ACCOUNTS[devKey].label,
+      DEV_ACCOUNTS[devKey].colors
+    );
+
+    const badge = document.createElement("span");
+badge.textContent = "DEV";
+badge.style.fontSize = "8px";          // slightly smaller
+badge.style.padding = "1px 3px";       // tighter
+badge.style.borderRadius = "4px";
+badge.style.background = "var(--accent)";
+badge.style.color = "#000";
+badge.style.fontWeight = "900";
+badge.style.boxShadow = "0 0 6px rgba(247,193,111,0.45)";
+badge.style.marginLeft = "0px";        // smaller gap
+
+    wrapper.appendChild(nameEl);
+    wrapper.appendChild(badge);
+
+    el.innerHTML = "";
+    el.appendChild(wrapper);
+
+    el.style.textShadow = "0 0 10px rgba(247,193,111,0.85)";
+    el.style.fontWeight = "900";
+    return;
+  }
+
+  // =====================
+  // NORMAL USER (NO GLOW)
+  // =====================
+  el.textContent = name || "unknown";
+  el.style.color = color || "#fff";
+  el.style.textShadow = "none";
+}
+
+// =====================
+// SCALEDRONE SETUP
+// =====================
+
+function reconnectChat() {
+  if (chatDrone) chatDrone.close();
+
+  isDev = !!(devName && DEV_ACCOUNTS[devName]);
+
+  chatDrone = new ScaleDrone(CLIENT_ID, {
+    data: {
+      name: getMyName(),
+      color: getMyColor(),
+      dev: isDev
     }
-    function getRandomColor() {
-      return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, '0');
-    }
- 
-    // Connect immediately on page load — counts you as online right away
-    chatDrone = new ScaleDrone(CLIENT_ID, {
-      data: { name: getRandomName(), color: getRandomColor() }
-    });
- 
-    chatDrone.on('open', () => {
-      const room = chatDrone.subscribe('observable-room');
-      room.on('members', m => { members = m; updatePanelMembers(); });
-      room.on('member_join', m => { members.push(m); updatePanelMembers(); });
-      room.on('member_leave', ({ id }) => {
-        members.splice(members.findIndex(m => m.id === id), 1);
-        updatePanelMembers();
+  });
+
+  chatDrone.on('open', () => {
+    const room = chatDrone.subscribe('observable-room');
+
+    room.on('members', m => {
+      members = m;
+
+      m.forEach(mem => {
+        profileMap[mem.id] = mem.clientData;
       });
-      room.on('data', (text, member) => {
-        if (member) addPanelMessage(text, member);
-      });
+
+      updatePanelMembers();
     });
- 
-    function updatePanelMembers() {
-      const count = members.length;
-      document.getElementById('online-count').textContent = count;
-      document.getElementById('panel-member-count').textContent = count + ' nerd' + (count !== 1 ? 's' : '') + ' online';
-      const list = document.getElementById('panel-members-list');
-      list.innerHTML = '';
-      members.forEach(m => {
-        const el = document.createElement('span');
-        el.className = 'member';
-        el.textContent = m.clientData.name;
-        el.style.color = m.clientData.color;
-        list.appendChild(el);
+
+    room.on('member_join', m => {
+      members.push(m);
+      profileMap[m.id] = m.clientData;
+      updatePanelMembers();
+    });
+
+    room.on('member_leave', ({ id }) => {
+      members = members.filter(m => m.id !== id);
+      delete profileMap[id];
+      updatePanelMembers();
+    });
+
+    room.on('data', (data, member) => {
+      try {
+        const msg = JSON.parse(data);
+
+        if (msg.type === "profileUpdate") {
+          profileMap[member.id] = msg;
+          updatePanelMembers();
+          return;
+        }
+      } catch {}
+
+      if (member) addPanelMessage(data, member);
+    });
+  });
+}
+
+reconnectChat();
+
+// =====================
+// UI
+// =====================
+
+function updatePanelMembers() {
+  const list = document.getElementById('panel-members-list');
+
+  document.getElementById('online-count').textContent = members.length;
+
+  list.innerHTML = "";
+
+  members.forEach(m => {
+    const el = document.createElement("span");
+    el.className = "member";
+    el.textContent = m.clientData?.name || "unknown";
+
+    styleNameEl(el, m);
+
+    list.appendChild(el);
+  });
+}
+
+function addPanelMessage(text, member) {
+  const box = document.getElementById('panel-messages');
+
+  const msg = document.createElement("div");
+  msg.className = "message";
+
+  const nameEl = document.createElement("span");
+  nameEl.className = "member";
+  nameEl.textContent = member.clientData?.name || "unknown";
+
+  styleNameEl(nameEl, member);
+
+  msg.appendChild(nameEl);
+  msg.appendChild(document.createTextNode(": " + text));
+
+  box.appendChild(msg);
+  box.scrollTop = box.scrollHeight;
+}
+
+// =====================
+// CHAT SEND + COMMANDS
+// =====================
+
+document.getElementById('panel-form').addEventListener('submit', e => {
+  e.preventDefault();
+
+  const input = document.getElementById('panel-input');
+  const value = input.value.trim();
+
+  if (!value) return;
+
+  const now = Date.now();
+  if (now - lastClick < coolDown) return;
+  lastClick = now;
+
+  input.value = "";
+  if (value === "/devlogout") {
+  devLogout();
+  return;
+}
+
+  // =====================
+  // DEV COMMAND (SECURE)
+  // =====================
+  if (value.startsWith("/dev ")) {
+    const parts = value.split(" ");
+    const target = parts[1];
+    const password = parts[2];
+
+    if (password !== DEV_PASSWORD) {
+      addPanelMessage("System", {
+        clientData: { name: "Invalid dev password" }
+      });
+      return;
+    }
+
+    if (DEV_ACCOUNTS[target]) {
+      devName = target;
+      localStorage.setItem("bagel_dev_name", target);
+
+      reconnectChat();
+
+      addPanelMessage("System", {
+        clientData: { name: "Switched to DEV: " + target }
+      });
+    } else {
+      addPanelMessage("System", {
+        clientData: { name: "Invalid dev account" }
       });
     }
- 
-    function addPanelMessage(text, member) {
-      const box = document.getElementById('panel-messages');
-      const msg = document.createElement('div');
-      msg.className = 'message';
-      const nameEl = document.createElement('span');
-      nameEl.className = 'member';
-      nameEl.textContent = member.clientData.name;
-      nameEl.style.color = member.clientData.color;
-      msg.appendChild(nameEl);
-      msg.appendChild(document.createTextNode(text));
-      box.appendChild(msg);
-      box.scrollTop = box.scrollHeight;
-    }
- 
-    // Single submit handler — covers both Enter and button click, never double-fires
-    document.getElementById('panel-form').addEventListener('submit', e => {
-      e.preventDefault();
- 
-      const now = Date.now();
-      // Always update lastClick first so blocked messages still reset the timer
-      const isSpam = now - lastClick < coolDown;
-      lastClick = now;
- 
-      if (isSpam) {
-        new Audio('stopspamming.mp3').play();
-        alert('ayo dude stop spamming');
-        return;
-      }
- 
-      const input = document.getElementById('panel-input');
-      const value = input.value.trim();
-      if (!value) return;
-      if (value.match(/(黑鬼|ass|cum|retard|bitch|shit|cunt|cock|dick|fuck|nigger|nigga|pussy|nazi|whore|faggot|handjob|penis|sex|hitler|niger|titties|gay|tit|boob|@ss|c0ck|b!tch|pu\$\$y|por|nigas|pp|incest|p0r|rape|r@pe|slut|threesum|foursum|twosum|shiz|p0r|nigg)/gi)) {
-        alert('cmon man why you saying that kinda stuff?');
-        return;
-      }
-      if (value.length > 100) {
-        alert('my guy, that message is too big.. just like your mom gottem');
-        return;
-      }
-      input.value = '';
-      chatDrone.publish({ room: 'observable-room', message: value });
-    });
- 
-    function toggleChat() {
-      document.getElementById('chat-panel').classList.toggle('open');
-    }
+
+    return;
+  }
+
+  chatDrone.publish({
+    room: 'observable-room',
+    message: value
+  });
+});
+
+// =====================
+// PROFILE
+// =====================
+
+function saveProfile() {
+  const nameInput = document.getElementById('profile-name-input');
+  const colorInput = document.getElementById('profile-color-input');
+
+  customName = nameInput.value.trim();
+  customColor = colorInput.value;
+
+  localStorage.setItem("bagel_custom_name", customName);
+  localStorage.setItem("bagel_custom_color", customColor);
+
+  chatDrone.publish({
+    room: "observable-room",
+    message: JSON.stringify({
+      type: "profileUpdate",
+      name: customName,
+      color: customColor
+    })
+  });
+
+  reconnectChat();
+}
+
+// =====================
+// UI TOGGLES
+// =====================
+
+function toggleChat() {
+  document.getElementById('chat-panel').classList.toggle('open');
+}
+
+function toggleProfile() {
+  document.getElementById('profile-content').classList.toggle('collapsed');
+}
+function devLogout() {
+  devName = null;
+  localStorage.removeItem("bagel_dev_name");
+
+  isDev = false;
+
+  reconnectChat();
+
+  addPanelMessage("System", {
+    clientData: { name: "Dev mode disabled" }
+  });
+}
