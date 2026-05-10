@@ -1,9 +1,15 @@
 const gamersgaming = {
-            "1on1Soccer": {
-        "name": "Drats!",
-        "url": "TSADrats/index.html",
-        "image": "thumbnails/drats.png",
-        tags:['original','strategy']
+                "jimmy": {
+        "name": "The Jimmy Bean Game",
+        "url": "JimmyBeanGame/index.html",
+        "image": "thumbnails/jimmybean.png",
+        tags:['original','platformer']
+    },
+            "phobia": {
+        "name": "Phobia",
+        "url": "Phobia 0.2.1/index.html",
+        "image": "thumbnails/phobia.png",
+        tags:['original','platformer']
     },
         "drats": {
         "name": "Drats!",
@@ -111,12 +117,12 @@ const gamersgaming = {
         "name": "Bagel With a Gun",
         "url": "bwag/index.html",
         "image": "thumbnails/bwag.png",
-        tags:['adventure','platformer','puzzle','action','shooter','strategy','favorite']
+        tags:['original','adventure','platformer','puzzle','action','shooter','strategy','favorite']
     },
     "BagelWithaGunDemo": {
         "name": "Bagel With a Gun Demo",
         "url": "bagelwithagun.html",
-        tags:['adventure','platformer','puzzle','action','shooter','strategy']
+        tags:['original','adventure','platformer','puzzle','action','shooter','strategy']
     },
     "Bagelwithlegs": {
         "name": "Bagel With Legs",
