@@ -31,7 +31,8 @@ const GENRES = {
   sports: ["sports"],
   action: ["action"],
   platformer: ["platformer"],
-  strategy: ["strategy"]
+  strategy: ["strategy"],
+  original: ["original"]
 };
 
 // ---------------- HELPERS ----------------
