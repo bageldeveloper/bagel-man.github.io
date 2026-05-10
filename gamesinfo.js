@@ -1,4 +1,16 @@
 const gamersgaming = {
+            "1on1Soccer": {
+        "name": "Drats!",
+        "url": "TSADrats/index.html",
+        "image": "thumbnails/drats.png",
+        tags:['original','strategy']
+    },
+        "drats": {
+        "name": "Drats!",
+        "url": "TSADrats/index.html",
+        "image": "thumbnails/drats.png",
+        tags:['original','strategy']
+    },
     "1on1Soccer": {
         "name": "1on1 Soccer",
         "url": "games/html/1on1soccer.html",
