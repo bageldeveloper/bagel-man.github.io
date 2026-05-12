@@ -406,9 +406,10 @@ function createCarouselRow(titleText, games) {
     // Add new ones to the TOP. Each needs a unique id.
     // =============================================
     const ANNOUNCEMENTS = [
-                  { id: 'ann-2026-05-10', date: 'May 10th, 2026', text: 'Hey guys! I added Drats, Phobia, and The Jimmy Bean Game, you can find them under the orginal games section. -Tom' },
 
-            { id: 'ann-2026-05-07', date: 'May 7th, 2026', text: 'You can pick your own name in the chat now! Also maybe youll see one of us in the chat hehe ;) -Tom' },
+      { id: 'ann-2026-05-10', date: 'May 12th, 2026', text: 'I apologize for anyone using the canvas course since it got hacked. However, some of the games on canvas still work, so go to tinyurl.com/bagelminecraft for the time being. -Carter' },
+      { id: 'ann-2026-05-10', date: 'May 10th, 2026', text: 'Hey guys! I added Drats, Phobia, and The Jimmy Bean Game, you can find them under the orginal games section. -Tom' },
+      { id: 'ann-2026-05-07', date: 'May 7th, 2026', text: 'You can pick your own name in the chat now! Also maybe youll see one of us in the chat hehe ;) -Tom' },
       { id: 'ann-2026-02-13', date: 'February 13th, 2026', text: 'The website has been overhauled, looks better, easier to navigate, and less of a mess. Also added wheely games. -Tom' },
       { id: 'ann-2025-10-11', date: 'October 11th, 2025', text: "Long time no see. Daniel had a bunch of unreleased flash games (now available) and I've fixed Minecraft 1.8. -Carter" },
       { id: 'ann-2025-02-14', date: 'February 14th, 2025', text: 'Updated the site with more games. The Jimmy Bean game is now on here. -Tom' },
