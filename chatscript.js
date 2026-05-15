@@ -18,7 +18,7 @@ const DEV_PASSWORD = "bagel2025";
 
 const DEV_ACCOUNTS = {
   carter: { colors: ["#f857a6", "#ff5858"], label: "Carter" },
-  daniel: { colors: ["#43e97b", "#38f9d7"], label: "Daniel" },
+  daniel: { colors: ["#fd6bff", "#2bcbee"], label: "Daniel" },
   tom:    { colors: ["#f7971e", "#ffd200"], label: "Tom" }
 };
 
