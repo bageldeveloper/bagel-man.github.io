@@ -9,6 +9,7 @@ let lastClick = Date.now() - coolDown;
 let members = [];
 let chatDrone;
 const profileMap = {};
+let missedMessages = 0;
 
 // =====================
 // DEV ACCOUNTS
@@ -214,12 +215,24 @@ function reconnectChat() {
         }
       } catch {}
 
-      if (member) addPanelMessage(data, member);
+      if (member) {
+        addPanelMessage(data, member);
+        // Increment missed messages when chat panel is closed
+        const chatPanel = document.getElementById('chat-panel');
+        if (!chatPanel.classList.contains('open')) {
+          missedMessages++;
+          updateMissedCount();
+        }
+      }
     });
   });
 }
 
 reconnectChat();
+
+// Reset missed messages on page load (user is checking the site)
+missedMessages = 0;
+updateMissedCount();
 
 // =====================
 // UI
@@ -227,8 +240,9 @@ reconnectChat();
 
 function updatePanelMembers() {
   const list = document.getElementById('panel-members-list');
+  const memberCount = document.getElementById('panel-member-count');
 
-  document.getElementById('online-count').textContent = members.length;
+  memberCount.textContent = members.length + ' online';
 
   list.innerHTML = "";
 
@@ -241,6 +255,11 @@ function updatePanelMembers() {
 
     list.appendChild(el);
   });
+}
+
+function updateMissedCount() {
+  const countEl = document.getElementById('online-count');
+  countEl.textContent = missedMessages > 0 ? missedMessages : '';
 }
 
 function addPanelMessage(text, member) {
@@ -354,7 +373,14 @@ function saveProfile() {
 // =====================
 
 function toggleChat() {
-  document.getElementById('chat-panel').classList.toggle('open');
+  const panel = document.getElementById('chat-panel');
+  panel.classList.toggle('open');
+  
+  // Reset missed messages when opening chat
+  if (panel.classList.contains('open')) {
+    missedMessages = 0;
+    updateMissedCount();
+  }
 }
 
 function toggleProfile() {
