@@ -103,7 +103,7 @@ const gamersgaming = {
     },
     "Asteroids": {
         "name": "Asteroids",
-        "url": "/games/html/assroid.html",
+        "url": "games/html/assroid.html",
         "image": "thumbnails/asteroids.png",
         tags:['shooter','action','strategy','console']
     },
@@ -301,12 +301,6 @@ const gamersgaming = {
         "url": "games/emu/doubledragon.html",
         "image": "thumbnails/doubledragon.jpg",
         tags:['adventure','action','strategy','console']
-    },
-    "DriftHunters": {
-        "name": "Drift Hunters",
-        "url": "games/html/drift-hunters/index.html",
-        "image": "thumbnails/drifthunters.png",
-        tags:['action','adventure','racing']
     },
     "DuckHunt": {
         "name": "Duck Hunt",
@@ -962,12 +956,6 @@ const gamersgaming = {
         "image": "thumbnails/sonic.png",
         tags:['adventure','puzzle','action','racing','platformer','difficult','strategy','console']
     },
-    "SpaceInvaders": {
-        "name": "Space Invaders",
-        "url": "space.html",
-        "image": "thumbnails/spaceinvaders.gif",
-        tags:['shooter','action','strategy','console']
-    },
     "StarWarsEpisodeOneRacer": {
         "name": "Star Wars Episode One: Racer",
         "url": "games/emu/episodeoneracer.html",
@@ -1230,12 +1218,6 @@ const gamersgaming = {
         "url": "games/html/factoryballschristmas.html",
         "image": "thumbnails/factoryballschristmas.png",
         tags:['puzzle','simulation','strategy']
-    },
-    "WheresMyWater": {
-        "name": "Where's my Water!",
-        "url": "games/Wheres-My-Water/index.html",
-        "image": "thumbnails/wheresmywater.png",
-        tags:['puzzle','simulation','racing','action','difficult','strategy','console']
     },
     "AngryBirds": {
         "name": "Angry Birds",
@@ -1951,7 +1933,9 @@ const gamersgaming = {
     */
 }
 
-module.exports = { gamersgaming };
+if (typeof module !== 'undefined') {
+  module.exports = { gamersgaming };
+}
 
                /*
                tags:['adventure','puzzle','simulation','shooter','tower-defense','racing','sports','action','platformer','difficult','strategy','console']

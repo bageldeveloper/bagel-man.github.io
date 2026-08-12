@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
+<html lang="en">
+<head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4474724430572739"
      crossorigin="anonymous"></script>
     <!-- SEO Meta Tags -->
@@ -60,9 +60,346 @@
 
   gtag('config', 'G-STZFN2TW1E');
 </script>
+    <link rel="icon" href="../bagelicontab.png">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+    <script src="https://cdn.scaledrone.com/scaledrone.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="../gamesinfo.js"></script>
+    <style>
+    .game-window-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      gap: 1rem;
+      min-height: calc(100vh - var(--topbar-height));
+    }
+    .main-content {
+      padding-left: 0;
+    }
+    .game-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .ad-sidebar {
+      width: 160px;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .game-window {
+      position: relative;
+      width: 960px;
+      height: 600px;
+      background: #000;
+      border: 3px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    }
+    .game-window embed {
+      width: 100%;
+      height: 100%;
+    }
+    .game-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 960px;
+    }
+    .suggested-games-section {
+      margin-top: 2rem;
+      width: 100%;
+    }
+    .suggested-games-title {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .suggested-games-row {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      overflow: hidden;
+    }
+    .suggested-games-container {
+      display: flex;
+      gap: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .suggested-game-card {
+      width: 200px;
+      height: 150px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid var(--border);
+      position: relative;
+      cursor: pointer;
+      flex-shrink: 0;
+      box-shadow: 0 4px 4px #000000;
+      transition: transform 0.15s ease;
+    }
+    .suggested-game-card:hover {
+      transform: translateY(-8px);
+    }
+    .suggested-game-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+    .suggested-game-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.5rem;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 900;
+      text-align: center;
+      z-index: 1;
+    }
+    .suggested-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      height: calc(100% - 0px);
+      width: 75px;
+      font-weight: 900;
+      cursor: pointer;
+      -webkit-text-stroke-color: var(--accent);
+      -webkit-text-stroke-width: 5px;
+      color: var(--accent);
+      font-size: 10px;
+      z-index: 10;
+      background-color: rgba(0,0,0,0.78);
+      border: 0;
+      animation: rowarrowstophover 0.2s ease both;
+    }
+    .suggested-arrow:hover {
+      animation: rowarrowhover 0.2s ease both;
+    }
+    .suggested-arrow:active {
+      animation: rowarrowstophover 0.2s;
+    }
+    .suggested-arrow.prev {
+      left: 0;
+    }
+    .suggested-arrow.next {
+      right: 0;
+    }
+    .suggested-arrow.hidden {
+      display: none;
+    }
+    @keyframes rowarrowhover {
+      from { opacity: 1; font-size: 10px; }
+      to { opacity: 1; font-size: 20px; }
+    }
+    @keyframes rowarrowstophover {
+      from { opacity: 1; font-size: 20px; }
+      to { opacity: 1; font-size: 10px; }
+    }
+    .game-window-title {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--accent);
+    }
+    .fullscreen-btn {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border-radius: 8px;
+      border: 2px solid var(--accent);
+      background: transparent;
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-family: "Nunito", sans-serif;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .fullscreen-btn:hover {
+      background: var(--accent);
+      color: #000;
+    }
+    .game-window.fullscreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+      z-index: 1000;
+    }
+    .game-window.fullscreen + .game-controls {
+      display: none;
+    }
+    .game-window:fullscreen #unity-container {
+      width: 100% !important;
+      height: 100% !important;
+      left: 0 !important;
+      top: 0 !important;
+      transform: none !important;
+    }
+    .game-window:fullscreen #unity-canvas {
+      width: 100% !important;
+      height: 100% !important;
+    }
+    body.fullscreen-mode .topbar {
+      display: none;
+    }
+    body.fullscreen-mode .sidebar {
+      display: none;
+    }
+    body.fullscreen-mode .layout {
+      padding-top: 0;
+    }
+    </style>
   </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
+<body>
+  <header class="topbar">
+    <div class="logo-area">
+      <img src="../bagelicontab.png" alt="Bagel">
+    </div>
+    <div class="topbar-center">
+      <div class="search-wrapper">
+        <input id="searchInput" placeholder="search games...">
+        <div id="searchIcon" class="search-icon"><img style="width:20px;" src="../images/icons/search.png"></div>
+        <div id="searchSuggestions" class="search-suggestions"></div>
+      </div>
+    </div>
+    <nav class="topbar-right">
+      <button id="chat-toggle-btn" onclick="toggleChat()"><img class="icons" src="../images/icons/chat.png"><span id="online-count">0</span></button>
+      <button id="announce-btn" onclick="toggleAnnouncePanel()"><img class="icons" src="../images/icons/announcements.png"><span id="announce-dot"></span></button>
+      <button onclick="toggleSettings()"><img class="icons" src="../images/icons/settings.png"></button>
+    </nav>
+  </header>
+
+  <!-- ANNOUNCEMENT PANEL -->
+  <div id="announce-panel">
+    <div class="ann-tabs">
+      <button class="ann-tab active" id="tab-new" onclick="switchAnnTab('new')">New</button>
+      <button class="ann-tab" id="tab-all" onclick="switchAnnTab('all')">All</button>
+    </div>
+    <div class="ann-pane active" id="pane-new">
+      <div id="ann-new-content"></div>
+    </div>
+    <div class="ann-pane" id="pane-all">
+      <div id="ann-all-list"></div>
+    </div>
+  </div>
+
+  <!-- SETTINGS PANEL -->
+  <div id="settings-panel">
+    <div class="settings-title">Settings</div>
+    <div class="settings-row">
+      <label>
+        Light mode
+        <span class="sub">Swap to a lighter theme</span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="toggle-light" onchange="applyLightMode(this.checked)">
+        <div class="toggle-track"></div>
+        <div class="toggle-thumb"></div>
+      </label>
+    </div>
+    <hr class="settings-divider">
+    <div class="settings-row">
+      <label>
+        Block ads
+        <span class="sub">Hides AdSense scripts & slots</span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="toggle-ads" onchange="applyAdBlock(this.checked)">
+        <div class="toggle-track"></div>
+        <div class="toggle-thumb"></div>
+      </label>
+    </div>
+  </div>
+
+  <!-- CHAT PANEL -->
+  <div id="chat-panel">
+    <div class="chat-panel-header">
+      <div>
+        <h3>Chat</h3>
+        <span class="members-count-inline" id="panel-member-count">connecting...</span>
+      </div>
+      <button class="chat-panel-close" onclick="toggleChat()">✖</button>
+    </div>
+    <div class="chat-panel-members" id="panel-members-list"></div>
+    <div class="chat-panel-messages" id="panel-messages"></div>
+    <div id="profile-panel">
+      <button class="profiletoggle" onclick="toggleProfile()">Profile</button>
+      <div id="profile-content" class="profile-content collapsed">
+        <div class="chat-profile-preview">
+          <span id="profile-preview-name"></span>
+        </div>
+        <div class="profile-row">
+          <input id="profile-name-input" maxlength="30" placeholder="your name" oninput="refreshProfilePreview()"/>
+          <input id="profile-color-input" type="color" oninput="refreshProfilePreview()"/>
+          <button onclick="saveProfile()">Save</button>
+        </div>
+      </div>
+    </div>
+    <form class="chat-panel-form" id="panel-form">
+      <input id="panel-input" placeholder="Say something..." maxlength="100">
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="game-categories">
+        <button class="active" data-genre="all"><img class="gameicon" src="../images/icons/home.png"> All Games</button>
+        <button data-genre="favorite"><img class="gameicon" src="../images/icons/favorites.png"> Favorites</button>
+        <button data-genre="adventure"><img class="gameicon" src="../images/icons/adventure.png"> Adventure</button>
+        <button data-genre="puzzle"><img class="gameicon" src="../images/icons/puzzle.png"> Puzzle</button>
+        <button data-genre="simulation"><img class="gameicon" src="../images/icons/simulation.png"> Simulation</button>
+        <button data-genre="shooter"><img class="gameicon" src="../images/icons/shooter.png"> Shooter</button>
+        <button data-genre="towerDefense"><img class="gameicon" src="../images/icons/tower.png"> Tower Defense</button>
+        <button data-genre="racing"><img class="gameicon" src="../images/icons/racing.png"> Racing</button>
+        <button data-genre="sports"><img class="gameicon" src="../images/icons/sports.png"> Sports</button>
+        <button data-genre="action"><img class="gameicon" src="../images/icons/action.png"> Action</button>
+        <button data-genre="platformer"><img class="gameicon" src="../images/icons/platformer.png"> Platformer</button>
+        <button data-genre="strategy"><img class="gameicon" src="../images/icons/strategy.png"> Strategy</button>
+        <button data-genre="original"><img class="gameicon" src="../images/icons/originals.png"> Original</button>
+      </div>
+    </aside>
+    <main class="main-content">
+      <div class="game-window-container">
+        <div class="game-area">
+          <div class="ad-sidebar">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4474724430572739"
+                 crossorigin="anonymous"></script>
+            <!-- ad bois -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:160px;height:600px"
+                 data-ad-client="ca-pub-4474724430572739"
+                 data-ad-slot="4055551074"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+          <div class="game-window" id="gameWindow"><div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
@@ -72,11 +409,6 @@
       </div>
       <div id="unity-mobile-warning">
         WebGL builds are not supported on mobile devices.
-      </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">DefinitelyNOTaFlappyBirdClone</div>
       </div>
     </div>
     <script>
@@ -96,7 +428,6 @@
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var mobileWarning = document.querySelector("#unity-mobile-warning");
 
       // By default Unity keeps WebGL canvas render target size matched with
@@ -128,14 +459,352 @@
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
         }).catch((message) => {
           alert(message);
         });
       };
       document.body.appendChild(script);
     </script>
-  </body>
+          </div>
+          <div class="ad-sidebar">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4474724430572739"
+                 crossorigin="anonymous"></script>
+            <!-- ad bois -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:160px;height:600px"
+                 data-ad-client="ca-pub-4474724430572739"
+                 data-ad-slot="4055551074"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+        </div>
+        <div class="game-controls">
+          <span class="game-window-title">Turkey Flap</span>
+          <button class="fullscreen-btn" onclick="toggleFullscreen()">⛶</button>
+        </div>
+        <div class="suggested-games-section">
+          <div class="suggested-games-title">Suggested</div>
+          <div class="suggested-games-row">
+            <button class="suggested-arrow prev" onclick="scrollSuggestedGames(-1)">◀</button>
+            <div class="suggested-games-container" id="suggestedGamesContainer"></div>
+            <button class="suggested-arrow next" onclick="scrollSuggestedGames(1)">▶</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../chatscript.js"></script>
+  <script>
+    function toggleFullscreen() {
+    const gameWindow = document.getElementById('gameWindow');
+
+    if (!document.fullscreenElement) {
+      gameWindow.requestFullscreen().catch(err => {
+        console.error(`Error attempting to enable fullscreen: ${err.message}`);
+      });
+    } else {
+      document.exitFullscreen();
+    }
+  }
+
+    function applyAdBlock(blockAds) {
+      const adSidebars = document.querySelectorAll('.ad-sidebar');
+      const adsbygoogle = document.querySelectorAll('.adsbygoogle');
+
+      adSidebars.forEach(sidebar => {
+        sidebar.style.display = blockAds ? 'none' : 'flex';
+      });
+
+      adsbygoogle.forEach(ad => {
+        ad.style.display = blockAds ? 'none' : 'block';
+      });
+
+      // Save preference to localStorage
+      localStorage.setItem('blockAds', blockAds);
+    }
+
+    function applyLightMode(isLight) {
+      document.body.classList.toggle('light', isLight);
+      localStorage.setItem('lightMode', isLight);
+    }
+
+    function toggleSettings() {
+      document.getElementById('settings-panel').classList.toggle('open');
+      document.getElementById('announce-panel').classList.remove('visible');
+      document.getElementById('chat-panel').classList.remove('open');
+    }
+
+
+    // =============================================
+    // ANNOUNCEMENTS
+    // =============================================
+    const ANNOUNCEMENTS = [
+      { id: 'ann-2026-05-10', date: 'May 12th, 2026', text: 'I apologize for anyone using the canvas course since it got hacked. However, some of the games on canvas still work, so go to tinyurl.com/bagelminecraft for the time being. -Carter' },
+      { id: 'ann-2026-05-10b', date: 'May 10th, 2026', text: 'Hey guys! I added Drats, Phobia, and The Jimmy Bean Game, you can find them under the orginal games section. -Tom' },
+      { id: 'ann-2026-05-07', date: 'May 7th, 2026', text: 'You can pick your own name in the chat now! Also maybe youll see one of us in the chat hehe ;) -Tom' },
+      { id: 'ann-2026-02-13', date: 'February 13th, 2026', text: 'The website has been overhauled, looks better, easier to navigate, and less of a mess. Also added wheely games. -Tom' },
+      { id: 'ann-2025-10-11', date: 'October 11th, 2025', text: "Long time no see. Daniel had a bunch of unreleased flash games (now available) and I've fixed Minecraft 1.8. -Carter" },
+      { id: 'ann-2025-02-14', date: 'February 14th, 2025', text: 'Updated the site with more games. The Jimmy Bean game is now on here. -Tom' },
+      { id: 'ann-2023-11-15b', date: 'November 15th, 2023', text: "Haven't really done much this past month. We are gonna start it back up hopefully. -Carter" },
+      { id: 'ann-2023-11-15a', date: 'November 15th, 2023', text: 'NEW GAME RELEASE ON THANKSGIVING -Carter' },
+      { id: 'ann-2023-11-13', date: 'November 13th, 2023', text: 'THE NEW WEBSITE IS BAGELCOMICS.ORG GUYS GO TO IT NOW -tom' },
+      { id: 'ann-2023-11-09', date: 'November 9th, 2023', text: "Bruh we get blocked after like 20 minutes?! Anyways new site will be bagelcomics.org. Edit: SOMEONE SUBSCRIBED TO THE PATREON!!!!! -Dirty Dan" },
+      { id: 'ann-2023-11-08', date: 'November 8th, 2023', text: 'Added some new chat names. Also NGW baby! Added Crush the Castle 1 and 2, Strike Force Heroes 1, 2, and 3. -Dirty Dan' },
+      { id: 'ann-2023-11-06b', date: 'November 6th, 2023', text: 'Added a Sterling quote of the day in the projects page. Check it everyday for out of context Sterling quotes. -Dirty Dan' },
+      { id: 'ann-2023-11-06a', date: 'November 6th, 2023', text: 'Added a Game of the Day section to keep things new and fresh every day. -Dirty Dan' },
+      { id: 'ann-2023-11-01', date: 'November 1st, 2023', text: "Halloween is over. Added Zelda Link to the Past, Earthbound, Banjo Kazooie, Line Rider 2 and 3. Also added a shop on the Patreon. -Dirty Dan" },
+      { id: 'ann-2023-10-31', date: 'October 31st, 2023', text: 'Sorry that the website was broken this morning, hopefully we fixed it. Happy Halloween! -Tom' },
+      { id: 'ann-2023-10-28', date: 'October 28th, 2023', text: 'Chat is back! We now have a Patreon with benefits and a free tier. -The whole bagelcomics team' },
+      { id: 'ann-2023-10-18', date: 'October 18th, 2023', text: 'NGW is back! Added the rest of the Hobo Games (3rd through 7th). -Dirty Dan' },
+      { id: 'ann-2023-10-10', date: 'October 10th, 2023', text: 'bagelcomics.com is dead, we are EGGYOLKERS. Also removed chat cuz no one used it. -Tom' },
+      { id: 'ann-2023-10-08', date: 'October 8th, 2023', text: "NGW is back! Added the Waitress and Escape Series games. -Dirty Dan" },
+      { id: 'ann-2023-10-04', date: 'October 4th, 2023', text: 'You like the spooky theme? Also added Mega Man X2 and X3. Happy Halloween! -Dirty Dan' },
+      { id: 'ann-2023-09-27', date: 'September 27th, 2023', text: 'Still a competition going on. Added every Red Ball game I could find. -Dirty Dan' },
+      { id: 'ann-2023-09-25b', date: 'September 25th, 2023', text: 'Added Star Wars Episode 1 Racer. Also announcing a tournament — winner gets a mystery gift! -Dirty Dan' },
+      { id: 'ann-2023-09-25a', date: 'September 25th, 2023', text: "Unfortunately Tom doesn't want to work on this anymore so it's just me and Daniel. -Carter" },
+      { id: 'ann-2023-09-21', date: 'September 21st, 2023', text: 'WE ARE SO BACK BABY WOOOOOOOOOOOO -Tom' },
+      { id: 'ann-2023-06-19', date: 'June 19th, 2023', text: 'Games section was a little unorganized. Made it fit the vibe better. -Dirty Dan' },
+      { id: 'ann-2023-05-18', date: 'May 18th, 2023', text: 'Added Super Smash Bros, Super Punch Out!!, and Stop GMO. Moved old Nintendo games to the Nintendo Games Section. -Dirty Dan' },
+      { id: 'ann-2023-05-15', date: 'May 15th, 2023', text: 'New emulator for N64, NES, SNES, NDS, and SEGA Genesis! Now you can fullscreen and customize controls. -Dirty Dan' },
+      { id: 'ann-2023-05-13', date: 'May 13th, 2023', text: 'Added literally every Papa game ever made. -Dirty Dan' },
+      { id: 'ann-2023-05-12', date: 'May 12th, 2023', text: 'Added ANOTHER ZELDA GAME, BATMAN, DUCKTALES, SUPER MARIO BROS 1/2/3, PUNCH OUT!, MEGA MAN 2, CONTRA, and more! -Dirty Dan' },
+      { id: 'ann-2023-05-08b', date: "May 8th, 2023", text: "It's my Birthday :) -Dirty Dan" },
+      { id: 'ann-2023-05-06', date: 'May 6th, 2023', text: "Papas games aren't broken anymore! Also fixed Awesome Tanks 2 and Learn to Fly 2. -Dirty Dan" },
+      { id: 'ann-2023-04-27', date: 'April 27th, 2023', text: 'Added some good old checkers. Still recruiting! -Dirty Dan' },
+      { id: 'ann-2023-04-25', date: 'April 25th, 2023', text: "New Games Tuesday? Added Mario Kart 64 and fixed multiple Papas games. -Tom" },
+      { id: 'ann-2023-04-13', date: 'April 13th, 2023', text: 'Added raft wars :)' },
+      { id: 'ann-2023-03-23', date: 'March 23rd, 2023', text: 'I set the repository to private but that broke everything so I\'m sorry that it was down yesterday.' },
+      { id: 'ann-2023-03-21', date: 'March 21st, 2023', text: 'New game wednesday! Added Papas Pancakeria, Papas Hotdogeria, Papas Burgeria, Plants vs Zombies 1 & 2, and Line Rider. -Tom' },
+      { id: 'ann-2023-03-15', date: 'March 15th, 2023', text: 'New games: Vex 6, Getaway Shootout, Drift Hunters, and Awesome Tanks 2. -Tom' },
+      { id: 'ann-2023-03-01', date: 'March 1st, 2023', text: 'Starting NGW! New games: Canyon Defense, 1 on 1 Soccer, Chibi Knight, 8 Ball Pool, Portal 2D, and Siftheads. -Tom' },
+      { id: 'ann-2023-01-16', date: 'January 16th, 2023', text: 'Got the 1.8 Minecraft client actually working. -Tom' },
+      { id: 'ann-2022-12-09b', date: 'December 9th, 2022', text: 'Bagel Royal is working (not on Chromebooks sadly). Added Sword and Sandals 1 and 2. -Dirty Dan' },
+      { id: 'ann-2022-12-07', date: 'December 7th, 2022', text: 'Added Jacksmith, which is a flash game someone asked for.' },
+      { id: 'ann-2022-12-05', date: 'December 5th, 2022', text: "Added Quake 1/3, also added Zelda Ocarina of Time. -Dirty Dan" },
+      { id: 'ann-2022-12-04', date: 'December 4th, 2022', text: 'New games: Duck Life 4 and all of the Riddle School games. Papas games coming soon. -Dirty Dan' },
+      { id: 'ann-2022-12-03', date: 'December 3rd, 2022', text: 'Added Super Smash Flash, pretty fun.' },
+      { id: 'ann-2022-11-20', date: 'November 20th, 2022', text: 'Added a whole truck load of new games including Learn to Fly 1, 2, and 3 and Art of War. -Dirty Dan' },
+      { id: 'ann-2022-11-18', date: 'November 18th, 2022', text: 'Gave Carter editing access. Now working on it together. -Tom' },
+      { id: 'ann-2022-11-06', date: 'November 6th, 2022', text: 'Added a Minecraft client, basically an exact port of 1.5. -Tom' },
+      { id: 'ann-2022-11-01', date: 'November 1st, 2022', text: 'Made a new game for Thanksgiving lol. -Tom' },
+      { id: 'ann-2022-10-31', date: 'October 31st, 2022', text: "WE HAVE CONTROL OF THE WEBSITE AGAIN! Slapped together an actual Bagel With a Gun 2 sneak peak. Also revamped the website! Happy Halloween! -Tom" },
+      { id: 'ann-2022-09-26', date: 'September 26th, 2022', text: 'Added Super Mario 64! New game coming out pretty soon, stay tuned. -Tom' },
+      { id: 'ann-2022-09-14', date: 'September 14th, 2022', text: 'Thank you for 10,000 visits! Also making a sequel to Bagel with a Gun. -Tom' },
+      { id: 'ann-2022-09-08', date: 'September 8th, 2022', text: 'Made the announcements fancy. -Tom' },
+    ];
+
+    function isUnseen(ann) { return !localStorage.getItem(ann.id); }
+    function getLatestUnseen() {
+      const latest = ANNOUNCEMENTS[0];
+      return localStorage.getItem(latest.id) ? null : latest;
+    }
+
+    function renderNewTab() {
+      const ann = getLatestUnseen();
+      const el = document.getElementById('ann-new-content');
+      if (!ann) {
+        el.innerHTML = '<div class="ann-caught-up">🎉 You\'re all caught up!</div>';
+        return;
+      }
+      el.innerHTML = `
+        <div class="ann-new-date">${ann.date}</div>
+        <div class="ann-new-text">${ann.text}</div>
+        <button class="ann-dismiss" onclick="dismissAnnouncement()">Dismiss</button>
+      `;
+    }
+
+    function renderAllTab() {
+      const list = document.getElementById('ann-all-list');
+      list.innerHTML = '';
+      ANNOUNCEMENTS.forEach(ann => {
+        const div = document.createElement('div');
+        div.className = 'ann-item' + (isUnseen(ann) ? ' unseen' : '');
+        div.innerHTML = `<div class="ann-item-date">${ann.date}</div><div class="ann-item-text">${ann.text}</div>`;
+        list.appendChild(div);
+      });
+    }
+
+    function dismissAnnouncement() {
+      const ann = getLatestUnseen();
+      if (ann) localStorage.setItem(ann.id, '1');
+      renderNewTab();
+      renderAllTab();
+      document.getElementById('announce-dot').classList.toggle('visible', !!getLatestUnseen());
+    }
+
+    function toggleAnnouncePanel() {
+      const panel = document.getElementById('announce-panel');
+      const isOpen = panel.classList.toggle('visible');
+      if (isOpen) {
+        document.getElementById('settings-panel').classList.remove('open');
+        document.getElementById('chat-panel').classList.remove('open');
+        switchAnnTab('new');
+        renderNewTab();
+      }
+    }
+
+    function switchAnnTab(tab) {
+      document.getElementById('pane-new').classList.toggle('active', tab === 'new');
+      document.getElementById('pane-all').classList.toggle('active', tab === 'all');
+      document.getElementById('tab-new').classList.toggle('active', tab === 'new');
+      document.getElementById('tab-all').classList.toggle('active', tab === 'all');
+      if (tab === 'all') renderAllTab();
+    }
+
+    function initAnnouncements() {
+      const hasUnseen = !!getLatestUnseen();
+      document.getElementById('announce-dot').classList.toggle('visible', hasUnseen);
+      renderNewTab();
+      if (hasUnseen && !sessionStorage.getItem('annShown')) {
+        sessionStorage.setItem('annShown', '1');
+        setTimeout(() => {
+          document.getElementById('announce-panel').classList.add('visible');
+          switchAnnTab('new');
+        }, 600);
+      }
+    }
+
+    // Close announcement panel when clicking outside
+    document.addEventListener('click', e => {
+      const panel = document.getElementById('announce-panel');
+      const btn = document.getElementById('announce-btn');
+      if (panel.classList.contains('visible') && !panel.contains(e.target) && !btn.contains(e.target)) {
+        panel.classList.remove('visible');
+      }
+    });
+
+    // Close settings panel when clicking outside
+    document.addEventListener('click', e => {
+      const panel = document.getElementById('settings-panel');
+      const btn = document.querySelector('[onclick="toggleSettings()"]');
+      if (panel && panel.classList.contains('open') && !panel.contains(e.target) && !btn.contains(e.target)) {
+        panel.classList.remove('open');
+      }
+    });
+
+    // Check for saved preferences
+    if (localStorage.getItem('blockAds') === 'true') {
+      document.getElementById('toggle-ads').checked = true;
+      applyAdBlock(true);
+    }
+
+    if (localStorage.getItem('lightMode') === 'true') {
+      document.getElementById('toggle-light').checked = true;
+      applyLightMode(true);
+    }
+
+    // Initialize announcements
+    initAnnouncements();
+
+    // =============================================
+    // SUGGESTED GAMES
+    // =============================================
+    let suggestedGamesIndex = 0;
+    const suggestedGamesPerView = 4;
+
+    function getSuggestedGames() {
+      const currentGameTags = ["platformer","strategy"];
+      const allGames = Object.values(gamersgaming);
+
+      // Get games with similar tags (excluding current game and favorites)
+      const similarGames = allGames.filter(game =>
+        game.url !== 'turkeyflap/index.html' &&
+        game.tags && game.tags.some(tag => currentGameTags.includes(tag)) &&
+        !game.tags.includes('favorite')
+      );
+
+      // Get games from favorites category (excluding current game)
+      const favoriteGames = allGames.filter(game =>
+        game.url !== 'turkeyflap/index.html' &&
+        game.tags && game.tags.includes('favorite')
+      );
+
+      // Get completely random games
+      const randomGames = allGames.filter(game =>
+        game.url !== 'turkeyflap/index.html' &&
+        !game.tags.includes('favorite')
+      );
+
+      // Select 4 random similar games
+      const selectedSimilar = similarGames
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 4);
+
+      // Select 1 random favorite game
+      const selectedFavorite = favoriteGames
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 1);
+
+      // Select 5 completely random games
+      const selectedRandom = randomGames
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 5);
+
+      // Combine: 4 similar + 1 favorite + 5 random
+      const combined = [...selectedSimilar, ...selectedFavorite, ...selectedRandom];
+
+      return combined.slice(0, 10);
+    }
+
+    function createSuggestedGameCard(game) {
+      const card = document.createElement('div');
+      card.className = 'suggested-game-card';
+
+      const imageUrl = game.image || 'thumbnails/skele.gif';
+      const gameUrl = game.url || '#';
+
+      card.innerHTML = `
+        <div class="suggested-game-bg" style="background-image: url('../${imageUrl}')"></div>
+        <div class="suggested-game-title">${game.name}</div>
+      `;
+
+      card.onclick = () => {
+        if (gameUrl !== '#') {
+          window.location.href = '../' + gameUrl;
+        }
+      };
+
+      return card;
+    }
+
+    function renderSuggestedGames() {
+      const container = document.getElementById('suggestedGamesContainer');
+      const games = getSuggestedGames();
+
+      container.innerHTML = '';
+      games.forEach(game => {
+        container.appendChild(createSuggestedGameCard(game));
+      });
+
+      updateSuggestedArrows();
+    }
+
+    function scrollSuggestedGames(direction) {
+      const container = document.getElementById('suggestedGamesContainer');
+      const cardWidth = 216; // 200px + 16px gap
+      const maxIndex = Math.max(0, container.children.length - suggestedGamesPerView);
+
+      suggestedGamesIndex += direction;
+      suggestedGamesIndex = Math.max(0, Math.min(suggestedGamesIndex, maxIndex));
+
+      container.style.transform = `translateX(-${suggestedGamesIndex * cardWidth}px)`;
+      updateSuggestedArrows();
+    }
+
+    function updateSuggestedArrows() {
+      const container = document.getElementById('suggestedGamesContainer');
+      const prevArrow = document.querySelector('.suggested-arrow.prev');
+      const nextArrow = document.querySelector('.suggested-arrow.next');
+      const maxIndex = Math.max(0, container.children.length - suggestedGamesPerView);
+
+      prevArrow.classList.toggle('hidden', suggestedGamesIndex === 0);
+      nextArrow.classList.toggle('hidden', suggestedGamesIndex >= maxIndex);
+    }
+
+    // Initialize suggested games
+    renderSuggestedGames();
+  </script>
+</body>
 </html>
