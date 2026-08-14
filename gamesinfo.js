@@ -1668,7 +1668,7 @@ const gamersgaming = {
     },
     "Hapland3": {
         "name": "Hapland 3",
-        "url": "games/html/hapland.html",
+        "url": "games/html/hapland3.html",
         "image": "thumbnails/hapland3.jpg",
         tags:['puzzle','strategy']
     },
