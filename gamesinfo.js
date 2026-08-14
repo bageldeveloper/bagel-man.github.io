@@ -1,11 +1,11 @@
 const gamersgaming = {
-                "jimmy": {
+        "jimmy": {
         "name": "The Jimmy Bean Game",
         "url": "JimmyBeanGame/index.html",
         "image": "thumbnails/jimmybean.png",
         tags:['original','platformer']
     },
-            "phobia": {
+        "phobia": {
         "name": "Phobia",
         "url": "Phobia 0.2.1/index.html",
         "image": "thumbnails/phobia.png",
@@ -122,6 +122,7 @@ const gamersgaming = {
     "BagelWithaGunDemo": {
         "name": "Bagel With a Gun Demo",
         "url": "bagelwithagun.html",
+        "image": "thumbnails/bwagDemo.png",
         tags:['original','adventure','platformer','puzzle','action','shooter','strategy']
     },
     "Bagelwithlegs": {
@@ -139,13 +140,14 @@ const gamersgaming = {
     "Batman": {
         "name": "Batman",
         "url": "games/emu/batman.html",
-        "image": "thumbnail/batman.jpg",
+        "image": "thumbnails/batman.jpg",
         tags:['adventure','puzzle','simulation','shooter','action','platformer','difficult','strategy','console']
     },
     "Blobby": {
         "name": "Blobby",
         "url": "blobby/index.html",
-        tags:['adventure','puzzle','action','shooter','strategy']
+        "image": "thumbnails/blobsters.png",
+        tags:['adventure','puzzle','action','shooter','strategy', 'original']
     },
     "BloonsTowerDefense": {
         "name": "Bloons Tower Defense",
@@ -1025,6 +1027,7 @@ const gamersgaming = {
     "SuperMarioFlash": {
         "name": "Super Mario Flash",
         "url": "games/html/supermarioflash.html",
+        "image": "thumbnails/marioflash.jpg",
         tags:['adventure','puzzle','action','platformer','strategy','console']
     },
     "SuperMarioKart": {
@@ -1450,6 +1453,7 @@ const gamersgaming = {
     "Alchemy": {
         "name": "Alchemy",
         "url": "games/html/alchemy.html",
+        "image": "thumbnails/alc.avif",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
     "BigTruckAdventures2": {

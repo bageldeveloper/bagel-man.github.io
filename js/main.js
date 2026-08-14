@@ -21,6 +21,7 @@ function animateCards() {
 
 const GENRES = {
   all: null,
+  allGames: null,
   favorite: ["favorite"],
   adventure: ["adventure"],
   puzzle: ["puzzle"],
@@ -89,7 +90,7 @@ function renderGenre(genreKey) {
 
   pageTitle.textContent =
     genreKey === "all"
-      ? "All Games"
+      ? "Home"
       : document.querySelector(`[data-genre="${genreKey}"]`).textContent;
 
   animateCards();
@@ -139,7 +140,7 @@ function renderAll() {
   gameGrid.style.display = "none";
   genreRowsContainer.style.display = "block";
 
-  pageTitle.textContent = "All Games";
+  pageTitle.textContent = "Home";
 
   animateCards();
 }
@@ -239,9 +240,7 @@ searchInput.addEventListener("focus", () => {
   renderDefaultSuggestions();
 });
 
-searchInput.addEventListener("input", (e) => {
-  const q = e.target.value.toLowerCase().trim();
-
+function runSearch(q) {
   if (!q) {
     setIcon("search");
     renderDefaultSuggestions?.();
@@ -263,6 +262,10 @@ searchInput.addEventListener("input", (e) => {
   pageTitle.textContent = `Search: "${q}"`;
 
   animateCards();
+}
+
+searchInput.addEventListener("input", (e) => {
+  runSearch(e.target.value.toLowerCase().trim());
 });
 
 searchInput.addEventListener("blur", () => {
@@ -288,7 +291,7 @@ searchIcon.addEventListener("click", () => {
 
     pageTitle.textContent =
       activeGenre === "all"
-        ? "All Games"
+        ? "Home"
         : activeGenre;
   } else {
     searchInput.focus();
@@ -594,4 +597,28 @@ function getLatestUnseen() {
 
 // ---------------- INIT ----------------
 
-renderAll();
+(function initFromQuery() {
+  const params = new URLSearchParams(window.location.search);
+  const q = params.get("q");
+  const genre = params.get("genre");
+
+  if (q) {
+    searchInput.value = q;
+    runSearch(q.toLowerCase().trim());
+    return;
+  }
+
+  if (genre && genre in GENRES) {
+    document.querySelectorAll(".game-categories button")
+      .forEach(b => b.classList.toggle("active", b.dataset.genre === genre));
+
+    if (genre === "all") {
+      renderAll();
+    } else {
+      renderGenre(genre);
+    }
+    return;
+  }
+
+  renderAll();
+})();

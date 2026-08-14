@@ -59,7 +59,7 @@
     <div class="settings-row">
       <label>
         Light mode
-        <span class="sub">Swap to a lighter theme</span>
+        <span class="sub">Activate to burn your eyes</span>
       </label>
       <label class="toggle">
         <input type="checkbox" id="toggle-light" onchange="applyLightMode(this.checked)">
@@ -147,7 +147,8 @@
     
     <aside class="sidebar">
       <div class="game-categories">
-        <button class="active" data-genre="all"><img class="gameicon" src="images/icons/home.png"> All Games</button>
+        <button class="active" data-genre="all"><img class="gameicon" src="images/icons/home.png"> Home</button>
+        <button data-genre="allGames"><img class="gameicon" src="images/icons/home.png"> All Games</button>
         <button data-genre="favorite"><img class="gameicon" src="images/icons/favorites.png">  Favorites</button>
         <button data-genre="adventure"><img class="gameicon" src="images/icons/adventure.png">  Adventure</button>
         <button data-genre="puzzle"><img class="gameicon" src="images/icons/puzzle.png">  Puzzle</button>
@@ -164,7 +165,7 @@
       </div>
     </aside>
     <main class="main-content">
-      <h1 id="pageTitle">All Games</h1>
+      <h1 id="pageTitle">Home</h1>
       <section id="gameGrid" class="card-grid"></section>
       <section id="genreRows"></section>
     </main>

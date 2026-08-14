@@ -289,7 +289,7 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
 <body>
   <header class="topbar">
     <div class="logo-area">
-      <img src="../../bagelicontab.png" alt="Bagel">
+      <a href="../../index.html"><img src="../../bagelicontab.png" alt="Bagel"></a>
     </div>
     <div class="topbar-center">
       <div class="search-wrapper">
@@ -325,7 +325,7 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
     <div class="settings-row">
       <label>
         Light mode
-        <span class="sub">Swap to a lighter theme</span>
+        <span class="sub">Activate to burn your eyes</span>
       </label>
       <label class="toggle">
         <input type="checkbox" id="toggle-light" onchange="applyLightMode(this.checked)">
@@ -665,6 +665,117 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
       document.getElementById('announce-panel').classList.remove('visible');
       document.getElementById('chat-panel').classList.remove('open');
     }
+
+    // =============================================
+    // SIDEBAR — jump to the homepage filtered by genre
+    // =============================================
+    document.querySelectorAll('.game-categories button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const genre = btn.dataset.genre;
+        window.location.href = genre === 'all'
+          ? '../../index.html'
+          : '../../index.html?genre=' + encodeURIComponent(genre);
+      });
+    });
+
+    // =============================================
+    // SEARCH — live dropdown here, full results on the homepage
+    // =============================================
+    const searchInputEl = document.getElementById('searchInput');
+    const searchIconEl = document.getElementById('searchIcon');
+    const suggestionsBoxEl = document.getElementById('searchSuggestions');
+
+    function goToGame(game) {
+      window.location.href = '../../' + game.url;
+    }
+
+    function getRecommendedGames() {
+      return Object.values(gamersgaming)
+        .filter(g => g.tags.includes('favorite') || g.tags.includes('popular'))
+        .slice(0, 5);
+    }
+
+    function getRandomGame() {
+      const games = Object.values(gamersgaming);
+      return games[Math.floor(Math.random() * games.length)];
+    }
+
+    function renderDefaultSearchSuggestions() {
+      suggestionsBoxEl.innerHTML = '';
+
+      const label1 = document.createElement('div');
+      label1.className = 'search-section-label';
+      label1.textContent = 'Recommended';
+      suggestionsBoxEl.appendChild(label1);
+
+      getRecommendedGames().forEach(game => {
+        const item = document.createElement('div');
+        item.textContent = game.name;
+        item.onclick = () => goToGame(game);
+        suggestionsBoxEl.appendChild(item);
+      });
+
+      const divider = document.createElement('div');
+      divider.className = 'search-section-label';
+      divider.textContent = ' ';
+      suggestionsBoxEl.appendChild(divider);
+
+      const random = getRandomGame();
+      const randomItem = document.createElement('div');
+      randomItem.textContent = 'Random Game!';
+      randomItem.onclick = () => goToGame(random);
+      suggestionsBoxEl.appendChild(randomItem);
+
+      suggestionsBoxEl.style.display = 'flex';
+    }
+
+    function renderMatchingSearchSuggestions(query) {
+      const matches = Object.values(gamersgaming)
+        .filter(g => g.name.toLowerCase().includes(query))
+        .slice(0, 6);
+
+      suggestionsBoxEl.innerHTML = '';
+
+      if (!matches.length) {
+        suggestionsBoxEl.style.display = 'none';
+        return;
+      }
+
+      matches.forEach(game => {
+        const item = document.createElement('div');
+        item.textContent = game.name;
+        item.onclick = () => goToGame(game);
+        suggestionsBoxEl.appendChild(item);
+      });
+
+      suggestionsBoxEl.style.display = 'flex';
+    }
+
+    function goToSearchResults() {
+      const q = searchInputEl.value.trim();
+      if (q) window.location.href = '../../index.html?q=' + encodeURIComponent(q);
+    }
+
+    searchInputEl.addEventListener('focus', renderDefaultSearchSuggestions);
+
+    searchInputEl.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      if (!q) {
+        renderDefaultSearchSuggestions();
+        return;
+      }
+      renderMatchingSearchSuggestions(q);
+    });
+
+    searchInputEl.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') goToSearchResults();
+    });
+
+    searchInputEl.addEventListener('blur', () => {
+      setTimeout(() => { suggestionsBoxEl.style.display = 'none'; }, 150);
+    });
+
+    searchIconEl.addEventListener('click', goToSearchResults);
 
 
     // =============================================

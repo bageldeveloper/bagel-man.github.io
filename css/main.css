@@ -391,7 +391,7 @@ body {
   border-radius: 10px;
   display: none;
   flex-direction: column;
-  z-index: -50;
+  z-index: 200;
 }
 
 .search-suggestions div {
