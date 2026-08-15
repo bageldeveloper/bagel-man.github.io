@@ -3,43 +3,43 @@ const gamersgaming = {
         "name": "The Jimmy Bean Game",
         "url": "JimmyBeanGame/index.html",
         "image": "thumbnails/jimmybean.png",
-        tags:['original','platformer']
+        tags:['original','platformer','adventure','action']
     },
         "phobia": {
         "name": "Phobia",
         "url": "Phobia 0.2.1/index.html",
         "image": "thumbnails/phobia.png",
-        tags:['original','platformer']
+        tags:['original','platformer','adventure','difficult']
     },
         "drats": {
         "name": "Drats!",
         "url": "TSADrats/index.html",
         "image": "thumbnails/drats.png",
-        tags:['original','strategy']
+        tags:['original','strategy','action','adventure']
     },
     "1on1Soccer": {
         "name": "1on1 Soccer",
         "url": "games/html/1on1soccer.html",
         "image": "thumbnails/1on1soccer.jpg",
-        tags:['sports','strategy']
+        tags:['sports','strategy','action','simulation']
     },
     "2048": {
         "name": "2048",
         "url": "games/2048/index.html",
         "image": "thumbnails/2048.jpg",
-        tags:['strategy','puzzle']
+        tags:['strategy','puzzle','Board','difficult']
     },
     "8BallPool": {
         "name": "8 Ball Pool",
         "url": "games/html/8ballpool.html",
         "image": "thumbnails/8ballpool.avif",
-        tags:['Board', 'strategy','sports']
+        tags:['Board','strategy','sports','simulation']
     },
     "AbobbosBigAdventure": {
         "name": "Abobbo's Big Adventure",
         "url": "games/html/bigadventure.html",
         "image": "thumbnails/bigadventure.jpg",
-        tags:['action','adventure',]
+        tags:['action','adventure','platformer','difficult']
     },
     "AgeOfDefense": {
         "name": "Age Of Defense",
@@ -81,13 +81,13 @@ const gamersgaming = {
         "name": "Alien Hominid",
         "url": "games/html/alien.html",
         "image": "thumbnails/alien.png",
-        tags:['action','shooter','strategy']
+        tags:['action','shooter','strategy','platformer']
     },
     "AppleShooter": {
         "name": "Apple Shooter",
         "url": "games/html/appleshoot.html",
         "image": "thumbnails/appleshooter.jpg",
-        tags:['shooter']
+        tags:['shooter','action','difficult','strategy']
     },
     "ArtofWar": {
         "name": "Art of War",
@@ -111,7 +111,7 @@ const gamersgaming = {
         "name": "Awesome Tanks 2",
         "url": "games/html/awesometanks2.html",
         "image": "thumbnails/awesometanks2.jpg",
-        tags:['action','shooter','strategy']
+        tags:['action','shooter','strategy','simulation']
     },
     "BagelWithaGun": {
         "name": "Bagel With a Gun",
@@ -153,42 +153,42 @@ const gamersgaming = {
         "name": "Bloons Tower Defense",
         "url": "games/html/bloons.html",
         "image": "thumbnails/bloonstd.jpg",
-        tags:['tower-defense','strategy']
+        tags:['tower-defense','strategy','puzzle','simulation']
     },
     "BloonsTowerDefense2": {
         "name": "Bloons Tower Defense 2",
         "url": "games/html/bloonstd2.html",
         "image": "thumbnails/bloonstd2.jpg",
-        tags:['tower-defense','strategy']
+        tags:['tower-defense','strategy','puzzle','simulation']
     },
     "BloonsTowerDefense3": {
         "name": "Bloons Tower Defense 3",
         "url": "games/html/bloonstd3.html",
         "image": "thumbnails/bloonstd3.jpg",
-        tags:['tower-defense','strategy']
+        tags:['tower-defense','strategy','puzzle','simulation']
     },
     "BloonsTowerDefense4": {
         "name": "Bloons Tower Defense 4",
         "url": "games/html/bloonstd4.html",
         "image": "thumbnails/bloonstd4.jpg",
-        tags:['tower-defense','strategy','favorite']
+        tags:['tower-defense','strategy','favorite','puzzle','simulation']
     },
     "BloonsTowerDefense5": {
         "name": "Bloons Tower Defense 5",
         "url": "games/html/bloonstd5.html",
         "image": "thumbnails/bloonstd5.jpg",
-        tags:['tower-defense','strategy','favorite']
+        tags:['tower-defense','strategy','favorite','puzzle','simulation']
     },
     "Bloxorz": {
         "name": "Bloxorz",
         "url": "games/html/bloxorz.html",
         "image": "thumbnails/bloxorz.jpg",
-        tags:['puzzle','strategy']
+        tags:['puzzle','strategy','platformer','difficult']
     },
     "Bloxstrike": {
         "name": "Bloxstrike",
         "url": "games/html/shooter.html",
-        tags:['action','shooter','strategy']
+        tags:['action','shooter','strategy','adventure']
     },
     "BreakingtheBank": {
         "name": "Breaking the Bank",
@@ -200,43 +200,43 @@ const gamersgaming = {
         "name": "Bubble Shooter",
         "url": "games/html/bubbleshooter.html",
         "image": "thumbnails/bubbleshooter.png",
-        tags:['shooter']
+        tags:['shooter','puzzle','strategy','difficult']
     },
     "CanyonDefense": {
         "name": "Canyon Defense",
         "url": "games/html/canyondefense.html",
         "image": "thumbnails/canyondefense.jpg",
-        tags:['tower-defense','strategy']
+        tags:['tower-defense','strategy','action','simulation']
     },
     "Castle": {
         "name": "Castle",
         "url": "games/html/castle.html",
         "image": "thumbnails/castle.jpg",
-        tags:['strategy','adventure']
+        tags:['strategy','adventure','action','simulation']
     },
     "Checkers": {
         "name": "Checkers",
         "url": "games/html/checkers.html",
         "image": "thumbnails/checkers.jpg",
-        tags:['Board', 'strategy']
+        tags:['Board','strategy','puzzle','difficult']
     },
     "ChibiKnight": {
         "name": "Chibi Knight",
         "url": "games/html/chibiknight.html",
         "image": "thumbnails/chibiknight.jpg",
-        tags:['action','adventure']
+        tags:['action','adventure','platformer','difficult']
     },
     "ColorCombat": {
         "name": "Color Combat",
         "url": "games/html/colorcombat.html",
         "image": "thumbnails/colorcombat.jpg",
-        tags:['action','strategy']
+        tags:['action','strategy','shooter','adventure']
     },
     "Commando": {
         "name": "Commando",
         "url": "games/html/commando.html",
         "image": "thumbnails/commando.jpg",
-        tags:['action','shooter','strategy']
+        tags:['action','shooter','strategy','adventure']
     },
     "Contra": {
         "name": "Contra",
@@ -248,13 +248,13 @@ const gamersgaming = {
         "name": "Cookie Clicker",
         "url": "games/cookie/index.html",
         "image": "thumbnails/cookieclicker.avif",
-        tags:['strategy','action']
+        tags:['strategy','action','simulation','puzzle']
     },
     "CrossingThePit": {
         "name": "Crossing the Pit",
         "url": "games/html/henrypit.html",
         "image": "thumbnails/CrossingThePit.webp",
-        tags:['simulation','henrystickmin']
+        tags:['simulation','henrystickmin','puzzle','adventure','strategy']
     },
     "Crushthecastle": {
         "name": "Crush the Castle",
@@ -272,19 +272,19 @@ const gamersgaming = {
         "name": "Cube Field",
         "url": "games/html/cube.html",
         "image": "thumbnails/cube.png",
-        tags:['adventure']
+        tags:['adventure','action','difficult','racing']
     },
     "DadnMe": {
         "name": "Dad n' Me",
         "url": "games/html/dadnme.html",
         "image": "thumbnails/DadnMe.webp",
-        tags:['action','simulation','strategy']
+        tags:['action','simulation','strategy','adventure']
     },
     "DigToChina": {
         "name": "Dig To China",
         "url": "games/html/digtochina.html",
         "image": "thumbnails/digtochina.webp",
-        tags:['adventure','strategy']
+        tags:['adventure','strategy','simulation','puzzle']
     },
     "DonkeyKongCountry": {
         "name": "Donkey Kong Country",
@@ -314,25 +314,25 @@ const gamersgaming = {
         "name": "Duck Life",
         "url": "games/html/ducklife.html",
         "image": "thumbnails/ducklife.jpg",
-        tags:['action','adventure','sports']
+        tags:['action','adventure','sports','simulation','racing']
     },
     "DuckLife2": {
         "name": "Duck Life 2",
         "url": "games/html/ducklife2.html",
         "image": "thumbnails/ducklife2.jpg",
-        tags:['action','adventure','sports']
+        tags:['action','adventure','sports','simulation','racing']
     },
     "DuckLife3": {
         "name": "Duck Life 3",
         "url": "games/html/ducklife3.html",
         "image": "thumbnails/ducklife3.jpg",
-        tags:['action','adventure','sports']
+        tags:['action','adventure','sports','simulation','racing']
     },
     "DuckLife4": {
         "name": "Duck Life 4",
         "url": "games/html/ducklife4.html",
         "image": "thumbnails/ducklife4.jpg",
-        tags:['action','adventure','sports']
+        tags:['action','adventure','sports','simulation','racing']
     },
     "DuckTales": {
         "name": "Duck Tales",
@@ -344,43 +344,43 @@ const gamersgaming = {
         "name": "Earthbound",
         "url": "games/emu/earthbound.html",
         "image": "thumbnails/earthbound.jpg",
-        tags:['adventure','action','console']
+        tags:['adventure','action','console','strategy','difficult']
     },
     "ElectricMan2": {
         "name": "ElectricMan 2",
         "url": "games/html/eman2.html",
         "image": "thumbnails/electricman2.jpg",
-        tags:['adventure','strategy']
+        tags:['adventure','strategy','action','shooter']
     },
     "Escapethebathroom": {
         "name": "Escape the Bathroom",
         "url": "games/html/escapethebathroom.html",
         "image": "thumbnails/escapethebathroom.png",
-        tags:['simulation','puzzle','strategy']
+        tags:['simulation','puzzle','strategy','adventure']
     },
     "Escapetheclassroom": {
         "name": "Escape the Classroom",
         "url": "games/html/escapetheclassroom.html",
         "image": "thumbnails/escapetheclassroom.jpg",
-        tags:['simulation','puzzle','strategy']
+        tags:['simulation','puzzle','strategy','adventure']
     },
     "Escapethecloset": {
         "name": "Escape the Closet",
         "url": "games/html/escapethecloset.html",
         "image": "thumbnails/escapethecloset.jpg",
-        tags:['simulation','puzzle','strategy']
+        tags:['simulation','puzzle','strategy','adventure']
     },
     "Escapetheladiesroom": {
         "name": "Escape the Ladies Room",
         "url": "games/html/escapetheladies.html",
         "image": "thumbnails/escapetheladiesroom.jpg",
-        tags:['simulation','puzzle','strategy']
+        tags:['simulation','puzzle','strategy','adventure']
     },
     "Escapetheroom": {
         "name": "Escape the Room",
         "url": "games/html/escapetheroom.html",
         "image": "thumbnails/escaperoom.webp",
-        tags:['simulation','puzzle','strategy']
+        tags:['simulation','puzzle','strategy','adventure']
     },
     "EscapingThePrison": {
         "name": "Escaping The Prison",
@@ -392,7 +392,7 @@ const gamersgaming = {
         "name": "Fancypants",
         "url": "games/html/fancypants.html",
         "image": "thumbnails/superfancypantsadventure.jpg",
-        tags:['adventure','strategy']
+        tags:['adventure','strategy','platformer','action']
     },
     "FireboyAndWatergirl1": {
         "name": "Fireboy and Watergirl 1 - The Forest Temple",
@@ -434,13 +434,13 @@ const gamersgaming = {
         "name": "Getaway Shootout",
         "url": "games/getaway-shootout/index.html",
         "image": "thumbnails/getawayshootout.avif",
-        tags:['action','shooter','strategy']
+        tags:['action','shooter','strategy','racing']
     },
     "GunBlood": {
         "name": "Gun Blood",
         "url": "games/html/gunblood.html",
         "image": "thumbnails/gunblood.png",
-        tags:['action','shooter','strategy']
+        tags:['action','shooter','strategy','difficult']
     },
     "HalfLife": {
         "name": "Half-Life",
@@ -452,49 +452,49 @@ const gamersgaming = {
         "name": "Hexgl",
         "url": "hexgl.html",
         "image": "thumbnails/hexgl.jpg",
-        tags:['racing']
+        tags:['racing','action','difficult','simulation']
     },
     "Hobo": {
         "name": "Hobo",
         "url": "games/html/hobo.html",
         "image": "thumbnails/hobo.jpg",
-        tags:['action','strategy']
+        tags:['action','strategy','adventure','difficult']
     },
     "Hobo2": {
         "name": "Hobo 2 - Prison Brawl",
         "url": "games/html/hobo2.html",
         "image": "thumbnails/hobo2.jpg",
-        tags:['action','strategy']
+        tags:['action','strategy','adventure','difficult']
     },
     "Hobo3": {
         "name": "Hobo 3 - Wanted",
         "url": "games/html/hobo3.html",
         "image": "thumbnails/hobo3.jpg",
-        tags:['action','strategy']
+        tags:['action','strategy','adventure','difficult']
     },
     "Hobo4": {
         "name": "Hobo 4 - Total War",
         "url": "games/html/hobo4.html",
         "image": "thumbnails/hobo4.png",
-        tags:['action','strategy']
+        tags:['action','strategy','adventure','difficult']
     },
     "Hobo5": {
         "name": "Hobo 5 - Space Brawls",
         "url": "games/html/hobo5.html",
         "image": "thumbnails/hobo5.png",
-        tags:['action','strategy']
+        tags:['action','strategy','adventure','difficult']
     },
     "Hobo6": {
         "name": "Hobo 6 - Hell",
         "url": "games/html/hobo6.html",
         "image": "thumbnails/hobo6.jpg",
-        tags:['action','strategy']
+        tags:['action','strategy','adventure','difficult']
     },
     "Hobo7": {
         "name": "Hobo 7 - Heaven",
         "url": "games/html/hobo7.html",
         "image": "thumbnails/hobo7.png",
-        tags:['action','strategy']
+        tags:['action','strategy','adventure','difficult']
     },
     "infiltratingTheAirship": {
         "name": "Infiltrating the Airship",
@@ -506,13 +506,13 @@ const gamersgaming = {
         "name": "Jump Game",
         "url": "jumpgame.html",
         "image": "thumbnails/jumpgame.png",
-        tags:['platformer']
+        tags:['platformer','action','difficult','adventure']
     },
     "JumpGame 2": {
         "name": "Jump Game 2",
         "url": "jumpgame2.html",
         "image": "thumbnails/jumpgame.png",
-        tags:['platformer']
+        tags:['platformer','action','difficult','adventure']
     },
     "JackSmith": {
         "name": "Jack Smith",
@@ -524,37 +524,37 @@ const gamersgaming = {
         "name": "Learn To Fly",
         "url": "games/html/learntofly.html",
         "image": "thumbnails/learntofly.jpg",
-        tags:['strategy','favorite','adventure']
+        tags:['strategy','favorite','adventure','simulation','puzzle']
     },
     "LearnTo Fly 2": {
         "name": "Learn To Fly 2",
         "url": "games/html/learntofly2.html",
         "image": "thumbnails/learntofly2.png",
-        tags:['strategy','adventure']
+        tags:['strategy','adventure','simulation','puzzle']
     },
     "LearnTo Fly 3": {
         "name": "Learn To Fly 3",
         "url": "games/html/learntofly3.html",
         "image": "thumbnails/learntofly3.jpg",
-        tags:['strategy','adventure']
+        tags:['strategy','adventure','simulation','puzzle']
     },
     "LegoStarWarsTCS": {
         "name": "Lego Star Wars TCS",
         "url": "games/emu/tcs.html",
         "image": "thumbnails/legostarwarstcs.jpg",
-        tags:['strategy','puzzle']
+        tags:['strategy','puzzle','adventure','action']
     },
     "LineRider": {
         "name": "Line Rider",
         "url": "games/html/linerider.html",
         "image": "thumbnails/linerider3.png",
-        tags:['strategy','puzzle']
+        tags:['strategy','puzzle','simulation','difficult']
     },
     "LineRider2": {
         "name": "Line Rider 2",
         "image": "thumbnails/linerider3.png",
         "url": "games/html/linerider2.html",
-        tags:['strategy']
+        tags:['strategy','puzzle','simulation','difficult']
     },
     "LineRider3": {
         "name": "Line Rider 3",
@@ -596,7 +596,7 @@ const gamersgaming = {
         "name": "Meat Boy",
         "url": "games/html/meatboy.html",
         "image": "thumbnails/meatboy.jpg",
-        tags:['action','adventure','platformer']
+        tags:['action','adventure','platformer','difficult']
     },
     "MegaMan2": {
         "name": "Mega Man 2",
@@ -626,7 +626,7 @@ const gamersgaming = {
         "name": "Miami Shark",
         "url": "games/html/miamishark.html",
         "image": "thumbnails/miamishark.png",
-        tags:['adventure','strategy']
+        tags:['adventure','strategy','action','simulation']
     },
     "MikeTysonsPunchOut!": {
         "name": "Mike Tyson's Punch Out!",
@@ -656,7 +656,7 @@ const gamersgaming = {
         "name": "Mini Putt",
         "url": "games/html/miniputt.html",
         "image": "thumbnails/miniputt.png",
-        tags:['simulation','sports', 'strategy']
+        tags:['simulation','sports','strategy','puzzle']
     },
     "MotoX3m": {
         "name": "MotoX3m",
@@ -686,13 +686,13 @@ const gamersgaming = {
         "name": "New York Shark",
         "url": "games/html/NYshark.html",
         "image": "thumbnails/newyorkshark.png",
-        tags:['adventure','simulation','strategy']
+        tags:['adventure','simulation','strategy','action']
     },
     "Orbitron": {
         "name": "Orbitron",
         "url": "orbitron.html",
         "image": "thumbnails/orbitron.jpg",
-        tags:['simulation','tower-defense','strategy']
+        tags:['simulation','tower-defense','strategy','puzzle']
     },
     "Pacman": {
         "name": "Pacman",
@@ -788,13 +788,13 @@ const gamersgaming = {
         "name": "Plants vs Zombies",
         "url": "games/html/pvz.html",
         "image": "thumbnails/plantsvszombies.png",
-        tags:['tower-defense','strategy']
+        tags:['tower-defense','strategy','puzzle','simulation']
     },
     "PlantsvsZombies2": {
         "name": "Plants vs Zombies 2",
         "url": "games/html/pvz2.html",
         "image": "thumbnails/plantsvszombies2.jpg",
-        tags:['tower-defense','strategy']
+        tags:['tower-defense','strategy','puzzle','simulation']
     },
     "Pong": {
         "name": "Pong",
@@ -806,13 +806,13 @@ const gamersgaming = {
         "name": "Portal 2D",
         "url": "games/html/portal2d.html",
         "image": "thumbnails/portal2D.png",
-        tags:['platformer','puzzle','strategy']
+        tags:['platformer','puzzle','strategy','difficult']
     },
     "PortalFlashVersion": {
         "name": "Portal Flash Version",
         "url": "games/html/portal.html",
         "image": "thumbnails/portalflash.jpg",
-        tags:['platformer','puzzle','strategy']
+        tags:['platformer','puzzle','strategy','difficult']
     },
     "PunchOut!": {
         "name": "Punch Out!",
@@ -872,55 +872,55 @@ const gamersgaming = {
         "name": "Retro bowl",
         "url": "games/retrobowl/index.html",
         "image": "thumbnails/retrobowl.png",
-        tags:['simulation','sports','strategy']
+        tags:['simulation','sports','strategy','action']
     },
     "RiddleSchool": {
         "name": "Riddle School",
         "url": "games/html/riddleschool.html",
         "image": "thumbnails/riddleschool.png",
-        tags:['adventure','puzzle','strategy']
+        tags:['adventure','puzzle','strategy','simulation']
     },
     "RiddleSchool 2": {
         "name": "Riddle School 2",
         "url": "games/html/riddleschool2.html",
         "image": "thumbnails/riddleschool2.jpg",
-        tags:['adventure','puzzle','strategy']
+        tags:['adventure','puzzle','strategy','simulation']
     },
     "RiddleSchool 3": {
         "name": "Riddle School 3",
         "url": "games/html/riddleschool3.html",
         "image": "thumbnails/riddleschool3.jpg",
-        tags:['adventure','puzzle','strategy']
+        tags:['adventure','puzzle','strategy','simulation']
     },
     "RiddleSchool 4": {
         "name": "Riddle School 4",
         "url": "games/html/riddleschool4.html",
         "image": "thumbnails/riddleschool4.jpg",
-        tags:['adventure','puzzle','strategy']
+        tags:['adventure','puzzle','strategy','simulation']
     },
     "RiddleSchool 5": {
         "name": "Riddle School 5",
         "url": "games/html/riddleschool5.html",
         "image": "thumbnails/riddleschool5.jpg",
-        tags:['adventure','puzzle','strategy']
+        tags:['adventure','puzzle','strategy','simulation']
     },
     "RiddleTransfer": {
         "name": "Riddle Transfer",
         "url": "games/html/riddleschooltransfer.html",
         "image": "thumbnails/riddleschooltransfer.png",
-        tags:['adventure','puzzle','strategy']
+        tags:['adventure','puzzle','strategy','simulation']
     },
     "RiddleTransfer2": {
         "name": "Riddle Transfer 2",
         "url": "games/html/riddleschooltransfer2.html",
         "image": "thumbnails/riddleschooltransfer2.png",
-        tags:['adventure','puzzle','strategy']
+        tags:['adventure','puzzle','strategy','simulation']
     },
     "RiverCityRansom": {
         "name": "River City Ransom",
         "url": "games/emu/ransom.html",
         "image": "thumbnails/riverransomcity.jpg",
-        tags:['adventure','action','console']
+        tags:['adventure','action','console','strategy']
     },
     "Run": {
         "name": "Run",
@@ -944,13 +944,13 @@ const gamersgaming = {
         "name": "Siftheads",
         "url": "games/html/siftheads.html",
         "image": "thumbnails/siftheads.png",
-        tags:['action','shooter','strategy']
+        tags:['action','shooter','strategy','adventure']
     },
     "Slope": {
         "name": "Slope",
         "url": "games/Slope-Game-main/index.html",
         "image": "thumbnails/slope.jpg",
-        tags:['racing','platformer','favorite']
+        tags:['racing','platformer','favorite','action','difficult']
     },
     "Sonic": {
         "name": "Sonic",
@@ -974,13 +974,13 @@ const gamersgaming = {
         "name": "Stick RPG Beta",
         "url": "games/html/stickrpgbeta.html",
         "image": "thumbnails/stickrpgbeta.jpg",
-        tags:['adventure','simulation','strategy']
+        tags:['adventure','simulation','strategy','action']
     },
     "StopGMO": {
         "name": "Stop GMO",
         "url": "games/html/stopgmo.html",
         "image": "thumbnails/stopgmo.jpg",
-        tags:['action','shooter','strategy']
+        tags:['action','shooter','strategy','adventure']
     },
     "StrikeForceHeroes": {
         "name": "Strike Force Heroes",
@@ -1070,13 +1070,13 @@ const gamersgaming = {
         "name": "Tetris",
         "url": "games/html/tetris.html",
         "image": "thumbnails/tetris.webp",
-        tags:['puzzle','strategy','console']
+        tags:['puzzle','strategy','console','difficult']
     },
     "TheImpossibleQuiz": {
         "name": "The Impossible Quiz",
         "url": "games/html/quiz.html",
         "image": "thumbnails/impossiblequiz.png",
-        tags:['puzzle','strategy']
+        tags:['puzzle','strategy','difficult','adventure']
     },
     "TheLegendOfZelda": {
         "name": "The Legend of Zelda",
@@ -1106,13 +1106,13 @@ const gamersgaming = {
         "name": "The Waitress",
         "url": "games/html/thewaitress.html",
         "image": "thumbnails/waitress.webp",
-        tags:['simulation','strategy']
+        tags:['simulation','strategy','action','difficult']
     },
     "ThisistheOnlyLevel": {
         "name": "This is the Only Level",
         "url": "games/html/only.html",
         "image": "thumbnails/onylevel.webp",
-        tags:['adventure','puzzle','platformer']
+        tags:['adventure','puzzle','platformer','difficult']
     },
     "TomandJerry": {
         "name": "Tom and Jerry",
@@ -1130,19 +1130,19 @@ const gamersgaming = {
         "name": "Turkey Flap",
         "url": "turkeyflap/index.html",
         "image": "thumbnails/turkeyflap.webp",
-        tags:['platformer','strategy']
+        tags:['platformer','strategy','action','difficult']
     },
     "TurtleTrigger": {
         "name": "Turtle Trigger",
         "url": "games/html/turtle.html",
         "image": "thumbnails/turtletrigger.webp",
-        tags:['shooter','strategy']
+        tags:['shooter','strategy','action','adventure']
     },
     "UltimateMortalKombat3": {
         "name": "Ultimate Mortal Kombat 3",
         "url": "games/emu/umk3.html",
         "image": "thumbnails/mortalcombat3.png",
-        tags:['action','strategy','console']
+        tags:['action','strategy','console','difficult']
     },
     "Vex3": {
         "name": "Vex 3",
@@ -1166,61 +1166,61 @@ const gamersgaming = {
         "name": "Worlds Hardest Game",
         "url": "games/html/hardestgame.html",
         "image": "thumbnails/worldshardestgame.jpg",
-        tags:['strategy']
+        tags:['strategy','puzzle','difficult','action']
     },
     "WorldsHardestGame2": {
         "name": "Worlds Hardest Game 2",
         "url": "games/html/hardestgame2.html",
         "image": "thumbnails/worldshardestgame2.png",
-        tags:['strategy']
+        tags:['strategy','puzzle','difficult','action']
     },
     "Zombies": {
         "name": "Zombies",
         "url": "games/html/zombie.html",
         "image": "thumbnails/zombies.png",
-        tags:['action','shooter','strategy']
+        tags:['action','shooter','strategy','adventure']
     },
     "HueJumper": {
         "name": "Hue Jumper",
         "url": "carindex.html",
         "image": "thumbnails/huejumper.png",
-        tags:['simulation','racing']
+        tags:['simulation','racing','action','difficult']
     },
     "Animatorvsanimation": {
         "name": "Animator vs Animation",
         "url": "games/html/animatorvsanimation.html",
         "image": "thumbnails/animatorvsanimation.jpg",
-        tags:['adventure','simulation']
+        tags:['adventure','simulation','action','puzzle']
     },
     "Animatorvsanimation2": {
         "name": "Animator vs Animation 2",
         "url": "games/html/animatorvsanimation2.html",
         "image": "thumbnails/animatorvsanimation2.jpg",
-        tags:['adventure','simulation']
+        tags:['adventure','simulation','action','puzzle']
     },
     "FactoryBalls": {
         "name": "Factory Balls",
         "url": "games/html/factoryballs.html",
         "image": "thumbnails/factoryballs.png",
-        tags:['puzzle','simulation','strategy']
+        tags:['puzzle','simulation','strategy','difficult']
     },
     "FactoryBalls2": {
         "name": "Factory Balls 2",
         "url": "games/html/factoryballs2.html",
         "image": "thumbnails/factoryballs2.png",
-        tags:['puzzle','simulation','strategy']
+        tags:['puzzle','simulation','strategy','difficult']
     },
     "FactoryBalls3": {
         "name": "Factory Balls 3",
         "url": "games/html/factoryballs3.html",
         "image": "thumbnails/factoryballs3.jpg",
-        tags:['puzzle','simulation','strategy']
+        tags:['puzzle','simulation','strategy','difficult']
     },
     "FactoryBallsChristmas": {
         "name": "Factory Balls Christmas",
         "url": "games/html/factoryballschristmas.html",
         "image": "thumbnails/factoryballschristmas.png",
-        tags:['puzzle','simulation','strategy']
+        tags:['puzzle','simulation','strategy','difficult']
     },
     "AngryBirds": {
         "name": "Angry Birds",
@@ -1232,13 +1232,13 @@ const gamersgaming = {
         "name": "Burrito Bison",
         "url": "games/html/burritobison.html",
         "image": "thumbnails/burritobison.png",
-        tags:['puzzle','action','platformer']
+        tags:['puzzle','action','platformer','adventure']
     },
     "Droidassault": {
         "name": "Droid Assault",
         "url": "games/html/droidassault.html",
         "image": "thumbnails/droidassault.jpg",
-        tags:['adventure','shooter','action']
+        tags:['adventure','shooter','action','strategy']
     },
     "Exitpath": {
         "name": "Exit Path",
@@ -1250,7 +1250,7 @@ const gamersgaming = {
         "name": "Gravitee Wars",
         "url": "games/html/graviteewars.html",
         "image": "thumbnails/graviteewars.jpg",
-        tags:['simulation','strategy']
+        tags:['simulation','strategy','puzzle','action']
     },
     "HackervsHacker": {
         "name": "Hacker vs Hacker",
@@ -1268,19 +1268,19 @@ const gamersgaming = {
         "name": "Stick Brawl",
         "url": "games/html/stickbrawl.html",
         "image": "thumbnails/stickbrawl.webp",
-        tags:['shooter','action','platformer']
+        tags:['shooter','action','platformer','adventure']
     },
     "Superfighters": {
         "name": "Superfighters",
         "url": "games/html/superfighters.html",
         "image": "thumbnails/superfighters.jpg",
-        tags:['shooter','action','platformer']
+        tags:['shooter','action','platformer','adventure']
     },
     "TerritoryWar": {
         "name": "Territory War",
         "url": "games/html/territorywar.html",
         "image": "thumbnails/terroritywar.jpg",
-        tags:['simulation','action']
+        tags:['simulation','action','strategy','difficult']
     },
     "Vex2": {
         "name": "Vex 2",
@@ -1358,13 +1358,13 @@ const gamersgaming = {
         "name": "Pandemic",
         "url": "games/html/pandemic.html",
         "image": "thumbnails/pandemic.jpg",
-        tags:['simulation','strategy']
+        tags:['simulation','strategy','puzzle','difficult']
     },
     "Pandemic2": {
         "name": "Pandemic 2",
         "url": "games/html/pandemic2.html",
         "image": "thumbnails/pandemic2.webp",
-        tags:['simulation','strategy']
+        tags:['simulation','strategy','puzzle','difficult']
     },
     "PCBreakdown": {
         "name": "PC Breakdown",
@@ -1544,19 +1544,19 @@ const gamersgaming = {
         "name": "Mini Putt 2",
         "url": "games/html/miniputt2.html",
         "image": "thumbnails/miniputt2.jpg",
-        tags:['simulation','sports', 'strategy']
+        tags:['simulation','sports','strategy','puzzle']
     },
     "MiniPutt3": {
         "name": "Mini Putt 3",
         "url": "games/html/miniputt3.html",
         "image": "thumbnails/miniputt3.png",
-        tags:['simulation','sports', 'strategy']
+        tags:['simulation','sports','strategy','puzzle']
     },
     "PandemicExtinction": {
         "name": "Pandemic Extinction of Man",
         "url": "games/html/pandemicextinction.html",
         "image": "thumbnails/pandemic.png",
-        tags:['simulation','strategy']
+        tags:['simulation','strategy','puzzle','difficult']
     },
     "PapaLouie": {
         "name": "Papa Louie",
@@ -1622,79 +1622,79 @@ const gamersgaming = {
         "name": "Mass Mayhem",
         "url": "games/html/massmayhem.html",
         "image": "thumbnails/massmayhem.jpg",
-        tags:['simulation','shooter','action']
+        tags:['simulation','shooter','action','strategy']
     },
     "MassMayhem2": {
         "name": "Mass Mayhem 2",
         "url": "games/html/massmayhem2.html",
         "image": "thumbnails/massmayhem2.webp",
-        tags:['simulation','shooter','action']
+        tags:['simulation','shooter','action','strategy']
     },
     "MassMayhem3": {
         "name": "Mass Mayhem 3",
         "url": "games/html/massmayhem3.html",
         "image": "thumbnails/massmayhem3.jpg",
-        tags:['simulation','shooter','action']
+        tags:['simulation','shooter','action','strategy']
     },
     "MassMayhem4": {
         "name": "Mass Mayhem 4",
         "url": "games/html/massmayhem4.html",
         "image": "thumbnails/massmayhem4.jpg",
-        tags:['simulation','shooter','action']
+        tags:['simulation','shooter','action','strategy']
     },
     "MassMayhemZombie": {
         "name": "Mass Mayhem Zombie Apocalypse",
         "url": "games/html/massmayhemzombie.html",
         "image": "thumbnails/massmayhemzombie.jpg",
-        tags:['simulation','shooter','action']
+        tags:['simulation','shooter','action','strategy']
     },
     "MassMayhemZombieExp": {
         "name": "Mass Mayhem Zombie Apocalypse Expansion",
         "url": "games/html/massmayhemzombieexp.html",
         "image": "thumbnails/massmayhemzombieepo.jpg",
-        tags:['simulation','shooter','action']
+        tags:['simulation','shooter','action','strategy']
     },
     "Hapland": {
         "name": "Hapland",
         "url": "games/html/hapland.html",
         "image": "thumbnails/hapland.jpg",
-        tags:['puzzle','difficult','strategy']
+        tags:['puzzle','difficult','strategy','adventure']
     },
     "Hapland2": {
         "name": "Hapland 2",
         "url": "games/html/hapland2.html",
         "image": "thumbnails/hapland2.jpg",
-        tags:['puzzle','strategy']
+        tags:['puzzle','strategy','difficult','adventure']
     },
     "Hapland3": {
         "name": "Hapland 3",
         "url": "games/html/hapland3.html",
         "image": "thumbnails/hapland3.jpg",
-        tags:['puzzle','strategy']
+        tags:['puzzle','strategy','difficult','adventure']
     },
     "GumDropHop": {
         "name": "Gum Drop Hop",
         "url": "games/html/gumdrophop.html",
         "image": "thumbnails/gumdrophop.webp",
-        tags:['adventure','platformer']
+        tags:['adventure','platformer','puzzle','difficult']
     },
     "GumDropHop2": {
         "name": "Gum Drop Hop 2",
         "url": "games/html/gumdrophop2.html",
         "image": "thumbnails/gumdrophop2.webp",
-        tags:['adventure','platformer']
+        tags:['adventure','platformer','puzzle','difficult']
     },
     "GumDropHop3": {
         "name": "Gum Drop Hop 3",
         "url": "games/html/gumdrophop3.html",
         "image": "thumbnails/gumdrophop3.jpg",
-        tags:['adventure','platformer']
+        tags:['adventure','platformer','puzzle','difficult']
     },
     "GumDropHop4": {
         "name": "Gum Drop Hop 4",
         "url": "games/html/gumdrophop4.html",
         "image": "thumbnails/gumdrophop4.jpg",
-        tags:['adventure','platformer']
+        tags:['adventure','platformer','puzzle','difficult']
     },
     "Gta5Flash": {
         "name": "Gta V Flash",
@@ -1796,49 +1796,49 @@ const gamersgaming = {
         "name": "Wheely",
         "url": "games/html/wheely.html",
         "image": "thumbnails/wheely.jpg",
-        tags:['puzzle']
+        tags:['puzzle','strategy','adventure','simulation']
     },
     "Wheely2": {
         "name": "Wheely 2",
         "url": "games/html/wheely2.html",
         "image": "thumbnails/wheely2.webp",
-        tags:['puzzle']
+        tags:['puzzle','strategy','adventure','simulation']
     },
     "Wheely3": {
         "name": "Wheely 3",
         "url": "games/html/wheely3.html",
         "image": "thumbnails/wheely3.jpg",
-        tags:['puzzle']
+        tags:['puzzle','strategy','adventure','simulation']
     },
     "Wheely4": {
         "name": "Wheely 4",
         "url": "games/html/wheely4.html",
         "image": "thumbnails/wheely4.jpg",
-        tags:['puzzle']
+        tags:['puzzle','strategy','adventure','simulation']
     },
     "Wheely5": {
         "name": "Wheely 5",
         "url": "games/html/wheely5.html",
         "image": "thumbnails/wheely5.jpg",
-        tags:['puzzle']
+        tags:['puzzle','strategy','adventure','simulation']
     },
     "Wheely6": {
         "name": "Wheely 6",
         "url": "games/html/wheely6.html",
         "image": "thumbnails/wheely6.webp",
-        tags:['puzzle']
+        tags:['puzzle','strategy','adventure','simulation']
     },
     "Wheely7": {
         "name": "Wheely 7",
         "url": "games/html/wheely7.html",
         "image": "thumbnails/wheely7.jpg",
-        tags:['puzzle']
+        tags:['puzzle','strategy','adventure','simulation']
     },
     "Wheely8": {
         "name": "Wheely 8",
         "url": "games/html/wheely8.html",
         "image": "thumbnails/wheely8.jpg",
-        tags:['puzzle']
+        tags:['puzzle','strategy','adventure','simulation']
     },
     "EarthTaken3": {
         "name": "Earth Taken 3",
