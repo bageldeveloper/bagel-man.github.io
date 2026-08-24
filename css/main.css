@@ -265,7 +265,8 @@ body::before {
     margin-left: 1rem;
 }
 
-.topbar-right button {
+.topbar-right button,
+.topbar-right a {
     position: relative;
 
     display: flex;
@@ -292,7 +293,8 @@ body::before {
         filter 0.15s ease;
 }
 
-.topbar-right button:hover {
+.topbar-right button:hover,
+.topbar-right a:hover {
     color: var(--accent);
 
     transform:
