@@ -740,7 +740,7 @@ function createCarouselRow(
 
     const title =
         document.createElement(
-            "h3"
+            "h2"
         );
 
     title.textContent =

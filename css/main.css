@@ -988,7 +988,7 @@ body::before {
         both;
 }
 
-.genre-row h3 {
+.genre-row h2 {
     margin:
         0 0 0.7rem;
 
@@ -1328,7 +1328,7 @@ body.light .card-overlay {
 }
 
 body.light .main-content > h1,
-body.light .genre-row h3 {
+body.light .genre-row h2 {
     text-shadow:
         2px 2px 0 rgba(0, 0, 0, 0.15);
 }
@@ -2771,4 +2771,52 @@ body.light .genre-row h3 {
                 calc(100vw - 20px)
             );
     }
+}
+/* Shared accessibility improvements */
+.topbar-right > button,
+.topbar-right > a {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.search-icon {
+  border: 0;
+  background: transparent;
+  font: inherit;
+}
+
+.search-icon:focus-visible,
+.topbar-right button:focus-visible,
+.topbar-right a:focus-visible,
+.game-categories button:focus-visible,
+.card:focus-visible,
+.row-arrow:focus-visible,
+.chat-panel-form button:focus-visible,
+.profiletoggle:focus-visible,
+.toggle:focus-within {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+.game-unavailable {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 360px;
+  padding: 2rem;
+  text-align: center;
+  font-weight: 800;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border-radius: 12px;
 }

@@ -125,13 +125,7 @@ const gamersgaming = {
         "image": "thumbnails/bwagDemo.png",
         tags:['original','adventure','platformer','puzzle','action','shooter','strategy']
     },
-    "Bagelwithlegs": {
-        "name": "Bagel With Legs",
-        "url": "games/html/bagelwithlegs.html",
-        "image": "thumbnails/bagelwithlegs.avif",
-        tags:['action','adventure','platformer','strategy']
-    },
-    "BanjoKazooie": {
+"BanjoKazooie": {
         "name": "Banjo Kazooie",
         "url": "games/emu/Banjo.html",
         "image": "thumbnails/banjo.png",
@@ -185,12 +179,7 @@ const gamersgaming = {
         "image": "thumbnails/bloxorz.jpg",
         tags:['puzzle','strategy','platformer','difficult']
     },
-    "Bloxstrike": {
-        "name": "Bloxstrike",
-        "url": "games/html/shooter.html",
-        tags:['action','shooter','strategy','adventure']
-    },
-    "BreakingtheBank": {
+"BreakingtheBank": {
         "name": "Breaking the Bank",
         "url": "games/html/henrybank.html",
         "image": "thumbnails/breakingthebank.png",
@@ -442,13 +431,7 @@ const gamersgaming = {
         "image": "thumbnails/gunblood.png",
         tags:['action','shooter','strategy','difficult']
     },
-    "HalfLife": {
-        "name": "Half-Life",
-        "url": "halflife/index.html",
-        "image": "thumbnails/halflife.jpg",
-        tags:['adventure','shooter','action','strategy','console']
-    },
-    "Hexgl": {
+"Hexgl": {
         "name": "Hexgl",
         "url": "hexgl.html",
         "image": "thumbnails/hexgl.jpg",
@@ -1174,13 +1157,7 @@ const gamersgaming = {
         "image": "thumbnails/worldshardestgame2.png",
         tags:['strategy','puzzle','difficult','action']
     },
-    "Zombies": {
-        "name": "Zombies",
-        "url": "games/html/zombie.html",
-        "image": "thumbnails/zombies.png",
-        tags:['action','shooter','strategy','adventure']
-    },
-    "HueJumper": {
+"HueJumper": {
         "name": "Hue Jumper",
         "url": "carindex.html",
         "image": "thumbnails/huejumper.png",
@@ -1432,13 +1409,7 @@ const gamersgaming = {
         "image": "thumbnails/bowman2.png",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
-    "AliceIsDead": {
-        "name": "Alice Is Dead",
-        "url": "games/html/aliceisdead.html",
-        "image": "thumbnails/aliceisdead.jpg",
-        tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
-    },
-    "AliceIsDead2": {
+"AliceIsDead2": {
         "name": "Alice Is Dead 2",
         "url": "games/html/aliceisdead2.html",
         "image": "thumbnails/aliceisdead2.jpg",
@@ -1600,19 +1571,13 @@ const gamersgaming = {
         "image": "thumbnails/redcar2.webp",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
-    "ReturnMan2": {
-        "name": "Return Man 2",
-        "url": "games/html/returnman2.html",
-        "image": "thumbnails/returnman2.avif",
-        tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
-    },
-    "ReturnMan2Mud": {
+"ReturnMan2Mud": {
         "name": "Return Man 2 - Mud Bowl",
         "url": "games/html/returnman2mudbowl.html",
         "image": "thumbnails/returnman2mud.jpg",
         tags:['adventure','puzzle','simulation','shooter','racing','sports','action','platformer','difficult','strategy','console']
     },
-    "ReturnMan2": {
+    "ReturnMan2Zombies": {
         "name": "Return Man 2 - Zombies",
         "url": "games/html/returnman2zombies.html",
         "image": "thumbnails/returnman2zombies.jpg",

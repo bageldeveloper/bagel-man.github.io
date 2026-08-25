@@ -147,7 +147,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
     <script src="https://cdn.scaledrone.com/scaledrone.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="gamesinfo.js"></script>
+    <script src="gamesinfo.js?v=20260824"></script>
     <style>
     .game-window-container {
       display: flex;
@@ -348,13 +348,13 @@
 <body>
   <header class="topbar">
     <div class="logo-area">
-      <a href="index.html"><img class="logo-icon" src="bagelcomicsicon.png" alt="Bagel"></a>
+      <a href="index.html"><img class="logo-icon" src="bagelicontab.png" alt="Bagel"></a>
     </div>
     <div class="topbar-center">
       <div class="search-wrapper">
-        <input id="searchInput" placeholder="search games...">
-        <div id="searchIcon" class="search-icon"><img style="width:20px;" src="images/icons/search.png"></div>
-        <div id="searchSuggestions" class="search-suggestions"></div>
+        <input id="searchInput" aria-label="Search games" placeholder="search games...">
+        <button id="searchIcon" class="search-icon" type="button" aria-label="Search games"><img style="width:20px;" src="images/icons/search.png"></button>
+        <div id="searchSuggestions" aria-live="polite" class="search-suggestions"></div>
       </div>
     </div>
     <nav class="topbar-right">
@@ -380,11 +380,11 @@
   </div>
 
   <!-- SETTINGS PANEL -->
-  <div id="settings-panel">
-    <div class="settings-title">Settings</div>
+  <div id="settings-panel" role="dialog" aria-modal="false" aria-labelledby="settings-title" aria-hidden="true">
+    <div class="settings-title" id="settings-title">Settings</div>
     <div class="settings-row">
-      <label>
-        Light mode
+      <label for="toggle-light">
+                Light mode
         <span class="sub">Activate to burn your eyes</span>
       </label>
       <label class="toggle">
@@ -395,8 +395,8 @@
     </div>
     <hr class="settings-divider">
     <div class="settings-row">
-      <label>
-        Block ads
+      <label for="toggle-ads">
+                Block ads
         <span class="sub">Hides AdSense scripts & slots</span>
       </label>
       <label class="toggle">
@@ -425,14 +425,14 @@
           <span id="profile-preview-name"></span>
         </div>
         <div class="profile-row">
-          <input id="profile-name-input" maxlength="30" placeholder="your name" oninput="refreshProfilePreview()"/>
-          <input id="profile-color-input" type="color" oninput="refreshProfilePreview()"/>
+          <input id="profile-name-input" aria-label="Display name" maxlength="30" placeholder="your name" oninput="refreshProfilePreview()"/>
+          <input id="profile-color-input" aria-label="Display color" type="color" oninput="refreshProfilePreview()"/>
           <button onclick="saveProfile()">Save</button>
         </div>
       </div>
     </div>
     <form class="chat-panel-form" id="panel-form">
-      <input id="panel-input" placeholder="Say something..." maxlength="100">
+      <input id="panel-input" aria-label="Chat message" placeholder="Say something..." maxlength="100">
       <button type="submit">Send</button>
     </form>
   </div>
@@ -534,7 +534,7 @@
     </main>
   </div>
 
-  <script src="chatscript.js"></script>
+  <script src="chatscript.js?v=20260824"></script>
   <script src="announcements.js"></script>
   <script>
     function toggleFullscreen() {
@@ -817,5 +817,6 @@
     // Initialize suggested games
     renderSuggestedGames();
   </script>
+  <script src="js/settings.js?v=20260824"></script>
 </body>
 </html>

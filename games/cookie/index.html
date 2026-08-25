@@ -19,7 +19,7 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
 <link rel="shortcut icon" href="img/favicon.ico" />
 <!--<link href="https://fonts.googleapis.com/css?family=Kavoon&subset=latin,latin-ext" rel="stylesheet" type="text/css">-->
 <link href='https://fonts.googleapis.com/css?family=Merriweather:900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<script src="showads.js"></script><!-- this just detects adblockers so we can adjust the layout and play nice -->
+
 <script src="base64.js"></script>
 <script src="main.js?v=2.089"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -88,7 +88,7 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
     <script src="https://cdn.scaledrone.com/scaledrone.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-    <script src="../../gamesinfo.js"></script>
+    <script src="../../gamesinfo.js?v=20260824"></script>
     <style>
     .game-window-container {
       display: flex;
@@ -289,13 +289,13 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
 <body>
   <header class="topbar">
     <div class="logo-area">
-      <a href="../../index.html"><img class="logo-icon" src="../../bagelcomicsicon.png" alt="Bagel"></a>
+      <a href="../../index.html"><img class="logo-icon" src="../../bagelicontab.png" alt="Bagel"></a>
     </div>
     <div class="topbar-center">
       <div class="search-wrapper">
-        <input id="searchInput" placeholder="search games...">
-        <div id="searchIcon" class="search-icon"><img style="width:20px;" src="../../images/icons/search.png"></div>
-        <div id="searchSuggestions" class="search-suggestions"></div>
+        <input id="searchInput" aria-label="Search games" placeholder="search games...">
+        <button id="searchIcon" class="search-icon" type="button" aria-label="Search games"><img style="width:20px;" src="../../images/icons/search.png"></button>
+        <div id="searchSuggestions" aria-live="polite" class="search-suggestions"></div>
       </div>
     </div>
     <nav class="topbar-right">
@@ -321,11 +321,11 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
   </div>
 
   <!-- SETTINGS PANEL -->
-  <div id="settings-panel">
-    <div class="settings-title">Settings</div>
+  <div id="settings-panel" role="dialog" aria-modal="false" aria-labelledby="settings-title" aria-hidden="true">
+    <div class="settings-title" id="settings-title">Settings</div>
     <div class="settings-row">
-      <label>
-        Light mode
+      <label for="toggle-light">
+                Light mode
         <span class="sub">Activate to burn your eyes</span>
       </label>
       <label class="toggle">
@@ -336,8 +336,8 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
     </div>
     <hr class="settings-divider">
     <div class="settings-row">
-      <label>
-        Block ads
+      <label for="toggle-ads">
+                Block ads
         <span class="sub">Hides AdSense scripts & slots</span>
       </label>
       <label class="toggle">
@@ -366,14 +366,14 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
           <span id="profile-preview-name"></span>
         </div>
         <div class="profile-row">
-          <input id="profile-name-input" maxlength="30" placeholder="your name" oninput="refreshProfilePreview()"/>
-          <input id="profile-color-input" type="color" oninput="refreshProfilePreview()"/>
+          <input id="profile-name-input" aria-label="Display name" maxlength="30" placeholder="your name" oninput="refreshProfilePreview()"/>
+          <input id="profile-color-input" aria-label="Display color" type="color" oninput="refreshProfilePreview()"/>
           <button onclick="saveProfile()">Save</button>
         </div>
       </div>
     </div>
     <form class="chat-panel-form" id="panel-form">
-      <input id="panel-input" placeholder="Say something..." maxlength="100">
+      <input id="panel-input" aria-label="Chat message" placeholder="Say something..." maxlength="100">
       <button type="submit">Send</button>
     </form>
   </div>
@@ -428,8 +428,7 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
 			Other versions
 			<div class="hoverable">
 			<a href="../" target="_blank" id="linkVersionLive">Live version</a>
-			<a href="beta" target="_blank" id="linkVersionBeta">Try the beta!</a>
-			<a href="//orteil.dashnet.org/cookieclicker/v10466" target="_blank" id="linkVersionOld">v. 1.0466</a>
+<a href="//orteil.dashnet.org/cookieclicker/v10466" target="_blank" id="linkVersionOld">v. 1.0466</a>
 			<a href="//orteil.dashnet.org/experiments/cookie/" target="_blank">Classic</a>
 			</div>
 		</div>
@@ -626,7 +625,7 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
     </main>
   </div>
 
-  <script src="../../chatscript.js"></script>
+  <script src="../../chatscript.js?v=20260824"></script>
   <script src="../../announcements.js"></script>
   <script>
     function toggleFullscreen() {
@@ -909,5 +908,6 @@ Feel free to alter this code to your liking, but please do not re-host it, do no
     // Initialize suggested games
     renderSuggestedGames();
   </script>
+  <script src="../../js/settings.js?v=20260824"></script>
 </body>
 </html>
