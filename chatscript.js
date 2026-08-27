@@ -15,13 +15,15 @@ let missedMessages = 0;
 // DEV ACCOUNTS
 // =====================
 
-const DEV_PASSWORD = null;
+const DEV_PASSWORD = "bagel2025";
 
-// Developer identities stay disabled until a trusted backend issues roles.
-const DEV_ACCOUNTS = {};
+const DEV_ACCOUNTS = {
+  carter: { colors: ["#f857a6", "#ff5858"], label: "Carter" },
+  daniel: { colors: ["#fd6bff", "#2bcbee"], label: "Daniel" },
+  tom:    { colors: ["#f7971e", "#ffd200"], label: "Tom" }
+};
 
-localStorage.removeItem("bagel_dev_name");
-let devName     = null;
+let devName     = localStorage.getItem("bagel_dev_name") || null;
 let customName  = localStorage.getItem("bagel_custom_name") || null;
 let customColor = localStorage.getItem("bagel_custom_color") || null;
 
@@ -37,9 +39,6 @@ function getMyName() {
   }
 
   if (customName) return customName;
-
-  const saved = sessionStorage.getItem("bagel_session_name");
-  if (saved) return saved;
 
   const adjs = ["cool","angry","giant","lazy","tiny","salty","spicy","mystic","crazy"];
   const nouns = ["bagel","cat","gamer","robot","ninja","burger","ghost","wizard"];
@@ -229,9 +228,10 @@ function reconnectChat() {
   });
 }
 
-// Chat connects only after the visitor opens it.
+reconnectChat();
+
+// Reset missed messages on page load (user is checking the site)
 missedMessages = 0;
-updatePanelMembers();
 updateMissedCount();
 
 // =====================
@@ -242,7 +242,7 @@ function updatePanelMembers() {
   const list = document.getElementById('panel-members-list');
   const memberCount = document.getElementById('panel-member-count');
 
-  memberCount.textContent = chatDrone ? members.length + ' online' : 'open chat to connect';
+  memberCount.textContent = members.length + ' online';
 
   list.innerHTML = "";
 
@@ -356,31 +356,16 @@ function saveProfile() {
   localStorage.setItem("bagel_custom_name", customName);
   localStorage.setItem("bagel_custom_color", customColor);
 
-  refreshProfilePreview();
+  chatDrone.publish({
+    room: "observable-room",
+    message: JSON.stringify({
+      type: "profileUpdate",
+      name: customName,
+      color: customColor
+    })
+  });
 
-  if (chatDrone) {
-    chatDrone.publish({
-      room: "observable-room",
-      message: JSON.stringify({
-        type: "profileUpdate",
-        name: customName,
-        color: customColor
-      })
-    });
-    reconnectChat();
-  }
-}
-
-function refreshProfilePreview() {
-  const nameInput = document.getElementById("profile-name-input");
-  const colorInput = document.getElementById("profile-color-input");
-  const preview = document.getElementById("profile-preview-name");
-  if (!nameInput || !colorInput || !preview) return;
-
-  preview.textContent = (nameInput.value.trim() || getMyName()).slice(0, 30);
-  preview.style.color = /^#[0-9a-f]{6}$/i.test(colorInput.value)
-    ? colorInput.value
-    : getMyColor();
+  reconnectChat();
 }
 
 // =====================
@@ -395,7 +380,6 @@ function toggleChat() {
   if (panel.classList.contains('open')) {
     missedMessages = 0;
     updateMissedCount();
-    if (!chatDrone) reconnectChat();
   }
 }
 
@@ -414,9 +398,3 @@ function devLogout() {
     clientData: { name: "Dev mode disabled" }
   });
 }
-
-const profileNameInput = document.getElementById('profile-name-input');
-const profileColorInput = document.getElementById('profile-color-input');
-if (profileNameInput) profileNameInput.value = customName || getMyName();
-if (profileColorInput) profileColorInput.value = customColor || getMyColor();
-refreshProfilePreview();
