@@ -8,8 +8,12 @@ const coolDown = 1500;
 let lastClick = Date.now() - coolDown;
 let members = [];
 let chatDrone;
+let chatRoom;
+let chatGeneration = 0;
 const profileMap = {};
 let missedMessages = 0;
+
+const PRESENCE_ID_KEY = "bagel_chat_presence_id";
 
 // =====================
 // DEV ACCOUNTS
@@ -40,6 +44,9 @@ function getMyName() {
 
   if (customName) return customName;
 
+  const sessionName = sessionStorage.getItem("bagel_session_name");
+  if (sessionName) return sessionName;
+
   const adjs = ["cool","angry","giant","lazy","tiny","salty","spicy","mystic","crazy"];
   const nouns = ["bagel","cat","gamer","robot","ninja","burger","ghost","wizard"];
 
@@ -50,6 +57,19 @@ function getMyName() {
 
   sessionStorage.setItem("bagel_session_name", generated);
   return generated;
+}
+
+function getPresenceId() {
+  let presenceId = sessionStorage.getItem(PRESENCE_ID_KEY);
+
+  if (!presenceId) {
+    presenceId = typeof crypto !== "undefined" && crypto.randomUUID
+      ? crypto.randomUUID()
+      : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    sessionStorage.setItem(PRESENCE_ID_KEY, presenceId);
+  }
+
+  return presenceId;
 }
 
 function getMyColor() {
@@ -166,26 +186,63 @@ badge.style.marginLeft = "0px";        // smaller gap
 // SCALEDRONE SETUP
 // =====================
 
+function memberPresenceId(member) {
+  return member?.clientData?.presenceId || member.id;
+}
+
+function addOrReplaceMember(member) {
+  const presenceId = memberPresenceId(member);
+
+  members = members.filter(existing =>
+    existing.id !== member.id && memberPresenceId(existing) !== presenceId
+  );
+  members.push(member);
+}
+
+function disconnectChat() {
+  chatGeneration++;
+  chatRoom = null;
+  members = [];
+
+  if (chatDrone) {
+    const drone = chatDrone;
+    chatDrone = null;
+
+    try {
+      drone.close();
+    } catch {}
+  }
+}
+
 function reconnectChat() {
-  if (chatDrone) chatDrone.close();
+  disconnectChat();
 
   isDev = !!(devName && DEV_ACCOUNTS[devName]);
 
-  chatDrone = new ScaleDrone(CLIENT_ID, {
+  const generation = chatGeneration;
+  const drone = new ScaleDrone(CLIENT_ID, {
     data: {
       name: getMyName(),
       color: getMyColor(),
-      dev: isDev
+      dev: isDev,
+      presenceId: getPresenceId()
     }
   });
+  chatDrone = drone;
 
-  chatDrone.on('open', () => {
-    const room = chatDrone.subscribe('observable-room');
+  drone.on('open', error => {
+    if (error || drone !== chatDrone || generation !== chatGeneration) return;
+
+    const room = drone.subscribe('observable-room');
+    chatRoom = room;
 
     room.on('members', m => {
-      members = m;
+      if (room !== chatRoom) return;
+
+      members = [];
 
       m.forEach(mem => {
+        addOrReplaceMember(mem);
         profileMap[mem.id] = mem.clientData;
       });
 
@@ -193,18 +250,24 @@ function reconnectChat() {
     });
 
     room.on('member_join', m => {
-      members.push(m);
+      if (room !== chatRoom) return;
+
+      addOrReplaceMember(m);
       profileMap[m.id] = m.clientData;
       updatePanelMembers();
     });
 
     room.on('member_leave', ({ id }) => {
+      if (room !== chatRoom) return;
+
       members = members.filter(m => m.id !== id);
       delete profileMap[id];
       updatePanelMembers();
     });
 
     room.on('data', (data, member) => {
+      if (room !== chatRoom) return;
+
       try {
         const msg = JSON.parse(data);
 
@@ -229,6 +292,13 @@ function reconnectChat() {
 }
 
 reconnectChat();
+
+// A homepage kept in the browser's back/forward cache can otherwise leave its
+// old ScaleDrone presence alive while the restored page opens another one.
+window.addEventListener('pagehide', disconnectChat);
+window.addEventListener('pageshow', event => {
+  if (event.persisted && !chatDrone) reconnectChat();
+});
 
 // Reset missed messages on page load (user is checking the site)
 missedMessages = 0;

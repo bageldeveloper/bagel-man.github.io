@@ -2620,6 +2620,47 @@ body.light .genre-row h2 {
 
 
 /* ============================================================
+   GAME AD RAILS
+   ============================================================ */
+
+.game-area > .ad-sidebar {
+    position: relative;
+    box-sizing: border-box;
+    flex: 0 0 160px !important;
+    width: 160px !important;
+    min-width: 160px;
+    min-height: 600px !important;
+    padding: 0;
+    align-self: center !important;
+    align-items: center;
+    overflow: visible;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: rgba(10, 12, 20, 0.72);
+}
+
+.game-area > .ad-sidebar::before {
+    content: "Advertisement";
+    position: absolute;
+    top: -18px;
+    left: 0;
+    width: 100%;
+    color: var(--muted);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@media (max-width: 1499px), (max-height: 1050px) {
+    .game-area > .ad-sidebar {
+        display: none !important;
+    }
+}
+
+/* ============================================================
    MOBILE
    ============================================================ */
 
