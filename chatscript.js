@@ -300,6 +300,21 @@ window.addEventListener('pageshow', event => {
   if (event.persisted && !chatDrone) reconnectChat();
 });
 
+// Unity/WebGL and some emulators listen for keyboard events on window and
+// document. Keep those game-level handlers from cancelling keystrokes while a
+// site text field (chat, profile, or search) has focus.
+function protectSiteTextInput(event) {
+  const target = event.target;
+
+  if (target?.matches?.('input, textarea, [contenteditable="true"]')) {
+    event.stopImmediatePropagation();
+  }
+}
+
+['keydown', 'keypress', 'keyup'].forEach(eventName => {
+  window.addEventListener(eventName, protectSiteTextInput, true);
+});
+
 // Reset missed messages on page load (user is checking the site)
 missedMessages = 0;
 updateMissedCount();
