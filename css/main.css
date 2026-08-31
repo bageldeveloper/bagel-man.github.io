@@ -153,8 +153,6 @@ body::before {
 }
 
 .logo-area img.logo-icon {
-    width: 44px;
-    height: 44px;
     max-width: none;
 
     border-radius: 10px;
