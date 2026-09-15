@@ -27,7 +27,7 @@ const gamersgaming = {
         "name": "2048",
         "url": "games/2048/index.html",
         "image": "thumbnails/2048.jpg",
-        tags:['strategy','puzzle','Board','difficult']
+        tags:['strategy','puzzle','Board','difficult','favorite']
     },
     "8BallPool": {
         "name": "8 Ball Pool",
@@ -165,7 +165,7 @@ const gamersgaming = {
         "name": "Bloons Tower Defense 4",
         "url": "games/html/bloonstd4.html",
         "image": "thumbnails/bloonstd4.jpg",
-        tags:['tower-defense','strategy','favorite','puzzle','simulation']
+        tags:['tower-defense','strategy','puzzle','simulation']
     },
     "BloonsTowerDefense5": {
         "name": "Bloons Tower Defense 5",
@@ -177,7 +177,7 @@ const gamersgaming = {
         "name": "Bloxorz",
         "url": "games/html/bloxorz.html",
         "image": "thumbnails/bloxorz.jpg",
-        tags:['puzzle','strategy','platformer','difficult']
+        tags:['puzzle','strategy','platformer','difficult','favorite']
     },
 "BreakingtheBank": {
         "name": "Breaking the Bank",
@@ -237,7 +237,7 @@ const gamersgaming = {
         "name": "Cookie Clicker",
         "url": "games/cookie/index.html",
         "image": "thumbnails/cookieclicker.avif",
-        tags:['strategy','action','simulation','puzzle']
+        tags:['strategy','action','simulation','puzzle','favorite']
     },
     "CrossingThePit": {
         "name": "Crossing the Pit",
@@ -321,7 +321,7 @@ const gamersgaming = {
         "name": "Duck Life 4",
         "url": "games/html/ducklife4.html",
         "image": "thumbnails/ducklife4.jpg",
-        tags:['action','adventure','sports','simulation','racing']
+        tags:['action','adventure','sports','simulation','racing','favorite']
     },
     "DuckTales": {
         "name": "Duck Tales",
@@ -585,7 +585,7 @@ const gamersgaming = {
         "name": "Mega Man 2",
         "url": "games/emu/megamantwo.html",
         "image": "thumbnails/megaman2.jpg",
-        tags:['adventure','shooter','action','platformer','strategy','console','favorite']
+        tags:['adventure','shooter','action','platformer','strategy','console']
     },
     "MegaManX": {
         "name": "Mega Man X",
@@ -681,7 +681,7 @@ const gamersgaming = {
         "name": "Pacman",
         "url": "games/html/Pacman.html",
         "image": "thumbnails/pacman.gif",
-        tags:['adventure','racing','action','difficult','strategy','console']
+        tags:['adventure','racing','action','difficult','strategy','console','favorite']
     },
     "PapasBakeria": {
         "name": "Papa's Bakeria",
@@ -813,7 +813,7 @@ const gamersgaming = {
         "name": "Quake 3",
         "url": "Quake3-master/Quake3.htm",
         "image": "thumbnails/quake3.jpg",
-        tags:['shooter','action','platformer','difficult','strategy','favorite','console']
+        tags:['shooter','action','platformer','difficult','strategy','console']
     },
     "RaftWars": {
         "name": "Raft Wars",
@@ -855,7 +855,7 @@ const gamersgaming = {
         "name": "Retro bowl",
         "url": "games/retrobowl/index.html",
         "image": "thumbnails/retrobowl.png",
-        tags:['simulation','sports','strategy','action']
+        tags:['simulation','sports','strategy','action','favorite']
     },
     "RiddleSchool": {
         "name": "Riddle School",
@@ -921,7 +921,7 @@ const gamersgaming = {
         "name": "Run 3",
         "url": "games/html/run3.html",
         "image": "thumbnails/run 3.jpg",
-        tags:['action','adventure','platformer','strategy']
+        tags:['action','adventure','platformer','strategy','favorite']
     },
     "Siftheads": {
         "name": "Siftheads",
@@ -945,7 +945,7 @@ const gamersgaming = {
         "name": "Star Wars Episode One: Racer",
         "url": "games/emu/episodeoneracer.html",
         "image": "thumbnails/starwarsracer.jpg",
-        tags:['racing','action','difficult','strategy','favorite','console']
+        tags:['racing','action','difficult','strategy','console']
     },
     "StealingTheDiamond": {
         "name": "Stealing The Diamond",
@@ -1059,7 +1059,7 @@ const gamersgaming = {
         "name": "The Impossible Quiz",
         "url": "games/html/quiz.html",
         "image": "thumbnails/impossiblequiz.png",
-        tags:['puzzle','strategy','difficult','adventure']
+        tags:['puzzle','strategy','difficult','adventure','favorite']
     },
     "TheLegendOfZelda": {
         "name": "The Legend of Zelda",
