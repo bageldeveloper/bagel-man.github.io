@@ -2910,3 +2910,9 @@ body.light .genre-row h2 {
     .game-ad--mobile-footer ins.adsbygoogle { width: 320px; height: 50px; }
     .game-ad--mobile-footer.is-over-game { opacity: 0; pointer-events: none; }
 }
+
+
+/* Keep the third sidebar row clear of game recommendations. */
+@media (min-width: 768px) {
+    .game-window-container > .suggested-games-section { margin-top: 4rem !important; }
+}

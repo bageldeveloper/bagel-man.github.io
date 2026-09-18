@@ -65,7 +65,7 @@ function updatePage(file) {
   );
   html = html.replace(
     /(<div class="game-window"[\s\S]*?<\/div>)(\s*<\/div>\s*<div class="game-controls">)/i,
-    `$1${eol}${slotMarkup("rectangle game-ad--rectangle-left", "Advertisement left of game").replace(">", ' data-ad-rail-position="1">')}${eol}${slotMarkup("rectangle game-ad--rectangle-left game-ad--rail-secondary", "Second advertisement left of game").replace(">", ' data-ad-rail-position="2">')}${eol}${slotMarkup("rectangle game-ad--rectangle-right", "Advertisement right of game").replace(">", ' data-ad-rail-position="1">')}${eol}${slotMarkup("rectangle game-ad--rectangle-right game-ad--rail-secondary", "Second advertisement right of game").replace(">", ' data-ad-rail-position="2">')}$2`
+    `$1${eol}${slotMarkup("rectangle game-ad--rectangle-left", "Advertisement left of game").replace(">", ' data-ad-rail-position="1">')}${eol}${slotMarkup("rectangle game-ad--rectangle-left game-ad--rail-secondary", "Second advertisement left of game").replace(">", ' data-ad-rail-position="2">')}${eol}${slotMarkup("rectangle game-ad--rectangle-left game-ad--rail-secondary", "Third advertisement left of game").replace(">", ' data-ad-rail-position="3">')}${eol}${slotMarkup("rectangle game-ad--rectangle-right", "Advertisement right of game").replace(">", ' data-ad-rail-position="1">')}${eol}${slotMarkup("rectangle game-ad--rectangle-right game-ad--rail-secondary", "Second advertisement right of game").replace(">", ' data-ad-rail-position="2">')}${eol}${slotMarkup("rectangle game-ad--rectangle-right game-ad--rail-secondary", "Third advertisement right of game").replace(">", ' data-ad-rail-position="3">')}$2`
   );
   html = html.replace(
     /(<div class="game-controls">[\s\S]*?<\/div>)/i,
