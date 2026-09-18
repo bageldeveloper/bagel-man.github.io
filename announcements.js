@@ -2,6 +2,7 @@
 // ANNOUNCEMENTS
 // =============================================
 const ANNOUNCEMENTS = [
+  { id: 'ann-2026-09-17', date: 'Septemeber 17th, 2026', text: 'Whats up gangalang. I am experimenting around with some of the ad configuration. So lmk if it gets annoying (email bagelcomics.com@gmail.com or message me in chat). Aside from that, big things are coming, so get ready. -Carter' },
   { id: 'ann-2026-08-10', date: 'August 14th, 2026', text: 'Welcome back everyone! We touched up all the games over the summer, so all the games are working now. Additionally, if bagelcomics.com is blocked in your school district, you can access the canvas version at tinyurl.com/bagelcomicsunblocked -Carter' },
   { id: 'ann-2026-05-10', date: 'May 12th, 2026', text: 'I apologize for anyone using the canvas course since it got hacked. However, some of the games on canvas still work, so go to tinyurl.com/bagelminecraft for the time being. -Carter' },
   { id: 'ann-2026-05-10b', date: 'May 10th, 2026', text: 'Hey guys! I added Drats, Phobia, and The Jimmy Bean Game, you can find them under the orginal games section. -Tom' },
