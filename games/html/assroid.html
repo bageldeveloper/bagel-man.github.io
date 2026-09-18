@@ -313,15 +313,6 @@
         <div class="toggle-thumb"></div>
       </label>
     </div>
-    <hr class="settings-divider">
-    <div class="settings-row">
-      <label for="toggle-ads">
-                Block ads
-        <span class="sub">Hides AdSense scripts & slots</span>
-      </label>
-      <label class="toggle">
-        <input type="checkbox" id="toggle-ads" onchange="applyAdBlock(this.checked)">
-        <div class="toggle-track"></div>
         <div class="toggle-thumb"></div>
       </label>
     </div>
@@ -377,39 +368,30 @@
     </aside>
     <main class="main-content">
       <div class="game-window-container">
-        <div class="game-area">
-          <div class="ad-sidebar">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4474724430572739"
-                 crossorigin="anonymous"></script>
-            <!-- ad bois -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:160px;height:600px"
-                 data-ad-client="ca-pub-4474724430572739"
-                 data-ad-slot="4055551074"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-          </div>
+<div class="game-area">
           <div class="game-window" id="gameWindow">
             <embed src="/games/swf/asteroids.swf" width="100%" height="100%"></embed>
           </div>
-          <div class="ad-sidebar">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4474724430572739"
-                 crossorigin="anonymous"></script>
-            <!-- ad bois -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:160px;height:600px"
-                 data-ad-client="ca-pub-4474724430572739"
-                 data-ad-slot="4055551074"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-          </div>
+<div class="game-ad game-ad--rectangle game-ad--rectangle-left" data-ad-rail-position="1" data-ad-label="AD SLOT" aria-label="Advertisement left of game">
+  <ins class="adsbygoogle"
+       data-ad-client="ca-pub-4474724430572739"
+       data-ad-slot="4055551074"></ins>
+</div>
+<div class="game-ad game-ad--rectangle game-ad--rectangle-right" data-ad-rail-position="1" data-ad-label="AD SLOT" aria-label="Advertisement right of game">
+  <ins class="adsbygoogle"
+       data-ad-client="ca-pub-4474724430572739"
+       data-ad-slot="4055551074"></ins>
+</div>
         </div>
         <div class="game-controls">
           <span class="game-window-title">Asteroids</span>
           <button class="fullscreen-btn" onclick="toggleFullscreen()">⛶</button>
         </div>
+        <div class="game-ad game-ad--banner" data-ad-label="AD SLOT" aria-label="Advertisement below game">
+  <ins class="adsbygoogle"
+       data-ad-client="ca-pub-4474724430572739"
+       data-ad-slot="4055551074"></ins>
+</div>
         <div class="suggested-games-section">
           <div class="suggested-games-title">Suggested</div>
           <div class="suggested-games-row">
@@ -419,7 +401,12 @@
           </div>
         </div>
       </div>
-    </main>
+    <div class="game-ad game-ad--mobile-footer" data-ad-label="AD SLOT" aria-label="Mobile footer advertisement">
+  <ins class="adsbygoogle"
+       data-ad-client="ca-pub-4474724430572739"
+       data-ad-slot="4055551074"></ins>
+</div>
+</main>
   </div>
 
   <script src="../../chatscript.js?v=20260901"></script>
@@ -436,22 +423,6 @@
       document.exitFullscreen();
     }
   }
-
-    function applyAdBlock(blockAds) {
-      const adSidebars = document.querySelectorAll('.ad-sidebar');
-      const adsbygoogle = document.querySelectorAll('.adsbygoogle');
-      
-      adSidebars.forEach(sidebar => {
-        sidebar.style.display = blockAds ? 'none' : 'flex';
-      });
-      
-      adsbygoogle.forEach(ad => {
-        ad.style.display = blockAds ? 'none' : 'block';
-      });
-
-      // Save preference to localStorage
-      localStorage.setItem('blockAds', blockAds);
-    }
 
     function applyLightMode(isLight) {
       document.body.classList.toggle('light', isLight);
@@ -587,11 +558,6 @@
     });
 
     // Check for saved preferences
-    if (localStorage.getItem('blockAds') === 'true') {
-      document.getElementById('toggle-ads').checked = true;
-      applyAdBlock(true);
-    }
-
     if (localStorage.getItem('lightMode') === 'true') {
       document.getElementById('toggle-light').checked = true;
       applyLightMode(true);
@@ -706,5 +672,6 @@
     renderSuggestedGames();
   </script>
   <script src="../../js/settings.js?v=20260824"></script>
+  <script src="../../js/ad-layout.js?v=20260917"></script>
 </body>
 </html>

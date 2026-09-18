@@ -1129,50 +1129,6 @@ function applyLightMode(on) {
 }
 
 
-function applyAdBlock(on) {
-
-    localStorage.setItem(
-        "adBlock",
-        on ? "1" : "0"
-    );
-
-
-    if (on) {
-
-        document
-            .querySelectorAll(
-                'script[src*="googlesyndication"], script[src*="adsbygoogle"]'
-            )
-            .forEach(
-                s => s.remove()
-            );
-
-
-        document
-            .querySelectorAll(
-                'ins.adsbygoogle, [id*="ad-"], [class*="ad-slot"]'
-            )
-            .forEach(
-                el =>
-                    el.style.display =
-                        "none"
-            );
-
-
-        window.adsbygoogle =
-            {
-                loaded: true,
-
-                push: () => {}
-            };
-
-    } else {
-
-        location.reload();
-    }
-}
-
-
 (function restoreSettings() {
 
     if (
@@ -1191,40 +1147,6 @@ function applyAdBlock(on) {
     }
 
 
-    if (
-        localStorage.getItem(
-            "adBlock"
-        ) === "1"
-    ) {
-
-        document.getElementById(
-            "toggle-ads"
-        ).checked = true;
-
-        applyAdBlock(
-            true
-        );
-
-    } else {
-
-        const s =
-            document.createElement(
-                "script"
-            );
-
-        s.async =
-            true;
-
-        s.src =
-            "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4474724430572739";
-
-        s.crossOrigin =
-            "anonymous";
-
-        document.head.appendChild(
-            s
-        );
-    }
 
 })();
 

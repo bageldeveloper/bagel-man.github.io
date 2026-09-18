@@ -1,0 +1,9 @@
+{
+  "name": "bagel-man.github.io",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/dev-server.js",
+    "ads:update": "node scripts/update-game-ads.js",
+    "test:ads": "node scripts/verify-ads.js"
+  }
+}

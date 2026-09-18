@@ -2859,3 +2859,53 @@ body.light .genre-row h2 {
   background: var(--surface-2);
   border-radius: 12px;
 }
+
+/* ============================================================
+   ADS
+   ============================================================ */
+.game-ad { position: relative; flex: 0 0 auto; overflow: visible; }
+.game-ad[hidden] { display: none !important; }
+.game-ad ins.adsbygoogle { display: inline-block; }
+.game-ad--banner { width: 728px; height: 90px; max-width: 100%; align-self: center; margin-top: 0.25rem; }
+.game-ad--banner ins.adsbygoogle { width: 728px; height: 90px; }
+.game-ad--rectangle {
+    position: absolute;
+    width: 300px;
+    height: 250px;
+}
+.game-ad--rectangle ins.adsbygoogle { width: 300px; height: 250px; }
+.game-ad--mobile-footer { display: none; }
+@media (min-width: 768px) {
+    .game-area { position: relative; }
+}
+.debug-ads .game-ad,
+.debug-ads .ad-debug-container { outline: 2px solid red !important; background: rgba(255, 0, 0, 0.04); }
+.debug-ads .game-ad::before,
+.debug-ads .ad-debug-container::before {
+    content: attr(data-ad-label); position: absolute; z-index: 2147483647;
+    top: 2px; left: 2px; padding: 1px 4px; color: red;
+    background: rgba(255, 255, 255, 0.94); font: 700 10px/1.3 Arial, sans-serif;
+    pointer-events: none;
+}
+@media (max-width: 767px) {
+    body { padding-bottom: calc(50px + env(safe-area-inset-bottom)); }
+    .game-window-container { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
+    .game-area { flex-direction: column; }
+    .game-ad--banner,
+    .game-ad--banner ins.adsbygoogle { width: 320px; height: 50px; }
+    .game-ad--rectangle {
+        position: static;
+        right: auto;
+        order: 2;
+        margin-top: 1rem;
+        transform: none;
+    }
+    .game-ad--rectangle-right { display: none; }
+    .game-ad--mobile-footer {
+        display: block; position: fixed; z-index: 900; left: 50%;
+        bottom: env(safe-area-inset-bottom); width: 320px; height: 50px;
+        transform: translateX(-50%); transition: opacity 120ms linear;
+    }
+    .game-ad--mobile-footer ins.adsbygoogle { width: 320px; height: 50px; }
+    .game-ad--mobile-footer.is-over-game { opacity: 0; pointer-events: none; }
+}
