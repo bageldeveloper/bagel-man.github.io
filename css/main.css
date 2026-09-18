@@ -2900,7 +2900,8 @@ body.light .genre-row h2 {
         margin-top: 1rem;
         transform: none;
     }
-    .game-ad--rectangle-right { display: none; }
+    .game-ad--rectangle-right,
+    .game-ad--rail-secondary { display: none; }
     .game-ad--mobile-footer {
         display: block; position: fixed; z-index: 900; left: 50%;
         bottom: env(safe-area-inset-bottom); width: 320px; height: 50px;

@@ -34,10 +34,10 @@ for (const file of gamePages) {
     adsenseUnits: count(/<ins class="adsbygoogle"/g),
     adsenseLoaders: count(/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js/g)
   };
-  if (checks.banner !== 1 || checks.rectangle !== 2 || checks.leftRectangle !== 1 ||
-      checks.rightRectangle !== 1 || checks.mobileFooter !== 1 ||
+  if (checks.banner !== 1 || checks.rectangle !== 4 || checks.leftRectangle !== 2 ||
+      checks.rightRectangle !== 2 || checks.mobileFooter !== 1 ||
       checks.legacySidebar !== 0 || checks.blockAdsUi !== 0 || checks.blockAdsCode !== 0 ||
-      checks.adLayoutScript !== 1 || checks.adsenseUnits !== 4 || checks.adsenseLoaders !== 1) {
+      checks.adLayoutScript !== 1 || checks.adsenseUnits !== 6 || checks.adsenseLoaders !== 1) {
     failures.push(`${relative}: ${JSON.stringify(checks)}`);
   }
 }
@@ -55,4 +55,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Verified ${gamePages.length} game pages: single-slot responsive left/right rails, one lower banner, and one mobile footer each; no block-ads feature remains.`);
+console.log(`Verified ${gamePages.length} game pages: two-slot responsive left/right rails, one lower banner, and one mobile footer each; no block-ads feature remains.`);
