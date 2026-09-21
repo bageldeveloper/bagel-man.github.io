@@ -1,7 +1,7 @@
 (function configureGameAds() {
   const debugAds = window.DEBUG_ADS === true;
   const mobileQuery = window.matchMedia("(max-width: 767px)");
-  const laptopQuery = window.matchMedia("(min-width: 901px) and (max-width: 1499px)");
+  const laptopQuery = window.matchMedia("(min-width: 901px) and (max-width: 1799px)");
   const adElements = Array.from(document.querySelectorAll(".game-ad ins.adsbygoogle"));
 
   if (debugAds) document.documentElement.classList.add("debug-ads");
@@ -36,10 +36,17 @@
   function positionSideAds() {
     if (!gameArea || !gameWindow) return;
 
-    if (mobileQuery.matches) {
+    if (window.innerWidth <= 900) {
       [...leftRails, ...rightRails].forEach(resetRail);
-      leftRails.forEach((rail, index) => { rail.hidden = index > 0; });
-      rightRails.forEach(rail => { rail.hidden = true; });
+      [...leftRails, ...rightRails].forEach(rail => { rail.hidden = true; });
+      initializeVisibleAds();
+      return;
+    }
+
+    if (laptopQuery.matches) {
+      [...leftRails, ...rightRails].forEach(resetRail);
+      leftRails.forEach((rail, index) => { rail.hidden = index > 1; });
+      rightRails.forEach((rail, index) => { rail.hidden = index > 1; });
       initializeVisibleAds();
       return;
     }
@@ -48,21 +55,12 @@
     const gameRect = gameWindow.getBoundingClientRect();
     const mainRect = mainContent?.getBoundingClientRect() || { left: 0, right: window.innerWidth };
     const edgePadding = 12;
-    const isLaptop = laptopQuery.matches;
-    const railGap = isLaptop ? 16 : 24;
-    const railTop = isLaptop ? 0 : gameRect.top - areaRect.top;
-    const maxRailsPerSide = isLaptop ? 2 : 3;
-    const activeLeftRails = leftRails.slice(0, maxRailsPerSide);
-    const activeRightRails = rightRails.slice(0, maxRailsPerSide);
-
-    [...leftRails.slice(maxRailsPerSide), ...rightRails.slice(maxRailsPerSide)].forEach(rail => {
-      resetRail(rail);
-      rail.hidden = true;
-    });
+    const railGap = 24;
+    const railTop = gameRect.top - areaRect.top;
 
     const placements = [
-      ...activeLeftRails.map((rail, index) => ({ rail, index, side: "left" })),
-      ...activeRightRails.map((rail, index) => ({ rail, index, side: "right" })),
+      ...leftRails.map((rail, index) => ({ rail, index, side: "left" })),
+      ...rightRails.map((rail, index) => ({ rail, index, side: "right" })),
     ];
 
     placements.forEach(({ rail, index, side }) => {

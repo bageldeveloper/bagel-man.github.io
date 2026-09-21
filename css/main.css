@@ -2899,19 +2899,38 @@ body.light .genre-row h2 {
     }
 }
 
-/* Laptop rails use narrow standard units so two ads fit on each side. */
-@media (min-width: 901px) and (max-width: 1499px) {
-    .main-content .game-area,
-    .main-content .game-controls {
-        max-width: min(800px, calc(100% - 288px));
-    }
-
-    .main-content .game-window {
-        max-width: 100%;
+/* Compact screens use a fluid three-column layout around standard-size ads. */
+@media (min-width: 901px) and (max-width: 1799px) {
+    .main-content .game-window-container {
+        --game-rail-gap: clamp(0.75rem, 1.15vw, 1rem);
+        --game-center-max: 50rem;
+        --game-layout-max: calc(65rem + var(--game-rail-gap) + var(--game-rail-gap));
     }
 
     .main-content .game-area {
-        min-height: 496px;
+        display: grid;
+        grid-template-columns: 120px minmax(0, var(--game-center-max)) 120px;
+        grid-template-rows: repeat(2, minmax(240px, 1fr));
+        column-gap: var(--game-rail-gap);
+        row-gap: var(--game-rail-gap);
+        width: 100%;
+        max-width: var(--game-layout-max);
+        min-height: 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-content .game-window {
+        grid-column: 2;
+        grid-row: 1 / 3;
+        width: 100%;
+        max-width: var(--game-center-max);
+        justify-self: center;
+    }
+
+    .main-content .game-controls {
+        width: calc(100% - 240px - var(--game-rail-gap) - var(--game-rail-gap));
+        max-width: var(--game-center-max);
     }
 
     .game-ad--rectangle,
@@ -2920,9 +2939,18 @@ body.light .genre-row h2 {
         height: 240px;
     }
 
-    .game-ad--rectangle[data-ad-rail-position="3"] {
-        display: none !important;
+    .game-ad--rectangle {
+        position: static;
+        inset: auto;
+        margin: 0;
+        transform: none;
     }
+
+    .game-ad--rectangle-left { grid-column: 1; }
+    .game-ad--rectangle-right { grid-column: 3; }
+    .game-ad--rectangle[data-ad-rail-position="1"] { grid-row: 1; }
+    .game-ad--rectangle[data-ad-rail-position="2"] { grid-row: 2; }
+    .game-ad--rectangle[data-ad-rail-position="3"] { display: none !important; }
 }
 
 /* A leaderboard is too wide for the tablet content column. */
