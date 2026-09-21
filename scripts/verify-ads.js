@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
-const assetVersion = "20260921-4";
+const assetVersion = "20260921-5";
 
 function walk(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
@@ -22,6 +22,9 @@ for (const file of gamePages) {
   const html = fs.readFileSync(file, "utf8");
   const relative = path.relative(root, file);
   const count = pattern => (html.match(pattern) || []).length;
+  const legacyGameAdSdkIndex = html.indexOf("imasdk.googleapis.com/js/sdkloader/ima3.js");
+  const adsenseLoaderIndex = html.indexOf("pagead2.googlesyndication.com/pagead/js/adsbygoogle.js");
+  const adLayoutIndex = html.indexOf("js/ad-layout.js");
   const checks = {
     banner: count(/game-ad--banner/g),
     rectangle: count(/game-ad--rectangle(?!-(?:left|right))/g),
@@ -38,12 +41,14 @@ for (const file of gamePages) {
     blockAdsenseUnits: count(/<ins class="adsbygoogle" style="display:block"/g),
     adsenseLoaders: count(/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js/g)
   };
+  const safeLegacySdkOrder = legacyGameAdSdkIndex === -1 ||
+    (adsenseLoaderIndex > legacyGameAdSdkIndex && adsenseLoaderIndex < adLayoutIndex);
   if (checks.banner !== 1 || checks.rectangle !== 6 || checks.leftRectangle !== 3 ||
       checks.rightRectangle !== 3 || checks.mobileFooter !== 1 ||
       checks.legacySidebar !== 0 || checks.blockAdsUi !== 0 || checks.blockAdsCode !== 0 ||
       checks.adLayoutScript !== 1 || checks.versionedAdLayoutScript !== 1 ||
       checks.versionedMainCss !== 1 || checks.adsenseUnits !== 8 ||
-      checks.blockAdsenseUnits !== 8 || checks.adsenseLoaders !== 1) {
+      checks.blockAdsenseUnits !== 8 || checks.adsenseLoaders !== 1 || !safeLegacySdkOrder) {
     failures.push(`${relative}: ${JSON.stringify(checks)}`);
   }
 }

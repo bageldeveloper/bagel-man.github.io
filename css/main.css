@@ -2892,6 +2892,12 @@ html .game-ad[hidden] { display: none !important; }
     margin-top: calc(0rem - var(--game-layout-offset));
 }
 
+/* Controls are pulled into the game area's trailing space; keep them clickable. */
+.main-content .game-controls {
+    position: relative;
+    z-index: 2;
+}
+
 /* Keep inline game-page dimensions inside the space left by the navigation. */
 @media (max-width: 1499px), (max-height: 1050px) {
     .main-content .game-window-container {
