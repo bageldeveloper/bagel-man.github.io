@@ -4,6 +4,7 @@ const path = require("path");
 const root = path.resolve(__dirname, "..");
 const publisher = "ca-pub-4474724430572739";
 const existingSlot = "4055551074";
+const assetVersion = "20260921-2";
 
 function walk(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
@@ -35,7 +36,7 @@ function removeBalancedBlock(source, marker, startToken = "{") {
 function slotMarkup(kind, label) {
   return [
     `<div class="game-ad game-ad--${kind}" data-ad-label="AD SLOT" aria-label="${label}">`,
-    `  <ins class="adsbygoogle"`,
+    `  <ins class="adsbygoogle" style="display:block"`,
     `       data-ad-client="${publisher}"`,
     `       data-ad-slot="${existingSlot}"></ins>`,
     `</div>`
@@ -79,13 +80,29 @@ function updatePage(file) {
   const settingsScripts = Array.from(html.matchAll(/<script src="([^\"]*?)js\/settings\.js[^\"]*"><\/script>/gi));
   const settingsScript = settingsScripts.at(-1);
   if (!settingsScript) throw new Error(`Missing settings script: ${path.relative(root, file)}`);
-  const adScript = `<script src="${settingsScript[1]}js/ad-layout.js?v=20260917"></script>`;
+  const adScript = `<script src="${settingsScript[1]}js/ad-layout.js?v=${assetVersion}"></script>`;
   html = html.replace(settingsScript[0], `${settingsScript[0]}${eol}  ${adScript}`);
 
   fs.writeFileSync(file, html.replaceAll("\n", eol).replaceAll("\r\r\n", "\r\n"), "utf8");
   return true;
 }
 
+function versionGameAssets(file) {
+  const original = fs.readFileSync(file, "utf8");
+  if (!original.includes('<div class="game-window"')) return false;
+
+  let html = original
+    .replace(/(css\/main\.css)(?:\?v=[^"']*)?/g, `$1?v=${assetVersion}`)
+    .replace(/(js\/ad-layout\.js)(?:\?v=[^"']*)?/g, `$1?v=${assetVersion}`)
+    .replace(/<ins class="adsbygoogle"(?![^>]*\bstyle=)/g, '<ins class="adsbygoogle" style="display:block"');
+
+  if (html === original) return false;
+  fs.writeFileSync(file, html, "utf8");
+  return true;
+}
+
 const pages = walk(root).filter(file => file.endsWith(".html"));
 const updated = pages.filter(updatePage);
+const versioned = pages.filter(versionGameAssets);
 console.log(`Updated ${updated.length} game pages with responsive side rails, a lower banner, and a mobile footer.`);
+console.log(`Versioned responsive assets on ${versioned.length} game pages.`);

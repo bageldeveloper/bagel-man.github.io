@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
+const assetVersion = "20260921-2";
 
 function walk(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
@@ -31,13 +32,18 @@ for (const file of gamePages) {
     blockAdsUi: count(/id="toggle-ads"/g),
     blockAdsCode: count(/applyAdBlock|bagel_block_ads|localStorage\.getItem\(['"](?:adBlock|blockAds)/g),
     adLayoutScript: count(/js\/ad-layout\.js/g),
+    versionedAdLayoutScript: count(new RegExp(`js/ad-layout\\.js\\?v=${assetVersion}`, "g")),
+    versionedMainCss: count(new RegExp(`css/main\\.css\\?v=${assetVersion}`, "g")),
     adsenseUnits: count(/<ins class="adsbygoogle"/g),
+    blockAdsenseUnits: count(/<ins class="adsbygoogle" style="display:block"/g),
     adsenseLoaders: count(/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js/g)
   };
   if (checks.banner !== 1 || checks.rectangle !== 6 || checks.leftRectangle !== 3 ||
       checks.rightRectangle !== 3 || checks.mobileFooter !== 1 ||
       checks.legacySidebar !== 0 || checks.blockAdsUi !== 0 || checks.blockAdsCode !== 0 ||
-      checks.adLayoutScript !== 1 || checks.adsenseUnits !== 8 || checks.adsenseLoaders !== 1) {
+      checks.adLayoutScript !== 1 || checks.versionedAdLayoutScript !== 1 ||
+      checks.versionedMainCss !== 1 || checks.adsenseUnits !== 8 ||
+      checks.blockAdsenseUnits !== 8 || checks.adsenseLoaders !== 1) {
     failures.push(`${relative}: ${JSON.stringify(checks)}`);
   }
 }

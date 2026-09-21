@@ -33,6 +33,18 @@
     rail.style.removeProperty("top");
   }
 
+  function closeGapBelowGame() {
+    if (!controls || !gameArea || !gameWindow || mobileQuery.matches) {
+      controls?.style.removeProperty("margin-top");
+      return;
+    }
+
+    const areaRect = gameArea.getBoundingClientRect();
+    const gameRect = gameWindow.getBoundingClientRect();
+    const trailingSpace = Math.max(0, areaRect.bottom - gameRect.bottom);
+    controls.style.marginTop = trailingSpace ? `-${trailingSpace}px` : "";
+  }
+
   function positionSideAds() {
     if (!gameArea || !gameWindow) return;
 
@@ -54,9 +66,19 @@
     const areaRect = gameArea.getBoundingClientRect();
     const gameRect = gameWindow.getBoundingClientRect();
     const mainRect = mainContent?.getBoundingClientRect() || { left: 0, right: window.innerWidth };
-    const edgePadding = 12;
+    const edgePadding = 16;
     const railGap = 24;
-    const railTop = gameRect.top - areaRect.top;
+    const visibleTop = Math.max(0, areaRect.top) + edgePadding;
+    const visibleBottom = Math.min(window.innerHeight, areaRect.bottom) - edgePadding;
+    const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+    const firstRail = leftRails[0] || rightRails[0];
+    const railHeight = Number.parseFloat(window.getComputedStyle(firstRail).height) || 250;
+    const visibleRailCount = Math.min(
+      3,
+      Math.max(1, Math.floor((visibleHeight + railGap) / (railHeight + railGap)))
+    );
+    const railTravel = Math.max(0, visibleHeight - railHeight);
+    const railTop = visibleTop - areaRect.top;
 
     const placements = [
       ...leftRails.map((rail, index) => ({ rail, index, side: "left" })),
@@ -67,18 +89,22 @@
       if (!rail) return;
       const railStyle = window.getComputedStyle(rail);
       const railWidth = Number.parseFloat(railStyle.width) || 300;
-      const railHeight = Number.parseFloat(railStyle.height) || 250;
+      const currentRailHeight = Number.parseFloat(railStyle.height) || railHeight;
       const left = side === "left"
         ? gameRect.left - areaRect.left - railWidth - railGap
         : gameRect.right - areaRect.left + railGap;
       const viewportLeft = areaRect.left + left;
       const safeLeft = Math.max(0, mainRect.left) + edgePadding;
       const safeRight = Math.min(window.innerWidth, mainRect.right) - edgePadding;
-      const fits = viewportLeft >= safeLeft && viewportLeft + railWidth <= safeRight;
+      const fits = index < visibleRailCount &&
+        viewportLeft >= safeLeft && viewportLeft + railWidth <= safeRight;
       rail.hidden = !fits;
       if (!fits) return;
+      const distributedTop = visibleRailCount === 1
+        ? railTop + Math.max(0, (visibleHeight - currentRailHeight) / 2)
+        : railTop + index * (railTravel / (visibleRailCount - 1));
       rail.style.left = `${left}px`;
-      rail.style.top = `${Math.max(0, railTop + index * (railHeight + railGap))}px`;
+      rail.style.top = `${distributedTop}px`;
     });
 
     initializeVisibleAds();
@@ -97,19 +123,25 @@
   }
 
   positionSideAds();
+  closeGapBelowGame();
   keepFooterClearOfContent();
   window.addEventListener("scroll", keepFooterClearOfContent, { passive: true });
   window.addEventListener("resize", () => {
     positionSideAds();
+    closeGapBelowGame();
     keepFooterClearOfContent();
   });
   mobileQuery.addEventListener?.("change", () => {
     positionSideAds();
+    closeGapBelowGame();
     keepFooterClearOfContent();
   });
   laptopQuery.addEventListener?.("change", positionSideAds);
 
   if (window.ResizeObserver && gameWindow) {
-    new ResizeObserver(positionSideAds).observe(gameWindow);
+    new ResizeObserver(() => {
+      positionSideAds();
+      closeGapBelowGame();
+    }).observe(gameWindow);
   }
 })();
