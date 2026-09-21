@@ -1,4 +1,3 @@
-
 *,
 *::before,
 *::after {
@@ -2889,7 +2888,11 @@ html .game-ad[hidden] { display: none !important; }
 
 .main-content .game-area {
     min-height: calc(100dvh - var(--game-viewport-top));
-    margin-top: calc(0rem - var(--game-layout-offset));
+    /* Capped at --game-viewport-gap (not the full --game-layout-offset) so this
+       pull-up can never drag the game window's top edge underneath the fixed
+       .topbar (z-index: 100) and swallow clicks on its top-edge controls,
+       e.g. the fullscreen button. */
+    margin-top: calc(0rem - min(var(--game-layout-offset), var(--game-viewport-gap)));
 }
 
 /* Controls are pulled into the game area's trailing space; keep them clickable. */
