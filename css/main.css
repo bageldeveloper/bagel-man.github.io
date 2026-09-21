@@ -2899,12 +2899,42 @@ body.light .genre-row h2 {
     }
 }
 
+/* Laptop rails use narrow standard units so two ads fit on each side. */
+@media (min-width: 901px) and (max-width: 1499px) {
+    .main-content .game-area,
+    .main-content .game-controls {
+        max-width: min(800px, calc(100% - 288px));
+    }
+
+    .main-content .game-window {
+        max-width: 100%;
+    }
+
+    .main-content .game-area {
+        min-height: 496px;
+    }
+
+    .game-ad--rectangle,
+    .game-ad--rectangle ins.adsbygoogle {
+        width: 120px;
+        height: 240px;
+    }
+
+    .game-ad--rectangle[data-ad-rail-position="3"] {
+        display: none !important;
+    }
+}
+
 /* A leaderboard is too wide for the tablet content column. */
 @media (min-width: 768px) and (max-width: 900px) {
     .game-ad--banner,
     .game-ad--banner ins.adsbygoogle {
         width: 468px;
         height: 60px;
+    }
+
+    .game-ad--rectangle {
+        display: none !important;
     }
 }
 

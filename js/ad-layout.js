@@ -1,6 +1,7 @@
 (function configureGameAds() {
   const debugAds = window.DEBUG_ADS === true;
   const mobileQuery = window.matchMedia("(max-width: 767px)");
+  const laptopQuery = window.matchMedia("(min-width: 901px) and (max-width: 1499px)");
   const adElements = Array.from(document.querySelectorAll(".game-ad ins.adsbygoogle"));
 
   if (debugAds) document.documentElement.classList.add("debug-ads");
@@ -47,24 +48,39 @@
     const gameRect = gameWindow.getBoundingClientRect();
     const mainRect = mainContent?.getBoundingClientRect() || { left: 0, right: window.innerWidth };
     const edgePadding = 12;
-    const railGap = 24;
-    const railTop = gameRect.top - areaRect.top;
-    const railStep = 274;
+    const isLaptop = laptopQuery.matches;
+    const railGap = isLaptop ? 16 : 24;
+    const railTop = isLaptop ? 0 : gameRect.top - areaRect.top;
+    const maxRailsPerSide = isLaptop ? 2 : 3;
+    const activeLeftRails = leftRails.slice(0, maxRailsPerSide);
+    const activeRightRails = rightRails.slice(0, maxRailsPerSide);
+
+    [...leftRails.slice(maxRailsPerSide), ...rightRails.slice(maxRailsPerSide)].forEach(rail => {
+      resetRail(rail);
+      rail.hidden = true;
+    });
+
     const placements = [
-      ...leftRails.map((rail, index) => ({ rail, index, left: gameRect.left - areaRect.left - 300 - railGap })),
-      ...rightRails.map((rail, index) => ({ rail, index, left: gameRect.right - areaRect.left + railGap })),
+      ...activeLeftRails.map((rail, index) => ({ rail, index, side: "left" })),
+      ...activeRightRails.map((rail, index) => ({ rail, index, side: "right" })),
     ];
 
-    placements.forEach(({ rail, index, left }) => {
+    placements.forEach(({ rail, index, side }) => {
       if (!rail) return;
+      const railStyle = window.getComputedStyle(rail);
+      const railWidth = Number.parseFloat(railStyle.width) || 300;
+      const railHeight = Number.parseFloat(railStyle.height) || 250;
+      const left = side === "left"
+        ? gameRect.left - areaRect.left - railWidth - railGap
+        : gameRect.right - areaRect.left + railGap;
       const viewportLeft = areaRect.left + left;
       const safeLeft = Math.max(0, mainRect.left) + edgePadding;
       const safeRight = Math.min(window.innerWidth, mainRect.right) - edgePadding;
-      const fits = viewportLeft >= safeLeft && viewportLeft + 300 <= safeRight;
+      const fits = viewportLeft >= safeLeft && viewportLeft + railWidth <= safeRight;
       rail.hidden = !fits;
       if (!fits) return;
       rail.style.left = `${left}px`;
-      rail.style.top = `${Math.max(0, railTop + index * railStep)}px`;
+      rail.style.top = `${Math.max(0, railTop + index * (railHeight + railGap))}px`;
     });
 
     initializeVisibleAds();
@@ -93,6 +109,7 @@
     positionSideAds();
     keepFooterClearOfContent();
   });
+  laptopQuery.addEventListener?.("change", positionSideAds);
 
   if (window.ResizeObserver && gameWindow) {
     new ResizeObserver(positionSideAds).observe(gameWindow);
