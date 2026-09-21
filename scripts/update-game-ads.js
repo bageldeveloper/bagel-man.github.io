@@ -4,7 +4,7 @@ const path = require("path");
 const root = path.resolve(__dirname, "..");
 const publisher = "ca-pub-4474724430572739";
 const existingSlot = "4055551074";
-const assetVersion = "20260921-2";
+const assetVersion = "20260921-4";
 
 function walk(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => {

@@ -2864,7 +2864,7 @@ body.light .genre-row h2 {
    ADS
    ============================================================ */
 .game-ad { position: relative; flex: 0 0 auto; overflow: visible; }
-.game-ad[hidden] { display: none !important; }
+html .game-ad[hidden] { display: none !important; }
 .game-ad ins.adsbygoogle { display: block; width: 100%; height: 100%; }
 .game-ad--banner { width: 728px; height: 90px; max-width: 100%; align-self: center; margin-top: 0.25rem; }
 .game-ad--rectangle {
@@ -2971,7 +2971,20 @@ body.light .genre-row h2 {
         align-self: end;
         margin-bottom: 1rem;
     }
-    .game-ad--rectangle[data-ad-rail-position="3"] { display: none !important; }
+    .game-ad--rectangle[data-ad-rail-position="3"] {
+        display: none !important;
+        grid-row: 1 / 3;
+        align-self: center;
+        height: clamp(
+            3.125rem,
+            calc(100dvh - var(--game-viewport-top) - 32rem - var(--game-rail-gap) - var(--game-rail-gap)),
+            6.25rem
+        );
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1799px) and (min-height: 42rem) {
+    .game-ad--rectangle[data-ad-rail-position="3"] { display: block !important; }
 }
 
 /* A leaderboard is too wide for the tablet content column. */
