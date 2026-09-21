@@ -2878,6 +2878,36 @@ body.light .genre-row h2 {
 @media (min-width: 768px) {
     .game-area { position: relative; }
 }
+
+/* Keep inline game-page dimensions inside the space left by the navigation. */
+@media (max-width: 1499px), (max-height: 1050px) {
+    .main-content .game-window-container {
+        padding-inline: clamp(1rem, 3vw, 2rem);
+    }
+
+    .main-content .game-area,
+    .main-content .game-window,
+    .main-content .game-controls {
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .main-content .game-window {
+        height: auto;
+        aspect-ratio: 4 / 3;
+        flex-shrink: 1;
+    }
+}
+
+/* A leaderboard is too wide for the tablet content column. */
+@media (min-width: 768px) and (max-width: 900px) {
+    .game-ad--banner,
+    .game-ad--banner ins.adsbygoogle {
+        width: 468px;
+        height: 60px;
+    }
+}
+
 .debug-ads .game-ad,
 .debug-ads .ad-debug-container { outline: 2px solid red !important; background: rgba(255, 0, 0, 0.04); }
 .debug-ads .game-ad::before,
@@ -2889,26 +2919,29 @@ body.light .genre-row h2 {
 }
 @media (max-width: 767px) {
     body { padding-bottom: calc(50px + env(safe-area-inset-bottom)); }
-    .game-window-container { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
-    .game-area { flex-direction: column; }
+    .game-window-container {
+        min-height: auto !important;
+        padding: 2rem 0.75rem !important;
+        gap: 0.75rem !important;
+    }
+    .main-content .game-area,
+    .main-content .game-window,
+    .main-content .game-controls { width: 100%; max-width: 100%; }
+    .main-content .game-window { min-width: 0; }
+    .game-window-title { font-size: clamp(1.1rem, 6vw, 1.5rem) !important; }
     .game-ad--banner,
     .game-ad--banner ins.adsbygoogle { width: 320px; height: 50px; }
     .game-ad--rectangle {
-        position: static;
-        right: auto;
-        order: 2;
-        margin-top: 1rem;
-        transform: none;
+        display: none !important;
     }
-    .game-ad--rectangle-right,
-    .game-ad--rail-secondary { display: none; }
     .game-ad--mobile-footer {
         display: block; position: fixed; z-index: 900; left: 50%;
-        bottom: env(safe-area-inset-bottom); width: 320px; height: 50px;
+        bottom: env(safe-area-inset-bottom); width: min(320px, 100vw); height: 50px;
         transform: translateX(-50%); transition: opacity 120ms linear;
     }
-    .game-ad--mobile-footer ins.adsbygoogle { width: 320px; height: 50px; }
+    .game-ad--mobile-footer ins.adsbygoogle { width: min(320px, 100vw); height: 50px; }
     .game-ad--mobile-footer.is-over-game { opacity: 0; pointer-events: none; }
+    .suggested-games-section { margin-top: 1.25rem !important; }
 }
 
 
