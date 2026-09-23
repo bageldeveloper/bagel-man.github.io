@@ -39,12 +39,38 @@ for (const [key, game] of Object.entries(catalog)) {
   for (const target of [game.url, game.image].filter(Boolean)) {
     if (!fs.existsSync(path.join(root, target))) fail("Missing catalog target: " + target);
   }
+
+  const page = path.join(root, game.url);
+  if (!fs.existsSync(page)) continue;
+  const html = fs.readFileSync(page, "utf8");
+  const analyticsLoader = html.match(/googletagmanager\.com\/gtag\/js\?id=(G-[A-Z0-9]+)/i)?.[1];
+  const analyticsConfig = html.match(/gtag\(\s*["']config["']\s*,\s*["'](G-[A-Z0-9]+)["']/i)?.[1];
+  if (!analyticsLoader || !analyticsConfig) {
+    fail("Catalog page is missing Google Analytics: " + game.url);
+  } else if (analyticsLoader !== analyticsConfig) {
+    fail("Catalog page has mismatched Google Analytics IDs: " + game.url);
+  }
+  if (!/<link\b[^>]*rel=["']stylesheet["']/i.test(html) && !/<style\b/i.test(html)) {
+    fail("Catalog page has no stylesheet or inline styles: " + game.url);
+  }
 }
 
-const htmlFiles = walk(root).filter(file => file.endsWith(".html"));
+const analyticsId = "G-STZFN2TW1E";
+const analyticsExclusions = new Set(["google9b92a034e6bc4b62.html"]);
+const htmlFiles = walk(root).filter(file => /\.html?$/i.test(file));
 const referencePattern = /<(?:script|img|link|a|iframe|embed|object|source|audio|video)\b[^>]*?\b(?:src|href|data)\s*=\s*["']([^"']+)["']/gis;
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file, "utf8");
+  if (!analyticsExclusions.has(relative(file))) {
+    const analyticsLoaders = [...html.matchAll(/googletagmanager\.com\/gtag\/js\?id=(G-[A-Z0-9]+)/gi)]
+      .map(match => match[1]);
+    const analyticsConfigs = [...html.matchAll(/gtag\(\s*["']config["']\s*,\s*["'](G-[A-Z0-9]+)["']/gi)]
+      .map(match => match[1]);
+    if (analyticsLoaders.length !== 1 || analyticsLoaders[0] !== analyticsId ||
+        analyticsConfigs.length !== 1 || analyticsConfigs[0] !== analyticsId) {
+      fail(relative(file) + " is missing the required Google Analytics tag " + analyticsId);
+    }
+  }
   for (const match of html.matchAll(referencePattern)) {
     const reference = match[1].trim();
     if (!reference || /^(?:https?:|data:|javascript:|mailto:|tel:|#|\/\/|blob:|about:)/i.test(reference)) continue;

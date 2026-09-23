@@ -431,6 +431,17 @@ document.getElementById('panel-form').addEventListener('submit', e => {
 // PROFILE
 // =====================
 
+function refreshProfilePreview() {
+  const nameInput = document.getElementById('profile-name-input');
+  const colorInput = document.getElementById('profile-color-input');
+  const preview = document.getElementById('profile-preview-name');
+
+  if (!nameInput || !colorInput || !preview) return;
+
+  preview.textContent = nameInput.value.trim() || 'Preview';
+  preview.style.color = colorInput.value;
+}
+
 function saveProfile() {
   const nameInput = document.getElementById('profile-name-input');
   const colorInput = document.getElementById('profile-color-input');

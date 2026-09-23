@@ -4,6 +4,8 @@
   "scripts": {
     "dev": "node scripts/dev-server.js",
     "ads:update": "node scripts/update-game-ads.js",
-    "test:ads": "node scripts/verify-ads.js"
+    "analytics:update": "node scripts/update-analytics.js",
+    "test:ads": "node scripts/verify-ads.js",
+    "test:site": "node scripts/validate-site.js"
   }
 }

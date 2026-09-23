@@ -70,8 +70,9 @@
     }
     .game-window {
       position: relative;
-      width: 853px;
-      height: 480px;
+      width: clamp(480px, min(calc(100vw - 616px), calc((100vh - 450px) * 16 / 9)), 1000px);
+      height: auto;
+      aspect-ratio: 16 / 9;
       background: #000;
       border: 3px solid var(--border);
       border-radius: 14px;
@@ -86,7 +87,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 853px;
+      width: clamp(480px, min(calc(100vw - 616px), calc((100vh - 450px) * 16 / 9)), 1000px);
     }
     .suggested-games-section {
       margin-top: 2rem;
@@ -287,9 +288,6 @@
         <div class="toggle-thumb"></div>
       </label>
     </div>
-        <div class="toggle-thumb"></div>
-      </label>
-    </div>
   </div>
 
   <!-- CHAT PANEL -->
@@ -381,8 +379,7 @@
                 '}' +
                 '});' +
                 '})();<\/script>' +
-                '  <script src="../../js/settings.js?v=20260824"></script>
-</body></html>'
+                '</body></html>'
               );
               doc.close();
             })();
