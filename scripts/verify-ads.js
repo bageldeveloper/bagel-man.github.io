@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
-const assetVersion = "20260921-5";
+const assetVersionPattern = "(?:20260921-5|20260924-[1-3])";
 
 function walk(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
@@ -35,8 +35,8 @@ for (const file of gamePages) {
     blockAdsUi: count(/id="toggle-ads"/g),
     blockAdsCode: count(/applyAdBlock|bagel_block_ads|localStorage\.getItem\(['"](?:adBlock|blockAds)/g),
     adLayoutScript: count(/js\/ad-layout\.js/g),
-    versionedAdLayoutScript: count(new RegExp(`js/ad-layout\\.js\\?v=${assetVersion}`, "g")),
-    versionedMainCss: count(new RegExp(`css/main\\.css\\?v=${assetVersion}`, "g")),
+    versionedAdLayoutScript: count(new RegExp(`js/ad-layout\\.js\\?v=${assetVersionPattern}`, "g")),
+    versionedMainCss: count(new RegExp(`css/main\\.css\\?v=${assetVersionPattern}`, "g")),
     adsenseUnits: count(/<ins class="adsbygoogle"/g),
     blockAdsenseUnits: count(/<ins class="adsbygoogle" style="display:block"/g),
     adsenseLoaders: count(/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js/g)

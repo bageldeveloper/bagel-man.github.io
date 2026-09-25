@@ -1,25 +1,11 @@
 (function configureGameAds() {
+  const DESKTOP_MIN_WIDTH = 901;
+  const RAIL_GAP = 16;
+  const NO_FILL_TIMEOUT_MS = 10000;
   const debugAds = window.DEBUG_ADS === true;
   const mobileQuery = window.matchMedia("(max-width: 767px)");
-  const laptopQuery = window.matchMedia("(min-width: 901px) and (max-width: 1799px)");
-  const laptopShortRailQuery = window.matchMedia(
-    "(min-width: 901px) and (max-width: 1799px) and (min-height: 42rem)"
-  );
-  const adElements = Array.from(document.querySelectorAll(".game-ad ins.adsbygoogle"));
 
   if (debugAds) document.documentElement.classList.add("debug-ads");
-
-  function initializeVisibleAds() {
-    adElements.forEach(ad => {
-      if (ad.dataset.adInitialized === "true" || ad.offsetParent === null) return;
-      try {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        ad.dataset.adInitialized = "true";
-      } catch (error) {
-        console.warn("AdSense slot initialization was deferred.", error);
-      }
-    });
-  }
 
   const mainContent = document.querySelector(".main-content");
   const gameArea = document.querySelector(".game-area");
@@ -29,6 +15,85 @@
   const banner = document.querySelector(".game-ad--banner");
   const controls = document.querySelector(".game-controls");
   const footer = document.querySelector(".game-ad--mobile-footer");
+  const railTimers = new WeakMap();
+  let layoutFrame = 0;
+
+  function adFor(container) {
+    return container?.querySelector("ins.adsbygoogle") || null;
+  }
+
+  function clearRailTimer(ad) {
+    const timer = railTimers.get(ad);
+    if (timer) window.clearTimeout(timer);
+    railTimers.delete(ad);
+  }
+
+  function retireRail(rail) {
+    if (!rail) return;
+    const ad = adFor(rail);
+    if (ad) clearRailTimer(ad);
+    if (debugAds) {
+      rail.dataset.adPreviewEmpty = "true";
+      return;
+    }
+    rail.dataset.adRetired = "true";
+    rail.hidden = true;
+  }
+
+  function observeRail(rail) {
+    const ad = adFor(rail);
+    if (!ad || !window.MutationObserver) return;
+    const handleStatus = () => {
+      const status = ad.dataset.adStatus;
+      if (status === "unfilled" || status === "unfill-optimized") {
+        retireRail(rail);
+      } else if (status === "filled") {
+        clearRailTimer(ad);
+      }
+    };
+    new MutationObserver(handleStatus).observe(ad, {
+      attributes: true,
+      attributeFilter: ["data-ad-status"],
+    });
+    handleStatus();
+  }
+
+  function initializeAd(ad, useNoFillTimeout = false) {
+    if (!ad || ad.dataset.adInitialized === "true") return;
+    const container = ad.closest(".game-ad");
+    if (!container || container.hidden || container.dataset.adRetired === "true") return;
+    const style = window.getComputedStyle(container);
+    const rect = container.getBoundingClientRect();
+    if (style.display === "none" || rect.width <= 0 || rect.height <= 0) return;
+
+    // AdSense must observe the final, visible dimensions before the request.
+    void ad.offsetWidth;
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      ad.dataset.adInitialized = "true";
+      if (useNoFillTimeout) {
+        clearRailTimer(ad);
+        railTimers.set(ad, window.setTimeout(() => {
+          const status = ad.dataset.adStatus;
+          if (!ad.querySelector("iframe") && status !== "filled") retireRail(container);
+        }, NO_FILL_TIMEOUT_MS));
+      }
+    } catch (error) {
+      console.warn("AdSense slot initialization was deferred.", error);
+    }
+  }
+
+  function initializeRailPairs(targetCount) {
+    for (let index = 0; index < targetCount; index += 1) {
+      initializeAd(adFor(leftRails[index]), true);
+      initializeAd(adFor(rightRails[index]), true);
+    }
+  }
+
+  function initializeUtilityAds() {
+    initializeAd(adFor(banner));
+    initializeAd(adFor(footer));
+  }
 
   function resetRail(rail) {
     if (!rail) return;
@@ -42,132 +107,69 @@
       controls?.style.removeProperty("margin-top");
       return;
     }
-
     const areaRect = gameArea.getBoundingClientRect();
     const gameRect = gameWindow.getBoundingClientRect();
     const trailingSpace = Math.max(0, areaRect.bottom - gameRect.bottom);
     controls.style.marginTop = trailingSpace ? `-${trailingSpace}px` : "";
   }
 
-  function removeRailOverlaps(rails, minimumGap = 16) {
-    let visibleRails = rails.filter(rail =>
-      !rail.hidden && window.getComputedStyle(rail).display !== "none"
-    );
-
-    while (visibleRails.length > 1) {
-      visibleRails.sort((a, b) =>
-        a.getBoundingClientRect().top - b.getBoundingClientRect().top
-      );
-      const overlapIndex = visibleRails.findIndex((rail, index) => {
-        if (index === visibleRails.length - 1) return false;
-        return rail.getBoundingClientRect().bottom + minimumGap >
-          visibleRails[index + 1].getBoundingClientRect().top;
-      });
-      if (overlapIndex === -1) return;
-
-      const shortRail = visibleRails.find(rail => rail.dataset.adRailPosition === "3");
-      const railToHide = shortRail || visibleRails[visibleRails.length - 1];
-      railToHide.hidden = true;
-      visibleRails = visibleRails.filter(rail => rail !== railToHide);
-    }
-  }
-
   function positionSideAds() {
-    if (!gameArea || !gameWindow) return;
-
-    if (window.innerWidth <= 900) {
-      [...leftRails, ...rightRails].forEach(resetRail);
-      [...leftRails, ...rightRails].forEach(rail => { rail.hidden = true; });
-      initializeVisibleAds();
+    if (!gameArea || !gameWindow) {
+      initializeUtilityAds();
       return;
     }
 
-    if (laptopQuery.matches) {
-      [...leftRails, ...rightRails].forEach(resetRail);
-      const areaRect = gameArea.getBoundingClientRect();
-      const usableRailHeight = Math.max(
-        0,
-        Math.min(window.innerHeight, areaRect.bottom) - Math.max(0, areaRect.top) - 32
-      );
-      const showSecondFullRail = usableRailHeight >= 504;
-      const shortRailHeight = Math.min(100, usableRailHeight - 512);
-      const showShortRail = showSecondFullRail &&
-        laptopShortRailQuery.matches && shortRailHeight >= 50;
-      leftRails.forEach((rail, index) => {
-        rail.hidden = index > 2 ||
-          (index === 1 && !showSecondFullRail) ||
-          (index === 2 && !showShortRail);
-        if (index === 2 && showShortRail) rail.style.height = `${shortRailHeight}px`;
-      });
-      rightRails.forEach((rail, index) => {
-        rail.hidden = index > 2 ||
-          (index === 1 && !showSecondFullRail) ||
-          (index === 2 && !showShortRail);
-        if (index === 2 && showShortRail) rail.style.height = `${shortRailHeight}px`;
-      });
-      removeRailOverlaps(leftRails);
-      removeRailOverlaps(rightRails);
-      initializeVisibleAds();
+    const rails = [...leftRails, ...rightRails];
+    rails.forEach(resetRail);
+    if (window.innerWidth < DESKTOP_MIN_WIDTH) {
+      rails.forEach(rail => { rail.hidden = true; });
+      initializeUtilityAds();
       return;
     }
 
     const areaRect = gameArea.getBoundingClientRect();
     const gameRect = gameWindow.getBoundingClientRect();
-    const mainRect = mainContent?.getBoundingClientRect() || { left: 0, right: window.innerWidth };
-    const edgePadding = 16;
-    const railGap = 24;
-    const visibleTop = Math.max(0, areaRect.top) + edgePadding;
-    const visibleBottom = Math.min(window.innerHeight, areaRect.bottom) - edgePadding;
-    const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+    const mainRect = mainContent?.getBoundingClientRect() || {
+      left: 0,
+      right: window.innerWidth,
+    };
+    const usableRailHeight = Math.max(0, areaRect.height);
     const firstRail = leftRails[0] || rightRails[0];
-    const railHeight = Number.parseFloat(window.getComputedStyle(firstRail).height) || 250;
-    const fullRailCount = Math.min(
-      3,
-      Math.max(1, Math.floor((visibleHeight + railGap) / (railHeight + railGap)))
+    const railStyle = firstRail ? window.getComputedStyle(firstRail) : null;
+    const railWidth = Number.parseFloat(railStyle?.width) || 120;
+    const railHeight = Number.parseFloat(railStyle?.height) || 240;
+    const countByHeight = Math.floor(
+      (usableRailHeight + RAIL_GAP) / (railHeight + RAIL_GAP)
     );
-    const railTravel = Math.max(0, visibleHeight - railHeight);
-    const railTop = visibleTop - areaRect.top;
-    const shortRailHeight = fullRailCount === 2
-      ? Math.min(100, visibleHeight - (railHeight * 2) - (railGap * 2))
-      : 0;
-    const showShortRail = shortRailHeight >= 50;
+    const targetCount = Math.min(3, Math.max(1, countByHeight));
+    const safeLeft = Math.max(0, mainRect.left) + RAIL_GAP;
+    const safeRight = Math.min(window.innerWidth, mainRect.right) - RAIL_GAP;
+    const leftPosition = gameRect.left - areaRect.left - railWidth - RAIL_GAP;
+    const rightPosition = gameRect.right - areaRect.left + RAIL_GAP;
+    const sidesFit = areaRect.left + leftPosition >= safeLeft &&
+      areaRect.left + rightPosition + railWidth <= safeRight;
+    const railTravel = Math.max(0, usableRailHeight - railHeight);
+    const railTop = 0;
 
     const placements = [
-      ...leftRails.map((rail, index) => ({ rail, index, side: "left" })),
-      ...rightRails.map((rail, index) => ({ rail, index, side: "right" })),
+      ...leftRails.map((rail, index) => ({ rail, index, left: leftPosition })),
+      ...rightRails.map((rail, index) => ({ rail, index, left: rightPosition })),
     ];
-
-    placements.forEach(({ rail, index, side }) => {
+    placements.forEach(({ rail, index, left }) => {
       if (!rail) return;
-      const railStyle = window.getComputedStyle(rail);
-      const railWidth = Number.parseFloat(railStyle.width) || 300;
-      const currentRailHeight = Number.parseFloat(railStyle.height) || railHeight;
-      const left = side === "left"
-        ? gameRect.left - areaRect.left - railWidth - railGap
-        : gameRect.right - areaRect.left + railGap;
-      const viewportLeft = areaRect.left + left;
-      const safeLeft = Math.max(0, mainRect.left) + edgePadding;
-      const safeRight = Math.min(window.innerWidth, mainRect.right) - edgePadding;
-      const isFullRail = index < fullRailCount;
-      const isShortRail = index === 2 && fullRailCount === 2 && showShortRail;
-      const fits = (isFullRail || isShortRail) &&
-        viewportLeft >= safeLeft && viewportLeft + railWidth <= safeRight;
-      rail.hidden = !fits;
-      if (!fits) return;
-      if (isShortRail) rail.style.height = `${shortRailHeight}px`;
-      const distributedTop = isShortRail
-        ? railTop + (visibleHeight - shortRailHeight) / 2
-        : fullRailCount === 1
-          ? railTop + Math.max(0, (visibleHeight - currentRailHeight) / 2)
-          : railTop + index * (railTravel / (fullRailCount - 1));
+      const active = sidesFit && index < targetCount &&
+        rail.dataset.adRetired !== "true";
+      rail.hidden = !active;
+      if (!active) return;
+      const top = targetCount === 1
+        ? railTop + railTravel / 2
+        : railTop + index * (railTravel / (targetCount - 1));
       rail.style.left = `${left}px`;
-      rail.style.top = `${distributedTop}px`;
+      rail.style.top = `${top}px`;
     });
 
-    removeRailOverlaps(leftRails);
-    removeRailOverlaps(rightRails);
-
-    initializeVisibleAds();
+    if (sidesFit) initializeRailPairs(targetCount);
+    initializeUtilityAds();
   }
 
   function keepFooterClearOfContent() {
@@ -182,27 +184,24 @@
     footer.classList.toggle("is-over-game", overlaps);
   }
 
-  positionSideAds();
-  closeGapBelowGame();
-  keepFooterClearOfContent();
-  window.addEventListener("scroll", keepFooterClearOfContent, { passive: true });
-  window.addEventListener("resize", () => {
+  function updateLayout() {
+    layoutFrame = 0;
     positionSideAds();
     closeGapBelowGame();
     keepFooterClearOfContent();
-  });
-  mobileQuery.addEventListener?.("change", () => {
-    positionSideAds();
-    closeGapBelowGame();
-    keepFooterClearOfContent();
-  });
-  laptopQuery.addEventListener?.("change", positionSideAds);
-  laptopShortRailQuery.addEventListener?.("change", positionSideAds);
+  }
 
+  function scheduleLayout() {
+    if (layoutFrame) window.cancelAnimationFrame(layoutFrame);
+    layoutFrame = window.requestAnimationFrame(updateLayout);
+  }
+
+  [...leftRails, ...rightRails].forEach(observeRail);
+  updateLayout();
+  window.addEventListener("scroll", keepFooterClearOfContent, { passive: true });
+  window.addEventListener("resize", scheduleLayout);
+  mobileQuery.addEventListener?.("change", scheduleLayout);
   if (window.ResizeObserver && gameWindow) {
-    new ResizeObserver(() => {
-      positionSideAds();
-      closeGapBelowGame();
-    }).observe(gameWindow);
+    new ResizeObserver(scheduleLayout).observe(gameWindow);
   }
 })();
