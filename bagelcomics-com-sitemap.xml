@@ -121,11 +121,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bagelcomics.com/Slope-Game-main/index.html</loc>
-    <lastmod>2025-10-11</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://bagelcomics.com/games/emu/episodeoneracer.html</loc>
     <lastmod>2025-10-11</lastmod>
     <priority>0.7</priority>
@@ -456,14 +451,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bagelcomics.com/newton.html</loc>
-    <lastmod>2025-10-11</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://bagelcomics.com/games/html/pong.html</loc>
     <lastmod>2025-10-11</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://bagelcomics.com/games/Slope-Game-main/index.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bagelcomics.com/games/emu/punchout.html</loc>
@@ -514,11 +509,6 @@
     <loc>https://bagelcomics.com/games/html/sonic.html</loc>
     <lastmod>2025-10-11</lastmod>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bagelcomics.com/space.html</loc>
-    <lastmod>2025-10-11</lastmod>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://bagelcomics.com/games/html/henrystealing.html</loc>
@@ -617,11 +607,6 @@
   </url>
   <url>
     <loc>https://bagelcomics.com/games/html/zombie.html</loc>
-    <lastmod>2025-10-11</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://bagelcomics.com/games/Wheres-My-Water/index.html</loc>
     <lastmod>2025-10-11</lastmod>
     <priority>0.7</priority>
   </url>
@@ -1356,11 +1341,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bagelcomics.com/2048.html</loc>
-    <lastmod>2025-10-11</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://bagelcomics.com/games/html/bloxorz.html</loc>
     <lastmod>2025-10-11</lastmod>
     <priority>0.7</priority>
@@ -1581,19 +1561,9 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bagelcomics.com/search.html</loc>
-    <lastmod>2025-10-11</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://bagelcomics.com/oldindex.html</loc>
     <lastmod>2025-10-11</lastmod>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://bagelcomics.com/games/cookie/beta</loc>
-    <lastmod>2025-10-11</lastmod>
-    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://bagelcomics.com/finalproject/weed.html</loc>
@@ -1646,11 +1616,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bagelcomics.com/pong.html</loc>
-    <lastmod>2025-10-11</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://bagelcomics.com/bagel.html</loc>
     <lastmod>2025-10-11</lastmod>
     <priority>0.9</priority>
@@ -1662,16 +1627,6 @@
   </url>
   <url>
     <loc>https://bagelcomics.com/blobby.html</loc>
-    <lastmod>2025-10-11</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://bagelcomics.com/indexpong.html</loc>
-    <lastmod>2025-10-11</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://bagelcomics.com/basktetball/</loc>
     <lastmod>2025-10-11</lastmod>
     <priority>0.9</priority>
   </url>

@@ -61,6 +61,9 @@ const htmlFiles = walk(root).filter(file => /\.html?$/i.test(file));
 const referencePattern = /<(?:script|img|link|a|iframe|embed|object|source|audio|video)\b[^>]*?\b(?:src|href|data)\s*=\s*["']([^"']+)["']/gis;
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file, "utf8");
+  if (!analyticsExclusions.has(relative(file)) && !/<title>\s*[^<\s][^<]*<\/title>/i.test(html)) {
+    fail(relative(file) + " has no non-empty page title");
+  }
   if (!analyticsExclusions.has(relative(file))) {
     const analyticsLoaders = [...html.matchAll(/googletagmanager\.com\/gtag\/js\?id=(G-[A-Z0-9]+)/gi)]
       .map(match => match[1]);
@@ -86,6 +89,17 @@ for (const file of htmlFiles) {
   const logoArea = html.match(/<div\s+class="logo-area">[\s\S]{0,400}?<\/div>/i)?.[0];
   if (logoArea && !/bagelicontab\.png/i.test(logoArea)) {
     fail(relative(file) + " uses the wrong body header image");
+  }
+}
+
+const sitemapPath = path.join(root, "bagelcomics-com-sitemap.xml");
+const sitemap = fs.readFileSync(sitemapPath, "utf8");
+for (const match of sitemap.matchAll(/<loc>https:\/\/bagelcomics\.com\/([^<]*)<\/loc>/g)) {
+  let target = decodeURIComponent(match[1]);
+  if (!target) target = "index.html";
+  if (target.endsWith("/")) target += "index.html";
+  if (!fs.existsSync(path.join(root, target))) {
+    fail("Sitemap references missing " + match[1]);
   }
 }
 

@@ -2,6 +2,7 @@
 // ANNOUNCEMENTS
 // =============================================
 const ANNOUNCEMENTS = [
+  { id: 'ann-2026-09-29', date: 'Septemeber 29th 2026', text: 'Whats up gangalang! I was updating the site a lil bit when I found an absolute gem <a href="/oldindex.html" style="color:#F7C06E;">here</a> on the site.  -Carter' },
   { id: 'ann-2026-09-17', date: 'Septemeber 19th 2026', text: 'Hey guys! I just added our newest 1.12 minecraft server for bagelcomics! the server url is wss://bagelcraft.net you guys should check it out!  -Carter' },
   { id: 'ann-2026-09-17', date: 'Septemeber 17th, 2026', text: 'Whats up gangalang. I am experimenting around with some of the ad configuration. So lmk if it gets annoying (email bagelcomics.com@gmail.com or message me in chat). Aside from that, big things are coming, so get ready. -Carter' },
   { id: 'ann-2026-08-10', date: 'August 14th, 2026', text: 'Welcome back everyone! We touched up all the games over the summer, so all the games are working now. Additionally, if bagelcomics.com is blocked in your school district, you can access the canvas version at tinyurl.com/bagelcomicsunblocked -Carter' },

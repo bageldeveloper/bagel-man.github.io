@@ -19,7 +19,8 @@ const mimeTypes = {
   ".png": "image/png",
   ".svg": "image/svg+xml",
   ".wasm": "application/wasm",
-  ".webp": "image/webp"
+  ".webp": "image/webp",
+  ".xml": "application/xml; charset=utf-8"
 };
 
 function resolveRequestPath(url) {
