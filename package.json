@@ -5,6 +5,7 @@
     "dev": "node scripts/dev-server.js",
     "ads:update": "node scripts/update-game-ads.js",
     "analytics:update": "node scripts/update-analytics.js",
+    "offline:build": "node scripts/build-offline-bundle.js",
     "test:ads": "node scripts/verify-ads.js",
     "test:site": "node scripts/validate-site.js"
   }

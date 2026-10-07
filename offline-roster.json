@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "description": "Offline bundle priority roster. The build keeps required SNES games, then fits the remaining games in this order.",
+  "required": [
+    "Aladdin", "DonkeyKongCountry", "Earthbound", "TheLionKing", "MegaManX", "MegaManX2", "MegaManX3", "MarvelSuperHeroes:WaroftheGems", "NBAJam", "SuperMarioKart", "SuperMarioWorld", "SuperPunchOut!!", "TheLegendOfZeldaLinkTothePast", "TomandJerry", "ToyStory", "UltimateMortalKombat3"
+  ],
+  "excluded": [
+    "Minecraft 1.8.8", "BagelWithaGunDemo", "BloonsTowerDefense", "BloonsTowerDefense2", "BloonsTowerDefense3", "BloonsTowerDefense4", "BubbleShooter", "CanyonDefense", "Castle", "Checkers", "ChibiKnight", "ColorCombat", "Commando", "Contra"
+  ],
+  "requestedLarge": [
+    "Slope", "GetawayShootout", "MarioKart64", "TheLegendofZeldaOcarinaofTime", "Doom1/2", "Quake"
+  ],
+  "priority": [
+    "Minecraft 1.12", "Minecraft 1.5.2", "SuperMario64", "SuperSmashBros", "Minecraft 1.8.8", "CookieClicker", "Retrobowl", "Slope", "SuperMarioWorld", "SuperMarioBros3", "TheImpossibleQuiz", "BloonsTowerDefense5", "BagelWithaGun", "MotoX3m", "Bloxorz", "MyFriendPedro", "NBAJam", "MotoX3m2", "LegoStarWarsTCS", "SuperMarioBros", "PlantsvsZombies", "StealingTheDiamond", "Doom1/2", "2048", "infiltratingTheAirship", "MikeTysonsPunchOut!", "Sonic", "learnToFly", "BagelWithaGunDemo", "FleeingTheComplex", "MarioKart64", "TheLegendOfZeldaLinkTothePast", "PapasPastaria", "GetawayShootout", "TheLegendOfZelda", "PapasCheeseria", "Vex3", "TurtleTrigger", "DuckLife4", "PapasBakeria", "Run3", "JackSmith", "Mario", "PlantsvsZombies2", "SuperMarioBros2", "EscapingThePrison", "Fancypants", "GunBlood", "MeatBoy", "DontWhackYourTeacher", "Pacman", "Quake", "BreakingtheBank", "RaftWars", "Batman", "DuckHunt", "PapasDonuteria", "DuckLife", "jimmy", "TheLegendofZeldaOcarinaofTime", "ClearVision3", "Hobo", "phobia", "DigToChina", "DouchebagLife", "drats", "Earthbound", "SuperMarioKart", "1on1Soccer", "AwesomeTanks2", "CrossingThePit", "PapasCupcakeria", "FireboyAndWatergirl1", "8BallPool", "AbobbosBigAdventure", "AgeOfDefense", "AgeOfDefense3", "AgeOfDefense4", "AgeOfWar", "AgeOfWar2", "AlienHominid", "AppleShooter", "ArtofWar", "ArtofWar2", "Asteroids", "BanjoKazooie", "Blobby", "BloonsTowerDefense", "BloonsTowerDefense2"
+  ]
+}

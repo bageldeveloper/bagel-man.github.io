@@ -1,7 +1,8 @@
 // =============================================
-// ANNOUNCEMENTS
+// ANNOUNCEMENTS https://forms.gle/betu3hYNygZBCuk9A
 // =============================================
 const ANNOUNCEMENTS = [
+  { id: 'ann-2026-10-07', date: 'October 7th 2026', text: 'Hello gamers! I realized that there isnt a place to fill out a complaint when the games are broken, so Im bringing back the google forms! If you run into a issue, you can file a Maintenance Request <a href="https://forms.gle/betu3hYNygZBCuk9A" style="color:#F7C06E;">here</a>! -Carter' },
   { id: 'ann-2026-09-29', date: 'Septemeber 29th 2026', text: 'Whats up gangalang! I was updating the site a lil bit when I found an absolute gem <a href="/oldindex.html" style="color:#F7C06E;">here</a> on the site.  -Carter' },
   { id: 'ann-2026-09-17', date: 'Septemeber 19th 2026', text: 'Hey guys! I just added our newest 1.12 minecraft server for bagelcomics! the server url is wss://bagelcraft.net you guys should check it out!  -Carter' },
   { id: 'ann-2026-09-17', date: 'Septemeber 17th, 2026', text: 'Whats up gangalang. I am experimenting around with some of the ad configuration. So lmk if it gets annoying (email bagelcomics.com@gmail.com or message me in chat). Aside from that, big things are coming, so get ready. -Carter' },
