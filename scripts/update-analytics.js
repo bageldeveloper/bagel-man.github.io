@@ -7,7 +7,8 @@ const excludedPages = new Set(["google9b92a034e6bc4b62.html"]);
 
 function walk(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
-    if (entry.name === ".git" || entry.name === "node_modules") return [];
+    if ([".git", "node_modules"].includes(entry.name) ||
+        (directory === root && ["dist", "_site", ".jekyll-cache"].includes(entry.name))) return [];
     const fullPath = path.join(directory, entry.name);
     return entry.isDirectory() ? walk(fullPath) : [fullPath];
   });
@@ -48,6 +49,7 @@ for (const file of walk(root)) {
   if (excludedPages.has(page)) continue;
 
   const original = fs.readFileSync(file, "utf8");
+  if (/<html\b[^>]*\bdata-game-runtime\b/i.test(original)) continue;
   const eol = original.includes("\r\n") ? "\r\n" : "\n";
   let html = original
     .replace(

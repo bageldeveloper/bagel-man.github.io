@@ -19,7 +19,7 @@
 
     <nav class="top-links">
       <a href="index.html">Games</a>
-      <a href="chat.html" class="active">Chat</a>
+      <a href="about.html#chat" class="active">Chat</a>
       <a href="projects.html">Projects</a>
       <a href="about.html">About</a>
     </nav>

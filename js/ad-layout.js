@@ -175,7 +175,8 @@
   function keepFooterClearOfContent() {
     if (!footer || !mobileQuery.matches) return;
     const footerTop = window.innerHeight - footer.offsetHeight;
-    const protectedAreas = [gameWindow, ...leftRails, controls, banner];
+    const protectedAreas = [gameWindow, ...leftRails, controls, banner,
+      ...document.querySelectorAll('.suggested-games-section, .game-site-footer, .below')];
     const overlaps = protectedAreas.some(element => {
       if (!element || element.hidden) return false;
       const rect = element.getBoundingClientRect();

@@ -1,18 +1,8 @@
-const play = document.getElementById('play');
-const intro = document.getElementById('intro');
-const stage = document.getElementById('stage');
 const game = document.getElementById('game');
 const status = document.getElementById('status');
 const gameWindow = document.getElementById('gameWindow');
 const fullscreen = document.getElementById('fullscreen');
 
-play.addEventListener('click', () => {
-  document.body.classList.add('playing');
-  intro.hidden = true;
-  stage.hidden = false;
-  status.textContent = 'Loading the game… The first download is about 300 MB.';
-  game.src = 'game.html';
-});
 game.addEventListener('load', () => {
   if (!game.getAttribute('src')) return;
   status.textContent = 'Loading the game… The first download is about 300 MB.';
