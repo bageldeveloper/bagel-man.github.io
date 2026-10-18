@@ -1,4 +1,10 @@
 const gamersgaming = {
+    "megamanX8": {
+        "name": "Mega Man X8",
+        "url": "games/megaman-x8/index.html",
+        "image": "thumbnails/megamanx8.jpg",
+        tags: ['action', 'platformer', 'adventure', 'shooter']
+    },
         "jimmy": {
         "name": "The Jimmy Bean Game",
         "url": "JimmyBeanGame/index.html",

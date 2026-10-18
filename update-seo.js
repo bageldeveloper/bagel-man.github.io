@@ -10,6 +10,7 @@ const startMarker = "<!-- GAME SEO:HEAD START -->";
 const endMarker = "<!-- GAME SEO:HEAD END -->";
 
 const summaries = {
+  "games/megaman-x8/index.html": "Play Mega Man X8 16-bit, a fan-made action platformer inspired by Mega Man X8, with keyboard, gamepad, and optional touch controls on Bagel Comics.",
   "games/html/freerun.html": "Free Running is a side-scrolling platform game built around running, jumping, and clearing obstacle-filled stages.",
   "games/html/endlesswar.html": "Endless War is a top-down action game with battlefield scenarios and tactical movement.",
   "games/html/drawsomething.html": "Draw Something is a drawing game presented in the Bagel Comics browser game collection.",

@@ -1,0 +1,25 @@
+{
+  "size": 312924447,
+  "chunks": [
+    {
+      "file": "game.pck.part1",
+      "size": 83886080,
+      "sha256": "064b3652beabdae2404556bc42f93f7cbf43eb70b7db277930fedf7da8c56ea9"
+    },
+    {
+      "file": "game.pck.part2",
+      "size": 83886080,
+      "sha256": "0d18f34118abdbd2d0ef3ba34d1e1a84404e93f47b10da1babb25f4574068918"
+    },
+    {
+      "file": "game.pck.part3",
+      "size": 83886080,
+      "sha256": "302ca06e88d75ee1145b1d841f02352d7324280bf923fb3e69ac278c60be3041"
+    },
+    {
+      "file": "game.pck.part4",
+      "size": 61266207,
+      "sha256": "d50692ee5385436cab8c85f5a787aab8d9f9c00fe3b05cac65ed0c34be33d979"
+    }
+  ]
+}
