@@ -13,5 +13,3 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/validate-site.js
-      - run: node scripts/verify-game-pages.js
-      - run: node scripts/verify-ads.js

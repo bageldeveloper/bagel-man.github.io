@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
-const port = Number(process.env.PORT || 5500);
+const port = 5500;
 const host = "127.0.0.1";
 const debugAds = process.env.DEBUG_ADS !== "false";
 
@@ -11,7 +11,6 @@ const mimeTypes = {
   ".css": "text/css; charset=utf-8",
   ".gif": "image/gif",
   ".html": "text/html; charset=utf-8",
-  ".htm": "text/html; charset=utf-8",
   ".ico": "image/x-icon",
   ".jpeg": "image/jpeg",
   ".jpg": "image/jpeg",
@@ -47,7 +46,7 @@ const server = http.createServer((request, response) => {
   response.setHeader("Content-Type", mimeTypes[extension] || "application/octet-stream");
   response.setHeader("Cache-Control", "no-store");
 
-  if (extension === ".html" || extension === ".htm") {
+  if (extension === ".html") {
     let html = fs.readFileSync(file, "utf8");
     if (debugAds) {
       html = html.replace(

@@ -8,8 +8,7 @@ const failures = [];
 
 function walk(dir) {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
-    if ([".git", "node_modules"].includes(entry.name) ||
-        (dir === root && ["dist", "_site", ".jekyll-cache"].includes(entry.name))) return [];
+    if (entry.name === ".git") return [];
     const full = path.join(dir, entry.name);
     return entry.isDirectory() ? walk(full) : [full];
   });
@@ -62,11 +61,10 @@ const htmlFiles = walk(root).filter(file => /\.html?$/i.test(file));
 const referencePattern = /<(?:script|img|link|a|iframe|embed|object|source|audio|video)\b[^>]*?\b(?:src|href|data)\s*=\s*["']([^"']+)["']/gis;
 for (const file of htmlFiles) {
   const html = fs.readFileSync(file, "utf8");
-  const gameRuntime = /<html\b[^>]*\bdata-game-runtime\b/i.test(html);
   if (!analyticsExclusions.has(relative(file)) && !/<title>\s*[^<\s][^<]*<\/title>/i.test(html)) {
     fail(relative(file) + " has no non-empty page title");
   }
-  if (!analyticsExclusions.has(relative(file)) && !gameRuntime) {
+  if (!analyticsExclusions.has(relative(file))) {
     const analyticsLoaders = [...html.matchAll(/googletagmanager\.com\/gtag\/js\?id=(G-[A-Z0-9]+)/gi)]
       .map(match => match[1]);
     const analyticsConfigs = [...html.matchAll(/gtag\(\s*["']config["']\s*,\s*["'](G-[A-Z0-9]+)["']/gi)]
@@ -105,9 +103,9 @@ for (const match of sitemap.matchAll(/<loc>https:\/\/bagelcomics\.com\/([^<]*)<\
   }
 }
 
-for (const file of ["js/main.js", "js/settings.js", "js/game-page.js", "chatscript.js", "announcements.js", "gamesinfo.js", "scripts/update-game-pages.js", "scripts/verify-game-pages.js"]) {
+for (const file of ["js/main.js", "js/settings.js", "chatscript.js", "announcements.js", "gamesinfo.js"]) {
   const result = spawnSync(process.execPath, ["--check", path.join(root, file)], { encoding: "utf8" });
-  if (result.status !== 0) fail(file + " fails syntax validation: " + (result.error?.message || result.stderr?.trim() || "Unknown process error"));
+  if (result.status !== 0) fail(file + " fails syntax validation: " + result.stderr.trim());
 }
 
 if (!/function\s+refreshProfilePreview\s*\(/.test(fs.readFileSync(path.join(root, "chatscript.js"), "utf8"))) {

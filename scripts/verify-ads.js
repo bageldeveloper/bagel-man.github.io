@@ -2,13 +2,11 @@ const fs = require("fs");
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
-const catalogFiles = new Set(Object.values(require('./update-game-pages').catalog()).map(game => path.join(root, game.url)));
-const assetVersionPattern = "(?:20260921-5|20260924-[1-3]|20261018)";
+const assetVersionPattern = "(?:20260921-5|20260924-[1-3])";
 
 function walk(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
-    if ([".git", "node_modules"].includes(entry.name) ||
-        (directory === root && ["dist", "_site", ".jekyll-cache"].includes(entry.name))) return [];
+    if ([".git", "node_modules"].includes(entry.name)) return [];
     const fullPath = path.join(directory, entry.name);
     return entry.isDirectory() ? walk(fullPath) : [fullPath];
   });
@@ -16,9 +14,8 @@ function walk(directory) {
 
 const failures = [];
 const gamePages = walk(root).filter(file => {
-  if (!file.endsWith('.html') && !catalogFiles.has(file)) return false;
-  const source = fs.readFileSync(file, "utf8");
-  return !/<html\b[^>]*\bdata-game-runtime\b/i.test(source) && source.includes('<div class="game-window"');
+  if (!file.endsWith(".html")) return false;
+  return fs.readFileSync(file, "utf8").includes('<div class="game-window"');
 });
 
 for (const file of gamePages) {

@@ -4,12 +4,11 @@ const path = require("path");
 const root = path.resolve(__dirname, "..");
 const publisher = "ca-pub-4474724430572739";
 const existingSlot = "4055551074";
-const assetVersion = "20261018";
+const assetVersion = "20260921-5";
 
 function walk(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap(entry => {
-    if ([".git", "node_modules"].includes(entry.name) ||
-        (directory === root && ["dist", "_site", ".jekyll-cache"].includes(entry.name))) return [];
+    if ([".git", "node_modules"].includes(entry.name)) return [];
     const fullPath = path.join(directory, entry.name);
     return entry.isDirectory() ? walk(fullPath) : [fullPath];
   });
@@ -46,7 +45,6 @@ function slotMarkup(kind, label) {
 
 function updatePage(file) {
   const original = fs.readFileSync(file, "utf8");
-  if (/<html\b[^>]*\bdata-game-runtime\b/i.test(original)) return false;
   if (!original.includes('<div class="game-window"')) return false;
   if (original.includes('class="game-ad game-ad--banner"')) return false;
 
@@ -91,7 +89,6 @@ function updatePage(file) {
 
 function versionGameAssets(file) {
   const original = fs.readFileSync(file, "utf8");
-  if (/<html\b[^>]*\bdata-game-runtime\b/i.test(original)) return false;
   if (!original.includes('<div class="game-window"')) return false;
 
   let html = original
@@ -104,11 +101,8 @@ function versionGameAssets(file) {
   return true;
 }
 
-if (require.main === module) {
-  const pages = walk(root).filter(file => file.endsWith('.html') || (file.endsWith('.htm') && /data-game-key=/.test(fs.readFileSync(file, 'utf8'))));
-  const updated = pages.filter(updatePage);
-  const versioned = pages.filter(versionGameAssets);
-  console.log(`Updated ${updated.length} game pages with responsive side rails, a lower banner, and a mobile footer.`);
-  console.log(`Versioned responsive assets on ${versioned.length} game pages.`);
-}
-module.exports = { slotMarkup, removeBalancedBlock };
+const pages = walk(root).filter(file => file.endsWith(".html"));
+const updated = pages.filter(updatePage);
+const versioned = pages.filter(versionGameAssets);
+console.log(`Updated ${updated.length} game pages with responsive side rails, a lower banner, and a mobile footer.`);
+console.log(`Versioned responsive assets on ${versioned.length} game pages.`);

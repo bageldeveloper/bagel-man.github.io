@@ -109,7 +109,7 @@ function include(key) {
 }
 
 // Shared visual/site assets. Thumbnails are added only for selected games.
-for (const item of ["css", "js", "images", "games/ruffle.js", "games/core.ruffle.ade83621b88d8fcd9574.js", "games/core.ruffle.11ddacfb2c8cba714468.js", "games/a673594f8b9d245eb457.wasm", "games/6392d556d910057b1996.wasm", "bagelicontab.png", "bagelcomicsicon.png", "favicon.png", "index.css", "index.js", "announcements.js", "chatscript.js", "about.html", "projects.html", "help.html"]) {
+for (const item of ["css", "js", "images", "games/ruffle.js", "games/core.ruffle.ade83621b88d8fcd9574.js", "games/core.ruffle.11ddacfb2c8cba714468.js", "games/a673594f8b9d245eb457.wasm", "games/6392d556d910057b1996.wasm", "bagelicontab.png", "bagelcomicsicon.png", "favicon.png", "index.css", "index.js", "announcements.js", "chatscript.js", "about.html", "chat.html", "projects.html", "help.html"]) {
   for (const file of filesUnder(item)) copied.add(file);
 }
 plannedBytes = [...copied].reduce((sum, file) => sum + fs.statSync(source(file)).size, 0);

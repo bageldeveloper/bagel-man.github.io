@@ -16,7 +16,7 @@
   <meta name="twitter:title" content="Mega Man X8 16-bit – Play Unblocked Online | Bagel Comics">
   <meta name="twitter:description" content="Play Mega Man X8 16-bit, a fan-made action platformer inspired by Mega Man X8, with keyboard, gamepad, and optional touch controls on Bagel Comics.">
   <meta name="twitter:image" content="https://bagelcomics.com/thumbnails/megamanx8.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Mega Man X8 16-bit","description":"Play Mega Man X8 16-bit, a fan-made action platformer inspired by Mega Man X8, with keyboard, gamepad, and optional touch controls on Bagel Comics.","url":"https://bagelcomics.com/games/megaman-x8/index.html","sameAs":"https://tinyurl.com/bagelcomicsunblocked","publisher":{"@type":"Organization","name":"Bagel Comics","url":"https://bagelcomics.com","email":"bagelcomics.com@gmail.com","sameAs":"https://tinyurl.com/bagelcomicsunblocked"},"image":"https://bagelcomics.com/thumbnails/megamanx8.jpg","genre":["action","platform","adventure","shooter"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Mega Man X8 16-bit","description":"Play Mega Man X8 16-bit, a fan-made action platformer inspired by Mega Man X8, with keyboard, gamepad, and optional touch controls on Bagel Comics.","url":"https://bagelcomics.com/games/megaman-x8/index.html","sameAs":"https://tinyurl.com/bagelcomicsunblocked","publisher":{"@type":"Organization","name":"Bagel Comics","url":"https://bagelcomics.com","email":"bagelcomics.com@gmail.com","sameAs":"https://tinyurl.com/bagelcomicsunblocked"},"image":"https://bagelcomics.com/thumbnails/megamanx8.jpg","genre":["action","platform","adventure","shooter"]}</script>
 <!-- GAME SEO:HEAD END -->
 <meta charset="utf-8">
   <meta name="theme-color" content="#0f1117">
@@ -27,16 +27,13 @@
   <link rel="stylesheet" href="../../css/main.css?v=20260921-5">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap">
   <link rel="stylesheet" href="style.css">
-<script src="app.js" defer></script>
+  <script src="app.js" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-STZFN2TW1E"></script>
 <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-STZFN2TW1E');</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4474724430572739" crossorigin="anonymous"></script>
-<script src="../../js/ad-layout.js?v=20261018" defer></script>
-<link rel="stylesheet" href="../../css/game-page.css?v=20261018">
-<script src="../../js/game-page.js?v=20261018" defer></script>
-<script src="../../gamesinfo.js?v=20261018"></script>
+<script src="../../js/ad-layout.js?v=20260921-5" defer></script>
 </head>
-<body class="x8-page game-page" id="top" data-game-key="megamanX8" style="--player-ratio: 1.7767857142857142; --player-max: 960px">
+<body class="x8-page" id="top">
   <a class="skip-link" href="#main-content">Skip to game</a>
   <header class="topbar">
     <div class="logo-area">
@@ -82,20 +79,24 @@
       </nav>
     </aside>
 
-    <div class="x8-content-column game-content-column">
+    <div class="x8-content-column">
       <main class="main-content" id="main-content">
         <div class="game-window-container">
           <nav class="x8-breadcrumb" aria-label="Breadcrumb"><a href="../../">All games</a><span aria-hidden="true">/</span><span>Mega Man X8 16-bit</span></nav>
           <section class="game-area" aria-label="Play Mega Man X8 16-bit">
-            <div class="game-window" id="gameWindow"><div class="game-cover" aria-label="Start Mega Man X8">
-    <img src="../../thumbnails/megamanx8.jpg" alt="Mega Man X8 cover" fetchpriority="high">
-    <div class="game-cover-content"><span class="game-cover-name">Mega Man X8</span><button type="button" data-play-game><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7Z"></path></svg>Play game</button><p class="game-cover-note">Loading in the background · Click Play to open the game</p></div>
-  </div><div class="game-player" inert>
-
-              <div class="stage" id="stage">
-                <div class="frame-wrap" id="frame-wrap"><iframe src="game.html" id="game" title="Mega Man X8 16-bit game" allow="autoplay; fullscreen; gamepad" allowfullscreen></iframe></div>
+            <div class="game-window" id="gameWindow">
+              <div class="intro" id="intro">
+                <img class="x8-poster" src="game.png" alt="Mega Man X8 16-bit title artwork" width="398" height="224" fetchpriority="high">
+                <div class="x8-launch-content">
+                  <span class="x8-kicker">Fan-made action platformer</span>
+                  <button class="play-button" id="play" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7Z"></path></svg><span>Play game</span></button>
+                  <p class="load-note">300 MB download · Audio starts when you play</p>
+                </div>
               </div>
-            </div></div>
+              <div class="stage" id="stage" hidden>
+                <div class="frame-wrap" id="frame-wrap"><iframe id="game" title="Mega Man X8 16-bit game" allow="autoplay; fullscreen; gamepad" allowfullscreen></iframe></div>
+              </div>
+            </div>
 <div class="game-ad game-ad--rectangle game-ad--rectangle-left" data-ad-rail-position="1" data-ad-label="AD SLOT" aria-label="Advertisement left of game">
   <ins class="adsbygoogle" style="display:block"
        data-ad-client="ca-pub-4474724430572739"
@@ -162,13 +163,15 @@
             </div>
           </section>
 
-          <section class="suggested-games-section" aria-labelledby="game-suggestions-title">
-    <div class="game-suggestions-heading"><h2 class="suggested-games-title" id="game-suggestions-title">Suggested</h2><a href="../../index.html">Browse all games <span aria-hidden="true">↗</span></a></div>
-    <div class="suggested-games-container" data-suggested-games><a class="suggested-game-card" href="../../bwag/index.html"><img src="../../thumbnails/bwag.png" alt="" loading="lazy"><span>Bagel With a Gun</span></a>
-<a class="suggested-game-card" href="../../bagelwithagun.html"><img src="../../thumbnails/bwagDemo.png" alt="" loading="lazy"><span>Bagel With a Gun Demo</span></a>
-<a class="suggested-game-card" href="../../games/emu/batman.html"><img src="../../thumbnails/batman.jpg" alt="" loading="lazy"><span>Batman</span></a>
-<a class="suggested-game-card" href="../../games/emu/mshwog.html"><img src="../../thumbnails/marvelheros.jpg" alt="" loading="lazy"><span>Marvel Super Heroes: War of the Gems</span></a></div>
-  </section>
+          <section class="suggested-games-section" aria-labelledby="suggested-title">
+            <div class="x8-section-heading"><h2 class="suggested-games-title" id="suggested-title">Suggested</h2><a href="../../">Browse all games <span aria-hidden="true">↗</span></a></div>
+            <div class="suggested-games-container">
+              <a class="suggested-game-card" href="../../JimmyBeanGame/index.html"><img src="../../thumbnails/jimmybean.png" alt="" loading="lazy"><span>The Jimmy Bean Game</span></a>
+              <a class="suggested-game-card" href="../../Phobia%200.2.1/index.html"><img src="../../thumbnails/phobia.png" alt="" loading="lazy"><span>Phobia</span></a>
+              <a class="suggested-game-card" href="../../TSADrats/index.html"><img src="../../thumbnails/drats.png" alt="" loading="lazy"><span>Drats!</span></a>
+              <a class="suggested-game-card" href="../../games/Slope-Game-main/index.html"><img src="../../thumbnails/slope.jpg" alt="" loading="lazy"><span>Slope</span></a>
+            </div>
+          </section>
         </div>
 <div class="game-ad game-ad--mobile-footer" data-ad-label="AD SLOT" aria-label="Mobile footer advertisement">
   <ins class="adsbygoogle" style="display:block"
@@ -177,13 +180,13 @@
 </div>
       </main>
 
-      <footer class="site-footer game-site-footer" data-game-footer id="credits" aria-labelledby="credits-title">
+      <footer class="site-footer" id="credits" aria-labelledby="credits-title">
         <div class="x8-footer-top">
           <a class="x8-footer-brand" href="../../" aria-label="Bagel Comics home"><img src="../../bagelicontab.png" alt="Bagel Comics" loading="lazy"></a>
           <div class="x8-author"><h2 id="credits-title">Game credits</h2><div class="x8-author-line"><img class="author-signature" src="alysson_signature.png" alt="Alysson da Paz signature" loading="lazy"><p>Original game by <strong>Alysson da Paz</strong><br>and the Mega Man X8 16-bit contributors.</p></div></div>
           <nav class="x8-credit-links" aria-label="Credits and license"><a href="README-original.md">Full game credits</a><a href="source-code.zip">Browser port source code</a><a href="credits-original.txt">Additional credits</a><a href="LICENSE-original.md">License</a><a href="https://github.com/AlyssonDaPaz/Mega-Man-X8-16-bit" target="_blank" rel="noopener noreferrer">Original source <span aria-hidden="true">↗</span></a></nav>
         </div>
-        <nav class="game-footer-links" aria-label="Footer links"><a href="../../index.html">Home</a><a href="../../about.html">About</a><a href="https://www.instagram.com/bagelcomicsofficial/" target="_blank" rel="noopener noreferrer">Instagram</a></nav><div class="x8-footer-bottom"><p>Mega Man is a property of Capcom. This free fan-made browser port is unaffiliated with Capcom.</p><a href="#top">Back to top ↑</a></div>
+        <div class="x8-footer-bottom"><p>Mega Man is a property of Capcom. This free fan-made browser port is unaffiliated with Capcom.</p><a href="#top">Back to top ↑</a></div>
       </footer>
     </div>
   </div>

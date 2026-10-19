@@ -7,9 +7,6 @@ The keyboard instructions panel is removed; optional touch buttons appear after
 launching on devices with a coarse pointer. Theme preferences use the site's
 existing storage keys.
 
-The cover now uses the shared catalog game-page shell. The game starts
-downloading behind the cover immediately; Play reveals it without restarting.
-
 ## Hosting
 
 Serve this directory unchanged over HTTPS, along with the rest of the site.
