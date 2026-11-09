@@ -43,6 +43,19 @@
     frame.allowFullscreen = true;
     frame.src = version.client;
     frame.addEventListener("load", () => {
+      if (version.id === "1.12.2") {
+        const gameWindow = frame.contentWindow;
+        const gameDocument = frame.contentDocument;
+        // The 1.12 canvas cancels mousedown's default action, which also
+        // prevents the browser from focusing its iframe after a click away.
+        // Capture the press before the engine handles it to restore real focus.
+        const focusGame = event => {
+          if (frame !== document.getElementById("minecraft-game") || preview.hidden === false) return;
+          if (event.target instanceof gameWindow.HTMLCanvasElement) gameWindow.focus();
+        };
+        gameDocument.addEventListener("pointerdown", focusGame, true);
+        gameDocument.addEventListener("mousedown", focusGame, true);
+      }
       if (frame === document.getElementById("minecraft-game") && picker.value === version.id) {
         status.textContent = `${version.label} opened. Allow a moment for the game to start.`;
       }

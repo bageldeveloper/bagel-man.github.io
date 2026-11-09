@@ -4,6 +4,8 @@ The game catalog lists one Minecraft page at `games/minecraft/index.html`. It re
 
 The launch screen follows Mega Man X8's image-and-Play overlay pattern. The original 1.5.2 thumbnail fills the player until Play is selected, and the version dropdown replaces the title in the controls below the player. Selecting another version brings the overlay back; the current client is replaced only when Play is pressed. Selecting the running version again dismisses the overlay without restarting it.
 
+For 1.12.2, the launcher restores the iframe window's keyboard focus when the player presses its canvas. The engine cancels the default mouse action, which otherwise prevents focus from returning after clicking outside the game. Capture listeners restore focus before the engine handles the press; search, chat, and other page controls can still take focus normally. The imported runtime and world storage are unchanged.
+
 Keep the standard `.game-window`, `.game-controls`, and `.game-window-title` selectors. The H1 remains in the launch overlay and is still updated by `update-seo.js`. The poster's `data-game-poster` marker makes its image follow the catalog's `image` field, alongside the social preview. The updater preserves the custom dropdown, Play button, and fullscreen control; `test:minecraft` checks this behavior with changed catalog content and repeated generation.
 
 ## Builds
