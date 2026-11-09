@@ -2,10 +2,11 @@
 // ANNOUNCEMENTS https://forms.gle/betu3hYNygZBCuk9A
 // =============================================
 const ANNOUNCEMENTS = [
+  { id: 'ann-2026-11-09', date: 'November 9th 2026', text: 'Whats up gangalang! I updated minecraft so theres no 1.5 to 1.26. As always, the minecraft server is still up at wss://bagelcraft.net -Carter' },
   { id: 'ann-2026-10-07', date: 'October 7th 2026', text: 'Hello gamers! I realized that there isnt a place to fill out a complaint when the games are broken, so Im bringing back the google forms! If you run into a issue, you can file a Maintenance Request <a href="https://forms.gle/betu3hYNygZBCuk9A" style="color:#F7C06E;">here</a>! -Carter' },
-  { id: 'ann-2026-09-29', date: 'Septemeber 29th 2026', text: 'Whats up gangalang! I was updating the site a lil bit when I found an absolute gem <a href="/oldindex.html" style="color:#F7C06E;">here</a> on the site.  -Carter' },
-  { id: 'ann-2026-09-17', date: 'Septemeber 19th 2026', text: 'Hey guys! I just added our newest 1.12 minecraft server for bagelcomics! the server url is wss://bagelcraft.net you guys should check it out!  -Carter' },
-  { id: 'ann-2026-09-17', date: 'Septemeber 17th, 2026', text: 'Whats up gangalang. I am experimenting around with some of the ad configuration. So lmk if it gets annoying (email bagelcomics.com@gmail.com or message me in chat). Aside from that, big things are coming, so get ready. -Carter' },
+  { id: 'ann-2026-09-29', date: 'September 29th 2026', text: 'Whats up gangalang! I was updating the site a lil bit when I found an absolute gem <a href="/oldindex.html" style="color:#F7C06E;">here</a> on the site.  -Carter' },
+  { id: 'ann-2026-09-17', date: 'September 19th 2026', text: 'Hey guys! I just added our newest 1.12 minecraft server for bagelcomics! the server url is wss://bagelcraft.net you guys should check it out!  -Carter' },
+  { id: 'ann-2026-09-17', date: 'September 17th, 2026', text: 'Whats up gangalang. I am experimenting around with some of the ad configuration. So lmk if it gets annoying (email bagelcomics.com@gmail.com or message me in chat). Aside from that, big things are coming, so get ready. -Carter' },
   { id: 'ann-2026-08-10', date: 'August 14th, 2026', text: 'Welcome back everyone! We touched up all the games over the summer, so all the games are working now. Additionally, if bagelcomics.com is blocked in your school district, you can access the canvas version at tinyurl.com/bagelcomicsunblocked -Carter' },
   { id: 'ann-2026-05-10', date: 'May 12th, 2026', text: 'I apologize for anyone using the canvas course since it got hacked. However, some of the games on canvas still work, so go to tinyurl.com/bagelminecraft for the time being. -Carter' },
   { id: 'ann-2026-05-10b', date: 'May 10th, 2026', text: 'Hey guys! I added Drats, Phobia, and The Jimmy Bean Game, you can find them under the orginal games section. -Tom' },
