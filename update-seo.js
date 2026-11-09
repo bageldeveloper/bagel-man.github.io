@@ -9,23 +9,6 @@ const contactEmail = "bagelcomics.com@gmail.com";
 const startMarker = "<!-- GAME SEO:HEAD START -->";
 const endMarker = "<!-- GAME SEO:HEAD END -->";
 
-const summaries = {
-  "games/megaman-x8/index.html": "Play Mega Man X8 16-bit, a fan-made action platformer inspired by Mega Man X8, with keyboard, gamepad, and optional touch controls on Bagel Comics.",
-  "games/html/freerun.html": "Free Running is a side-scrolling platform game built around running, jumping, and clearing obstacle-filled stages.",
-  "games/html/endlesswar.html": "Endless War is a top-down action game with battlefield scenarios and tactical movement.",
-  "games/html/drawsomething.html": "Draw Something is a drawing game presented in the Bagel Comics browser game collection.",
-  "games/html/supersmashflash.html": "Super Smash Flash is a browser fighting game featuring platform-based battles.",
-  "games/html/chaosfaction2.html": "Chaos Faction 2 is an arena fighting game with fast platform-based battles.",
-  "games/html/crosswordpuzzle.html": "Crossword Puzzle is a word puzzle game for solving clues on a crossword grid.",
-  "games/html/chooseyourweapon.html": "Choose Your Weapon is an action platform game in the Bagel Comics catalog.",
-  "games/html/dragracer2.html": "Drag Racer 2 is a racing game centered on building and racing a drag car.",
-  "games/html/battlegear3.html": "Battle Gear 3 is a strategy game based on deploying units during large battles.",
-  "games/vex6/index.html": "Vex 6 is a stick-figure platform game built around obstacle courses and precise movement.",
-  "games/html/lineriderundo.html": "Line Rider with Undo is a drawing and physics game with an undo option for revising tracks.",
-  "games/html/hobo5.html": "Hobo 5: Space Brawls is an action game in the Hobo series with side-scrolling fights.",
-  "eaglercraft-1.12.html": "Play the Eaglercraft 1.12 browser build on Bagel Comics through the existing embedded Minecraft 1.12 game page."
-};
-
 const genreLabels = {
   action: "action",
   adventure: "adventure",
@@ -46,7 +29,7 @@ function loadCatalog() {
   const source = fs.readFileSync(path.join(root, "gamesinfo.js"), "utf8");
   const context = {};
   vm.runInNewContext(source + ";globalThis.catalog = gamersgaming;", context);
-  return Object.values(context.catalog);
+  return context.catalog;
 }
 
 function escapeHtml(value) {
@@ -68,20 +51,12 @@ function reliableGenres(game) {
 }
 
 function descriptionFor(game) {
-  if (summaries[game.url]) return summaries[game.url];
-  const genre = reliableGenres(game)[0];
-  if (genre) {
-    return `Play ${game.name} in your browser on Bagel Comics. Open the existing embedded ${genreLabels[genre]} game and browse more titles in the catalog.`;
-  }
-  return `Play ${game.name} in your browser on Bagel Comics using the existing embedded game page, then browse more titles from the game catalog.`;
+  if (!game.description || !game.metaDescription) throw new Error(`Missing editorial copy: ${game.url}`);
+  return game.description;
 }
 
 function titleFor(game) {
-  if (game.url === "eaglercraft-1.12.html") {
-    return "Eaglercraft 1.12 – Play Minecraft 1.12 Unblocked Online | Bagel Comics";
-  }
-  const title = `${game.name} – Play Unblocked Online | Bagel Comics`;
-  return title.length <= 65 ? title : `${game.name} – Play Online | Bagel Comics`;
+  return `Play ${game.name} | Bagel Comics`;
 }
 
 function removeOldSeo(head) {
@@ -96,11 +71,13 @@ function removeOldSeo(head) {
 function seoHead(game, eol) {
   const title = titleFor(game);
   const description = descriptionFor(game);
+  const metaDescription = game.metaDescription || description;
   const url = absoluteUrl(game.url);
   const image = game.image && fs.existsSync(path.join(root, game.image))
     ? absoluteUrl(game.image)
     : null;
   const genres = reliableGenres(game).map(tag => genreLabels[tag]);
+  const stylesheet = path.posix.relative(path.posix.dirname(game.url), "css/game-seo.css");
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "VideoGame",
@@ -122,20 +99,21 @@ function seoHead(game, eol) {
   return [
     startMarker,
     `  <title>${escapeHtml(title)}</title>`,
+    `  <link rel="stylesheet" href="${escapeHtml(stylesheet)}?v=20261109">`,
     "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">",
-    `  <meta name="description" content="${escapeHtml(description)}">`,
+    `  <meta name="description" content="${escapeHtml(metaDescription)}">`,
     "  <meta name=\"robots\" content=\"index,follow\">",
     `  <link rel="canonical" href="${escapeHtml(url)}">`,
     "  <meta property=\"og:type\" content=\"website\">",
     `  <meta property="og:title" content="${escapeHtml(title)}">`,
-    `  <meta property="og:description" content="${escapeHtml(description)}">`,
+    `  <meta property="og:description" content="${escapeHtml(metaDescription)}">`,
     `  <meta property="og:url" content="${escapeHtml(url)}">`,
     image ? `  <meta property="og:image" content="${escapeHtml(image)}">` : "",
     `  <meta name="twitter:card" content="${image ? "summary_large_image" : "summary"}">`,
     `  <meta name="twitter:title" content="${escapeHtml(title)}">`,
-    `  <meta name="twitter:description" content="${escapeHtml(description)}">`,
+    `  <meta name="twitter:description" content="${escapeHtml(metaDescription)}">`,
     image ? `  <meta name="twitter:image" content="${escapeHtml(image)}">` : "",
-    `  <script type="application/ld+json">${JSON.stringify(structuredData)}</script>`,
+    `  <script type="application/ld+json">${JSON.stringify(structuredData).replaceAll("<", "\\u003c")}</script>`,
     endMarker
   ].filter(Boolean).join(eol);
 }
@@ -152,10 +130,68 @@ function writeWithRetry(file, content) {
   }
 }
 
-function updatePage(game) {
-  const file = path.join(root, game.url);
-  if (!fs.existsSync(file)) throw new Error(`Missing game page: ${game.url}`);
-  const original = fs.readFileSync(file, "utf8");
+function updateGameBody(html, game, eol) {
+  if (!game.description || !game.metaDescription) throw new Error(`Missing editorial copy: ${game.url}`);
+  const start = "<!-- GAME SEO:DESCRIPTION START -->";
+  const end = "<!-- GAME SEO:DESCRIPTION END -->";
+  const heading = `<h1 class="game-window-title">Play ${escapeHtml(game.name)}</h1>`;
+  const hasControls = html.includes('<div class="game-controls">');
+  const standalone = !hasControls;
+  const mode = game.url === "games/2048/index.html" ? "2048"
+    : game.url === "games/vex6/index.html" ? "canvas" : "frame";
+  html = html.replace(/<body\b([^>]*)>/i, (_match, attributes) => {
+    const existing = attributes.match(/\sclass=["']([^"']*)["']/i);
+    const classes = new Set((existing ? existing[1] : "").split(/\s+/).filter(Boolean));
+    classes.add("game-seo-page");
+    if (standalone) classes.add(`game-seo-${mode}-page`);
+    if (game.url === "games/cookie/index.html") classes.add("game-seo-cookie-page");
+    const rest = attributes.replace(/\sclass=["'][^"']*["']/i, "");
+    return `<body${rest} class="${[...classes].join(" ")}">`;
+  });
+
+  // Keep one primary heading; preserve secondary headings belonging to game UIs.
+  if (game.url === "games/2048/index.html") {
+    html = html.replace(/<h1 class="title">([\s\S]*?)<\/h1>/, '<div class="title">$1</div>');
+  }
+  if (["orbitron.html", "N64Wasm-master/dist/index.html"].includes(game.url)) {
+    html = html.replace(/<h1\b([^>]*)>([\s\S]*?)<\/h1>/gi, (match, attributes, content) =>
+      attributes.includes('class="game-window-title"') ? match : `<h2${attributes}>${content}</h2>`);
+  }
+  if (hasControls) {
+    const headingPattern = /<(span|h1) class="game-window-title">[\s\S]*?<\/\1>/;
+    if (!headingPattern.test(html)) throw new Error(`Cannot find game heading: ${game.url}`);
+    html = html.replace(headingPattern, () => heading);
+  }
+  const paragraph = [
+    start,
+    ...(standalone ? ['        <section class="game-seo-info" aria-label="About this game">', `        ${heading}`] : []),
+    `        <p class="game-description">${escapeHtml(game.description)}</p>`,
+    ...(standalone ? ['        </section>'] : []),
+    `        ${end}`
+  ].join(eol);
+  const existing = new RegExp(`${start}[\\s\\S]*?${end}`);
+  if (existing.test(html)) return html.replace(existing, () => paragraph);
+  if (hasControls) {
+    // Match the complete controls element, including Mega Man X8's nested divs.
+    const controlsStart = html.indexOf('<div class="game-controls">');
+    const tags = /<\/?div\b[^>]*>/gi;
+    tags.lastIndex = controlsStart;
+    let depth = 0;
+    let match;
+    while ((match = tags.exec(html))) {
+      depth += match[0].startsWith("</") ? -1 : 1;
+      if (depth === 0) return html.slice(0, tags.lastIndex) + eol + "        " + paragraph + html.slice(tags.lastIndex);
+    }
+    throw new Error(`Unclosed game controls: ${game.url}`);
+  }
+  const anchor = game.url === "games/2048/index.html" ? '  <script src="js/bind_polyfill.js">'
+    : game.url === "games/vex6/index.html" ? '    <script type="text/javascript">' : '  <noscript>';
+  const position = html.indexOf(anchor, html.indexOf("<body"));
+  if (position < 0) throw new Error(`Cannot locate standalone game introduction: ${game.url}`);
+  return html.slice(0, position) + "        " + paragraph + eol + html.slice(position);
+}
+
+function renderPage(game, original) {
   const eol = original.includes("\r\n") ? "\r\n" : "\n";
   let html = original.replace(/<html\b([^>]*)>/i, (_match, attributes) => {
     const clean = attributes.replace(/\s+lang=["'][^"']*["']/i, "");
@@ -165,13 +201,36 @@ function updatePage(game) {
     const cleanedHead = removeOldSeo(head).replace(/^\s+/, "");
     return `<head${attributes}>${eol}  ${seoHead(game, eol)}${eol}${cleanedHead}</head>`;
   });
-  writeWithRetry(file, html);
+  html = updateGameBody(html, game, eol);
+  if (game.image) {
+    const poster = escapeHtml(path.posix.relative(path.posix.dirname(game.url), game.image));
+    html = html.replace(/<img\b[^>]*\bdata-game-poster\b[^>]*>/gi, tag =>
+      tag.replace(/\ssrc=["'][^"']*["']/i, () => ` src="${poster}"`));
+  }
+  return html;
 }
 
 function main() {
   const catalog = loadCatalog();
-  for (const game of catalog) updatePage(game);
-  console.log(`Updated head-only SEO for ${catalog.length} game pages; body markup was preserved.`);
+  const args = process.argv.slice(2);
+  if (args.length && (args.length !== 2 || args[0] !== "--game" || !args[1])) {
+    throw new Error("Usage: node update-seo.js [--game <catalog-key>]");
+  }
+  const key = args[1];
+  if (key && !Object.hasOwn(catalog, key)) throw new Error(`Unknown game: ${key}`);
+  const games = key ? [catalog[key]] : Object.values(catalog);
+  // Prepare every page before writing so missing copy or markup cannot partially update the catalog.
+  const pages = games.map(game => {
+    const file = path.join(root, game.url);
+    const original = fs.readFileSync(file, "utf8");
+    return { file, original, html: renderPage(game, original) };
+  });
+  for (const { file, original, html } of pages) {
+    if (html !== original) writeWithRetry(file, html);
+  }
+  console.log(`Updated headings, visible descriptions and metadata for ${games.length} game page(s).`);
 }
 
-main();
+if (require.main === module) main();
+
+module.exports = { loadCatalog, renderPage };

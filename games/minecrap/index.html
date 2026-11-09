@@ -1,38 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- GAME SEO:HEAD START -->
-  <title>Minecraft 1.8 – Play Unblocked Online | Bagel Comics</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Play Minecraft 1.8 in your browser on Bagel Comics using the existing embedded game page, then browse more titles from the game catalog.">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://bagelcomics.com/games/minecrap/index.html">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Minecraft 1.8 – Play Unblocked Online | Bagel Comics">
-  <meta property="og:description" content="Play Minecraft 1.8 in your browser on Bagel Comics using the existing embedded game page, then browse more titles from the game catalog.">
-  <meta property="og:url" content="https://bagelcomics.com/games/minecrap/index.html">
-  <meta property="og:image" content="https://bagelcomics.com/thumbnails/minecraft1.8.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Minecraft 1.8 – Play Unblocked Online | Bagel Comics">
-  <meta name="twitter:description" content="Play Minecraft 1.8 in your browser on Bagel Comics using the existing embedded game page, then browse more titles from the game catalog.">
-  <meta name="twitter:image" content="https://bagelcomics.com/thumbnails/minecraft1.8.jpg">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Minecraft 1.8","description":"Play Minecraft 1.8 in your browser on Bagel Comics using the existing embedded game page, then browse more titles from the game catalog.","url":"https://bagelcomics.com/games/minecrap/index.html","sameAs":"https://tinyurl.com/bagelcomicsunblocked","publisher":{"@type":"Organization","name":"Bagel Comics","url":"https://bagelcomics.com","email":"bagelcomics.com@gmail.com","sameAs":"https://tinyurl.com/bagelcomicsunblocked"},"image":"https://bagelcomics.com/thumbnails/minecraft1.8.jpg"}</script>
-<!-- GAME SEO:HEAD END -->
-<meta charset="utf-8">
+  <meta charset="UTF-8">
+  <title>Play Minecraft | Bagel Comics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://bagelcomics.com/games/minecraft/index.html">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-STZFN2TW1E"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-STZFN2TW1E');</script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-STZFN2TW1E');
+    const destination = new URL("../minecraft/index.html", location.href);
+    const params = new URLSearchParams(location.search);
+    if (!params.has('version')) params.set('version', "1.8.8");
+    destination.search = params.toString();
+    destination.hash = location.hash;
+    location.replace(destination.href);
   </script>
-  <style>
-    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #000; }
-    iframe { display: block; width: 100%; height: 100%; border: 0; }
-  </style>
+  <noscript><meta http-equiv="refresh" content="0; url=../minecraft/index.html?version=1.8.8"></noscript>
 </head>
 <body>
-  <iframe src="game.html" title="Minecraft 1.8 EaglercraftX game" allow="autoplay; fullscreen; gamepad; clipboard-read; clipboard-write" allowfullscreen></iframe>
-  <noscript>JavaScript is required to play Minecraft 1.8.</noscript>
+  <h1>Play Minecraft</h1>
+  <p>Minecraft versions now share one page. <a href="../minecraft/index.html?version=1.8.8">Continue to Minecraft 1.8.8</a>.</p>
 </body>
 </html>

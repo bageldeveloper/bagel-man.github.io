@@ -18,7 +18,7 @@ const PLANNING_LIMIT = 500 * 1024 * 1024;
 // These four large, high-interest web games are intentional exceptions.
 const OPTIONAL_MAX_BYTES = 10 * 1024 * 1024;
 const REQUESTED_LARGE_MAX_BYTES = 210 * 1024 * 1024;
-const PREFERRED_LARGE_GAMES = new Set(["BagelWithaGun", "phobia", "BloonsTowerDefense5", "PlantsvsZombies", "Minecraft 1.12", "Minecraft 1.5.2", "SuperMario64", "SuperSmashBros"]);
+const PREFERRED_LARGE_GAMES = new Set(["BagelWithaGun", "phobia", "BloonsTowerDefense5", "PlantsvsZombies", "Minecraft", "SuperMario64", "SuperSmashBros"]);
 const CHUNK_LIMIT = 700 * 1024;
 
 function loadCatalog() {
@@ -65,6 +65,10 @@ function candidateFiles(key) {
   const localReference = value => value.startsWith("/")
     ? value.slice(1)
     : path.posix.normalize(path.posix.join(path.posix.dirname(game.url), value));
+  if (key === "Minecraft") {
+    const minecraft = require("../games/minecraft/versions.js");
+    for (const version of minecraft.versions.filter(version => version.offlineBundle)) add(localReference(version.client));
+  }
   if (game.url.startsWith("games/emu/")) {
     addTree("games/emu/data");
     const rom = page.match(/EJS_gameUrl\s*=\s*['\"]([^'\"]+)/)?.[1];
@@ -76,8 +80,7 @@ function candidateFiles(key) {
     }
   }
   const roots = [
-    ["Minecraft 1.5.2", "eaglercraft-main/eaglercraft-main/stable-download/web"],
-    ["Minecraft 1.8.8", "games/minecrap"], ["SuperMario64", "games/sm64"],
+    ["SuperMario64", "games/sm64"],
     ["MarioKart64", "N64Wasm-masterMK64/dist"], ["TheLegendofZeldaOcarinaofTime", "N64Wasm-master/dist"],
     ["Doom1/2", "doom/public"], ["Quake", "Quake1-master"], ["BagelWithaGun", "bwag"],
     ["jimmy", "JimmyBeanGame"], ["phobia", "Phobia 0.2.1"], ["drats", "TSADrats"],
@@ -158,6 +161,10 @@ for (const file of copied) if (fs.existsSync(source(file)) && fs.statSync(source
 
 const offlineCatalog = Object.fromEntries([...selected].map(key => [key, catalog[key]]));
 fs.writeFileSync(target("gamesinfo.js"), `const gamersgaming = ${JSON.stringify(offlineCatalog, null, 2)};\nif (typeof module !== 'undefined') module.exports = { gamersgaming };\n`);
+if (selected.has("Minecraft")) {
+  const minecraft = require("../games/minecraft/versions.js");
+  fs.writeFileSync(target("games/minecraft/versions.js"), `window.minecraftVersions = ${JSON.stringify({ ...minecraft, versions: minecraft.versions.filter(version => version.offlineBundle) })};\n`);
+}
 fs.mkdirSync(target("offline-assets"), { recursive: true });
 fs.writeFileSync(target("offline-assets/offline-font.css"), `@font-face { font-family: "BebasNeueRegular"; src: url("/css/BebasNeue-webfont.woff") format("woff"); font-display: swap; }\nbody, body button, body input, body textarea, body select { font-family: "Nunito", "BebasNeueRegular", system-ui, sans-serif !important; }\n`);
 
@@ -176,6 +183,10 @@ function sanitizeHtml(html) {
 function chunkLargeScripts(file) {
   const absolute = target(file);
   let html = sanitizeHtml(fs.readFileSync(absolute, "utf8"));
+  if (file === "games/minecraft/index.html") {
+    html = html.replaceAll("Minecraft 1.5.2, 1.8.8, 1.12.2, 26.2, or 26.3", "Minecraft 1.5.2 or 1.12.2")
+      .replaceAll("Eaglercraft 1.5.2, 1.8.8, 1.12.2, 26.2, or 26.3", "Eaglercraft 1.5.2 or 1.12.2");
+  }
   const relativeFromPage = asset => path.posix.relative(path.posix.dirname(file), asset) || "./";
   html = html.replace(/<\/head>/i, match => `<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap">\n<link rel="stylesheet" href="${relativeFromPage("offline-assets/offline-font.css")}">\n${match}`);
   if (file === "eaglercraft-1.12-game.html") {

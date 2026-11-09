@@ -1,0 +1,33 @@
+/* Minecraft launch screen and version slot within the standard game template. */
+.minecraft-page .main-content .game-window { height: auto; aspect-ratio: 16 / 9; }
+.minecraft-placeholder, .minecraft-stage { position: absolute; inset: 0; }
+.minecraft-placeholder { z-index: 2; }
+.minecraft-placeholder[hidden], .minecraft-stage[hidden] { display: none; }
+.minecraft-poster { display: block; width: 100%; height: 100%; object-fit: cover; }
+.minecraft-launch-content { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 12px; padding: 24px; text-align: center; background: linear-gradient(180deg, transparent 24%, #07070b33 48%, #07070be8 100%); }
+.minecraft-page .minecraft-launch-content .game-window-title { color: #fff; font-size: clamp(1.1rem, 2.1vw, 1.6rem); text-shadow: 0 2px 6px #000; }
+.minecraft-play { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 11px 25px; border: 3px solid #090b10; border-radius: 10px; box-shadow: 5px 5px 0 #090b10; background: var(--accent); color: #131313; font: inherit; font-weight: 900; font-size: 19px; cursor: pointer; transition: transform .15s, box-shadow .15s; }
+.minecraft-play svg { width: 21px; height: 21px; fill: currentColor; }
+.minecraft-play:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 #090b10; }
+.minecraft-play:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 #090b10; }
+.minecraft-play:focus-visible, .minecraft-version-field select:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+.minecraft-launch-content p { color: #bdc5d0; margin: 0; font-size: 11px; line-height: 1.4; }
+.minecraft-stage iframe { width: 100%; height: 100%; display: block; border: 0; }
+.minecraft-version-field { flex: 1; max-width: 360px; min-width: 0; }
+.minecraft-page .game-controls { gap: 12px; }
+.minecraft-version-label { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.minecraft-version-field select { width: 100%; min-height: 42px; padding: 0.5rem 0.75rem; border: 2px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--accent); font: inherit; font-size: 1.1rem; font-weight: 900; }
+.minecraft-status { width: 100%; max-width: 1000px; margin: 0; color: var(--muted); font-size: 0.85rem; line-height: 1.5; text-align: center; }
+.minecraft-page .fullscreen-btn:disabled { opacity: 0.45; cursor: default; }
+.minecraft-page .game-server-promo { width: 100%; max-width: 1000px; margin: 0; color: var(--accent); text-align: center; font-size: 0.95rem; line-height: 1.6; overflow-wrap: anywhere; }
+.minecraft-page .game-server-promo[hidden] { display: none; }
+.minecraft-page #gameWindow:fullscreen { width: 100vw; height: 100vh; border: 0; border-radius: 0; }
+@media (max-width: 900px) {
+  .minecraft-page .main-content .game-area { height: auto; min-height: 0; margin-top: 0; }
+}
+@media (max-width: 767px) {
+  .minecraft-launch-content { gap: 8px; padding: 12px; }
+  .minecraft-play { min-height: 40px; padding: 7px 16px; font-size: 16px; }
+  .minecraft-page .minecraft-launch-content .game-window-title { font-size: 1.1rem !important; }
+  .minecraft-version-field select { font-size: 1rem; }
+}

@@ -1,0 +1,51 @@
+{
+  "checkedOn": "2026-11-09",
+  "publisher": "https://eaglercraft.com/downloads",
+  "builds": [
+    {
+      "version": "1.5.2",
+      "file": "games/minecraft/clients/1.5.2.html",
+      "source": "https://cdn.eaglercraft.net/objects/dl/1.5.2/Eaglercraft_1.5.2-sp2.01_Offline.zip",
+      "upstreamSha256": "b97fb5f541332c28c27766c6c0d6525ddefe215033d3d4fde20fb9686a9970d7",
+      "localSha256": "985025937a1a196b2fc0bb4b9ed2432628097d5025bf01314a8152927be4d3bb",
+      "bytes": 23536379
+    },
+    {
+      "version": "1.8.8",
+      "file": "games/minecrap/game.html",
+      "source": "https://cdn.eaglercraft.net/objects/dl/1.8.8/eaglercraft1-8-62da5f39.zip",
+      "upstreamSha256": "8d7b926f5488baba6bc0a02e02266c2f6c766a343c2a3425c1689a071a6b943c",
+      "localSha256": "ae79f2916dc68b0768e9815e3b7231129f556769d2e74334ccd1e02594877cd1",
+      "bytes": 34880641
+    },
+    {
+      "version": "26.2",
+      "file": "games/minecraft/clients/26.2.html",
+      "source": "https://cdn.eaglercraft.net/objects/dl/26.2/eaglercraft26-2-6eda6918.zip",
+      "upstreamSha256": "a47be1b2f9e42acb0b427567ee97ecd80a734a45acd41212676102b2cd1860c8",
+      "localSha256": "af2fe0acce434de3ee04fbf70a43382443528fe935035efcbc9bf2feb971a773",
+      "bytes": 77579778
+    },
+    {
+      "version": "26.3",
+      "file": "games/minecraft/clients/26.3.html",
+      "source": "https://cdn.eaglercraft.net/objects/dl/26.3/eaglercraft26-3-6eda6918.zip",
+      "upstreamSha256": "6d3b6c3419f1da310e51edd8bc071813d17119d1b1e20db44fb5561fabb27866",
+      "localSha256": "a32aa86a1290455faaa23ea0c5a047184b7acd0dd0bbf9e8ba0a85b8430ca9c0",
+      "bytes": 79422704
+    },
+    {
+      "version": "1.12.2",
+      "file": "games/minecraft/clients/1.12.2.html",
+      "preserved": true,
+      "localSha256": "eb935392fca1cc2429d589b6fad8619425d6aa5b3c855239dbe23a16c49a3579",
+      "derivedFrom": "eaglercraft-1.12-game.html",
+      "originalSha256": "5712bdde79879ef68b7e59d2267837359e90ed32d23436ab0cb1f98701f48513",
+      "runtimeScriptSha256": [
+        "8756c4b8e4eedf0f7c5917fab496c3ba89b21b597d0347427ba99e18745197d1",
+        "a7ddc1548d4454e3c709ae05edb0c73d4bf214a08b0af0cd35eaa99c9084b048"
+      ],
+      "bytes": 22370354
+    }
+  ]
+}

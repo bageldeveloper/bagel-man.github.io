@@ -7,6 +7,8 @@
     "analytics:update": "node scripts/update-analytics.js",
     "offline:build": "node scripts/build-offline-bundle.js",
     "test:ads": "node scripts/verify-ads.js",
-    "test:site": "node scripts/validate-site.js"
+    "test:site": "node scripts/validate-site.js",
+    "test:seo": "node scripts/verify-game-seo.js",
+    "test:minecraft": "node scripts/verify-minecraft.js"
   }
 }
